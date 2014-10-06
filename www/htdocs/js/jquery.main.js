@@ -173,6 +173,23 @@ aero.expand = function() {
   });
 };
 
+aero.wine = function() {
+  var wit = $('div.wine-item');
+  wit.each(function() {
+    var wi = $(this);
+
+    $('a', wi).on('click', function() {
+      wit.removeClass('open');
+      wi.addClass('open')
+      return false;
+    });
+    $('a.wine-item-popup-close', wi).on('click', function() {
+      wi.removeClass('open')
+      return false;
+    });
+  })
+}
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -184,6 +201,7 @@ aero.init = function() {
   aero.vote();
   aero.openclose();
   aero.expand();
+  aero.wine();
 };
 
 $(aero.init);

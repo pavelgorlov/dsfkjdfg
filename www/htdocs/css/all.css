@@ -837,6 +837,11 @@ a.btn:hover {
   color: #fff;
   background: #000 url(../images/bg/next-step-space.jpg) 50% no-repeat;
 }
+.next-step.style {
+  height: 149px;
+  color: #fff;
+  background: #080808 url(../images/bg/next-step-style.jpg) 100% 50% no-repeat;
+}
 .next-step-text {
   font-size: 15px;
   line-height: 17px;
@@ -899,6 +904,14 @@ a.btn:hover {
   overflow: hidden;
   z-index: 2;
 }
+.wine .versa-label {
+  top: 80px;
+  margin-top: 0;
+}
+.wine-vs .versa-label {
+  top: 80px;
+  margin-top: 0;
+}
 .versa-img {
   float: left;
   position: relative;
@@ -941,6 +954,9 @@ a.btn:hover {
 .inter-quote.top {
   margin-top: 80px;
 }
+.inter-quote.htop {
+  margin-top: 60px;
+}
 .inter-quote:before, .inter-quote:after {
   content: "";
   width: 40px;
@@ -964,6 +980,20 @@ a.btn:hover {
   top: 50%;
   margin-top: -45px;
 }
+.inter-quote-img img {
+  display: block;
+  margin: 0 auto;
+}
+.inter-quote-title {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 100px;
+  margin-left: -50px;
+  margin-top: 5px;
+  text-align: center;
+  font: 15px/18px "flightcregular", sans-serif !important;
+}
 .inter-col.side .inter-quote-img {
   right: auto;
   left: -250px;
@@ -983,6 +1013,7 @@ a.btn:hover {
   padding-top: 120px;
 }
 .inter-text {
+  position: relative;
   font-size: 15px;
   line-height: 18px;
 }
@@ -1064,6 +1095,9 @@ a.btn:hover {
   text-align: center;
   color: #fff;
 }
+.register .page-header {
+  max-width: 1000px;
+}
 .register p a {
   color: #d0383f;
 }
@@ -1084,6 +1118,34 @@ a.btn:hover {
 .card-form-header {
   font: 19px/21px "flightcbold", sans-serif;
   padding: 75px 0 15px;
+}
+
+.card-steps {
+  text-align: center;
+  padding: 15px 0 40px;
+}
+
+.card-step {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 14px;
+}
+.card-step-num {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 7px 0 0;
+  width: 33px;
+  height: 33px;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 19px;
+  font: 26px/33px "flightcregular", sans-serif;
+}
+.card-step p {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
 }
 
 /* recipe */
@@ -1387,4 +1449,155 @@ a.btn:hover {
   font-size: 15px;
   line-height: 18px;
   padding-top: 15px;
+}
+
+/* wine */
+.wine {
+  border-top: 1px solid #dddad6;
+  box-shadow: inset 0 1px 0 #fff;
+}
+.wine .page-header {
+  max-width: 760px;
+}
+.wine-guide {
+  padding: 40px 0 70px;
+  background: #fff url(../images/bg/wine-guide.jpg) 50% 100% no-repeat;
+}
+.wine-guide .page-header {
+  max-width: 1000px;
+  padding-bottom: 85px;
+}
+.wine-guide .page-header:after {
+  content: "";
+  margin: 30px auto 0;
+  display: block;
+  width: 128px;
+  height: 2px;
+  background: #000;
+}
+.wine-carousel {
+  position: relative;
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 70px;
+}
+.wine-slicer {
+  width: 1020px;
+  margin: 0 -10px;
+  position: relative;
+}
+.wine-item {
+  position: relative;
+  float: left;
+  width: 170px;
+}
+.wine-item.open {
+  z-index: 2;
+}
+.wine-item a {
+  display: block;
+  text-decoration: none;
+}
+.wine-item-title {
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+  padding-top: 10px;
+}
+.wine-item-popup {
+  transition: all 0.25s;
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  width: 420px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: center;
+  line-height: 16px;
+  padding: 0 10px;
+  margin-left: -220px;
+  background-color: #F4F3F2;
+  border-radius: 5px;
+}
+.wine-item-popup-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background: url(../images/bg/board-popup-close.png) 0 0 no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.wine-item-popup-title {
+  padding: 20px 0 10px;
+  font: 15px/17px "flightcbold", sans-serif;
+}
+.wine-item-popup-title:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #000;
+  margin: 15px auto 0;
+}
+.open .wine-item-popup {
+  top: 80px;
+  opacity: 1;
+  padding-bottom: 5px;
+  border: 1px solid #DDDAD6;
+  max-height: 800px;
+}
+.wine-item img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* wine contest */
+.wine-vs {
+  padding-top: 40px;
+}
+.wine-vs .page-header {
+  max-width: 1000px;
+}
+.wine-vs-subheader {
+  text-align: center;
+  padding-top: 10px;
+}
+.wine-vs-holder {
+  position: relative;
+  padding-top: 30px;
+}
+.wine-vs-holder img {
+  display: block;
+  margin: 0 auto;
+}
+.wine-vs-name {
+  font: 27px/28px "Georgia", Times, "Times New Roman", serif;
+  padding-bottom: 20px;
+}
+.wine-vs-name:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #000;
+  margin: 15px auto 0;
+}
+.wine-vs-title {
+  position: absolute;
+  bottom: 100px;
+  width: 330px;
+  text-align: center;
+}
+.wine-vs-title-text {
+  min-height: 200px;
+}
+.wine-vs-title.first {
+  left: 0;
+}
+.wine-vs-title.second {
+  right: 0;
 }

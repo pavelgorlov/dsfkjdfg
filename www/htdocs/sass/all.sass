@@ -604,6 +604,10 @@ a.btn
     height: 149px
     color: #fff
     background: #000 url(../images/bg/next-step-space.jpg) 50% no-repeat
+  &.style
+    height: 149px
+    color: #fff
+    background: #080808 url(../images/bg/next-step-style.jpg) 100% 50% no-repeat
   &-text
     font-size: 15px
     line-height: 17px
@@ -657,6 +661,12 @@ a.btn
     text-indent: -9999px
     overflow: hidden
     z-index: 2
+    .wine &
+      top: 80px
+      margin-top: 0
+    .wine-vs &
+      top: 80px
+      margin-top: 0
   &-img
     float: left
     position: relative
@@ -692,6 +702,8 @@ a.btn
     font: 18px/29px $serif
     &.top
       margin-top: 80px
+    &.htop
+      margin-top: 60px
     &:before,
     &:after
       content: ""
@@ -712,6 +724,18 @@ a.btn
       right: -250px
       top: 50%
       margin-top: -45px
+      img
+        display: block
+        margin: 0 auto
+    &-title
+      position: absolute
+      left: 50%
+      top: 100%
+      width: 100px
+      margin-left: -50px
+      margin-top: 5px
+      text-align: center
+      font: 15px/18px $regular !important
     .inter-col.side &-img
       right: auto
       left: -250px
@@ -726,6 +750,7 @@ a.btn
   &-col.space
     padding-top: 120px
   &-text
+    position: relative
     font-size: 15px
     line-height: 18px
     p
@@ -784,6 +809,8 @@ a.btn
   line-height: 18px
   text-align: center
   color: #fff
+  .page-header
+    max-width: 1000px
   p a
     color: #d0383f
   .page-header
@@ -799,6 +826,28 @@ a.btn
   &-header
     font: 19px/21px $bold
     padding: 75px 0 15px
+.card-steps
+  text-align: center
+  padding: 15px 0 40px
+.card-step
+  display: inline-block
+  vertical-align: middle
+  padding: 0 14px
+  &-num
+    display: inline-block
+    vertical-align: middle
+    margin: 0 7px 0 0
+    width: 33px
+    height: 33px
+    text-align: center
+    border: 2px solid #fff
+    border-radius: 19px
+    font: 26px/33px $regular
+  p
+    margin: 0
+    display: inline-block
+    vertical-align: middle
+    text-align: left
 
 /* recipe */
 .recipe-promo
@@ -1031,3 +1080,127 @@ a.btn
     font-size: 15px
     line-height: 18px
     padding-top: 15px
+
+/* wine */
+.wine
+  border-top: 1px solid #dddad6
+  box-shadow: inset 0 1px 0 #fff
+  .page-header
+    max-width: 760px
+  &-guide
+    padding: 40px 0 70px
+    background: #fff url(../images/bg/wine-guide.jpg) 50% 100% no-repeat
+    .page-header
+      max-width: 1000px
+      padding-bottom: 85px
+      &:after
+        content: ""
+        margin: 30px auto 0
+        display: block
+        width: 128px
+        height: 2px
+        background: #000
+  &-carousel
+    position: relative
+    width: 1000px
+    //overflow: hidden
+    margin: auto
+    padding-bottom: 70px
+  &-slicer
+    width: 1020px
+    margin: 0 -10px
+    position: relative
+    //overflow: hidden
+  &-item
+    position: relative
+    float: left
+    width: 170px
+    &.open
+      z-index: 2
+    a
+      display: block
+      text-decoration: none
+    &-title
+      text-align: center
+      font-size: 15px
+      line-height: 18px
+      padding-top: 10px
+    &-popup
+      transition: all .25s
+      position: absolute
+      left: 50%
+      top: 60px
+      width: 420px
+      max-height: 0
+      opacity: 0
+      overflow: hidden
+      font-size: 13px
+      text-align: center
+      line-height: 16px
+      padding: 0 10px
+      margin-left: -220px
+      background-color: #F4F3F2
+      border-radius: 5px
+      &-close
+        position: absolute
+        right: 10px
+        top: 10px
+        width: 15px
+        height: 15px
+        background: url(../images/bg/board-popup-close.png) 0 0 no-repeat
+        text-indent: -9999px
+        overflow: hidden
+      &-title
+        padding: 20px 0 10px
+        font: 15px/17px $bold
+        &:after
+          content: ""
+          display: block
+          width: 50px
+          height: 2px
+          background: #000
+          margin: 15px auto 0
+      .open &
+        top: 80px
+        opacity: 1
+        padding-bottom: 5px
+        border: 1px solid #DDDAD6
+        max-height: 800px
+    img
+      display: block
+      margin: 0 auto
+/* wine contest */
+.wine-vs
+  padding-top: 40px
+  .page-header
+    max-width: 1000px
+  &-subheader
+    text-align: center
+    padding-top: 10px
+  &-holder
+    position: relative
+    padding-top: 30px
+    img
+      display: block
+      margin: 0 auto
+  &-name
+    font: 27px/28px $serif
+    padding-bottom: 20px
+    &:after
+      content: ""
+      display: block
+      width: 30px
+      height: 2px
+      background: #000
+      margin: 15px auto 0
+  &-title
+    position: absolute
+    bottom: 100px
+    width: 330px
+    text-align: center
+    &-text
+      min-height: 200px
+  &-title.first
+    left: 0
+  &-title.second
+    right: 0
