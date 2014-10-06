@@ -138,7 +138,6 @@ textarea:focus:-ms-input-placeholder {
   padding: 0 10px;
   margin: auto;
 }
-
 .page-header {
   margin: 0;
   max-width: 600px;
@@ -160,7 +159,6 @@ textarea:focus:-ms-input-placeholder {
   height: 2px;
   background: #fff;
 }
-
 .page-content p {
   margin: 0;
 }
@@ -873,6 +871,11 @@ a.btn:hover {
   color: #fff;
   background: #080808 url(../images/bg/next-step-style.jpg) 100% 50% no-repeat;
 }
+.next-step.haute {
+  height: 149px;
+  color: #fff;
+  background: #080808 url(../images/bg/next-step-haute.jpg) 100% 50% no-repeat;
+}
 .next-step-text {
   font-size: 15px;
   line-height: 17px;
@@ -1040,7 +1043,13 @@ a.btn:hover {
   width: 690px;
   padding-left: 50px;
 }
-.inter-col.side {
+.inter-col-smaller {
+  width: 615px;
+}
+.inter-col .inter-quote {
+  max-width: 100%;
+}
+.inter-col.side, .inter-col-smaller.side {
   float: right;
   padding-left: 0;
 }
@@ -1382,7 +1391,7 @@ a.btn:hover {
   width: 200px;
   padding: 40px 25px 15px;
   text-align: center;
-  background-color: #F4F3F2;
+  background-color: #f4f3f2;
   border: 1px solid #DDDAD6;
   border-radius: 5px;
   z-index: 3;
@@ -1566,7 +1575,7 @@ a.btn:hover {
   line-height: 16px;
   padding: 0 10px;
   margin-left: -220px;
-  background-color: #F4F3F2;
+  background-color: #f4f3f2;
   border-radius: 5px;
 }
 .wine-item-popup-close {
@@ -1849,4 +1858,111 @@ a.btn:hover {
 .main-text {
   padding-top: 55px;
   font: 19px/25px "Georgia", Times, "Times New Roman", serif;
+}
+
+/* entertainment */
+.ent {
+  padding-top: 40px;
+  height: 588px;
+  background: #000 url(../images/bg/ent.jpg) no-repeat 50%;
+}
+.ent .page-header {
+  color: #fff;
+  max-width: 1000px;
+}
+.ent .page-header:after {
+  content: "";
+  width: 130px;
+  height: 2px;
+  background: #fff;
+  margin: 30px auto 0;
+  display: block;
+}
+
+.reviews {
+  background: #080808 url(../images/bg/reviews.jpg);
+  background-size: cover;
+  padding: 65px 0 120px;
+}
+.reviews .page-header {
+  color: #fff;
+  max-width: 1000px;
+}
+.reviews .page-header:after {
+  content: "";
+  width: 130px;
+  height: 2px;
+  background: #fff;
+  margin: 30px auto 0;
+  display: block;
+}
+.reviews-list {
+  padding-top: 80px;
+}
+.reviews-item {
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-size: 15px;
+  line-height: 19px;
+  color: #fff;
+}
+.reviews-img {
+  position: relative;
+  width: 159px;
+  margin: auto;
+}
+.reviews-name {
+  padding: 10px 0 2px;
+  font: 19px/21px "flightcbold", sans-serif;
+}
+.reviews .plus-circ {
+  left: auto;
+  right: -18px;
+  margin-top: -18px;
+  top: 50%;
+}
+
+.rate-movie {
+  padding: 60px 0 90px;
+}
+.rate-movie .page-header {
+  max-width: 1000px;
+  padding-bottom: 90px;
+}
+.rate-movie .page-header:after {
+  content: "";
+  width: 130px;
+  height: 2px;
+  background: #000;
+  margin: 30px auto 0;
+  display: block;
+}
+
+.rate-movie-item {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+.rate-movie-item img {
+  display: block;
+  margin: 0 auto;
+}
+.rate-movie-item-title {
+  font: 18px/23px "Georgia", Times, "Times New Roman", serif;
+  min-height: 46px;
+  padding-bottom: 10px;
+}
+
+.sky .page-header:after {
+  display: none;
+}
+
+.sky-subheader {
+  text-align: center;
+  padding: 15px 0 0;
+}
+
+.sky-space {
+  padding-left: 80px;
 }
