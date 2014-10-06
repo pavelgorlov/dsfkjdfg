@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* fonts */
 @font-face {
   font-family: "flightcregular";
@@ -145,6 +146,19 @@ textarea:focus:-ms-input-placeholder {
   font: 28px/30px "flightcbold", sans-serif;
   text-transform: uppercase;
   text-align: center;
+}
+.interview-preview .page-header {
+  color: #fff;
+  max-width: 1000px;
+  padding: 65px 0;
+}
+.interview-preview .page-header:after {
+  content: "";
+  display: block;
+  margin: 25px auto 0;
+  width: 125px;
+  height: 2px;
+  background: #fff;
 }
 
 .page-content p {
@@ -374,7 +388,7 @@ a.btn:hover {
   text-transform: uppercase;
 }
 .promo-content {
-  font: 22px/30px Georgia, Times, serif;
+  font: 22px/30px "Georgia", Times, "Times New Roman", serif;
   max-width: 740px;
   margin: 35px auto 0;
 }
@@ -737,6 +751,12 @@ a.btn:hover {
   font-size: 15px;
   line-height: 17px;
 }
+.expert-hidden, .open .expert-promo {
+  display: none;
+}
+.open .expert-hidden {
+  display: block;
+}
 .expert-space {
   padding-top: 55px;
 }
@@ -750,6 +770,12 @@ a.btn:hover {
 .inter .expert {
   transition: padding 0.25s;
   padding-bottom: 30px;
+}
+.space-inter .expert {
+  padding-bottom: 0;
+}
+.space-inter .expert img {
+  display: block;
 }
 .inter .open .expert {
   padding-bottom: 0;
@@ -821,6 +847,11 @@ a.btn:hover {
   text-align: center;
   text-decoration: none;
   background: #000;
+}
+.next-step.comf {
+  height: 148px;
+  color: #fff;
+  background: #000 url(../images/bg/next-step-comf.jpg) 50% no-repeat;
 }
 .next-step.comfort {
   height: 148px;
@@ -951,6 +982,10 @@ a.btn:hover {
   padding-bottom: 10px;
   font: 18px/29px "Georgia", Times, "Times New Roman", serif;
 }
+.inter-quote-header {
+  font: 19px/22px "flightcbold", sans-serif;
+  padding: 0 0 15px;
+}
 .inter-quote.top {
   margin-top: 80px;
 }
@@ -1019,6 +1054,19 @@ a.btn:hover {
 }
 .inter-text p {
   margin: 10px 0 0;
+}
+.inter-text ul {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.inter-text ul li {
+  margin-top: 5px;
+}
+.inter-text ul li:before {
+  content: "—";
+  display: inline-block;
+  margin-right: 20px;
 }
 .inter-text.min {
   max-width: 670px;
@@ -1600,4 +1648,106 @@ a.btn:hover {
 }
 .wine-vs-title.second {
   right: 0;
+}
+
+.chair-space {
+  background: #fff url(../images/bg/chair-space.jpg) 50% 100% no-repeat;
+  min-height: 805px;
+}
+.chair-space-info {
+  padding: 60px 0;
+  background: #f2f1f0;
+}
+.chair-space-subheader {
+  padding: 15px 0 45px;
+  line-height: 17px;
+  font-size: 15px;
+  max-width: 810px;
+  margin: auto;
+  text-align: center;
+}
+
+.chair-info-img {
+  float: right;
+  margin-left: 15px;
+}
+
+.chair-info-desc {
+  font: 18px/29px "Georgia", Times, "Times New Roman", serif;
+  padding-top: 50px;
+}
+
+.chair-stats {
+  background: #e5e3e1;
+  padding-bottom: 75px;
+}
+.chair-stats-header {
+  padding: 50px 0 60px;
+  text-align: center;
+  font: 19px/22px "flightcbold", sans-serif;
+}
+.chair-stats-item {
+  float: left;
+  width: 25%;
+}
+.chair-stats-item .plus-circ {
+  left: auto;
+  right: -22px;
+  top: -18px;
+  top: 50%;
+}
+.chair-stats-img {
+  position: relative;
+  width: 159px;
+  text-align: center;
+}
+.chair-stats-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.chair-stats-tab, .chair-stats-cell {
+  width: 100%;
+  height: 100%;
+}
+.chair-stats-tab {
+  display: table;
+}
+.chair-stats-cell {
+  display: table-cell;
+  vertical-align: middle;
+  color: #fff;
+  font: 21px/20px "Georgia", Times, "Times New Roman", serif;
+}
+.chair-stats-cell span {
+  display: block;
+  font-size: 70px;
+  letter-spacing: -3px;
+  line-height: 70px;
+}
+.smaller .chair-stats-cell span {
+  font-size: 55px;
+  line-height: 55px;
+}
+.pressed .chair-stats-cell span {
+  line-height: 50px;
+  letter-spacing: 0;
+}
+.chair-stats-cell span sup {
+  font-size: 21px;
+}
+.chair-stats-cell span span {
+  display: inline;
+  font-size: 21px;
+}
+
+.interview-preview {
+  height: 292px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  text-align: center;
 }
