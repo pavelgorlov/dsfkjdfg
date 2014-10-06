@@ -331,81 +331,39 @@ a.btn
     transition: transform .4s ease
     transform-origin: 50% 50% 0px
   &-popup
-    position: absolute
-    top: 30px
-    left: -60px
-    width: 385px
-    max-height: 0
-    background: transparent
-    border: 1px solid transparent
-    border-radius: 5px
-    opacity: 0
-    padding: 5px 0
-    transition: opacity .25s linear, top .25s linear, left .25s linear, right .25s linear, border-color .25s linear, background .25s linear
-    overflow: hidden
-    &-img
-      display: inline-block
-      vertical-align: middle
-      width: 110px
-      height: 110px
-      background-color: #000
-      border: 2px solid #fff
-      border-radius: 58px
-      box-shadow: 0 0 4.8px 0.3px rgba(255, 255, 255, 0.2)
-      overflow: hidden
-    &-tab,
-    &-cell
-      width: 100%
-      height: 100%
-    &-tab
-      display: table
-    &-cell
-      display: table-cell
-      vertical-align: middle
-    &-img img
-      display: block
-      max-width: 100%
-      max-height: 100%
-      margin: 0 auto
     &-text
-      display: inline-block
-      vertical-align: middle
-      width: 230px
-      padding-left: 15px
+      position: absolute
+      left: 50%
+      text-align: center
+      bottom: 35px
+      width: 186px
+      overflow: hidden
+      max-height: 0
+      margin-left: -93px
       font-size: 15px
       line-height: 17px
-      &:first-child
-        padding-left: 10px
-        padding-right: 15px
+      opacity: 0
+      transition: opacity .25s ease
+      color: #fff
+      .board .open &
+        max-height: 50px
+        opacity: 1
     &-close
       position: absolute
-      top: 10px
-      right: 10px
-      width: 15px
-      height: 15px
+      top: 0
+      right: 0
+      width: 0
+      height: 0
       background: url(../images/bg/board-popup-close.png) 0 0 no-repeat
       text-indent: -9999px
       overflow: hidden
-  &-hint.open &-popup
-    top: 50px
-    left: -40px
-    border-color: #ddd9d5
-    background: #f2f1f0
-    opacity: 1
-  &-hint.opened &-popup
-    max-height: 300px
-  &-hint.reverse &-popup,
-  &-hint.reverse &-popup
-    left: auto
-    right: -60px
-  &-hint.reverse &-popup-close,
-  &-hint.reverse &-popup-close
-    right: auto
-    left: 10px
-  &-hint.reverse.open &-popup,
-  &-hint.reverse.open &-popup
-    left: auto
-    right: -40px
+      transition: opacity .25s ease
+      opacity: 0
+      z-index: 2
+      .board .open &
+        width: 15px
+        height: 15px
+        opacity: 1
 .plus-circ
   position: absolute
   left: 0
@@ -428,6 +386,10 @@ a.btn
     top: 50%
     left: 50%
     background: #fff
+    transition: opacity .25s ease
+  .open &:before,
+  .open &:after
+    opacity: 0
   &:before
     width: 18px
     height: 2px
@@ -440,18 +402,33 @@ a.btn
     box-shadow: 0 0 15px #fff
   .touch &:active
     box-shadow: 0 0 15px #fff
-.open .plus-circ
-  left: -16px
-  top: 78px
-  width: 114px
-  height: 114px
-  border-radius: 61px
-  background-color: #ebe9e8
-  opacity: 0
-.board-hint.reverse.open .plus-circ
-  left: -66px
-.opened .plus-circ
-  z-index: -1
+  img
+    display: block
+    width: 100%
+    height: 100%
+    opacity: 0
+    border-radius: 131px
+    transition: all .25s ease
+  .board .open & img
+    border-radius: 127px
+    opacity: 1
+  .board &
+    overflow: visible
+    text-indent: 0
+  .board .open &
+    width: 253px
+    height: 253px
+    background-color: #000
+    border: 4px solid #F2F1F0
+    border-radius: 131px
+    margin: -131px 0 0 -131px
+    box-shadow: 0 0 4.8px 0.3px rgba(255, 255, 255, 0.2)
+    &:hover
+      box-shadow: 0 0 4.8px 0.3px rgba(255, 255, 255, 0.2)
+//.board-hint.reverse.open .plus-circ
+  //left: -66px
+//.opened .plus-circ
+  //z-index: -1
 .no-borderradius .plus-circ
   border: none
   width: 46px

@@ -74,7 +74,7 @@ aero.hint = function() {
   hints.each(function() {
     var hint = $(this),
         opener = $('a.plus-circ', hint),
-        closer = $('a.board-popup-close', hint);
+        closer = $('.board-popup-close', hint);
 
     opener.on('click.hint', function() {
       if (hint.hasClass('opened')) {
