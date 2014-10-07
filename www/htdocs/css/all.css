@@ -797,6 +797,7 @@ a.btn:hover {
   margin-left: -400px;
   width: 800px;
   max-height: 0;
+  overflow: hidden;
   text-align: center;
   opacity: 0;
   transform: scale(0.6);
@@ -815,6 +816,9 @@ a.btn:hover {
 }
 .vote-result-lab {
   text-align: right;
+}
+.selected .vote-result-lab {
+  color: #d0383f;
 }
 .vote-result-val {
   padding-left: 15px;
@@ -1502,6 +1506,9 @@ a.btn:hover {
 .travel {
   position: relative;
 }
+.travel.beach {
+  background: #fff url(../images/bg/travel.jpg) 100% 0 no-repeat;
+}
 .travel-content {
   padding-top: 40px;
   padding-bottom: 90px;
@@ -1526,6 +1533,14 @@ a.btn:hover {
   position: relative;
   margin: auto;
   width: 159px;
+}
+.travel-img img {
+  display: block;
+}
+.disabled .travel-img img {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  filter: gray;
+  -webkit-filter: grayscale(100%);
 }
 .travel-label {
   text-align: center;
@@ -1991,4 +2006,36 @@ a.btn:hover {
 
 .sky-space {
   padding-left: 80px;
+}
+
+/* custom inputs */
+.customizedElements,
+.customizedElement {
+  position: absolute;
+  left: -9999px;
+}
+
+.customRadio, .customRadioChecked {
+  float: left;
+  margin-right: 15px;
+  width: 19px;
+  height: 19px;
+  background: url(../images/bg/radio.png) no-repeat;
+  overflow: hidden;
+}
+.customRadioChecked {
+  background-position: 0 -30px;
+}
+
+/* checkboxes */
+.customCheckbox, .customCheckboxChecked {
+  float: left;
+  width: 19px;
+  height: 19px;
+  margin-right: 15px;
+  overflow: hidden;
+  background: url(../images/bg/checkbox.png) no-repeat;
+}
+.customCheckboxChecked {
+  background-position: 0 -30px;
 }

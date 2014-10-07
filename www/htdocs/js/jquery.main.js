@@ -188,7 +188,17 @@ aero.wine = function() {
       return false;
     });
   })
-}
+};
+
+aero.inputs = function() {
+  if ( typeof $.fn.urInputs === 'undefined' ) {
+    return;
+  }
+
+  $('.custom-inputs').urInputs({
+    replaceCheckboxes: true
+  });
+};
 
 aero.init = function() {
   aero.parallax('div.board', {
@@ -202,6 +212,7 @@ aero.init = function() {
   aero.openclose();
   aero.expand();
   aero.wine();
+  aero.inputs();
 };
 
 $(aero.init);
