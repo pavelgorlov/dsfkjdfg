@@ -764,6 +764,9 @@ a.btn:hover {
   min-height: 412px;
   padding: 50px 0;
 }
+.vote .page-width {
+  position: relative;
+}
 .vote .page-header {
   color: #fff;
 }
@@ -772,17 +775,75 @@ a.btn:hover {
   line-height: 21px;
   padding-top: 20px;
   text-align: center;
+  max-width: 540px;
+  margin: auto;
+}
+.vote-answer {
+  padding-top: 55px;
+  max-width: 350px;
+  margin: auto;
 }
 .vote-container {
   width: 385px;
   margin: 55px auto 0;
 }
 .vote-holder {
-  transition: all 0.3s;
+  transition: all 0.3s ease;
+}
+.vote-result {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -400px;
+  width: 800px;
+  max-height: 0;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.vote-result-tab {
+  margin-top: 30px;
+  display: inline-table;
+}
+.vote-result-row {
+  display: table-row;
+}
+.vote-result-cell {
+  padding: 5px 0;
+  display: table-cell;
+}
+.vote-result-lab {
+  text-align: right;
+}
+.vote-result-val {
+  padding-left: 15px;
+}
+.vote-result-value {
+  display: inline-block;
+  vertical-align: middle;
+  width: 147px;
+  height: 8px;
+  position: relative;
+  overflow: hidden;
+  background-color: #dddad6;
+  border-radius: 4px;
+}
+.vote-result-value span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  background-color: #d0383f;
 }
 .voted .vote-holder {
   transform: scale(1.2);
   opacity: 0;
+}
+.voted .vote-result {
+  max-height: 400px;
+  transform: scale(1);
+  opacity: 1;
 }
 .vote-row {
   padding-top: 15px;

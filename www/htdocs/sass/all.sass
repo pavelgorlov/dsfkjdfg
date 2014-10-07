@@ -553,6 +553,8 @@ a.btn
     size: cover
   min-height: 412px
   padding: 50px 0
+  .page-width
+    position: relative
   .page-header
     color: #fff
   &-quest
@@ -560,14 +562,62 @@ a.btn
     line-height: 21px
     padding-top: 20px
     text-align: center
+    max-width: 540px
+    margin: auto
+  &-answer
+    padding-top: 55px
+    max-width: 350px
+    margin: auto
   &-container
     width: 385px
     margin: 55px auto 0
   &-holder
-    transition: all .3s
+    transition: all .3s ease
+  &-result
+    position: absolute
+    left: 50%
+    top: 0
+    margin-left: -400px
+    width: 800px
+    max-height: 0
+    text-align: center
+    opacity: 0
+    transform: scale(.6)
+    transition: transform .3s ease, opacity .3s ease
+    &-tab
+      margin-top: 30px
+      display: inline-table
+    &-row
+      display: table-row
+    &-cell
+      padding: 5px 0
+      display: table-cell
+    &-lab
+      text-align: right
+    &-val
+      padding-left: 15px
+    &-value
+      display: inline-block
+      vertical-align: middle
+      width: 147px
+      height: 8px
+      position: relative
+      overflow: hidden
+      background-color: #dddad6
+      border-radius: 4px
+      span
+        position: absolute
+        left: 0
+        top: 0
+        height: 8px
+        background-color: #d0383f
   .voted &-holder
     transform: scale(1.2)
     opacity: 0
+  .voted &-result
+    max-height: 400px
+    transform: scale(1)
+    opacity: 1
   &-row
     padding-top: 15px
   &-chk
