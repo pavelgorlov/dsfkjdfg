@@ -384,6 +384,45 @@ aero.bonus = function() {
   });
 };
 
+aero.wishes = function() {
+  $('div.wishes').each(function() {
+    var wsh = $(this),
+        wsh_item = $('div.wish', wsh),
+        wsh_current = wsh_item.index( wsh_item.filter('.current').eq(0) ),
+        wsh_len = wsh_item.length,
+        wsh_btn = $('a.btn', wsh);
+
+    if ( wsh_current < 0 ) {
+      wsh_current = 0;
+    }
+
+    wsh_item.eq(wsh_current).addClass('current');
+
+    wsh_btn.on('click.wsh', function() {
+      if ( wsh_btn.hasClass('side') ) {
+        // next
+        if ( wsh_current < wsh_len - 1 ) {
+          wsh_current++;
+        } else {
+          wsh_current = 0;
+        }
+      } else {
+        // prev
+        if ( wsh_current > 0 ) {
+          wsh_current--;
+        } else {
+          wsh_current = wsh_len - 1;
+        }
+      }
+      wsh_item
+        .removeClass('current')
+        .eq(wsh_current).addClass('current');
+
+      return false;
+    });
+  });
+};
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -399,6 +438,7 @@ aero.init = function() {
   aero.inputs();
   aero.test.init('div.test-js');
   aero.bonus();
+  aero.wishes();
 };
 
 $(aero.init);

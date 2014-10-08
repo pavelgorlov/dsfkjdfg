@@ -1521,10 +1521,17 @@ a.btn:hover {
 }
 
 .wish {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   padding-top: 50px;
   font: 21px/31px "Georgia", Times, "Times New Roman", serif;
   max-width: 555px;
   margin: auto;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: transform 0.25s ease;
 }
 .wish:before {
   content: "";
@@ -1533,6 +1540,14 @@ a.btn:hover {
   margin: 0 auto 55px;
   height: 2px;
   background: #fff;
+}
+
+.wish.current {
+  position: static;
+  left: auto;
+  top: auto;
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* travel */
