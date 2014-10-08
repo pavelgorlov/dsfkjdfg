@@ -1015,6 +1015,39 @@ a.btn:hover {
   text-align: center;
 }
 
+.vote-rating {
+  display: none;
+  position: relative;
+  background: #ccc;
+  color: #fff;
+  border-radius: 15px;
+  height: 30px;
+  width: 170px;
+  margin: 27px auto 2px;
+  overflow: hidden;
+}
+.vote-rating i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #d0383f;
+}
+.vote-rating span {
+  display: block;
+  text-align: center;
+  font: 12px/30px "flightcbold", sans-serif;
+  position: relative;
+  z-index: 2;
+}
+.versa-done .vote-rating {
+  display: block;
+}
+
+.versa-done .btn-vote {
+  display: none;
+}
+
 /* inter */
 .inter {
   padding-top: 45px;

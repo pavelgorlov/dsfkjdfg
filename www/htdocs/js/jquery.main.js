@@ -477,6 +477,18 @@ aero.main = function() {
     });
 };
 
+aero.versa = function() {
+  $('div.versa').each(function() {
+    var vs = $(this),
+        vs_btn = $('a.btn-vote', vs);
+
+    vs_btn.on('click.vs', function() {
+      vs.addClass('versa-done');
+      return false;
+    });
+  });
+};
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -495,6 +507,7 @@ aero.init = function() {
   aero.bonus();
   aero.wishes();
   aero.main();
+  aero.versa();
 
   $('.mask-reg').mask('99-99-99-99-99');
 };
