@@ -202,7 +202,7 @@ aero.inputs = function() {
 
 aero.test = {
   value: [],
-  steps: test_json,
+  steps: false,
   title: '',
 
   tpl: '<div class="travel-item" data-background="{{background}}">\
@@ -245,6 +245,12 @@ aero.test = {
   },
 
   init: function(el) {
+    if ( typeof test_json === 'undefined' ) {
+      return;
+    }
+
+    aero.test.steps = test_json;
+
     if ( $(el).length === 0 ) {
       return;
     }
@@ -355,6 +361,24 @@ aero.bonus = function() {
 
     bf_close.on('click.bf', function() {
       bf_item.removeClass('open');
+      return false;
+    });
+  });
+
+  var st = $('div.chair-stats-item');
+  st.each(function() {
+    var st_item = $(this),
+        st_opener = $('a', st_item),
+        st_close = $('a.bonus-feature-popup-close', st_item);
+
+    st_opener.on('click.st', function() {
+      st.removeClass('open');
+      st_item.addClass('open');
+      return false;
+    });
+
+    st_close.on('click.st', function() {
+      st_item.removeClass('open');
       return false;
     });
   });
