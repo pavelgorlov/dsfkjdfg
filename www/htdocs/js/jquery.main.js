@@ -125,6 +125,18 @@ aero.vote = function() {
   });
 };
 
+aero.register = function() {
+  $('div.reg-js').each(function() {
+    var reg = $(this),
+        reg_btn = $('a.btn-reg', reg);
+
+    reg_btn.on('click', function() {
+      reg.toggleClass('registered');
+      return false;
+    });
+  });
+};
+
 aero.openclose = function() {
   $('.open-close-js').each(function() {
     var oc = $(this),
@@ -474,6 +486,7 @@ aero.init = function() {
 
   aero.hint();
   aero.vote();
+  aero.register();
   aero.openclose();
   aero.expand();
   aero.wine();
@@ -482,6 +495,8 @@ aero.init = function() {
   aero.bonus();
   aero.wishes();
   aero.main();
+
+  $('.mask-reg').mask('99-99-99-99-99');
 };
 
 $(aero.init);

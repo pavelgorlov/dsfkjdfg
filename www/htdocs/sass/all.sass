@@ -895,6 +895,7 @@ a.btn
     text-align: center
     padding: 10px 0
 .register
+  position: relative
   height: 592px
   padding-top: 50px
   background: #000 url(../images/bg/register.jpg) 50% no-repeat
@@ -910,15 +911,41 @@ a.btn
     padding-bottom: 20px
   p
     margin: 0 0 20px
+.card-number
+  position: absolute
+  left: 50%
+  top: 256px
+  width: 424px
+  margin: 0 0 0 -212px
+  padding: 5px 0
+  border: none
+  background-color: #ccc
+  color: #666
+  border-radius: 31px
+  font: 44px/46px $regular
+  text-align: center
+  transition: opacity .25s ease, transform .25s ease, left .25s .25s ease
+  &:focus
+    outline: none
+  .registered &
+    opacity: 0
+    transform: scale(1.5)
+    left: -9999px
 .card-form
   width: 358px
   height: 234px
   margin: 0 auto 30px
   background: url(../images/bg/card-form.png) 0 0 no-repeat
   text-align: center
+  transform: scale(.8)
+  opacity: 0
+  transition: opacity .25s ease, transform .25s ease
   &-header
     font: 19px/21px $bold
     padding: 75px 0 15px
+  .registered &
+    transform: scale(1)
+    opacity: 1
 .card-steps
   text-align: center
   padding: 15px 0 40px
