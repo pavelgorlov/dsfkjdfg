@@ -340,6 +340,26 @@ aero.test = {
   }
 };
 
+aero.bonus = function() {
+  var bf = $('div.bonus-feature');
+  bf.each(function() {
+    var bf_item = $(this),
+        bf_opener = $('a', bf_item),
+        bf_close = $('a.bonus-feature-popup-close', bf_item);
+
+    bf_opener.on('click.bf', function() {
+      bf.removeClass('open');
+      bf_item.addClass('open');
+      return false;
+    });
+
+    bf_close.on('click.bf', function() {
+      bf_item.removeClass('open');
+      return false;
+    });
+  });
+};
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -354,6 +374,7 @@ aero.init = function() {
   aero.wine();
   aero.inputs();
   aero.test.init('div.test-js');
+  aero.bonus();
 };
 
 $(aero.init);
