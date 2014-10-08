@@ -7,6 +7,7 @@ var test_json = [
       {
         "image":"../images/tmp/44.jpg",
         "title":"Город",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",
@@ -65,6 +66,7 @@ var test_json = [
       {
         "image":"../images/tmp/46.jpg",
         "title":"Пляж",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",
@@ -130,6 +132,7 @@ var test_json = [
       {
         "image":"../images/tmp/44.jpg",
         "title":"Город",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",
@@ -188,6 +191,7 @@ var test_json = [
       {
         "image":"../images/tmp/46.jpg",
         "title":"Пляж",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",
@@ -253,6 +257,7 @@ var test_json = [
       {
         "image":"../images/tmp/44.jpg",
         "title":"Город",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",
@@ -311,6 +316,7 @@ var test_json = [
       {
         "image":"../images/tmp/45.jpg",
         "title":"Пляж",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",
@@ -376,6 +382,7 @@ var test_json = [
       {
         "image":"../images/tmp/44.jpg",
         "title":"Город",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",
@@ -434,6 +441,7 @@ var test_json = [
       {
         "image":"../images/tmp/45.jpg",
         "title":"Пляж",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
         "place":[
           {
             "image":"../images/tmp/22.jpg",

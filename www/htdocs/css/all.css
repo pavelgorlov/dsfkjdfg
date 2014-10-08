@@ -1585,6 +1585,9 @@ a.btn:hover {
   padding-top: 40px;
   font: 19px/21px "flightcbold", sans-serif;
 }
+.travel-subheader-desc {
+  padding-top: 20px;
+}
 .travel-list {
   padding-top: 95px;
   min-height: 192px;

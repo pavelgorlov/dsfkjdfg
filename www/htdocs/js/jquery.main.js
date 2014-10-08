@@ -259,7 +259,7 @@ aero.test = {
       var test = $(this),
           test_container = $('div.travel-list', test);
 
-      aero.test.description = $('div.travel-description', test);
+      aero.test.description = $('div.travel-description', test).html();
 
       test.addClass('invalid');
 
@@ -318,9 +318,7 @@ aero.test = {
               case 2:
                 aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place );
                 test.addClass('done');
-                break;
-              case 3:
-                //aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place[ aero.test.value[2] ].place );
+                $('div.travel-description', test).html( aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].subtitle );
                 break;
             }
 
@@ -338,7 +336,7 @@ aero.test = {
           test.css({
             backgroundImage: 'none'
           });
-          $('div.travel-description', test).text( aero.test.description );
+          $('div.travel-description', test).html( aero.test.description );
           return false;
         }
       });
