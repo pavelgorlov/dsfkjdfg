@@ -423,6 +423,50 @@ aero.wishes = function() {
   });
 };
 
+aero.main = function() {
+  var main = $('div.promo').eq(0),
+      page_w,
+      page_h,
+      doc = $(document),
+      bone = $('div.bone').eq(0);
+
+  function resizePage() {
+    page_w = document.compatMode=='CSS1Compat' ? document.documentElement.clientWidth : document.body.clientWidth;
+    page_h = document.compatMode=='CSS1Compat' ? document.documentElement.clientHeight : document.body.clientHeight;
+
+    main.css({
+      minHeight: page_h - 61
+    });
+  }
+
+  function scrollPage() {
+    if ( doc.scrollTop() > page_h - 110 ) {
+      bone
+        .removeClass('collapsed')
+        .addClass('fixed');
+    } else if ( doc.scrollTop() > page_h - 210 ) {
+      bone
+        .removeClass('fixed')
+        .addClass('collapsed');
+    } else {
+      bone
+        .removeClass('collapsed')
+        .removeClass('fixed');
+    }
+  }
+
+  resizePage();
+  scrollPage();
+
+  $(window)
+    .on('resize', function() {
+      resizePage();
+    })
+    .on('scroll', function() {
+      scrollPage();
+    });
+};
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -439,6 +483,7 @@ aero.init = function() {
   aero.test.init('div.test-js');
   aero.bonus();
   aero.wishes();
+  aero.main();
 };
 
 $(aero.init);

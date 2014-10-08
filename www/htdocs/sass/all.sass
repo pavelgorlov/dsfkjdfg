@@ -165,8 +165,13 @@ a.btn
   vertical-align: middle
   margin: 0
   padding: 0
+  max-height: 0
+  position: relative
+  padding-top: 30px
+  overflow: hidden
   list-style: none
   font-size: 0
+  transition: opacity .25s ease, padding-top .25s ease
   li
     display: inline-block
     vertical-align: middle
@@ -183,6 +188,10 @@ a.btn
     color: #fff
   a.current
     cursor: default
+  .fixed &
+    padding-top: 0
+    max-height: 100px
+    opacity: 1
 
 .logo
   display: inline-block
@@ -218,23 +227,26 @@ a.btn
   &-cell
     display: table-cell
     vertical-align: middle
+    padding-bottom: 160px
   &-text
     position: relative
     z-index: 2
   &-header
     font: 58px/60px $bold
+    padding-bottom: 20px
     text-transform: uppercase
+    &:after
+      content: ""
+      display: block
+      width: 127px
+      height: 2px
+      background: #fff
+      margin: 40px auto
   &-content
     font: 22px/30px $serif
     max-width: 740px
-    margin: 35px auto 0
-  &-content:before
-    content: ""
-    display: block
-    width: 127px
-    height: 2px
-    background: #fff
-    margin: 0 auto 40px
+    margin: auto
+    padding-bottom: 30px
   &-img
     position: absolute
     left: 0
@@ -1591,47 +1603,70 @@ a.btn
   &-menu
     margin-top: 15px
     background: #000
+    .promo &
+      position: absolute
+      left: 0
+      top: 100%
+      width: 100%
+      margin-top: -161px
+      z-index: 2
     ul
       margin: 0 auto
       padding: 0
       list-style: none
       width: $page-width
-      overflow: hidden
+      transition: width .25s ease, padding-right .25s ease
+      display: table
       li
-        float: left
-        width: (100%/$menu-items-length)
+        display: table-cell
+        vertical-align: middle
         font-size: 18px
         line-height: 20px
+        transition: all .25s ease
         color: #fff
         text-transform: uppercase
         a
+          position: relative
           color: #fff
           display: block
           padding: 20px 0 25px
           text-decoration: none
-  i
-    display: block
-    height: 86px
-    margin: 0 auto 15px
-    background: url(../images/bg/menu.png) 0 0 no-repeat
-    &.menu-1
-      width: 84px
-      background-position: 0 0
-    &.menu-2
-      width: 97px
-      background-position: -167px 0
-    &.menu-3
-      width: 91px
-      background-position: -328px 0
-    &.menu-4
-      width: 87px
-      background-position: -523px 0
-    &.menu-5
-      width: 86px
-      background-position: -682px 0
-    &.menu-6
-      width: 64px
-      background-position: -849px 0
+    .collapsed & ul,
+    .fixed & ul
+      width: 757px
+      padding-right: 23px
+      li
+        font-size: 13px
+        line-height: 15px
+    .fixed & ul
+      opacity: 0
+    i
+      display: block
+      height: 86px
+      margin: 0 auto 15px
+      transition: opacity .25s
+      background: url(../images/bg/menu.png) 0 0 no-repeat
+      &.menu-1
+        width: 84px
+        background-position: 0 0
+      &.menu-2
+        width: 97px
+        background-position: -167px 0
+      &.menu-3
+        width: 91px
+        background-position: -328px 0
+      &.menu-4
+        width: 87px
+        background-position: -523px 0
+      &.menu-5
+        width: 86px
+        background-position: -682px 0
+      &.menu-6
+        width: 64px
+        background-position: -849px 0
+      .collapsed &,
+      .fixed &
+        opacity: 0
   &-text
     padding-top: 55px
     font: 19px/25px $serif

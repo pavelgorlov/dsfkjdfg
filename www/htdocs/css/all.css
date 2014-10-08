@@ -318,8 +318,13 @@ a.btn:hover {
   vertical-align: middle;
   margin: 0;
   padding: 0;
+  max-height: 0;
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
   list-style: none;
   font-size: 0;
+  transition: opacity 0.25s ease, padding-top 0.25s ease;
 }
 .topnav li {
   display: inline-block;
@@ -340,6 +345,11 @@ a.btn:hover {
 }
 .topnav a.current {
   cursor: default;
+}
+.fixed .topnav {
+  padding-top: 0;
+  max-height: 100px;
+  opacity: 1;
 }
 
 .logo {
@@ -383,6 +393,7 @@ a.btn:hover {
 .promo-cell {
   display: table-cell;
   vertical-align: middle;
+  padding-bottom: 160px;
 }
 .promo-text {
   position: relative;
@@ -390,20 +401,22 @@ a.btn:hover {
 }
 .promo-header {
   font: 58px/60px "flightcbold", sans-serif;
+  padding-bottom: 20px;
   text-transform: uppercase;
 }
-.promo-content {
-  font: 22px/30px "Georgia", Times, "Times New Roman", serif;
-  max-width: 740px;
-  margin: 35px auto 0;
-}
-.promo-content:before {
+.promo-header:after {
   content: "";
   display: block;
   width: 127px;
   height: 2px;
   background: #fff;
-  margin: 0 auto 40px;
+  margin: 40px auto;
+}
+.promo-content {
+  font: 22px/30px "Georgia", Times, "Times New Roman", serif;
+  max-width: 740px;
+  margin: auto;
+  padding-bottom: 30px;
 }
 .promo-img {
   position: absolute;
@@ -2064,56 +2077,82 @@ a.btn:hover {
   margin-top: 15px;
   background: #000;
 }
+.promo .main-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  margin-top: -161px;
+  z-index: 2;
+}
 .main-menu ul {
   margin: 0 auto;
   padding: 0;
   list-style: none;
   width: 980px;
-  overflow: hidden;
+  transition: width 0.25s ease, padding-right 0.25s ease;
+  display: table;
 }
 .main-menu ul li {
-  float: left;
-  width: 16.66667%;
+  display: table-cell;
+  vertical-align: middle;
   font-size: 18px;
   line-height: 20px;
+  transition: all 0.25s ease;
   color: #fff;
   text-transform: uppercase;
 }
 .main-menu ul li a {
+  position: relative;
   color: #fff;
   display: block;
   padding: 20px 0 25px;
   text-decoration: none;
 }
-.main i {
+.collapsed .main-menu ul, .fixed .main-menu ul {
+  width: 757px;
+  padding-right: 23px;
+}
+.collapsed .main-menu ul li, .fixed .main-menu ul li {
+  font-size: 13px;
+  line-height: 15px;
+}
+.fixed .main-menu ul {
+  opacity: 0;
+}
+.main-menu i {
   display: block;
   height: 86px;
   margin: 0 auto 15px;
+  transition: opacity 0.25s;
   background: url(../images/bg/menu.png) 0 0 no-repeat;
 }
-.main i.menu-1 {
+.main-menu i.menu-1 {
   width: 84px;
   background-position: 0 0;
 }
-.main i.menu-2 {
+.main-menu i.menu-2 {
   width: 97px;
   background-position: -167px 0;
 }
-.main i.menu-3 {
+.main-menu i.menu-3 {
   width: 91px;
   background-position: -328px 0;
 }
-.main i.menu-4 {
+.main-menu i.menu-4 {
   width: 87px;
   background-position: -523px 0;
 }
-.main i.menu-5 {
+.main-menu i.menu-5 {
   width: 86px;
   background-position: -682px 0;
 }
-.main i.menu-6 {
+.main-menu i.menu-6 {
   width: 64px;
   background-position: -849px 0;
+}
+.collapsed .main-menu i, .fixed .main-menu i {
+  opacity: 0;
 }
 .main-text {
   padding-top: 55px;
