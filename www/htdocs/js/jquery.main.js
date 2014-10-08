@@ -187,7 +187,7 @@ aero.wine = function() {
       wi.removeClass('open')
       return false;
     });
-  })
+  });
 };
 
 aero.inputs = function() {
@@ -198,6 +198,146 @@ aero.inputs = function() {
   $('.custom-inputs').urInputs({
     replaceCheckboxes: true
   });
+};
+
+aero.test = {
+  value: [],
+  steps: test_json,
+  title: '',
+
+  tpl: '<div class="travel-item" data-background="{{background}}">\
+          <div class="travel-img">\
+            <img src="{{image}}" width="159" height="159" alt="">\
+            <i></i><b></b>\
+          </div>\
+          <div class="travel-label">{{{title}}}</div>\
+          <div class="travel-popup">\
+            {{{popup}}}<a href="#" class="travel-popup-close">x</a>\
+          </div>\
+        </div>',
+
+  render: function(container, items) {
+    var items_html = '';
+
+    if ( typeof items === 'undefined' ) {
+      alert('Ошибка. Пожалуйста, попробуйте перезагрузить страницу');
+      return;
+    }
+
+    container.addClass('move-out');
+
+    setTimeout(function() {
+      container.html('');
+
+      for ( var i = 0, n = items.length; i < n; i++ ) {
+        var item_data = {
+          image: items[i].image,
+          background: items[i].background,
+          title: items[i].title,
+          popup: items[i].description
+        };
+
+        items_html += Mustache.render(aero.test.tpl, item_data);
+      }
+      container.append( items_html );
+      container.removeClass('move-out');
+    }, 250);
+  },
+
+  init: function(el) {
+    if ( $(el).length === 0 ) {
+      return;
+    }
+
+    $(el).each(function() {
+      var test = $(this),
+          test_container = $('div.travel-list', test);
+
+      aero.test.description = $('div.travel-description', test);
+
+      test.addClass('invalid');
+
+      aero.test.render( test_container, aero.test.steps );
+
+      test.on('click.test', function(e) {
+        var target = $(e.target);
+
+        if ( target.hasClass('travel-popup-close') ) {
+          target.closest('div.travel-item').removeClass('active');
+          return false;
+        }
+
+        if ( target.parents('div.travel-item').length ) {
+          target = target.closest('div.travel-item');
+        }
+
+        if ( target.hasClass('travel-item') ) {
+          if ( test.hasClass('done') ) {
+            $('div.travel-item', test).removeClass('active');
+            target.addClass('active');
+          } else {
+            $('div.travel-item', test)
+              .removeClass('checked')
+              .addClass('disabled');
+
+            target
+              .addClass('checked')
+              .removeClass('disabled');
+
+            var target_index = $('div.travel-item', test).index(target),
+                target_bg = target.attr('data-background');
+
+            if ( target_bg ) {
+              test.css({
+                backgroundImage: 'url(' + target_bg + ')'
+              });
+            }
+
+            test.attr('data-value', target_index);
+
+            test.removeClass('invalid');
+          }
+
+          return false;
+        }
+
+        if ( target.hasClass('btn-next') ) {
+          if ( !test.hasClass('invalid') ) {
+            aero.test.value.push( test.attr('data-value') );
+
+            switch ( aero.test.value.length ) {
+              case 1:
+                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place );
+                break;
+              case 2:
+                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place );
+                test.addClass('done');
+                break;
+              case 3:
+                //aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place[ aero.test.value[2] ].place );
+                break;
+            }
+
+            test.addClass('invalid');
+          }
+
+          return false;
+        }
+
+        if ( target.hasClass('btn-reset') ) {
+          test.removeClass('done');
+          aero.test.value = [];
+          test.addClass('invalid');
+          aero.test.render( test_container, aero.test.steps );
+          test.css({
+            backgroundImage: 'none'
+          });
+          $('div.travel-description', test).text( aero.test.description );
+          return false;
+        }
+      });
+    });
+  }
 };
 
 aero.init = function() {
@@ -213,6 +353,7 @@ aero.init = function() {
   aero.expand();
   aero.wine();
   aero.inputs();
+  aero.test.init('div.test-js');
 };
 
 $(aero.init);
