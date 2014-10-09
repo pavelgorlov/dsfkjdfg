@@ -1527,6 +1527,7 @@ a.btn:hover {
   border: 1px solid #DDDAD6;
   opacity: 1;
   max-height: 800px;
+  min-height: 108px;
 }
 .bonus-feature-popup-close {
   position: absolute;
@@ -1576,6 +1577,10 @@ a.btn:hover {
 .bonus-feature-cell span span {
   display: inline;
   font-size: 21px;
+}
+
+.chair-stats-popup-title {
+  font-family: "flightcbold", sans-serif;
 }
 
 /* wishes */
