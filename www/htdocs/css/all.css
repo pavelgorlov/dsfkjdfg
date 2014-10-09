@@ -781,7 +781,7 @@ a.btn:hover {
   color: #fff;
   background: #000 url(../images/bg/vote.jpg) 50% no-repeat;
   background-size: cover;
-  min-height: 412px;
+  min-height: 398px;
   padding: 50px 0;
 }
 .vote .page-width {
@@ -1263,6 +1263,7 @@ a.btn:hover {
   font: 44px/46px "flightcregular", sans-serif;
   text-align: center;
   transition: opacity 0.25s ease, transform 0.25s ease, left 0.25s 0.25s ease;
+  z-index: 2;
 }
 .card-number:focus {
   outline: none;
