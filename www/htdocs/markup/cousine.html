@@ -281,6 +281,7 @@
 			</div><!-- /register -->
 			<!-- recipe -->
 			<div class="haute-secrets recipe recipe-js">
+				<script src="../inc/recipe.js"></script>
 				<div class="recipe-promo">
 					<img src="../images/tmp/9.png" width="45" height="48" class="sleep-img" alt="">
 					<div class="secrets-header">Рецепт блюда, который не вошел в меню <br> и который Вы можете сделать сами</div>
@@ -294,85 +295,30 @@
 					<div class="secrets-subheader">
 						по рецепту Дмитрия Яковлева
 					</div>
-					<div class="recipe-table recipe-js" style="background-image: url(../images/recipe/1.jpg);">
+					<div class="recipe-table">
 						<div class="clearfix page-width">
-							<div class="recipe-popup">
-								asd
+							<div class="recipe-clock">
+								<div class="recipe-clock-icon"></div>
+								<div class="recipe-clock-title"><div class="recipe-clock-tab">
+									<div class="recipe-clock-cell"></div>
+								</div></div>
+								<div class="recipe-popup">
+									<table>
+										<tfoot>
+											<tr>
+												<td>Общее время</td>
+												<td class="recipe-total-time"></td>
+											</tr>
+										</tfoot>
+										<tbody></tbody>
+									</table>
+								</div>
 							</div>
 							<div class="zut">
 								<div class="zut-top"><div class="zut-btm"><div class="zut-bg">
 									<div class="zut-header">Ингредиенты</div>
-									<div class="zut-subheader">для 2х порций</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/11.png" alt="">
-										</div>
-										<span>50 г</span>
-										Рябина
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/12.png" alt="">
-										</div>
-										<span>100 г</span>
-										Цуккини
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/13.png" alt="">
-										</div>
-										<span>1 кг</span>
-										Каре ягненка
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/14.png" alt="">
-										</div>
-										<span>70 мл</span>
-										Масло оливковое
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/15.png" alt="">
-										</div>
-										<span>5 г</span>
-										Соль
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/16.png" alt="">
-										</div>
-										<span>5 г</span>
-										Перец
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/17.png" alt="">
-										</div>
-										<span>50 мл</span>
-										Соус демиглас
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/18.png" alt="">
-										</div>
-										<span>30 г</span>
-										Листья салата
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/19.png" alt="">
-										</div>
-										<span>15 г</span>
-										Базилик
-									</div>
-									<div class="clearfix zut-row">
-										<div class="zut-icon">
-											<img src="../images/tmp/20.png" alt="">
-										</div>
-										<span>10 г</span>
-										Ростки молодого горошка
-									</div>
+									<div class="zut-subheader"></div>
+									<div class="zut-tab"></div>
 								</div></div></div>
 							</div>
 						</div>
@@ -380,7 +326,7 @@
 					<div class="recipe-hints">
 						<div class="clearfix page-width">
 							<div class="recipe-hint-popup">
-								Это легкое, диетическое блюдо, оно отлично подойдет и для полета в самолете, и для семейного ужина. Запивать его лучше или горячим зеленым чаем, или легким сухим красным вином.
+								<div class="recipe-step-description"></div>
 								<a href="#" class="recipe-hint-prev">&laquo;</a>
 								<a href="#" class="recipe-hint-next">&raquo;</a>
 							</div>

@@ -348,7 +348,7 @@ aero.test = {
           test.css({
             backgroundImage: 'none'
           });
-          $('div.travel-description', test).html( aero.test.description );
+          $('div.travel-description', test).html( aero.test.hint );
           return false;
         }
       });
@@ -489,6 +489,134 @@ aero.versa = function() {
   });
 };
 
+aero.recipe = {
+  step: 0,
+  substep: 0,
+  preload: false,
+
+  render: function() {
+    aero.recipe.steps
+      .removeClass('current')
+      .eq(aero.recipe.step).addClass('current');
+
+    aero.recipe.clock.text( recipe.steps[aero.recipe.step].duration );
+
+    for (var i = 0, n = recipe.ingredients.length; i < n; i++ ) {
+      if ( recipe.ingredients[i].step <= aero.recipe.step && recipe.ingredients[i].substep <= aero.recipe.substep ) {
+        aero.recipe.ingr.eq(i).removeClass('disabled');
+      } else {
+        aero.recipe.ingr.eq(i).addClass('disabled');
+      }
+    }
+
+    if ( aero.recipe.preload ) {
+      aero.recipe.preload = null;
+    }
+
+    aero.recipe.preload = new Image();
+    $(aero.recipe.preload)
+      .on('load', function() {
+        aero.recipe.preload = false;
+        aero.recipe.bg.css({
+          backgroundImage: 'url(' + recipe.steps[aero.recipe.step].hints[aero.recipe.substep].image + ')'
+        });
+      })
+      .attr('src', recipe.steps[aero.recipe.step].hints[aero.recipe.substep].image);
+
+    aero.recipe.desc.html(recipe.steps[aero.recipe.step].hints[aero.recipe.substep].name);
+  },
+
+  init: function() {
+    if ( typeof recipe === 'undefined' ) {
+      return;
+    }
+
+    aero.recipe.hold = $('div.recipe-js').eq(0);
+    aero.recipe.tab = $('div.recipe-popup tbody', aero.recipe.hold);
+    aero.recipe.bg = $('div.recipe-table', aero.recipe.hold);
+    aero.recipe.desc = $('div.recipe-step-description', aero.recipe.hold);
+    aero.recipe.clock = $('div.recipe-clock-cell', aero.recipe.hold);
+    aero.recipe.zut = $('div.zut-tab', aero.recipe.hold);
+    aero.recipe.btnPrev = $('a.recipe-hint-prev', aero.recipe.hold);
+    aero.recipe.btnNext = $('a.recipe-hint-next', aero.recipe.hold);
+
+    $('div.zut-subheader', aero.recipe.hold).text(recipe.serv);
+
+    var recipe_tab = '';
+    for ( var i = 0, n = recipe.steps.length; i < n; i++ ) {
+      recipe_tab += '<tr><td>' + recipe.steps[i].title + '</td><td>' + recipe.steps[i].duration + '</td></tr>';
+    }
+    aero.recipe.tab.html(recipe_tab);
+    $('td.recipe-total-time', aero.recipe.hold).html( recipe.time );
+    aero.recipe.steps = $('tr', aero.recipe.tab);
+
+    var zut_tab = '';
+    for (var i = 0, n = recipe.ingredients.length; i < n; i++ ) {
+      zut_tab += '<div class="clearfix zut-row">' + ((recipe.ingredients[i].icon) ? '<div class="zut-icon"><img src="' + recipe.ingredients[i].icon + '" alt=""></div>' : '') + '<span>' + recipe.ingredients[i].qty + '</span>' + recipe.ingredients[i].name + '</div>';
+    }
+    aero.recipe.zut.html(zut_tab);
+    aero.recipe.ingr = $('div.zut-row', aero.recipe.zut);
+
+    aero.recipe.render();
+
+    aero.recipe.btnPrev.addClass('disabled');
+
+    function _recipePrev() {
+      aero.recipe.btnNext.removeClass('disabled');
+
+      if ( aero.recipe.substep > 0 ) {
+        aero.recipe.substep--;
+      } else {
+        aero.recipe.step--;
+        aero.recipe.substep = recipe.steps[aero.recipe.step].hints.length - 1;
+      }
+
+      if ( aero.recipe.step === 0 && aero.recipe.substep === 0 ) {
+        aero.recipe.btnPrev.addClass('disabled');
+      }
+
+      aero.recipe.render();
+    }
+
+    function _recipeNext() {
+      aero.recipe.btnPrev.removeClass('disabled');
+
+      if ( aero.recipe.substep < recipe.steps[aero.recipe.step].hints.length - 1 ) {
+        aero.recipe.substep++;
+      } else {
+        aero.recipe.substep = 0;
+        aero.recipe.step++;
+      }
+
+      if ( aero.recipe.step === recipe.steps.length - 1 && aero.recipe.substep === recipe.steps[aero.recipe.step].hints.length - 1 ) {
+        aero.recipe.btnNext.addClass('disabled');
+      }
+
+      aero.recipe.render();
+    }
+
+    aero.recipe.btnNext.on('click', function() {
+      if ( aero.recipe.btnNext.hasClass('disabled') ) {
+        return false;
+      }
+
+      _recipeNext();
+
+      return false;
+    });
+
+    aero.recipe.btnPrev.on('click', function() {
+      if ( aero.recipe.btnPrev.hasClass('disabled') ) {
+        return false;
+      }
+
+      _recipePrev();
+
+      return false;
+    });
+  }
+};
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -508,6 +636,7 @@ aero.init = function() {
   aero.wishes();
   aero.main();
   aero.versa();
+  aero.recipe.init();
 
   $('.mask-reg').mask('99-99-99-99-99');
 };
