@@ -627,6 +627,11 @@ aero.space = {
     aero.space.right.css({
       marginLeft: aero.space.w/2*aero.space.settings.coef
     });
+    if ( aero.space.w === 95 ) {
+      aero.space.title.addClass('show');
+    } else {
+      aero.space.title.removeClass('show');
+    }
     aero.space.val.text(aero.space.w + 'см');
   },
 
@@ -640,13 +645,6 @@ aero.space = {
       values: [ 50, 145 ],
       slide: function( event, ui ) {
         aero.space.w = ui.values[1] - ui.values[0];
-
-        if ( aero.space.w === 95 ) {
-          aero.space.title.addClass('show');
-        } else {
-          aero.space.title.removeClass('show');
-        }
-
         aero.space.place();
       }
     });

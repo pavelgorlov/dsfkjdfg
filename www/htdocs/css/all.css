@@ -441,6 +441,8 @@ a.btn:hover {
 .chair-content {
   padding-top: 40px;
   text-align: center;
+}
+.chair-content.chairs-hsp {
   min-height: 765px;
 }
 .chair-text {
