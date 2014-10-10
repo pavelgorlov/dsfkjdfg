@@ -268,6 +268,7 @@ a.btn
   &-content
     padding-top: 40px
     text-align: center
+    min-height: 765px
   &-text
     max-width: 880px
     margin: 25px auto 0
@@ -1968,3 +1969,92 @@ a.btn
     background: url(../images/bg/checkbox.png) no-repeat
   &Checked
     background-position: 0 -30px
+#space_left,
+#space_right
+  position: absolute
+  top: 200px
+  left: 50%
+  transition: margin-left .25s linear
+
+/* UI slider */
+.slider-chair
+  &-holder
+    position: absolute
+    left: 50%
+    bottom: 75px
+    width: 500px
+    margin-left: -250px
+  &-title
+    position: absolute
+    left: 50%
+    margin-left: -175px
+    bottom: 110px
+    width: 350px
+    font: 18px/25px $serif
+    text-align: center
+    opacity: 0
+    transition: opacity .25s ease
+    &.show
+      opacity: 1
+  &-val
+    position: absolute
+    left: 50%
+    margin-left: -175px
+    bottom: 52px
+    width: 350px
+    font: 15px/17px $regular
+    text-align: center
+.ui-slider
+  position: relative
+  text-align: left
+  &-handle
+    position: absolute
+    z-index: 2
+    width: 1.2em
+    height: 1.2em
+    cursor: default
+    -ms-touch-action: none
+    touch-action: none
+    #chair_space &
+      width: 22px
+      height: 22px
+      background: #000
+      border-radius: 14px
+      border: 2px solid #fff
+      &:before
+        content: ""
+        position: absolute
+        left: 50%
+        top: 50%
+        margin: -5px 0 0 -5px
+        width: 10px
+        height: 10px
+        background: #fff
+        border-radius: 5px
+  &-range
+    position: absolute
+    z-index: 1
+    font-size: .7em
+    display: block
+    border: 0
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range
+  filter: inherit
+#chair_space .ui-slider-horizontal
+  background: #dddad6
+  height: 5px
+  border: 6px solid #f4f3f2
+  border-radius: 9px
+#chair_space .ui-slider-horizontal .ui-slider-handle
+  top: -11px
+  margin-left: -13px
+#chair_space .ui-slider-horizontal .ui-slider-range
+  top: -6px
+  height: 17px
+  background: #D43038
+  opacity: .85
+.ui-slider-horizontal .ui-slider-range-min
+  left: 0
+.ui-slider-horizontal .ui-slider-range-max
+  right: 0

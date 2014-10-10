@@ -441,6 +441,7 @@ a.btn:hover {
 .chair-content {
   padding-top: 40px;
   text-align: center;
+  min-height: 765px;
 }
 .chair-text {
   max-width: 880px;
@@ -2516,4 +2517,116 @@ a.btn:hover {
 }
 .customCheckboxChecked {
   background-position: 0 -30px;
+}
+
+#space_left,
+#space_right {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transition: margin-left 0.25s linear;
+}
+
+/* UI slider */
+.slider-chair-holder {
+  position: absolute;
+  left: 50%;
+  bottom: 75px;
+  width: 500px;
+  margin-left: -250px;
+}
+.slider-chair-title {
+  position: absolute;
+  left: 50%;
+  margin-left: -175px;
+  bottom: 110px;
+  width: 350px;
+  font: 18px/25px "Georgia", Times, "Times New Roman", serif;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.slider-chair-title.show {
+  opacity: 1;
+}
+.slider-chair-val {
+  position: absolute;
+  left: 50%;
+  margin-left: -175px;
+  bottom: 52px;
+  width: 350px;
+  font: 15px/17px "flightcregular", sans-serif;
+  text-align: center;
+}
+
+.ui-slider {
+  position: relative;
+  text-align: left;
+}
+.ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: default;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+#chair_space .ui-slider-handle {
+  width: 22px;
+  height: 22px;
+  background: #000;
+  border-radius: 14px;
+  border: 2px solid #fff;
+}
+#chair_space .ui-slider-handle:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -5px 0 0 -5px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+.ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: 0.7em;
+  display: block;
+  border: 0;
+}
+
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+  filter: inherit;
+}
+
+#chair_space .ui-slider-horizontal {
+  background: #dddad6;
+  height: 5px;
+  border: 6px solid #f4f3f2;
+  border-radius: 9px;
+}
+
+#chair_space .ui-slider-horizontal .ui-slider-handle {
+  top: -11px;
+  margin-left: -13px;
+}
+
+#chair_space .ui-slider-horizontal .ui-slider-range {
+  top: -6px;
+  height: 17px;
+  background: #D43038;
+  opacity: 0.85;
+}
+
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0;
+}
+
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0;
 }

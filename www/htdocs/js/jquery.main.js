@@ -617,6 +617,92 @@ aero.recipe = {
   }
 };
 
+aero.space = {
+  w: 0,
+
+  place: function() {
+    aero.space.left.css({
+      marginLeft: -aero.space.chairWidth - aero.space.w/2*aero.space.settings.coef
+    });
+    aero.space.right.css({
+      marginLeft: aero.space.w/2*aero.space.settings.coef
+    });
+    aero.space.val.text(aero.space.w + 'см');
+  },
+
+  slider: function() {
+    var spc_slider = $("#slider_chair");
+    spc_slider.slider({
+      range: true,
+      step: 5,
+      min: 0,
+      max: 225,
+      values: [ 50, 145 ],
+      slide: function( event, ui ) {
+        aero.space.w = ui.values[1] - ui.values[0];
+
+        if ( aero.space.w === 95 ) {
+          aero.space.title.addClass('show');
+        } else {
+          aero.space.title.removeClass('show');
+        }
+
+        aero.space.place();
+      }
+    });
+
+    aero.space.w = spc_slider.slider('values', 1) - spc_slider.slider('values', 0);
+    aero.space.place();
+  },
+
+  init: function(settings) {
+    aero.space.settings = settings || {
+      width: 335,
+      space: 0,
+      coef: 1
+    };
+
+    var spc = $('#chair_space'),
+        spc_img, spc_img_half,
+        spc_img_src = spc.attr('data-src');
+
+    if ( !spc_img_src ) {
+      return;
+    }
+
+    aero.space.w = aero.space.settings.space;
+
+    spc_img = new Image();
+
+    $(spc_img)
+      .on('load', function() {
+        aero.space.left = $('<img id="space_left" src="' + spc_img_src + '" alt="">');
+        aero.space.right = $('<img id="space_right" src="' + spc_img_src + '" alt="">');
+        aero.space.left.appendTo(spc)
+        aero.space.right.appendTo(spc)
+        aero.space.chairWidth = aero.space.settings.width;
+
+        aero.space.val = $('div.slider-chair-val').eq(0);
+        if ( aero.space.val.length === 0 ) {
+          aero.space.val = $('<div class="slider-chair-val"></div>').appendTo(spc);
+        }
+
+        aero.space.place();
+
+        aero.space.title = $('div.slider-chair-title').eq(0);
+        if ( aero.space.title.length === 0 ) {
+          aero.space.title = $('<div class="slider-chair-title">Именно такое расстояние между креслами в бизнес-классе «Аэрофлота»</div>').appendTo(spc);
+        }
+
+        $('<div class="slider-chair-holder"><div id="slider_chair"></div></div>').appendTo(spc);
+        aero.space.slider();
+      })
+      .attr({
+        src: spc_img_src
+      });
+  }
+};
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -637,6 +723,11 @@ aero.init = function() {
   aero.main();
   aero.versa();
   aero.recipe.init();
+  aero.space.init({
+    width: 335, // chair width
+    space: 0, // initial space btw chairs
+    coef: 1.37 // space to monitor pix coef
+  });
 
   $('.mask-reg').mask('99-99-99-99-99');
 };
