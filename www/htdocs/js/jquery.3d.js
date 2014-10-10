@@ -8,6 +8,7 @@ aero.d3 = {
   img_l: [],
 
   state: '',
+  frame: 0,
 
   imagesToLoad: 0,
   busy: false,
@@ -63,6 +64,37 @@ aero.d3 = {
     }
   },
 
+  sliderInit: function() {
+    aero.d3.slider = $("#slider");
+
+    aero.d3.slider.slider({
+      min: 0,
+      max: aero.d3.settings.frames.expand - 1,
+      slide: function( event, ui ) {
+        aero.d3.frame = ui.value;
+
+        if ( aero.d3.frame === 0 ) {
+          // min
+          aero.d3.parent.removeClass('expanded');
+        } else if ( aero.d3.frame === aero.d3.settings.frames.expand - 1 ) {
+          // max
+          aero.d3.parent.addClass('expanded');
+          aero.d3.state = 'expanded';
+        }
+
+        if ( Modernizr.canvas ) {
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_x[aero.d3.frame], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
+        } else {
+          aero.d3.el.attr('src', aero.d3.img_x[aero.d3.frame].src);
+        }
+      }
+    });
+  },
+
   preload: function(src, draw) {
     var img = new Image();
 
@@ -73,7 +105,11 @@ aero.d3 = {
 
         if ( draw ) {
           if ( Modernizr.canvas ) {
-            aero.d3.ctx.drawImage(img, 0, 0);
+            try {
+              aero.d3.ctx.drawImage(img, 0, 0);
+            } catch(e) {
+              aero.log(e);
+            }
           } else {
             aero.d3.el.attr('src', src);
           }
@@ -109,9 +145,14 @@ aero.d3 = {
       aero.d3.expand(function() {
         aero.d3.rotate();
       });
+    } else if ( aero.d3.frame !== aero.d3.settings.frames.expand - 1 && aero.d3.frame !== 0 ) {
+      aero.d3.expand(function() {
+        aero.d3.rotate();
+      });
     } else {
       // rotate
       aero.d3.busy = true;
+      aero.d3.parent.addClass('rotated');
 
       var i = 0,
           len = aero.d3.settings.frames.rotate - 1,
@@ -124,10 +165,15 @@ aero.d3 = {
           cancelAnimationFrame(rAF);
           rAF = null;
           aero.d3.busy = false;
+          aero.d3.parent.removeClass('rotated');
         }
 
         if ( Modernizr.canvas ) {
-          aero.d3.ctx.drawImage(aero.d3.img_r[i], 0, 0);
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_r[i], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
         } else {
           aero.d3.el.attr('src', aero.d3.img_r[i].src);
         }
@@ -157,7 +203,9 @@ aero.d3 = {
       var i, len;
       var rAFe;
 
-      i = aero.d3.settings.frames.expand - 1;
+      //i = aero.d3.settings.frames.expand - 1;
+
+      i = aero.d3.frame;
 
       function _collapseStep() {
         if ( i > 0 ) {
@@ -169,6 +217,8 @@ aero.d3 = {
 
           aero.d3.state = '';
           aero.d3.parent.removeClass('expanded');
+          aero.d3.slider.slider('value', 0);
+          aero.d3.frame = 0;
 
           if ( $.isFunction(callback) ) {
             callback.apply(this);
@@ -176,7 +226,11 @@ aero.d3 = {
         }
 
         if ( Modernizr.canvas ) {
-          aero.d3.ctx.drawImage(aero.d3.img_x[i], 0, 0);
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_x[i], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
         } else {
           aero.d3.el.attr('src', aero.d3.img_x[i].src);
         }
@@ -194,7 +248,8 @@ aero.d3 = {
       var i, len;
       var rAFc;
 
-      i = 0;
+      //i = 0;
+      i = aero.d3.frame;
       len = aero.d3.settings.frames.expand - 1;
 
       function _expandStep() {
@@ -207,6 +262,8 @@ aero.d3 = {
 
           aero.d3.state = 'expanded';
           aero.d3.parent.addClass('expanded');
+          aero.d3.slider.slider('value', aero.d3.settings.frames.expand - 1);
+          aero.d3.frame = aero.d3.settings.frames.expand - 1;
 
           if ( $.isFunction(callback) ) {
             callback.apply(this);
@@ -214,7 +271,11 @@ aero.d3 = {
         }
 
         if ( Modernizr.canvas ) {
-          aero.d3.ctx.drawImage(aero.d3.img_x[i], 0, 0);
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_x[i], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
         } else {
           aero.d3.el.attr('src', aero.d3.img_x[i].src);
         }
@@ -261,7 +322,11 @@ aero.d3 = {
         }
 
         if ( Modernizr.canvas ) {
-          aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
         } else {
           aero.d3.el.attr('src', aero.d3.img_l[i].src);
         }
@@ -304,7 +369,11 @@ aero.d3 = {
         }
 
         if ( Modernizr.canvas ) {
-          aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
         } else {
           aero.d3.el.attr('src', aero.d3.img_l[i].src);
         }
@@ -367,6 +436,7 @@ aero.d3 = {
     });
 
     aero.d3.initImages();
+    aero.d3.sliderInit();
   }
 };
 

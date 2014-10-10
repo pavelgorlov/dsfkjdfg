@@ -492,6 +492,42 @@ a.btn:hover {
   margin: auto;
 }
 
+.chair-expander {
+  width: 560px;
+  position: relative;
+  margin: auto;
+  padding-bottom: 50px;
+}
+.light .chair-expander, .rotated .chair-expander {
+  visibility: hidden;
+}
+
+.chair-condition {
+  position: absolute;
+  top: -53px;
+  width: 90px;
+  text-align: center;
+}
+.chair-condition i {
+  display: block;
+  height: 41px;
+  margin: 0 auto 10px;
+  background: url(../images/bg/chair-conditions.png) 0 0 no-repeat;
+}
+.chair-condition.cond-1 {
+  left: -95px;
+}
+.chair-condition.cond-1 i {
+  width: 40px;
+}
+.chair-condition.cond-2 {
+  right: -95px;
+}
+.chair-condition.cond-2 i {
+  width: 53px;
+  background-position: -100px 0;
+}
+
 /* board */
 .board {
   position: relative;
@@ -2568,20 +2604,16 @@ a.btn:hover {
 .ui-slider-handle {
   position: absolute;
   z-index: 2;
-  width: 1.2em;
-  height: 1.2em;
   cursor: default;
   -ms-touch-action: none;
   touch-action: none;
-}
-#chair_space .ui-slider-handle {
   width: 22px;
   height: 22px;
   background: #000;
   border-radius: 14px;
   border: 2px solid #fff;
 }
-#chair_space .ui-slider-handle:before {
+.ui-slider-handle:before {
   content: "";
   position: absolute;
   left: 50%;
@@ -2606,19 +2638,19 @@ a.btn:hover {
   filter: inherit;
 }
 
-#chair_space .ui-slider-horizontal {
+.ui-slider-horizontal {
   background: #dddad6;
   height: 5px;
   border: 6px solid #f4f3f2;
   border-radius: 9px;
 }
 
-#chair_space .ui-slider-horizontal .ui-slider-handle {
+.ui-slider-horizontal .ui-slider-handle {
   top: -11px;
   margin-left: -13px;
 }
 
-#chair_space .ui-slider-horizontal .ui-slider-range {
+.ui-slider-horizontal .ui-slider-range {
   top: -6px;
   height: 17px;
   background: #D43038;
