@@ -1100,6 +1100,28 @@ a.btn
     &:hover &-icon
       -webkit-animation: clock .08s linear 3
       animation: clock .08s linear 3
+  &-slide
+    max-height: 2000px
+    width: 100%
+    transition: max-height .5s linear
+    overflow: hidden
+    .recipe-close &
+      max-height: 0
+  &-expand
+    margin-bottom: 50px
+  &-content .recipe-expand
+    display: none
+    .recipe-close &
+      display: block
+  .secrets-header
+    font: 22px/24px $bold
+    text-transform: uppercase
+    margin-bottom: 0
+  &-close .secrets-header
+    text-transform: none
+    background: none
+    margin-bottom: -10px
+    font: 15px/18px $regular
   &-popup
     position: absolute
     cursor: default
@@ -1162,6 +1184,19 @@ a.btn
       border: 8px outset transparent
       border-left-color: #F4F3F2
       border-left-style: solid
+  &-heading
+    max-height: 0
+    transition: max-height .25s linear, padding .25s linear
+    overflow: hidden
+    font: 22px/24px $bold
+    max-width: 520px
+    margin: 50px auto 0
+    text-align: center
+    text-transform: uppercase
+    .recipe-close &
+      background: url(../images/bg/recipe-header.png) 50% 0 no-repeat
+      max-height: 300px
+      padding: 60px 0 0
   &-hints
     background: $dark-cream
     padding: 20px 0
@@ -1218,6 +1253,17 @@ a.btn
     float: left
     margin: 0 5px 0 0
     font: 19px/21px $bold
+.btn-recipe
+  position: absolute
+  right: 120px
+  width: 400px
+  text-align: center
+  bottom: 0
+  a
+    background: #fff
+    display: none
+    &.show
+      display: inline-block
 .zut
   float: left
   position: relative

@@ -1470,6 +1470,35 @@ a.btn:hover {
   -webkit-animation: clock 0.08s linear 3;
   animation: clock 0.08s linear 3;
 }
+.recipe-slide {
+  max-height: 2000px;
+  width: 100%;
+  transition: max-height 0.5s linear;
+  overflow: hidden;
+}
+.recipe-close .recipe-slide {
+  max-height: 0;
+}
+.recipe-expand {
+  margin-bottom: 50px;
+}
+.recipe-content .recipe-expand {
+  display: none;
+}
+.recipe-close .recipe-content .recipe-expand {
+  display: block;
+}
+.recipe .secrets-header {
+  font: 22px/24px "flightcbold", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.recipe-close .secrets-header {
+  text-transform: none;
+  background: none;
+  margin-bottom: -10px;
+  font: 15px/18px "flightcregular", sans-serif;
+}
 .recipe-popup {
   position: absolute;
   cursor: default;
@@ -1544,6 +1573,21 @@ a.btn:hover {
   border-left-color: #F4F3F2;
   border-left-style: solid;
 }
+.recipe-heading {
+  max-height: 0;
+  transition: max-height 0.25s linear, padding 0.25s linear;
+  overflow: hidden;
+  font: 22px/24px "flightcbold", sans-serif;
+  max-width: 520px;
+  margin: 50px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.recipe-close .recipe-heading {
+  background: url(../images/bg/recipe-header.png) 50% 0 no-repeat;
+  max-height: 300px;
+  padding: 60px 0 0;
+}
 .recipe-hints {
   background: #f4f3f2;
   padding: 20px 0;
@@ -1608,6 +1652,21 @@ a.btn:hover {
   float: left;
   margin: 0 5px 0 0;
   font: 19px/21px "flightcbold", sans-serif;
+}
+
+.btn-recipe {
+  position: absolute;
+  right: 120px;
+  width: 400px;
+  text-align: center;
+  bottom: 0;
+}
+.btn-recipe a {
+  background: #fff;
+  display: none;
+}
+.btn-recipe a.show {
+  display: inline-block;
 }
 
 .zut {

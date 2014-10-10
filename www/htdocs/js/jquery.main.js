@@ -534,11 +534,15 @@ aero.recipe = {
     aero.recipe.hold = $('div.recipe-js').eq(0);
     aero.recipe.tab = $('div.recipe-popup tbody', aero.recipe.hold);
     aero.recipe.bg = $('div.recipe-table', aero.recipe.hold);
+    aero.recipe.slide = $('div.recipe-slide', aero.recipe.hold);
     aero.recipe.desc = $('div.recipe-step-description', aero.recipe.hold);
     aero.recipe.clock = $('div.recipe-clock-cell', aero.recipe.hold);
     aero.recipe.zut = $('div.zut-tab', aero.recipe.hold);
     aero.recipe.btnPrev = $('a.recipe-hint-prev', aero.recipe.hold);
     aero.recipe.btnNext = $('a.recipe-hint-next', aero.recipe.hold);
+    aero.recipe.bPrev = $('a.btn-prev', aero.recipe.hold);
+    aero.recipe.bNext = $('a.btn-next', aero.recipe.hold);
+    aero.recipe.bNext.addClass('show');
 
     $('div.zut-subheader', aero.recipe.hold).text(recipe.serv);
 
@@ -575,6 +579,14 @@ aero.recipe = {
         aero.recipe.btnPrev.addClass('disabled');
       }
 
+      if ( aero.recipe.step === recipe.steps.length - 1 && aero.recipe.substep === recipe.steps[aero.recipe.step].hints.length - 1 ) {
+        aero.recipe.bPrev.addClass('show');
+        aero.recipe.bNext.removeClass('show');
+      } else {
+        aero.recipe.bPrev.removeClass('show');
+        aero.recipe.bNext.addClass('show');
+      }
+
       aero.recipe.render();
     }
 
@@ -590,6 +602,11 @@ aero.recipe = {
 
       if ( aero.recipe.step === recipe.steps.length - 1 && aero.recipe.substep === recipe.steps[aero.recipe.step].hints.length - 1 ) {
         aero.recipe.btnNext.addClass('disabled');
+        aero.recipe.bPrev.addClass('show');
+        aero.recipe.bNext.removClass('show');
+      } else {
+        aero.recipe.bNext.addClass('show');
+        aero.recipe.bPrev.removeClass('show');
       }
 
       aero.recipe.render();
@@ -605,6 +622,11 @@ aero.recipe = {
       return false;
     });
 
+    aero.recipe.bNext.on('click', function() {
+      _recipeNext();
+      return false;
+    });
+
     aero.recipe.btnPrev.on('click', function() {
       if ( aero.recipe.btnPrev.hasClass('disabled') ) {
         return false;
@@ -612,6 +634,18 @@ aero.recipe = {
 
       _recipePrev();
 
+      return false;
+    });
+
+    aero.recipe.bPrev.on('click', function() {
+      _recipePrev();
+      return false;
+    });
+
+    aero.recipe.hold.addClass('recipe-close');
+
+    $('a.recipe-expand').on('click', function() {
+      aero.recipe.hold.removeClass('recipe-close');
       return false;
     });
   }
