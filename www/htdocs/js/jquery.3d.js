@@ -3,6 +3,36 @@ var aero = window.aero || {};
 aero.d3 = {
   parent: $('div.chair').eq(0),
 
+  tlenbow: [
+    "#ffffff",
+    "#f5f5f5",
+    "#ebebeb",
+    "#e1e1e1",
+    "#d7d7d7",
+    "#d2d2d2",
+    "#cdcdcd",
+    "#c3c3c3",
+    "#b8b8b8",
+    "#aeaeae",
+    "#a4a4a4",
+    "#9a9a9a",
+    "#8f8f8f",
+    "#858585",
+    "#7b7b7b",
+    "#717171",
+    "#666666",
+    "#5c5c5c",
+    "#525252",
+    "#484848",
+    "#3d3d3d",
+    "#333333",
+    "#2a2a2a",
+    "#1f1f1f",
+    "#141414",
+    "#141414",
+    "#141414"
+  ],
+
   img_r: [],
   img_x: [],
   img_l: [],
@@ -301,6 +331,14 @@ aero.d3 = {
       // turn on the light
       var i, len;
       var rAFon;
+      var bg, bg_w, bg_h;
+
+      if ( Modernizr.canvas ) {
+        bg = $('#canvas_bg');
+        bg_w = bg.width();
+        bg_h = bg.height();
+        bg.show();
+      }
 
       i = 0;
       len = aero.d3.settings.frames.light - 1;
@@ -324,10 +362,15 @@ aero.d3 = {
         if ( Modernizr.canvas ) {
           try {
             aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
+            aero.d3.ctx_bg.fillStyle = aero.d3.tlenbow[i];
+            aero.d3.ctx_bg.fillRect(0, 0, bg_w, bg_h);
           } catch(e) {
             aero.log(e);
           }
         } else {
+          aero.d3.bg.css({
+            backgroundColor: aero.d3.tlenbow[i]
+          });
           aero.d3.el.attr('src', aero.d3.img_l[i].src);
         }
       }
@@ -348,6 +391,13 @@ aero.d3 = {
       // turn off the light
       var i, len;
       var rAFoff;
+      var bg, bg_w, bg_h;
+
+      if ( Modernizr.canvas ) {
+        bg = $('#canvas_bg');
+        bg_w = bg.width();
+        bg_h = bg.height();
+      }
 
       i = aero.d3.settings.frames.light - 1;
 
@@ -362,6 +412,7 @@ aero.d3 = {
           aero.d3.state = 'expanded';
           aero.d3.parent.removeClass('light');
           aero.d3.parent.addClass('expanded');
+          bg.hide();
 
           if ( $.isFunction(callback) ) {
             callback.apply(this);
@@ -371,11 +422,16 @@ aero.d3 = {
         if ( Modernizr.canvas ) {
           try {
             aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
+            aero.d3.ctx_bg.fillStyle = aero.d3.tlenbow[i];
+            aero.d3.ctx_bg.fillRect(0, 0, bg_w, bg_h);
           } catch(e) {
             aero.log(e);
           }
         } else {
           aero.d3.el.attr('src', aero.d3.img_l[i].src);
+          aero.d3.bg.css({
+            backgroundColor: aero.d3.tlenbow[i]
+          });
         }
       }
 
@@ -406,10 +462,30 @@ aero.d3 = {
       // defaults...
     };
 
+    aero.d3.bg = $(el).closest('div.chair-bg').eq(0);
+
     if ( Modernizr.canvas ) {
       var canvas = $('<canvas width="' + aero.d3.settings.width + '" height="' + aero.d3.settings.height + '"></canvas>').appendTo( $(el) );
+      var canvas_bg = $('<canvas width="100" height="100" id="canvas_bg"></canvas>').appendTo( aero.d3.bg );
 
       aero.d3.ctx = canvas.get(0).getContext('2d');
+      aero.d3.ctx_bg = canvas_bg.get(0).getContext('2d');
+      function _resizeCanvasBg() {
+        var bgw = aero.d3.bg.width(),
+            bgh = aero.d3.bg.height();
+        canvas_bg.attr({
+          width: bgw,
+          height: bgh
+        });
+        var j = ( aero.d3.parent.hasClass('light') ) ? (aero.d3.tlenbow.length - 1) : 0;
+        aero.d3.ctx_bg.fillStyle = aero.d3.tlenbow[j];
+        aero.d3.ctx_bg.fillRect(0, 0, bgw, bgh);
+      }
+      _resizeCanvasBg();
+      $(window).on('resize.cnvbg', function() {
+        _resizeCanvasBg();
+      });
+      canvas_bg.hide();
     } else {
       var img = new Image();
 

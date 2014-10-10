@@ -265,6 +265,7 @@ a.btn
 /* chair */
 .chair
   position: relative
+  z-index: 2
   &-content
     padding-top: 40px
     text-align: center
@@ -307,7 +308,12 @@ a.btn
 #chair
   display: block
   margin: auto
-
+#canvas_bg
+  position: absolute
+  left: 0
+  top: 0
+.chair-bg
+  position: relative
 .chair-expander
   width: 560px
   position: relative

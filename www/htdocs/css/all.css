@@ -437,6 +437,7 @@ a.btn:hover {
 /* chair */
 .chair {
   position: relative;
+  z-index: 2;
 }
 .chair-content {
   padding-top: 40px;
@@ -490,6 +491,16 @@ a.btn:hover {
 #chair {
   display: block;
   margin: auto;
+}
+
+#canvas_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.chair-bg {
+  position: relative;
 }
 
 .chair-expander {
