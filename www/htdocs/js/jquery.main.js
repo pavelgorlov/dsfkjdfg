@@ -684,13 +684,12 @@ aero.space = {
         if ( aero.space.val.length === 0 ) {
           aero.space.val = $('<div class="slider-chair-val"></div>').appendTo(spc);
         }
-
-        aero.space.place();
-
         aero.space.title = $('div.slider-chair-title').eq(0);
         if ( aero.space.title.length === 0 ) {
           aero.space.title = $('<div class="slider-chair-title">Именно такое расстояние между креслами в бизнес-классе «Аэрофлота»</div>').appendTo(spc);
         }
+
+        aero.space.place();
 
         $('<div class="slider-chair-holder"><div id="slider_chair"></div></div>').appendTo(spc);
         aero.space.slider();
