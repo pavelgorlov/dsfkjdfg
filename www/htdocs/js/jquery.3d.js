@@ -36,6 +36,7 @@ aero.d3 = {
   img_r: [],
   img_x: [],
   img_l: [],
+  img_t: [],
 
   state: '',
   frame: 0,
@@ -48,6 +49,7 @@ aero.d3 = {
 
     aero.d3.imagesToLoad += aero.d3.settings.frames.rotate;
     aero.d3.imagesToLoad += aero.d3.settings.frames.expand;
+    aero.d3.parent.removeClass('ready');
 
     for ( var i = 0, n = aero.d3.settings.frames.rotate; i < n; i++ ) {
       var drawImage = (i == 0) ? true : false;
@@ -91,6 +93,20 @@ aero.d3 = {
       var img = aero.d3.preload( aero.d3.settings.path.light + s + aero.d3.settings.ext, false);
 
       aero.d3.img_l.push(img);
+    }
+
+    for ( var i = 0, n = aero.d3.settings.frames.table; i < n; i++ ) {
+      s = i.toString();
+
+      if ( s.length === 1 ) {
+        s = '00' + s;
+      } else if ( s.length === 2 ) {
+        s = '0' + s;
+      }
+
+      var img = aero.d3.preload( aero.d3.settings.path.table + s + aero.d3.settings.ext, false);
+
+      aero.d3.img_t.push(img);
     }
   },
 
@@ -146,6 +162,9 @@ aero.d3 = {
         }
 
         aero.d3.imagesToLoad--;
+        if ( aero.d3.imagesToLoad === 0 ) {
+          aero.d3.parent.addClass('ready');
+        }
       })
       .on('error', function(image, e) {
         aero.log('[Image ' + src + ' loading error]');
@@ -168,6 +187,10 @@ aero.d3 = {
         aero.d3.expand(function() {
           aero.d3.rotate();
         });
+      });
+    } else if ( aero.d3.state === 'table' ) {
+      aero.d3.table(function() {
+        aero.d3.rotate();
       });
     } else if ( aero.d3.state === 'expanded' ) {
       // if expanded
@@ -218,12 +241,121 @@ aero.d3 = {
     }
   },
 
-  expand: function(callback) {
+  table: function(callback) {
     if ( aero.d3.busy ) {
       return;
     }
 
     if ( aero.d3.state === 'light' ) {
+      aero.d3.light(function() {
+        aero.d3.expand(function() {
+          aero.d3.table();
+        });
+      });
+    } else if ( aero.d3.state === 'expanded' ) {
+      aero.d3.expand(function() {
+        aero.d3.table();
+      });
+    } else if ( aero.d3.state === 'table' ) {
+      aero.d3.busy = true;
+
+      var i, len;
+      var rAFte;
+
+      i = aero.d3.settings.frames.table - 1;
+
+      function _collapseTableStep() {
+        if ( i > 0 ) {
+          i--;
+        } else if (rAFte) {
+          cancelAnimationFrame(rAFte);
+          rAFte = null;
+          aero.d3.busy = false;
+
+          aero.d3.state = '';
+          aero.d3.parent.removeClass('table');
+
+          if ( $.isFunction(callback) ) {
+            callback.apply(this);
+          }
+        }
+
+        if ( Modernizr.canvas ) {
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_t[i], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
+        } else {
+          aero.d3.el.attr('src', aero.d3.img_t[i].src);
+        }
+      }
+
+      function animateTableCollapse() {
+        rAFte = requestAnimationFrame( animateTableCollapse );
+        _collapseTableStep();
+      }
+
+      rAFte = requestAnimationFrame( animateTableCollapse );
+    } else if ( aero.d3.frame !== 0 ) {
+      aero.d3.expand(function() {
+        aero.d3.table();
+      })
+    } else {
+      aero.d3.busy = true;
+
+      var i, len;
+      var rAFtc;
+
+      i = 0;
+      len = aero.d3.settings.frames.table - 1;
+
+      function _expandTableStep() {
+        if ( i < len ) {
+          i++;
+        } else if (rAFtc) {
+          cancelAnimationFrame(rAFtc);
+          rAFtc = null;
+          aero.d3.busy = false;
+
+          aero.d3.state = 'table';
+          aero.d3.parent.addClass('table');
+
+          if ( $.isFunction(callback) ) {
+            callback.apply(this);
+          }
+        }
+
+        if ( Modernizr.canvas ) {
+          try {
+            aero.d3.ctx.drawImage(aero.d3.img_t[i], 0, 0);
+          } catch(e) {
+            aero.log(e);
+          }
+        } else {
+          aero.d3.el.attr('src', aero.d3.img_t[i].src);
+        }
+      }
+
+      function animateTableExpand() {
+        rAFtc = requestAnimationFrame( animateTableExpand );
+        _expandTableStep();
+      }
+
+      rAFtc = requestAnimationFrame( animateTableExpand );
+    }
+  },
+
+  expand: function(callback) {
+    if ( aero.d3.busy ) {
+      return;
+    }
+
+    if ( aero.d3.state === 'table' ) {
+      aero.d3.table(function() {
+        aero.d3.expand();
+      });
+    } else if ( aero.d3.state === 'light' ) {
       aero.d3.light(function() {
         aero.d3.expand();
       });
@@ -445,6 +577,12 @@ aero.d3 = {
       // aero.d3.parent.css({
       //   backgroundColor: '#fff'
       // });
+    } else if ( aero.d3.state === 'table' ) {
+      aero.d3.table(function() {
+        aero.d3.expand(function() {
+          aero.d3.light();
+        });
+      });
     } else {
       // expand and turn on the light
       aero.d3.expand(function() {
@@ -461,6 +599,9 @@ aero.d3 = {
     aero.d3.settings = settings || {
       // defaults...
     };
+
+    aero.d3.loading = $('<div id="chair_loading"><i></i>Загрузка...</div>');
+    aero.d3.loading.appendTo( aero.d3.parent );
 
     aero.d3.bg = $(el).closest('div.chair-bg').eq(0);
 
@@ -511,6 +652,11 @@ aero.d3 = {
       return false;
     });
 
+    $(aero.d3.settings.links.table).on('click', function() {
+      aero.d3.table();
+      return false;
+    });
+
     aero.d3.initImages();
     aero.d3.sliderInit();
   }
@@ -523,18 +669,21 @@ $(function() {
     links: {
       rotate: '#chair_rotate',
       expand: '#chair_expand',
-      light: '#chair_light'
+      light: '#chair_light',
+      table: '#chair_table'
     },
     path: {
       rotate: '../images/rotate/',
       expand: '../images/expand/',
-      light: '../images/light/'
+      light: '../images/light/',
+      table: '../images/table/'
     },
     ext: '.jpg',
     frames: {
       rotate: 198, // rotate frames 0 - 199,
       expand: 42, // expand frames 0 - 43
-      light: 26 // light frames 0 25
+      light: 26, // light frames 0 25
+      table: 9 // table frames
     }
   });
 });

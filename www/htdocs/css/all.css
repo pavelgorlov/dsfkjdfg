@@ -446,6 +446,33 @@ a.btn:hover {
 }
 
 /* chair */
+#chair_loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  margin-left: -100px;
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
+  text-align: center;
+}
+#chair_loading i {
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #000;
+  background: #000 url(../images/loading24.dark.gif) 50% no-repeat;
+  box-shadow: 0 0 4.8px 0.3px rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.ready #chair_loading {
+  display: none;
+}
+
 .chair {
   position: relative;
   z-index: 2;
@@ -467,10 +494,13 @@ a.btn:hover {
   position: relative;
   width: 750px;
   margin: auto;
-  padding-bottom: 20px;
 }
 .chair-hint {
+  display: none;
   position: absolute;
+}
+.ready .chair-hint {
+  display: block;
 }
 .chair-hint-title {
   position: absolute;
@@ -516,9 +546,16 @@ a.btn:hover {
 
 .chair-expander {
   width: 560px;
-  position: relative;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
   margin: -50px auto 0;
   padding-bottom: 50px;
+}
+.ready .chair-expander {
+  position: relative;
+  left: auto;
+  top: auto;
 }
 .light .chair-expander, .rotated .chair-expander {
   visibility: hidden;
