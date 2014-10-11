@@ -808,6 +808,7 @@ aero.init = function() {
   });
 
   $('.mask-reg').mask('99-99-99-99-99');
+  $('.mask-reg-card').mask("99 99 99 99 99",{placeholder:"_"});
 };
 
 $(aero.init);

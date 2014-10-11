@@ -543,6 +543,7 @@ a.btn
     border-top: 2px solid #d9d6d2
     font: 13px/15px $bold
     text-align: center
+    letter-spacing: 1px
     text-decoration: none
     text-transform: uppercase
     &:before,
@@ -1012,6 +1013,40 @@ a.btn
     opacity: 0
     transform: scale(1.5)
     left: -9999px
+.card-form-inp
+  position: absolute
+  left: 50%
+  top: 192px
+  margin-left: -179px
+  width: 358px
+  height: 204px
+  padding: 30px 0 0
+  background: url(../images/bg/card-form.png) 0 0 no-repeat
+  text-align: center
+  transform: scale(.8)
+  transition: opacity .25s ease, transform .25s ease
+  z-index: 2
+  &-lab
+    padding: 40px 0 10px
+    font: 19px/21px $bold
+  &-bg
+    margin: 0 auto 25px
+    width: 308px
+    background: url(../images/bg/card-form-field.png) 0 5px no-repeat
+    input
+      margin: 0
+      padding: 0
+      letter-spacing: .08em
+      word-spacing: -.21em
+      font: 44px/46px $regular
+      width: 308px
+      border: none
+      background: none
+      &:focus
+        outline: none
+  .registered &
+    opacity: 0
+    transform: scale(1.25)
 .card-form
   width: 358px
   height: 234px
