@@ -2982,3 +2982,38 @@ a.btn:hover {
 .ivanova .page-width {
   min-height: 420px;
 }
+
+.ent-features {
+  position: relative;
+  height: 0;
+}
+
+.ent-feature {
+  position: absolute;
+  top: 160px;
+  color: #fff;
+  font: 15px/17px "flightcregular", sans-serif;
+  text-align: center;
+  width: 190px;
+  margin-left: -95px;
+}
+.ent-feature img {
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.ent-feature.ft1 {
+  left: 100px;
+}
+
+.ent-feature.ft2 {
+  left: 700px;
+}
+
+.ent-feature.ft3 {
+  left: 820px;
+}
+
+.ent-feature.ft4 {
+  left: 940px;
+}
