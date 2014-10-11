@@ -175,6 +175,7 @@ textarea:focus:-ms-input-placeholder {
   color: #fff;
   cursor: pointer;
   font: 12px/14px "flightcbold", sans-serif;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0;
   padding: 0 50px;
@@ -2195,6 +2196,12 @@ a.btn:hover {
   float: left;
   width: 170px;
 }
+.wine-item .plus-circ {
+  left: auto;
+  right: 25px;
+  top: 275px;
+  z-index: 1;
+}
 .wine-item.open {
   z-index: 2;
 }
@@ -2224,6 +2231,7 @@ a.btn:hover {
   margin-left: -220px;
   background-color: #f4f3f2;
   border-radius: 5px;
+  z-index: 3;
 }
 .wine-item-popup-close {
   position: absolute;
@@ -2234,6 +2242,9 @@ a.btn:hover {
   background: url(../images/bg/board-popup-close.png) 0 0 no-repeat;
   text-indent: -9999px;
   overflow: hidden;
+}
+.wine-carousel .wine-item-popup-close {
+  background: url(../images/bg/travel-popup-close.png) 0 0 no-repeat;
 }
 .wine-item-popup-title {
   padding: 20px 0 10px;
@@ -2250,7 +2261,8 @@ a.btn:hover {
 .open .wine-item-popup {
   top: 80px;
   opacity: 1;
-  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 25px;
   border: 1px solid #DDDAD6;
   max-height: 800px;
 }

@@ -47,6 +47,7 @@
   color: #fff
   cursor: pointer
   font: 12px/14px $bold
+  letter-spacing: 1px
   text-transform: uppercase
   margin: 0
   padding: 0 50px
@@ -1690,6 +1691,11 @@ a.btn
     position: relative
     float: left
     width: 170px
+    .plus-circ
+      left: auto
+      right: 25px
+      top: 275px
+      z-index: 1
     &.open
       z-index: 2
     a
@@ -1716,6 +1722,7 @@ a.btn
       margin-left: -220px
       background-color: $dark-cream
       border-radius: 5px
+      z-index: 3
       &-close
         position: absolute
         right: 10px
@@ -1725,6 +1732,8 @@ a.btn
         background: url(../images/bg/board-popup-close.png) 0 0 no-repeat
         text-indent: -9999px
         overflow: hidden
+        .wine-carousel &
+          background: url(../images/bg/travel-popup-close.png) 0 0 no-repeat
       &-title
         padding: 20px 0 10px
         font: 15px/17px $bold
@@ -1738,7 +1747,8 @@ a.btn
       .open &
         top: 80px
         opacity: 1
-        padding-bottom: 5px
+        padding-top: 5px
+        padding-bottom: 25px
         border: 1px solid #DDDAD6
         max-height: 800px
     img
