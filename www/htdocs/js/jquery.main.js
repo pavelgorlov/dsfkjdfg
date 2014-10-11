@@ -525,7 +525,7 @@ aero.main = function() {
 };
 
 aero.versa = function() {
-  $('div.versa').each(function() {
+  $('div.versa-js').each(function() {
     var vs = $(this),
         vs_btn = $('a.btn-vote', vs);
 
