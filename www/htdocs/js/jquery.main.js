@@ -132,6 +132,9 @@ aero.register = function() {
 
     reg_btn.on('click', function() {
       reg.toggleClass('registered');
+      setTimeout(function() {
+        reg.find('div.card-form-inp').hide();
+      }, 250);
       return false;
     });
   });
