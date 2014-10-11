@@ -466,7 +466,7 @@ a.btn:hover {
 .chair-holder {
   position: relative;
   width: 750px;
-  margin: 40px auto 0;
+  margin: auto;
   padding-bottom: 20px;
 }
 .chair-hint {
@@ -517,7 +517,7 @@ a.btn:hover {
 .chair-expander {
   width: 560px;
   position: relative;
-  margin: auto;
+  margin: -50px auto 0;
   padding-bottom: 50px;
 }
 .light .chair-expander, .rotated .chair-expander {
@@ -2590,19 +2590,14 @@ a.btn:hover {
 .ent {
   padding-top: 40px;
   height: 588px;
+  color: #fff;
+  text-align: center;
   background: #000 url(../images/bg/ent.jpg) no-repeat 50%;
 }
 .ent .page-header {
+  padding: 0 0 20px;
   color: #fff;
   max-width: 1000px;
-}
-.ent .page-header:after {
-  content: "";
-  width: 130px;
-  height: 2px;
-  background: #fff;
-  margin: 30px auto 0;
-  display: block;
 }
 
 .reviews {

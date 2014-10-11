@@ -519,7 +519,7 @@ aero.d3 = {
 $(function() {
   aero.d3.init('#chair', {
     width: 750,
-    height: 500,
+    height: 650,
     links: {
       rotate: '#chair_rotate',
       expand: '#chair_expand',
