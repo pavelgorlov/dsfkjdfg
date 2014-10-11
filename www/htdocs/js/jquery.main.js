@@ -228,7 +228,7 @@ aero.test = {
           </div>\
         </div>',
 
-  render: function(container, items) {
+  render: function(container, items, coloured) {
     var items_html = '';
 
     if ( typeof items === 'undefined' ) {
@@ -253,6 +253,26 @@ aero.test = {
       }
       container.append( items_html );
       container.removeClass('move-out');
+      if ( !coloured ) {
+        container.removeClass('last-step');
+        $('div.travel-item', container).addClass('disabled');
+        $('div.travel-item', container).addClass('disabled-hover');
+      } else {
+        container.addClass('last-step');
+      }
+
+      $('div.travel-item', container)
+        .off('mouseenter.trv')
+        .off('mouseleave.trv')
+        .on('mouseenter.trv', function() {
+          $(this).removeClass('disabled');
+        })
+        .on('mouseleave.trv', function() {
+          var that = $(this);
+          if ( that.hasClass('disabled-hover') ) {
+            that.addClass('disabled');
+          }
+        })
     }, 250);
   },
 
@@ -275,7 +295,7 @@ aero.test = {
 
       test.addClass('invalid');
 
-      aero.test.render( test_container, aero.test.steps );
+      aero.test.render( test_container, aero.test.steps, false );
 
       test.on('click.test', function(e) {
         var target = $(e.target);
@@ -296,19 +316,19 @@ aero.test = {
           } else {
             $('div.travel-item', test)
               .removeClass('checked')
-              .addClass('disabled');
+              .addClass('disabled')
+              .addClass('disabled-hover');
 
             target
               .addClass('checked')
-              .removeClass('disabled');
+              .removeClass('disabled')
+              .removeClass('disabled-hover');
 
             var target_index = $('div.travel-item', test).index(target),
                 target_bg = target.attr('data-background');
 
             if ( target_bg ) {
-              test.css({
-                backgroundImage: 'url(' + target_bg + ')'
-              });
+              test.background = 'url(' + target_bg + ')'
             }
 
             test.attr('data-value', target_index);
@@ -325,11 +345,14 @@ aero.test = {
 
             switch ( aero.test.value.length ) {
               case 1:
-                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place );
+                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place, false );
                 break;
               case 2:
-                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place );
+                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place, true );
                 test.addClass('done');
+                test.css({
+                  backgroundImage: test.background
+                });
                 $('div.travel-description', test).html( aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].subtitle );
                 break;
             }
@@ -344,10 +367,11 @@ aero.test = {
           test.removeClass('done');
           aero.test.value = [];
           test.addClass('invalid');
-          aero.test.render( test_container, aero.test.steps );
+          aero.test.render( test_container, aero.test.steps, false );
           test.css({
             backgroundImage: 'none'
           });
+          test.background = 'none';
           $('div.travel-description', test).html( aero.test.hint );
           return false;
         }
@@ -416,6 +440,19 @@ aero.wishes = function() {
         } else {
           wsh_current = 0;
         }
+        var wic = wsh_item.filter('.current');
+
+        wic.addClass('flow-out-next');
+
+        setTimeout(function() {
+          wic.removeClass('current');
+          wic.removeClass('flow-out-next');
+          wsh_item.eq(wsh_current).addClass('flow-in-next');
+          wsh_item.eq(wsh_current).addClass('current');
+          setTimeout(function() {
+            wsh_item.eq(wsh_current).removeClass('flow-in-next');
+          }, 250);
+        }, 250);
       } else {
         // prev
         if ( wsh_current > 0 ) {
@@ -423,10 +460,20 @@ aero.wishes = function() {
         } else {
           wsh_current = wsh_len - 1;
         }
+        var wic = wsh_item.filter('.current');
+
+        wic.addClass('flow-out-prev');
+
+        setTimeout(function() {
+          wic.removeClass('current');
+          wic.removeClass('flow-out-prev');
+          wsh_item.eq(wsh_current).addClass('flow-in-prev');
+          wsh_item.eq(wsh_current).addClass('current');
+          setTimeout(function() {
+            wsh_item.eq(wsh_current).removeClass('flow-in-prev');
+          }, 250);
+        }, 250);
       }
-      wsh_item
-        .removeClass('current')
-        .eq(wsh_current).addClass('current');
 
       return false;
     });

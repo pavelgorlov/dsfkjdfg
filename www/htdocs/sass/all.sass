@@ -166,6 +166,7 @@ a.btn
   margin: 0
   padding: 0
   max-height: 0
+  max-width: 0
   position: relative
   padding-top: 30px
   overflow: hidden
@@ -190,15 +191,25 @@ a.btn
     cursor: default
   .fixed &
     padding-top: 0
+    max-width: 1200px
     max-height: 100px
     opacity: 1
 
 .logo
   display: inline-block
   vertical-align: middle
+  height: 37px
+  transition: height .25s ease
   &-aeroflot
     float: right
-    margin: 2px 0 0
+    width: 211px
+    transition: width .25s ease
+    .collapsed &,
+    .fixed &
+      width: 106px
+  .collapsed &,
+  .fixed &
+    height: 24px
 
 /* footer */
 .footer
@@ -254,7 +265,7 @@ a.btn
     width: 100%
     height: 100%
     background:
-      size: cover
+      //size: cover // background-scale
       position: 50%
       repeat: no-repeat
     transition: transform .4s ease
@@ -393,8 +404,8 @@ a.btn
         opacity: 1
     &-close
       position: absolute
-      top: 0
-      right: 0
+      top: 28px
+      right: -5px
       width: 0
       height: 0
       background: url(../images/bg/board-popup-close.png) 0 0 no-repeat
@@ -492,7 +503,7 @@ a.btn
 /* sleep */
 .sleep
   padding-top: 80px
-  background: #f2f1f0 url(../images/bg/sleep.jpg) 0 50px no-repeat
+  background: #f2f1f0 url(../images/bg/sleep.jpg) 0 88px no-repeat
   &-promo
     width: 790px
     margin: auto
@@ -623,6 +634,10 @@ a.btn
   &-container
     width: 385px
     margin: 55px auto 0
+    &.vote150 .vote-row
+      margin-left: auto
+      margin-right: auto
+      width: 150px
   &-holder
     transition: all .3s ease
   &-result
@@ -888,6 +903,8 @@ a.btn
       width: 615px
     .inter-quote
       max-width: 100%
+    &.inter-col-yak
+      width: 585px
   &-col.side,
   &-col-smaller.side
     float: right
@@ -1316,6 +1333,8 @@ a.btn
     text-align: center
   &-subheader
     padding-top: 95px
+.bonus-btm-spc1
+  padding-bottom: 12px
 .bonus-header
   max-width: 800px
 .bonus-feats
@@ -1362,6 +1381,17 @@ a.btn
       opacity: 1
       max-height: 800px
       min-height: 108px
+    .premium-feats &
+      font-size: 13px
+      line-height: 16px
+      &:before
+        margin-bottom: 35px
+    .space-stats-list &
+      font-size: 13px
+      line-height: 16px
+      .chair-stats-popup-title
+        font-size: 15px
+        line-height: 17px
     &-close
       position: absolute
       right: 10px
@@ -1421,17 +1451,13 @@ a.btn
     .btn.side
       float: right
 .wish
-  position: absolute
-  left: 0
-  top: 0
   width: 100%
   padding-top: 50px
   font: 21px/31px $serif
   max-width: 555px
   margin: auto
-  opacity: 0
-  transform: scale(.6)
-  transition: transform .25s ease
+  display: none
+  transition: transform .25s ease, opacity .25s ease
   &:before
     content: ""
     display: block
@@ -1440,11 +1466,7 @@ a.btn
     height: 2px
     background: #fff
 .wish.current
-  position: static
-  left: auto
-  top: auto
-  transform: scale(1)
-  opacity: 1
+  display: block
 
 /* travel */
 .travel
@@ -1481,6 +1503,8 @@ a.btn
     width: 25%
     &.active
       z-index: 2
+    .last-step &
+      width: 43%
   &-img
     position: relative
     margin: auto
@@ -1837,7 +1861,7 @@ a.btn
 .main
   height: 100%
   background: #000 url(../images/bg/main.jpg) 50% no-repeat
-    size: cover
+    //size: cover // background-scale
   color: #fff
   &-header
     font: 58px/60px $bold
