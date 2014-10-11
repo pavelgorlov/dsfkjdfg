@@ -128,7 +128,7 @@ aero.vote = function() {
 aero.register = function() {
   $('div.reg-js').each(function() {
     var reg = $(this),
-        reg_btn = $('a.btn-reg', reg);
+        reg_btn = $('a.btn', reg);
 
     reg_btn.on('click', function() {
       reg.toggleClass('registered');
