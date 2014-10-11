@@ -807,6 +807,30 @@ aero.space = {
   }
 };
 
+aero.ent = function() {
+
+  $('div.ent-screen').each(function() {
+    var ent_screen = $(this);
+    var ent = $('div.ent-screen-item', ent_screen);
+    ent.each(function() {
+      var ent_item = $(this);
+
+      $('a.ent-screen-opener', ent_item).on('click.ent', function() {
+        ent_screen.addClass('open-all');
+        ent_item.addClass('open');
+        return false;
+      });
+
+      ent_item.on('click.ent', function() {
+        if ( ent_item.hasClass('open') ) {
+          ent_item.removeClass('open');
+          ent_screen.removeClass('open-all');
+        }
+      });
+    });
+  });
+};
+
 aero.init = function() {
   aero.parallax('div.board', {
     bg: 'span.board-img',
@@ -833,6 +857,7 @@ aero.init = function() {
     space: 0, // initial space btw chairs
     coef: 1.37 // space to monitor pix coef
   });
+  aero.ent();
 
   $('.mask-reg').mask('99-99-99-99-99');
   $('.mask-reg-card').mask("99 99 99 99 99",{placeholder:"_"});

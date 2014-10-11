@@ -2588,6 +2588,7 @@ a.btn:hover {
 
 /* entertainment */
 .ent {
+  position: relative;
   padding-top: 40px;
   height: 588px;
   color: #fff;
@@ -2598,6 +2599,85 @@ a.btn:hover {
   padding: 0 0 20px;
   color: #fff;
   max-width: 1000px;
+}
+.ent-screen {
+  position: absolute;
+  left: 50%;
+  top: 176px;
+  margin-left: -75px;
+  width: 163px;
+  height: 280px;
+}
+.ent-screen-over {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(16, 17, 34, 0.6);
+  background-repeat: no-repeat;
+  background-position: 50% 10px;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.25s 0.25s ease, transform 0.25s 0.25s ease;
+  transform: scale(0.8);
+  text-indent: 0;
+}
+.open .ent-screen-over {
+  height: 100%;
+  opacity: 1;
+  z-index: 2;
+  cursor: pointer;
+  transform: scale(1);
+}
+.ent-screen-tab, .ent-screen-cell {
+  width: 100%;
+  height: 100%;
+}
+.ent-screen-tab {
+  display: table;
+}
+.ent-screen-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.ent-screen-hint {
+  padding: 0 10px;
+}
+.ent-screen-item {
+  margin: 8px 0 0;
+}
+.ent-screen-item.android .ent-screen-opener, .ent-screen-item.android .ent-screen-over {
+  background-image: url(../images/bg/android.png);
+}
+.ent-screen-item.lamp .ent-screen-opener, .ent-screen-item.lamp .ent-screen-over {
+  background-image: url(../images/bg/lamp.png);
+}
+.ent-screen-item.man .ent-screen-opener, .ent-screen-item.man .ent-screen-over {
+  background-image: url(../images/bg/man.png);
+}
+.ent-screen-item.apple .ent-screen-opener, .ent-screen-item.apple .ent-screen-over {
+  background-image: url(../images/bg/apple.png);
+}
+.ent-screen-item:first-child {
+  margin-top: 0;
+}
+.ent-screen-opener {
+  display: block;
+  width: 100%;
+  height: 64px;
+  background-color: rgba(16, 17, 34, 0.6);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  text-indent: -9999px;
+  overflow: hidden;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.open .ent-screen-opener {
+  transform: scale(1.25);
+}
+.open-all .ent-screen-opener {
+  opacity: 0;
 }
 
 .reviews {
