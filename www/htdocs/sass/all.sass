@@ -2036,6 +2036,7 @@ a.btn
       margin: 30px auto 0
       display: block
   &-list
+    position: relative
     padding-top: 80px
   &-item
     float: left
@@ -2044,6 +2045,8 @@ a.btn
     font-size: 15px
     line-height: 19px
     color: #fff
+    &.open
+      z-index: 2
   &-img
     position: relative
     width: 159px
@@ -2056,6 +2059,63 @@ a.btn
     right: -18px
     margin-top: -18px
     top: 50%
+    z-index: 1
+  &-quote
+    display: inline-block
+    vertical-align: middle
+    width: 525px
+    position: relative
+    &:before,
+    &:after
+      content: ""
+      width: 40px
+      position: absolute
+    &:before
+      left: -57px
+      top: -10px
+      height: 33px
+      background: url(../images/bg/inter-quote-before.png) 0 0 no-repeat
+    &:after
+      right: -53px
+      bottom: -20px
+      height: 32px
+      background: url(../images/bg/inter-quote-after.png) 0 0 no-repeat
+  &-popup
+    position: absolute
+    left: 0
+    top: 50px
+    width: 980px
+    background-color: #F4F3F2
+    border-radius: 5px
+    max-height: 0
+    overflow: hidden
+    color: #000
+    transition: opacity .25s ease, top .25s ease
+    text-align: left
+    opacity: 0
+    z-index: 2
+    .open &
+      opacity: 1
+      width: 935px
+      top: 75px
+      padding: 25px 0 35px 45px
+      border: 1px solid #DDDAD6
+      max-height: 500px
+    .expert
+      float: none
+      width: 240px
+      margin-right: 55px
+      display: inline-block
+      vertical-align: middle
+    &-close
+      position: absolute
+      right: 10px
+      top: 10px
+      width: 15px
+      height: 15px
+      background: url(../images/bg/travel-popup-close.png) 0 0 no-repeat
+      text-indent: -9999px
+      overflow: hidden
 .rate-movie
   padding: 60px 0 90px
   .page-header
@@ -2206,3 +2266,7 @@ a.btn
   left: 0
 .ui-slider-horizontal .ui-slider-range-max
   right: 0
+.ivanova
+  background: #f4f3f2 url(../images/tmp/52.jpg) 0 100% no-repeat
+  .page-width
+    min-height: 420px

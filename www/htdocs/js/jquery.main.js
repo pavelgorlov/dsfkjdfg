@@ -202,6 +202,32 @@ aero.wine = function() {
   });
 };
 
+aero.impr = function() {
+  var wit = $('div.reviews-item');
+
+  wit.each(function() {
+    var wi = $(this);
+
+    $('a.plus-circ', wi).on('click', function() {
+      wit.removeClass('open');
+      wi.addClass('open')
+      return false;
+    });
+    $('a.reviews-popup-close', wi).on('click', function() {
+      wi.removeClass('open')
+      return false;
+    });
+  });
+
+  $(document).on('click.impr', function(e) {
+    var target = $(e.target);
+
+    if ( !target.hasClass('reviews-popup') && target.parents('div.reviews-popup').length === 0 ) {
+      wit.filter('.open').removeClass('open');
+    }
+  });
+};
+
 aero.inputs = function() {
   if ( typeof $.fn.urInputs === 'undefined' ) {
     return;
@@ -794,6 +820,7 @@ aero.init = function() {
   aero.openclose();
   aero.expand();
   aero.wine();
+  aero.impr();
   aero.inputs();
   aero.test.init('div.test-js');
   aero.bonus();

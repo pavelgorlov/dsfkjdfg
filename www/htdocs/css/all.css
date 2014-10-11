@@ -2623,6 +2623,7 @@ a.btn:hover {
   display: block;
 }
 .reviews-list {
+  position: relative;
   padding-top: 80px;
 }
 .reviews-item {
@@ -2632,6 +2633,9 @@ a.btn:hover {
   font-size: 15px;
   line-height: 19px;
   color: #fff;
+}
+.reviews-item.open {
+  z-index: 2;
 }
 .reviews-img {
   position: relative;
@@ -2647,6 +2651,70 @@ a.btn:hover {
   right: -18px;
   margin-top: -18px;
   top: 50%;
+  z-index: 1;
+}
+.reviews-quote {
+  display: inline-block;
+  vertical-align: middle;
+  width: 525px;
+  position: relative;
+}
+.reviews-quote:before, .reviews-quote:after {
+  content: "";
+  width: 40px;
+  position: absolute;
+}
+.reviews-quote:before {
+  left: -57px;
+  top: -10px;
+  height: 33px;
+  background: url(../images/bg/inter-quote-before.png) 0 0 no-repeat;
+}
+.reviews-quote:after {
+  right: -53px;
+  bottom: -20px;
+  height: 32px;
+  background: url(../images/bg/inter-quote-after.png) 0 0 no-repeat;
+}
+.reviews-popup {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 980px;
+  background-color: #F4F3F2;
+  border-radius: 5px;
+  max-height: 0;
+  overflow: hidden;
+  color: #000;
+  transition: opacity 0.25s ease, top 0.25s ease;
+  text-align: left;
+  opacity: 0;
+  z-index: 2;
+}
+.open .reviews-popup {
+  opacity: 1;
+  width: 935px;
+  top: 75px;
+  padding: 25px 0 35px 45px;
+  border: 1px solid #DDDAD6;
+  max-height: 500px;
+}
+.reviews-popup .expert {
+  float: none;
+  width: 240px;
+  margin-right: 55px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.reviews-popup-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background: url(../images/bg/travel-popup-close.png) 0 0 no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
 }
 
 .rate-movie {
@@ -2831,4 +2899,11 @@ a.btn:hover {
 
 .ui-slider-horizontal .ui-slider-range-max {
   right: 0;
+}
+
+.ivanova {
+  background: #f4f3f2 url(../images/tmp/52.jpg) 0 100% no-repeat;
+}
+.ivanova .page-width {
+  min-height: 420px;
 }
