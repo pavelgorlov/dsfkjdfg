@@ -679,7 +679,7 @@ aero.recipe = {
       if ( aero.recipe.step === recipe.steps.length - 1 && aero.recipe.substep === recipe.steps[aero.recipe.step].hints.length - 1 ) {
         aero.recipe.btnNext.addClass('disabled');
         aero.recipe.bPrev.addClass('show');
-        aero.recipe.bNext.removClass('show');
+        aero.recipe.bNext.removeClass('show');
       } else {
         aero.recipe.bNext.addClass('show');
         aero.recipe.bPrev.removeClass('show');
