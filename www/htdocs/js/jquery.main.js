@@ -245,8 +245,9 @@ aero.test = {
   value: [],
   steps: false,
   title: '',
+  background: false,
 
-  tpl: '<div class="travel-item" data-background="{{background}}">\
+  tpl: '<div class="travel-item" data-background="{{background}}" style="{{style}}">\
           <div class="travel-img">\
             <img src="{{image}}" width="159" height="159" alt="">\
             <i></i><b></b>\
@@ -257,40 +258,63 @@ aero.test = {
           </div>\
         </div>',
 
-  render: function(container, items, coloured) {
-    var items_html = '';
+  render: function(items) {
+    var items_html = '',
+        coloured = false;
 
     if ( typeof items === 'undefined' ) {
       alert('Ошибка. Пожалуйста, попробуйте перезагрузить страницу');
       return;
     }
 
-    container.addClass('move-out');
+    aero.test.container.addClass('move-out');
 
     setTimeout(function() {
-      container.html('');
+      aero.test.container.html('');
+
+      if ( aero.test.background ) {
+        aero.test.el.addClass('done');
+
+        aero.test.el.css({
+          backgroundImage: aero.test.background
+        });
+
+        coloured = true;
+
+        switch ( aero.test.value.length ) {
+          case 1:
+            $('div.travel-description', aero.test.el).html( aero.test.steps[ aero.test.value[0] ].subtitle );
+            break;
+          case 2:
+            $('div.travel-description', aero.test.el).html( aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].subtitle );
+            break;
+        }
+      } else {
+        $('div.travel-description', aero.test.el).html(aero.test.subtitle);
+      }
 
       for ( var i = 0, n = items.length; i < n; i++ ) {
         var item_data = {
           image: items[i].image,
           background: items[i].background,
           title: items[i].title,
-          popup: items[i].description
+          popup: items[i].description,
+          style: aero.test.background ? 'width: ' + 100/items.length+'%' : ''
         };
 
         items_html += Mustache.render(aero.test.tpl, item_data);
       }
-      container.append( items_html );
-      container.removeClass('move-out');
+      aero.test.container.append( items_html );
+      aero.test.container.removeClass('move-out');
       if ( !coloured ) {
-        container.removeClass('last-step');
-        $('div.travel-item', container).addClass('disabled');
-        $('div.travel-item', container).addClass('disabled-hover');
+        aero.test.container.removeClass('last-step');
+        $('div.travel-item', aero.test.container).addClass('disabled');
+        $('div.travel-item', aero.test.container).addClass('disabled-hover');
       } else {
-        container.addClass('last-step');
+        aero.test.container.addClass('last-step');
       }
 
-      $('div.travel-item', container)
+      $('div.travel-item', aero.test.container)
         .off('mouseenter.trv')
         .off('mouseleave.trv')
         .on('mouseenter.trv', function() {
@@ -317,16 +341,15 @@ aero.test = {
     }
 
     $(el).each(function() {
-      var test = $(this),
-          test_container = $('div.travel-list', test);
+      aero.test.el = $(this);
+      aero.test.container = $('div.travel-list', aero.test.el);
+      aero.test.description = $('div.travel-description', aero.test.el).html();
+      aero.test.el.addClass('invalid');
+      aero.test.render( aero.test.steps );
 
-      aero.test.description = $('div.travel-description', test).html();
+      aero.test.subtitle = $('div.travel-description', aero.test.el).html();
 
-      test.addClass('invalid');
-
-      aero.test.render( test_container, aero.test.steps, false );
-
-      test.on('click.test', function(e) {
+      aero.test.el.on('click.test', function(e) {
         var target = $(e.target);
 
         if ( target.hasClass('travel-popup-close') ) {
@@ -339,11 +362,11 @@ aero.test = {
         }
 
         if ( target.hasClass('travel-item') ) {
-          if ( test.hasClass('done') ) {
-            $('div.travel-item', test).removeClass('active');
+          if ( aero.test.el.hasClass('done') ) {
+            $('div.travel-item', aero.test.el).removeClass('active');
             target.addClass('active');
           } else {
-            $('div.travel-item', test)
+            $('div.travel-item', aero.test.el)
               .removeClass('checked')
               .addClass('disabled')
               .addClass('disabled-hover');
@@ -353,55 +376,52 @@ aero.test = {
               .removeClass('disabled')
               .removeClass('disabled-hover');
 
-            var target_index = $('div.travel-item', test).index(target),
+            var target_index = $('div.travel-item', aero.test.el).index(target),
                 target_bg = target.attr('data-background');
 
             if ( target_bg ) {
-              test.background = 'url(' + target_bg + ')'
+              aero.test.background = 'url(' + target_bg + ')'
+            } else {
+              aero.test.background = false;
             }
 
-            test.attr('data-value', target_index);
+            aero.test.el.attr('data-value', target_index);
 
-            test.removeClass('invalid');
+            aero.test.el.removeClass('invalid');
           }
 
           return false;
         }
 
         if ( target.hasClass('btn-next') ) {
-          if ( !test.hasClass('invalid') ) {
-            aero.test.value.push( test.attr('data-value') );
+          if ( !aero.test.el.hasClass('invalid') ) {
+            aero.test.value.push( aero.test.el.attr('data-value') );
 
             switch ( aero.test.value.length ) {
               case 1:
-                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place, false );
+                aero.test.render( aero.test.steps[ aero.test.value[0] ].place);
                 break;
               case 2:
-                aero.test.render( test_container, aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place, true );
-                test.addClass('done');
-                test.css({
-                  backgroundImage: test.background
-                });
-                $('div.travel-description', test).html( aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].subtitle );
+                aero.test.render( aero.test.steps[ aero.test.value[0] ].place[ aero.test.value[1] ].place);
                 break;
             }
 
-            test.addClass('invalid');
+            aero.test.el.addClass('invalid');
           }
 
           return false;
         }
 
         if ( target.hasClass('btn-reset') ) {
-          test.removeClass('done');
+          aero.test.el.removeClass('done');
           aero.test.value = [];
-          test.addClass('invalid');
-          aero.test.render( test_container, aero.test.steps, false );
-          test.css({
+          aero.test.el.addClass('invalid');
+          aero.test.render(aero.test.steps);
+          aero.test.el.css({
             backgroundImage: 'none'
           });
-          test.background = 'none';
-          $('div.travel-description', test).html( aero.test.hint );
+          aero.test.background = false;
+          $('div.travel-description', aero.test.el).html( aero.test.hint );
           return false;
         }
       });

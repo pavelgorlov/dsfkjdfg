@@ -2213,17 +2213,13 @@ a.btn:hover {
   padding: 0;
 }
 .travel-desc-content dt {
-  display: inline-block;
-  vertical-align: top;
   font-family: "flightcbold", sans-serif;
   margin: 0;
   padding: 0;
 }
 .travel-desc-content dd {
-  display: inline-block;
-  vertical-align: top;
   margin: 0;
-  padding: 0;
+  padding: 0 0 5px;
 }
 .travel-desc-content dd p {
   margin: 0;

@@ -1,18 +1,21 @@
 var test_json = [
   {
-    "image":"../images/tmp/20.jpg",
-    "title":"Семейный отдых",
-    "place":[
+    "image": "../images/test/1.jpg",
+    "title": "Семейный отдых",
+    "place": [
       {
-        "image":"../images/tmp/44.jpg",
-        "background":"../images/tmp/49.jpg",
-        "title":"Город",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
+        "image": "../images/test/1-1.jpg",
+        "background": "../images/test/1-1-bg.jpg",
+        "title": "Пляж",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><p>Планы: кормить скатов с рук, летать на гидроплане на высоте птичьего полета, плавать <br> с дельфинами, кататься на парусной яхте, заниматься дрифт-дайвингом</p>",
+        "place": [
           {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
+            "type": "place",
+            "image": "../images/test/1-1-1.jpg",
+            "title": "<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт<br>Мальдивские острова, Атолл Ноону",
+            // Мальдивские острова, Ноону описание:
+            "description": "\
+              <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
               <div class='travel-desc-content'>\
                 <dl>\
                   <dt>Минимальный период проживания:</dt>\
@@ -33,12 +36,16 @@ var test_json = [
                   <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
                 </dl>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
+              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь <br> с Вашим персональным ассистентом по телефону, указанному <br> на обороте Вашей карты Aeroflot Bonus Platinum</div>\
+            "
           },
           {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
+            "type": "place",
+            "image": "../images/test/1-1-2.jpg",
+            "title": "<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
+            // Мальдивские острова описание:
+            "description": "\
+              <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
               <div class='travel-desc-content'>\
                 <dl>\
                   <dt>Минимальный период проживания:</dt>\
@@ -59,20 +66,24 @@ var test_json = [
                   <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
                 </dl>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
+              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь <br> с Вашим персональным ассистентом по телефону, указанному <br> на обороте Вашей карты Aeroflot Bonus Platinum</div>\
+            "
           }
         ]
       },
       {
-        "image":"../images/tmp/46.jpg",
-        "background":"../images/tmp/50.jpg",
-        "title":"Пляж",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
+        "image": "../images/test/1-2.jpg",
+        "background": "../images/test/1-2-bg.jpg",
+        "title": "Город",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><p>Несколько строк о направлениях, в одну-две строки</p>",
+        "place": [
           {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
+            "type": "place",
+            "image": "../images/test/1-2-1.jpg",
+            "title": "<div class='travel-selected-title'>Путешествие «Алиса <br>в стране чудес»</div>Великобртания",
+            // Алиса описание:
+            "description": "\
+              <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
               <div class='travel-desc-content'>\
                 <dl>\
                   <dt>Минимальный период проживания:</dt>\
@@ -93,12 +104,18 @@ var test_json = [
                   <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
                 </dl>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
+              <div class='travel-desc-footer'>\
+                <a href='#' class='btn-vote'>перейти</a>\
+              </div>\
+            "
           },
           {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
+            "type": "place",
+            "image": "../images/test/1-2-2.jpg",
+            "title": "<div class='travel-selected-title'>Волшебный мир <br> Гарри Поттера</div>Великобритания",
+            // Гарри Поттер описание:
+            "description": "\
+              <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
               <div class='travel-desc-content'>\
                 <dl>\
                   <dt>Минимальный период проживания:</dt>\
@@ -119,86 +136,119 @@ var test_json = [
                   <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
                 </dl>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
+              <div class='travel-desc-footer'>\
+                <a href='#' class='btn-vote'>перейти</a>\
+              </div>\
+            "
           }
         ]
       }
     ]
   },
   {
-    "image":"../images/tmp/21.jpg",
-    "title":"Спортивный отдых",
-    "place":[
+    "image": "../images/test/2.jpg",
+    "title": "Спортивный отдых",
+    "place": [
       {
-        "image":"../images/tmp/44.jpg",
-        "background":"../images/tmp/48.jpg",
-        "title":"Город",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
+        "image": "../images/test/2-1.jpg",
+        "background": "../images/test/2-1-bg.jpg",
+        "title": "Зимний отдых в горах",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><p>Несколько строк о направлениях, в одну-две строки</p>",
+        "place": [
           {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
+            "type": "place",
+            "image": "../images/test/2-1-1.jpg",
+            "title": "<div class='travel-selected-title'>Отель Cheval Blanc Hotel <br> (ski-in/ski-out )</div>Франция, Куршевель",
+            // Франция, Куршевель описание:
+            "description": "\
+              <div class='travel-desc-header'>Спецпредложение действительно с 5 по 11 января</div>\
               <div class='travel-desc-content'>\
                 <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
+                  <dt>Расположен</dt>\
+                  <dd>в престижном районе Jardin Alpin, <br> в нескольких минутах на лыжах от подъемника</dd>\
                   <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
+                  <dd>детская игровая комната</dd>\
+                  <dt>Красота и здоровье:</dt>\
+                  <dd>СПА-центр Givenchy Show SPA, тренажерный зал </dd>\
+                  <dt>Любителям горнолыжного спорта:</dt>\
+                  <dd>специальные массажные программы</dd>\
+                  <dt>Гурманам:</dt>\
+                  <dd>гастрономический ресторан «Le 1947»</dd>\
+                  <dt>Ценителям сигар:</dt>\
+                  <dd>cигарный салон</dd>\
                 </dl>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
+              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь <br> с Вашим персональным ассистентом по телефону, указанному <br> на обороте Вашей карты Aeroflot Bonus Platinum</div>\
+            "
           },
           {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
+            "type": "place",
+            "image": "../images/test/2-1-2.jpg",
+            "title": "<div class='travel-selected-title'>Шале SM02 (7 спален)</div>Швейцария, Сильваплана",
+            // Швейцария, Сильваплана описание:
+            "description": "\
+              <div class='travel-desc-header'>Спецпредложение действительно с 5 по 11 января</div>\
               <div class='travel-desc-content'>\
                 <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
+                  <dt>Расположен</dt>\
+                  <dd>в престижном районе Jardin Alpin, <br> в нескольких минутах на лыжах от подъемника</dd>\
                   <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
+                  <dd>детская игровая комната</dd>\
+                  <dt>Красота и здоровье:</dt>\
+                  <dd>СПА-центр Givenchy Show SPA, тренажерный зал </dd>\
+                  <dt>Любителям горнолыжного спорта:</dt>\
+                  <dd>специальные массажные программы</dd>\
+                  <dt>Гурманам:</dt>\
+                  <dd>гастрономический ресторан «Le 1947»</dd>\
+                  <dt>Ценителям сигар:</dt>\
+                  <dd>cигарный салон</dd>\
                 </dl>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
+              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь <br> с Вашим персональным ассистентом по телефону, указанному <br> на обороте Вашей карты Aeroflot Bonus Platinum</div>\
+            "
+          },
+          {
+            "type": "place",
+            "image": "../images/test/2-1-3.jpg",
+            "title": "<div class='travel-selected-title'>Отель Little Nell</div>США, Аспен",
+            // США,Аспен описание:
+            "description": "\
+              <div class='travel-desc-header'>Спецпредложение действительно с 5 по 11 января</div>\
+              <div class='travel-desc-content'>\
+                <dl>\
+                  <dt>Расположен</dt>\
+                  <dd>в престижном районе Jardin Alpin, <br> в нескольких минутах на лыжах от подъемника</dd>\
+                  <dt>Для детей:</dt>\
+                  <dd>детская игровая комната</dd>\
+                  <dt>Красота и здоровье:</dt>\
+                  <dd>СПА-центр Givenchy Show SPA, тренажерный зал </dd>\
+                  <dt>Любителям горнолыжного спорта:</dt>\
+                  <dd>специальные массажные программы</dd>\
+                  <dt>Гурманам:</dt>\
+                  <dd>гастрономический ресторан «Le 1947»</dd>\
+                  <dt>Ценителям сигар:</dt>\
+                  <dd>cигарный салон</dd>\
+                </dl>\
+              </div>\
+              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь <br> с Вашим персональным ассистентом по телефону, указанному <br> на обороте Вашей карты Aeroflot Bonus Platinum</div>\
+            "
           }
         ]
       },
       {
-        "image":"../images/tmp/46.jpg",
-        "background":"../images/tmp/46.jpg",
-        "title":"Пляж",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
+        "image": "../images/test/2-2.jpg",
+        "background": "../images/test/2-2-bg.jpg",
+        "description": "Несколько строк о направлениях, в одну-две строки",
+        "title": "Теннис",
+        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><p>Несколько строк о направлениях, в одну-две строки</p>",
+        "place": [
           {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
+            "type": "place",
+            "image": "../images/test/2-2-1.jpg",
+            "title": "<div class='travel-selected-title'>Семинары c Venus Williams,<br>отель Sandy Lane</div>остров Барбадос",
+            // Барбадос описание:
+            "description": "\
+              <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
               <div class='travel-desc-content'>\
                 <dl>\
                   <dt>Минимальный период проживания:</dt>\
@@ -219,288 +269,185 @@ var test_json = [
                   <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
                 </dl>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          },
-          {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
+              <div class='travel-desc-footer'>\
+                <a href='#' class='btn-vote'>перейти</a>\
               </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
+            "
           }
         ]
       }
     ]
   },
   {
-    "image":"../images/tmp/22.jpg",
-    "title":"Отпуск на море",
-    "place":[
+    "image": "../images/test/3.jpg",
+    "background": "../images/test/3-0-bg.jpg",
+    "title": "Отпуск на море",
+    "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><p>Несколько строк о направлениях, в одну-две строки</p>",
+    "place": [
       {
-        "image":"../images/tmp/44.jpg",
-        "background":"../images/tmp/49.jpg",
-        "title":"Город",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
-          {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          },
-          {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          }
-        ]
+        "type": "place",
+        "image": "../images/test/3-0-1.jpg",
+        "title": "<div class='travel-selected-title'>Отель Canyon Ranch <br>на пляже Miami beach</div>США",
+        // США описание:
+        "description": "\
+          <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
+          <div class='travel-desc-content'>\
+            <dl>\
+              <dt>Минимальный период проживания:</dt>\
+              <dd>4 ночи</dd>\
+              <dt>Период путешествия:</dt>\
+              <dd>до 31 октября</dd>\
+              <dt>Специальные привилегии:</dt>\
+              <dd>\
+                <p>Бесплатные ужины в дополнение к завтракам,</p>\
+                <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
+                <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
+              </dd>\
+              <dt>Для детей:</dt>\
+              <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
+              <dt>Для пап:</dt>\
+              <dd>гольф, рыбалка, парусный спорт</dd>\
+              <dt>Для всей семьи:</dt>\
+              <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
+            </dl>\
+          </div>\
+          <div class='travel-desc-footer'>\
+            <a href='#' class='btn-vote'>перейти</a>\
+          </div>\
+        "
       },
       {
-        "image":"../images/tmp/45.jpg",
-        "background":"../images/tmp/49.jpg",
-        "title":"Пляж",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
-          {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          },
-          {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          }
-        ]
+        "type": "place",
+        "image": "../images/test/3-0-2.jpg",
+        "title": "<div class='travel-selected-title'>Отель Intercontinental Hotel</div>Вьетнам, Дананг",
+        // Вьетнам описание:
+        "description": "\
+          <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
+          <div class='travel-desc-content'>\
+            <dl>\
+              <dt>Минимальный период проживания:</dt>\
+              <dd>4 ночи</dd>\
+              <dt>Период путешествия:</dt>\
+              <dd>до 31 октября</dd>\
+              <dt>Специальные привилегии:</dt>\
+              <dd>\
+                <p>Бесплатные ужины в дополнение к завтракам,</p>\
+                <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
+                <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
+              </dd>\
+              <dt>Для детей:</dt>\
+              <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
+              <dt>Для пап:</dt>\
+              <dd>гольф, рыбалка, парусный спорт</dd>\
+              <dt>Для всей семьи:</dt>\
+              <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
+            </dl>\
+          </div>\
+          <div class='travel-desc-footer'>\
+            <a href='#' class='btn-vote'>перейти</a>\
+          </div>\
+        "
+      },
+      {
+        "type": "place",
+        "image": "../images/test/3-0-3.jpg",
+        "title": "<div class='travel-selected-title'>Отель Four Seasons</div>остров Маврикий",
+        // Маврикий описание:
+        "description": "\
+          <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
+          <div class='travel-desc-content'>\
+            <dl>\
+              <dt>Минимальный период проживания:</dt>\
+              <dd>4 ночи</dd>\
+              <dt>Период путешествия:</dt>\
+              <dd>до 31 октября</dd>\
+              <dt>Специальные привилегии:</dt>\
+              <dd>\
+                <p>Бесплатные ужины в дополнение к завтракам,</p>\
+                <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
+                <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
+              </dd>\
+              <dt>Для детей:</dt>\
+              <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
+              <dt>Для пап:</dt>\
+              <dd>гольф, рыбалка, парусный спорт</dd>\
+              <dt>Для всей семьи:</dt>\
+              <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
+            </dl>\
+          </div>\
+          <div class='travel-desc-footer'>\
+            <a href='#' class='btn-vote'>перейти</a>\
+          </div>\
+        "
       }
     ]
   },
   {
-    "image":"../images/tmp/23.jpg",
-    "title":"Путешествие со звездой",
-    "place":[
+    "image": "../images/test/4.jpg",
+    "background": "../images/test/4-0-bg.jpg",
+    "title": "Путешествие со звездой",
+    "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><p>Несколько строк о направлениях, в одну-две строки</p>",
+    "place": [
       {
-        "image":"../images/tmp/44.jpg",
-        "background":"../images/tmp/48.jpg",
-        "title":"Город",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
-          {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          },
-          {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          }
-        ]
+        "type": "place",
+        "image": "../images/test/4-0-1.jpg",
+        "title": "<div class='travel-selected-title'>Удивительный тур с<br> Николаем Николаевичем<br> Дроздовым</div>Австралия",
+        // Дроздов описание:
+        "description": "\
+          <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
+          <div class='travel-desc-content'>\
+            <dl>\
+              <dt>Минимальный период проживания:</dt>\
+              <dd>4 ночи</dd>\
+              <dt>Период путешествия:</dt>\
+              <dd>до 31 октября</dd>\
+              <dt>Специальные привилегии:</dt>\
+              <dd>\
+                <p>Бесплатные ужины в дополнение к завтракам,</p>\
+                <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
+                <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
+              </dd>\
+              <dt>Для детей:</dt>\
+              <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
+              <dt>Для пап:</dt>\
+              <dd>гольф, рыбалка, парусный спорт</dd>\
+              <dt>Для всей семьи:</dt>\
+              <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
+            </dl>\
+          </div>\
+          <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>\
+        "
       },
       {
-        "image":"../images/tmp/45.jpg",
-        "background":"../images/tmp/49.jpg",
-        "title":"Пляж",
-        "subtitle": "<div class='travel-subheader'>Aeroflot Bonus Platinum рекомендует</div><div class='travel-subheader-desc'>Несколько строк о направлениях, <br> в одну-две строки</div>",
-        "place":[
-          {
-            "image":"../images/tmp/22.jpg",
-            "title":"<div class='travel-selected-title'>Velaa Private Island Resort</div>Частный остров и курорт <br> Мальдивские острова, Атолл Ноону",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          },
-          {
-            "image":"../images/tmp/23.jpg",
-            "title":"<div class='travel-selected-title'>Maalifushi By Como</div>Мальдивские острова",
-            "description": "<div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus Platinum действительно до 31 октября</div>\
-              <div class='travel-desc-content'>\
-                <dl>\
-                  <dt>Минимальный период проживания:</dt>\
-                  <dd>4 ночи</dd>\
-                  <dt>Период путешествия:</dt>\
-                  <dd>до 31 октября</dd>\
-                  <dt>Специальные привилегии:</dt>\
-                  <dd>\
-                    <p>Бесплатные ужины в дополнение к завтракам,</p>\
-                    <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
-                    <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
-                  </dd>\
-                  <dt>Для детей:</dt>\
-                  <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
-                  <dt>Для пап:</dt>\
-                  <dd>гольф, рыбалка, парусный спорт</dd>\
-                  <dt>Для всей семьи:</dt>\
-                  <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
-                </dl>\
-              </div>\
-              <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>"
-          }
-        ]
+        "type": "place",
+        "image": "../images/test/4-0-2.jpg",
+        "title": "<div class='travel-selected-title'>Семейный тур к маэстро <br> Альбано Карризи</div>Италия",
+        // Кариззи описание:
+        "description": "\
+          <div class='travel-desc-header'>Cпецпредложение для клиентов Aeroflot Bonus <br> Platinum действительно до 31 октября</div>\
+          <div class='travel-desc-content'>\
+            <dl>\
+              <dt>Минимальный период проживания:</dt>\
+              <dd>4 ночи</dd>\
+              <dt>Период путешествия:</dt>\
+              <dd>до 31 октября</dd>\
+              <dt>Специальные привилегии:</dt>\
+              <dd>\
+                <p>Бесплатные ужины в дополнение к завтракам,</p>\
+                <p>Кредит в 100 долларов на обед в ресторанах отеля</p>\
+                <p>Бесплатный комбинированный трансфер на гидросамолете для детей до 12 лет</p>\
+              </dd>\
+              <dt>Для детей:</dt>\
+              <dd>захватывающее путешествие юных исследователей на подводной лодке, водные виды спорта Для мам: спа-услуги Clarins</dd>\
+              <dt>Для пап:</dt>\
+              <dd>гольф, рыбалка, парусный спорт</dd>\
+              <dt>Для всей семьи:</dt>\
+              <dd>теннис, сквош, йога, дайвинг, виндсерфинг, водные лыжи, кайтсерфинг</dd>\
+            </dl>\
+          </div>\
+          <div class='travel-desc-footer'>Чтобы воспользоваться этим спецпредложением свяжитесь с Вашим персональным ассистентом по телефону, указанному на обороте Вашей карты Aeroflot Bonus Platinum</div>\
+        "
       }
     ]
-  }
+  },
 ];
