@@ -156,13 +156,55 @@ aero.vote = function() {
 aero.register = function() {
   $('div.reg-js').each(function() {
     var reg = $(this),
-        reg_btn = $('a.btn', reg);
+        reg_form = $('form', reg),
+        reg_inp = $('input:text', reg_form),
+        reg_submit = $('a.btn', reg),
+        reg_result = $('div.card-form', reg),
+        reg_inp_name;
 
-    reg_btn.on('click', function() {
-      reg.toggleClass('registered');
-      setTimeout(function() {
-        reg.find('div.card-form-inp').hide();
-      }, 250);
+    reg_submit.addClass('disabled');
+
+    if ( reg_inp.attr('name') ) {
+      reg_inp_name = reg_inp.attr('name');
+    } else {
+      reg_inp.attr('name', 'register_card_number');
+    }
+
+    reg_form.ajaxForm({
+      success: function( data ) {
+        reg_result.html(data);
+        reg.addClass('registered');
+        setTimeout(function() {
+          reg.find('div.card-form-inp').hide();
+        }, 250);
+      }
+    });
+
+    reg_inp.on('keyup', function() {
+      if ( reg_form.valid() && reg_inp.val().indexOf('_') === -1 ) {
+        reg_submit.removeClass('disabled')
+      } else {
+        reg_submit.addClass('disabled');
+      }
+    });
+
+    var rulez = {};
+    rulez[reg_inp_name] = {
+      required: true
+    };
+
+    reg_form.validate({
+      errorPlacement: function() {},
+      rules: rulez,
+      submitHandler: function() {
+        reg_submit.addClass('disabled');
+      }
+    });
+
+    reg_submit.on('click', function() {
+      if ( !$(this).hasClass('disabled') ) {
+        reg_form.submit();
+      }
       return false;
     });
   });
