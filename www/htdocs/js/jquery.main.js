@@ -766,20 +766,45 @@ aero.space = {
   },
 
   slider: function() {
-    var spc_slider = $("#slider_chair");
-    spc_slider.slider({
-      range: true,
+    var spc_slider = $("#slider_chair"),
+        spc_slider_w = spc_slider.width();
+
+    var spc_slider_1 = $('<div class="slider-half"></div>');
+    spc_slider_1.appendTo(spc_slider);
+    spc_slider_1.css({
+      width: spc_slider_w/2 - 6
+    });
+    var spc_slider_2 = spc_slider_1.clone(true).insertAfter(spc_slider_1);
+    spc_slider_1.addClass('slider-half-1');
+    spc_slider_2.addClass('slider-half-2');
+
+    spc_slider_1.slider({
+      range: 'max',
       step: 5,
       min: 0,
       max: 225,
-      values: [ 50, 145 ],
+      value: 95,
       slide: function( event, ui ) {
-        aero.space.w = ui.values[1] - ui.values[0];
+        aero.space.w = 225 - ui.value;
+        spc_slider_2.slider('value', aero.space.w);
+        aero.space.place();
+      }
+    });
+    spc_slider_2.slider({
+      range: 'min',
+      step: 5,
+      min: 0,
+      max: 225,
+      value: 95,
+      slide: function( event, ui ) {
+        aero.space.w = ui.value;
+        spc_slider_1.slider('value', 225 - aero.space.w);
         aero.space.place();
       }
     });
 
-    aero.space.w = spc_slider.slider('values', 1) - spc_slider.slider('values', 0);
+    aero.space.w = spc_slider_2.slider('value');
+    spc_slider_1.slider('value', 120);
     aero.space.place();
   },
 

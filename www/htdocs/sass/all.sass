@@ -2338,16 +2338,31 @@ a.btn
     font-size: .7em
     display: block
     border: 0
+.slider-half
+  position: absolute
+  top: 0
+  &-1
+    left: 0
+  &-2
+    right: 0
 /* support: IE8 - See #6727 */
 .ui-slider.ui-state-disabled .ui-slider-handle,
 .ui-slider.ui-state-disabled .ui-slider-range
   filter: inherit
-
+#slider_chair
+  height: 17px
+  position: relative
 .ui-slider-horizontal
   background: #dddad6
   height: 5px
   border: 6px solid #f4f3f2
   border-radius: 9px
+  .slider-half-1 &
+    border-radius: 9px 0 0 9px
+    border-right-width: 0
+  .slider-half-2 &
+    border-radius: 0 9px 9px 0
+    border-left-width: 0
 .ui-slider-horizontal .ui-slider-handle
   top: -11px
   margin-left: -13px
