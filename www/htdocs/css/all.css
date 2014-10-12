@@ -190,6 +190,11 @@ textarea:focus:-ms-input-placeholder {
 .btn:active {
   box-shadow: 0 0 10px #fff;
 }
+.btn.disabled {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default;
+}
 
 a.btn {
   height: auto;

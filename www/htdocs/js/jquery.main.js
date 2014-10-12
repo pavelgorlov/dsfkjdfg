@@ -116,11 +116,39 @@ aero.hint = function() {
 aero.vote = function() {
   $('div.vote-js').each(function() {
     var vote = $(this),
-        vote_form = $('form', vote);
+        vote_form = $('form', vote),
+        vote_submit = $('input:submit', vote_form),
+        vote_result = $('div.vote-result', vote);
 
-    vote_form.on('submit', function() {
-      vote.addClass('voted');
-      return false;
+    vote_submit.addClass('disabled');
+
+    vote_form.ajaxForm({
+      success: function( data ) {
+        vote.addClass('voted');
+        vote_result.html(data);
+      }
+    });
+
+    $('input:checkbox', vote_form)
+      .attr("name", "vote")
+      .on('change', function() {
+        if ( vote_form.valid() ) {
+          vote_submit.removeClass('disabled')
+        } else {
+          vote_submit.addClass('disabled');
+        }
+      });
+
+    vote_form.validate({
+      errorPlacement: function() {},
+      rules: {
+        "vote": {
+          required: true
+        }
+      },
+      submitHandler: function() {
+        vote_submit.addClass('disabled');
+      }
     });
   });
 };
