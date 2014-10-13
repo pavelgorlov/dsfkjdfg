@@ -2560,7 +2560,7 @@ a.btn:hover {
 .main-select {
   font-size: 18px;
   line-height: 20px;
-  padding-top: 75px;
+  padding: 75px 0 30px;
   text-transform: uppercase;
 }
 .main-menu {
