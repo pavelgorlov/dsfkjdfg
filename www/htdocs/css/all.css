@@ -1523,12 +1523,15 @@ a.btn:hover {
 .recipe-content {
   padding-top: 15px;
 }
-.recipe-table {
+.recipe-slide {
   margin-top: 25px;
+  background: #ece7e0 url(../images/bg/table.jpg) repeat-x;
+}
+.recipe-table {
   padding: 35px 0;
   min-height: 564px;
-  background: #ece7e0 url(../images/bg/table.jpg) 0 0 no-repeat;
-  background-size: cover;
+  background: url(../images/bg/table.jpg) 50% no-repeat;
+  background-size: contain;
 }
 .recipe-table .page-width {
   position: relative;
