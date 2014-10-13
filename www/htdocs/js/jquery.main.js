@@ -615,6 +615,8 @@ aero.main = function() {
 
     if ( page_h_61 > 680 ) {
       page_h_61 = 680
+    } else if ( page_h_61 < 590 ) {
+      page_h_61 = 590
     }
 
     main.css({
