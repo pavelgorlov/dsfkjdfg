@@ -2976,6 +2976,9 @@ a.btn:hover {
   border-radius: 14px;
   border: 2px solid #fff;
 }
+.ui-slider-handle:focus {
+  outline: none;
+}
 .ui-slider-handle:before {
   content: "";
   position: absolute;
