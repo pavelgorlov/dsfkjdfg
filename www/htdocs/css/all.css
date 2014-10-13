@@ -1247,6 +1247,7 @@ a.btn:hover {
 .inter-col {
   width: 690px;
   padding-left: 50px;
+  float: left;
 }
 .inter-col-smaller {
   width: 615px;
@@ -1257,7 +1258,7 @@ a.btn:hover {
 .inter-col.inter-col-yak {
   width: 585px;
 }
-.inter-col.side, .inter-col-smaller.side {
+.inter-col.side, .open-close-slide .inter-col.side, .inter-col-smaller.side {
   float: right;
   padding-left: 0;
 }
