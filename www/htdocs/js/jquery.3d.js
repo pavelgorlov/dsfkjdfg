@@ -683,7 +683,7 @@ $(function() {
       rotate: 198, // rotate frames 0 - 199,
       expand: 42, // expand frames 0 - 43
       light: 26, // light frames 0 25
-      table: 9 // table frames
+      table: 33 // table frames
     }
   });
 });
