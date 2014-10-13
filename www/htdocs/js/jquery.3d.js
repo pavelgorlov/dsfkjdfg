@@ -49,6 +49,9 @@ aero.d3 = {
 
     aero.d3.imagesToLoad += aero.d3.settings.frames.rotate;
     aero.d3.imagesToLoad += aero.d3.settings.frames.expand;
+    aero.d3.imagesToLoad += aero.d3.settings.frames.light;
+    aero.d3.imagesToLoad += aero.d3.settings.frames.table;
+
     aero.d3.parent.removeClass('ready');
 
     for ( var i = 0, n = aero.d3.settings.frames.rotate; i < n; i++ ) {
@@ -135,19 +138,27 @@ aero.d3 = {
             aero.log(e);
           }
         } else {
-          aero.d3.el.attr('src', aero.d3.img_x[aero.d3.frame].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_x[aero.d3.frame].src);
+          } catch(e) {
+            aero.log(e);
+          }
         }
       }
     });
   },
 
   preload: function(src, draw) {
-    var img = new Image();
+    var img = new Image(),
+        now;
+
+    if ( !Modernizr.canvas ) {
+      now = +new Date();
+    }
 
     $(img)
       .on('load', function() {
         img._ready = true;
-        img.src = src;
 
         if ( draw ) {
           if ( Modernizr.canvas ) {
@@ -157,11 +168,15 @@ aero.d3 = {
               aero.log(e);
             }
           } else {
-            aero.d3.el.attr('src', src);
+            try {
+              aero.d3.el.attr('src', img.src);
+            } catch(e) {
+              aero.log(e);
+            }
           }
         }
-
         aero.d3.imagesToLoad--;
+        //aero.log(aero.d3.imagesToLoad);
         if ( aero.d3.imagesToLoad === 0 ) {
           aero.d3.parent.addClass('ready');
         }
@@ -171,9 +186,8 @@ aero.d3 = {
         img._error = true;
       })
       .attr({
-        src: src
+        src: src + '?anticache=' + now
       });
-
     return img;
   },
 
@@ -228,7 +242,11 @@ aero.d3 = {
             aero.log(e);
           }
         } else {
-          aero.d3.el.attr('src', aero.d3.img_r[i].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_r[i].src);
+          } catch(e) {
+            aero.log(e);
+          }
         }
       }
 
@@ -287,7 +305,11 @@ aero.d3 = {
             aero.log(e);
           }
         } else {
-          aero.d3.el.attr('src', aero.d3.img_t[i].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_t[i].src);
+          } catch(e) {
+            aero.log(e);
+          }
         }
       }
 
@@ -333,7 +355,11 @@ aero.d3 = {
             aero.log(e);
           }
         } else {
-          aero.d3.el.attr('src', aero.d3.img_t[i].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_t[i].src);
+          } catch(e) {
+            aero.log(e);
+          } 
         }
       }
 
@@ -394,7 +420,11 @@ aero.d3 = {
             aero.log(e);
           }
         } else {
-          aero.d3.el.attr('src', aero.d3.img_x[i].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_x[i].src);
+          } catch(e) {
+            aero.log(e);
+          } 
         }
       }
 
@@ -439,7 +469,11 @@ aero.d3 = {
             aero.log(e);
           }
         } else {
-          aero.d3.el.attr('src', aero.d3.img_x[i].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_x[i].src);
+          } catch(e) {
+            aero.log(e);
+          } 
         }
       }
 
@@ -503,7 +537,11 @@ aero.d3 = {
           aero.d3.bg.css({
             backgroundColor: aero.d3.tlenbow[i]
           });
-          aero.d3.el.attr('src', aero.d3.img_l[i].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_l[i].src);
+          } catch(e) {
+            aero.log(e);
+          } 
         }
       }
 
@@ -544,7 +582,7 @@ aero.d3 = {
           aero.d3.state = 'expanded';
           aero.d3.parent.removeClass('light');
           aero.d3.parent.addClass('expanded');
-          bg.hide();
+          $('#canvas_bg').hide();
 
           if ( $.isFunction(callback) ) {
             callback.apply(this);
@@ -560,7 +598,11 @@ aero.d3 = {
             aero.log(e);
           }
         } else {
-          aero.d3.el.attr('src', aero.d3.img_l[i].src);
+          try {
+            aero.d3.el.attr('src', aero.d3.img_l[i].src);
+          } catch(e) {
+            aero.log(e);
+          }
           aero.d3.bg.css({
             backgroundColor: aero.d3.tlenbow[i]
           });
@@ -680,7 +722,7 @@ $(function() {
     },
     ext: '.jpg',
     frames: {
-      rotate: 198, // rotate frames 0 - 199,
+      rotate: 200, // rotate frames 0 - 199,
       expand: 42, // expand frames 0 - 43
       light: 26, // light frames 0 25
       table: 32 // table frames
