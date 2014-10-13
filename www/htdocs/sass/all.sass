@@ -12,7 +12,6 @@
   width: 100%
   &.main
     height: 100%
-    overflow: hidden
 .page
   &-width
     width: $page-width
@@ -113,6 +112,12 @@ a.btn
       color: #dddad6
     border-radius: 0
     background: $grey
+  .c
+    display: none
+  .open & .c
+    display: inline
+  .open & .o
+    display: none
 .btn-reg
   display: inline-block
   vertical-align: middle
@@ -223,7 +228,7 @@ a.btn
 
 /* content */
 .content
-  padding-top: 61px
+  padding-top: 65px
 .promo
   width: 100%
   height: 497px
@@ -727,7 +732,7 @@ a.btn
     transform: scale(1)
     opacity: 1
   &-row
-    padding-top: 15px
+    padding-top: 12px
   &-chk
     float: left
     margin: 0 10px 0 0
@@ -736,7 +741,7 @@ a.btn
   &-label
     display: block
     font-size: 15px
-    line-height: 17px
+    line-height: 20px
     overflow: hidden
   &-submit
     padding-top: 55px
@@ -937,6 +942,8 @@ a.btn
   &-col
     width: 690px
     padding-left: 50px
+    .sleep &
+      float: left
     &-smaller
       width: 615px
     .inter-quote
@@ -944,6 +951,7 @@ a.btn
     &.inter-col-yak
       width: 585px
   &-col.side,
+  .open-close-slide &-col.side,
   &-col-smaller.side
     float: right
     padding-left: 0
@@ -1147,12 +1155,14 @@ a.btn
   &-content
     //display: none
     padding-top: 15px
-  &-table
+  &-slide
     margin-top: 25px
+    background: #ece7e0 url(../images/bg/table.jpg) repeat-x
+  &-table
     padding: 35px 0
     min-height: 564px
-    background: #ece7e0 url(../images/bg/table.jpg) 0 0 no-repeat
-      size: cover
+    background: url(../images/bg/table.jpg) 50% no-repeat
+      size: contain
     .page-width
       position: relative
   &-clock
@@ -1957,7 +1967,7 @@ a.btn
   &-content
     padding: 100px 0
   .footer
-    position: absolute
+    position: fixed
     left: 0
     bottom: 0
     width: 100%
@@ -2256,12 +2266,11 @@ a.btn
   &,
   &Checked
     float: left
-    margin-right: 15px
     width: 19px
     height: 19px
-    background: url(../images/bg/radio.png) no-repeat
+    margin-right: 15px
     overflow: hidden
-
+    background: url(../images/bg/checkbox.png) no-repeat
   &Checked
     background-position: 0 -30px
 
@@ -2326,6 +2335,8 @@ a.btn
     background: #000
     border-radius: 14px
     border: 2px solid #fff
+    &:focus
+      outline: none
     &:before
       content: ""
       position: absolute
@@ -2405,3 +2416,6 @@ a.btn
   left: 820px
 .ent-feature.ft4
   left: 940px
+/* skype */
+.skype_pnh_container
+  display:none!important

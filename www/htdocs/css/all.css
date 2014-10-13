@@ -134,7 +134,6 @@ textarea:focus:-ms-input-placeholder {
 }
 .bone.main {
   height: 100%;
-  overflow: hidden;
 }
 
 .page-width {
@@ -257,6 +256,15 @@ a.btn:hover {
   border-color: #dddad6;
   border-radius: 0;
   background: #e9e7e5;
+}
+.btn-expand .c {
+  display: none;
+}
+.open .btn-expand .c {
+  display: inline;
+}
+.open .btn-expand .o {
+  display: none;
 }
 
 .btn-reg {
@@ -386,7 +394,7 @@ a.btn:hover {
 
 /* content */
 .content {
-  padding-top: 61px;
+  padding-top: 65px;
 }
 
 .promo {
@@ -992,7 +1000,7 @@ a.btn:hover {
   opacity: 1;
 }
 .vote-row {
-  padding-top: 15px;
+  padding-top: 12px;
 }
 .vote-chk {
   float: left;
@@ -1003,7 +1011,7 @@ a.btn:hover {
 .vote-label {
   display: block;
   font-size: 15px;
-  line-height: 17px;
+  line-height: 20px;
   overflow: hidden;
 }
 .vote-submit {
@@ -1248,6 +1256,9 @@ a.btn:hover {
   width: 690px;
   padding-left: 50px;
 }
+.sleep .inter-col {
+  float: left;
+}
 .inter-col-smaller {
   width: 615px;
 }
@@ -1257,7 +1268,7 @@ a.btn:hover {
 .inter-col.inter-col-yak {
   width: 585px;
 }
-.inter-col.side, .inter-col-smaller.side {
+.inter-col.side, .open-close-slide .inter-col.side, .inter-col-smaller.side {
   float: right;
   padding-left: 0;
 }
@@ -1523,12 +1534,15 @@ a.btn:hover {
 .recipe-content {
   padding-top: 15px;
 }
-.recipe-table {
+.recipe-slide {
   margin-top: 25px;
+  background: #ece7e0 url(../images/bg/table.jpg) repeat-x;
+}
+.recipe-table {
   padding: 35px 0;
   min-height: 564px;
-  background: #ece7e0 url(../images/bg/table.jpg) 0 0 no-repeat;
-  background-size: cover;
+  background: url(../images/bg/table.jpg) 50% no-repeat;
+  background-size: contain;
 }
 .recipe-table .page-width {
   position: relative;
@@ -2526,7 +2540,7 @@ a.btn:hover {
   padding: 100px 0;
 }
 .main .footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -2883,11 +2897,11 @@ a.btn:hover {
 
 .customRadio, .customRadioChecked {
   float: left;
-  margin-right: 15px;
   width: 19px;
   height: 19px;
-  background: url(../images/bg/radio.png) no-repeat;
+  margin-right: 15px;
   overflow: hidden;
+  background: url(../images/bg/checkbox.png) no-repeat;
 }
 .customRadioChecked {
   background-position: 0 -30px;
@@ -2961,6 +2975,9 @@ a.btn:hover {
   background: #000;
   border-radius: 14px;
   border: 2px solid #fff;
+}
+.ui-slider-handle:focus {
+  outline: none;
 }
 .ui-slider-handle:before {
   content: "";
@@ -3079,3 +3096,5 @@ a.btn:hover {
 .ent-feature.ft4 {
   left: 940px;
 }
+
+/* skype */
