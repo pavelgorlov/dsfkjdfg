@@ -446,7 +446,7 @@ a.btn:hover {
 .promo-img {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -83px;
   width: 100%;
   height: 100%;
   background-position: 50%;
