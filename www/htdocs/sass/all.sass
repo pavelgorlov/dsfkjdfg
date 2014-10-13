@@ -112,6 +112,12 @@ a.btn
       color: #dddad6
     border-radius: 0
     background: $grey
+  .c
+    display: none
+  .open & .c
+    display: inline
+  .open & .o
+    display: none
 .btn-reg
   display: inline-block
   vertical-align: middle
@@ -936,8 +942,8 @@ a.btn
   &-col
     width: 690px
     padding-left: 50px
-    .open-close-slide &
-    float: left
+    .sleep &
+      float: left
     &-smaller
       width: 615px
     .inter-quote

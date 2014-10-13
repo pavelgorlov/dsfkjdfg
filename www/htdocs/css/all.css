@@ -257,6 +257,15 @@ a.btn:hover {
   border-radius: 0;
   background: #e9e7e5;
 }
+.btn-expand .c {
+  display: none;
+}
+.open .btn-expand .c {
+  display: inline;
+}
+.open .btn-expand .o {
+  display: none;
+}
 
 .btn-reg {
   display: inline-block;
@@ -1246,6 +1255,8 @@ a.btn:hover {
 .inter-col {
   width: 690px;
   padding-left: 50px;
+}
+.sleep .inter-col {
   float: left;
 }
 .inter-col-smaller {
