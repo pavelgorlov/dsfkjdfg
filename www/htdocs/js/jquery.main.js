@@ -611,13 +611,18 @@ aero.main = function() {
   function resizePage() {
     page_w = document.compatMode=='CSS1Compat' ? document.documentElement.clientWidth : document.body.clientWidth;
     page_h = document.compatMode=='CSS1Compat' ? document.documentElement.clientHeight : document.body.clientHeight;
+    page_h_61 = page_h - 61;
+
+    if ( page_h_61 > 680 ) {
+      page_h_61 = 680
+    }
 
     main.css({
-      minHeight: page_h - 61
+      minHeight: page_h_61
     });
 
     main_bg.css({
-      height:  page_h - 61 - 160
+      height: page_h_61 - 160
     })
   }
 
