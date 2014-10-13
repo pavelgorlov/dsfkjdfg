@@ -1541,13 +1541,19 @@ a.btn:hover {
 }
 .recipe-slide {
   margin-top: 25px;
-  background: #ece7e0 url(../images/bg/table.jpg) repeat-x;
+  background: #ece7e0 url(../images/bg/table.jpg);
 }
 .recipe-table {
   padding: 35px 0;
   min-height: 564px;
   background: url(../images/bg/table.jpg) 50% no-repeat;
   background-size: contain;
+}
+.recipe-done .recipe-table {
+  background-repeat: no-repeat;
+  background-color: #ccc;
+  background-position: 50%;
+  background-size: auto 100%;
 }
 .recipe-table .page-width {
   position: relative;

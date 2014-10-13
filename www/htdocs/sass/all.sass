@@ -1160,12 +1160,18 @@ a.btn
     padding-top: 15px
   &-slide
     margin-top: 25px
-    background: #ece7e0 url(../images/bg/table.jpg) repeat-x
+    background: #ece7e0 url(../images/bg/table.jpg)
   &-table
     padding: 35px 0
     min-height: 564px
     background: url(../images/bg/table.jpg) 50% no-repeat
       size: contain
+    .recipe-done &
+      background:
+        repeat: no-repeat
+        color: #ccc
+        position: 50%
+        size: auto 100%
     .page-width
       position: relative
   &-clock

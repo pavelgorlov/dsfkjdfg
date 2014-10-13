@@ -754,9 +754,11 @@ aero.recipe = {
       if ( aero.recipe.step === recipe.steps.length - 1 && aero.recipe.substep === recipe.steps[aero.recipe.step].hints.length - 1 ) {
         aero.recipe.bPrev.addClass('show');
         aero.recipe.bNext.removeClass('show');
+        aero.recipe.hold.addClass('recipe-done');
       } else {
         aero.recipe.bPrev.removeClass('show');
         aero.recipe.bNext.addClass('show');
+        aero.recipe.hold.removeClass('recipe-done');
       }
 
       aero.recipe.render();
@@ -773,10 +775,12 @@ aero.recipe = {
       }
 
       if ( aero.recipe.step === recipe.steps.length - 1 && aero.recipe.substep === recipe.steps[aero.recipe.step].hints.length - 1 ) {
+        aero.recipe.hold.addClass('recipe-done');
         aero.recipe.btnNext.addClass('disabled');
         aero.recipe.bPrev.addClass('show');
         aero.recipe.bNext.removeClass('show');
       } else {
+        aero.recipe.hold.removeClass('recipe-done');
         aero.recipe.bNext.addClass('show');
         aero.recipe.bPrev.removeClass('show');
       }
