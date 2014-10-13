@@ -427,6 +427,7 @@ a.btn:hover {
 .promo-header {
   font: 58px/60px "flightcbold", sans-serif;
   padding-bottom: 20px;
+  padding-top: 30px;
   text-transform: uppercase;
 }
 .promo-header:after {
@@ -441,6 +442,7 @@ a.btn:hover {
   font: 22px/30px "Georgia", Times, "Times New Roman", serif;
   max-width: 740px;
   margin: auto;
+  padding-bottom: 30px;
 }
 .promo-img {
   position: absolute;
