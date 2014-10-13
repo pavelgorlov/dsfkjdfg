@@ -602,6 +602,7 @@ aero.wishes = function() {
 
 aero.main = function() {
   var main = $('div.promo').eq(0),
+      main_bg = $('span.promo-img', main),
       page_w,
       page_h,
       doc = $(document),
@@ -614,6 +615,10 @@ aero.main = function() {
     main.css({
       minHeight: page_h - 61
     });
+
+    main_bg.css({
+      height:  page_h - 61 - 160
+    })
   }
 
   function scrollPage() {
