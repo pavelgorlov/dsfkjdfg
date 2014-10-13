@@ -153,7 +153,9 @@ aero.d3 = {
         now;
 
     if ( !Modernizr.canvas ) {
-      now = +new Date();
+      now = '?anticache=' + (+new Date());
+    } else {
+      now = '';
     }
 
     $(img)
@@ -186,7 +188,7 @@ aero.d3 = {
         img._error = true;
       })
       .attr({
-        src: src + '?anticache=' + now
+        src: src + now
       });
     return img;
   },
