@@ -134,7 +134,6 @@ textarea:focus:-ms-input-placeholder {
 }
 .bone.main {
   height: 100%;
-  overflow: hidden;
 }
 
 .page-width {
@@ -2527,7 +2526,7 @@ a.btn:hover {
   padding: 100px 0;
 }
 .main .footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
