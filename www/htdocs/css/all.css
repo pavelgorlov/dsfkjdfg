@@ -1000,7 +1000,7 @@ a.btn:hover {
   opacity: 1;
 }
 .vote-row {
-  padding-top: 15px;
+  padding-top: 12px;
 }
 .vote-chk {
   float: left;
@@ -1011,7 +1011,7 @@ a.btn:hover {
 .vote-label {
   display: block;
   font-size: 15px;
-  line-height: 17px;
+  line-height: 20px;
   overflow: hidden;
 }
 .vote-submit {
@@ -2897,11 +2897,11 @@ a.btn:hover {
 
 .customRadio, .customRadioChecked {
   float: left;
-  margin-right: 15px;
   width: 19px;
   height: 19px;
-  background: url(../images/bg/radio.png) no-repeat;
+  margin-right: 15px;
   overflow: hidden;
+  background: url(../images/bg/checkbox.png) no-repeat;
 }
 .customRadioChecked {
   background-position: 0 -30px;

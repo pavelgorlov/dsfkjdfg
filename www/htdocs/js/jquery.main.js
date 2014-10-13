@@ -129,7 +129,7 @@ aero.vote = function() {
       }
     });
 
-    $('input:checkbox', vote_form)
+    $('input:radio', vote_form)
       .attr("name", "vote")
       .on('change', function() {
         if ( vote_form.valid() ) {
@@ -307,7 +307,8 @@ aero.inputs = function() {
   }
 
   $('.custom-inputs').urInputs({
-    replaceCheckboxes: true
+    replaceCheckboxes: true,
+    replaceRadios: true
   });
 };
 
