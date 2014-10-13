@@ -753,6 +753,9 @@ a.btn:hover {
 #chair_rotate:before, #chair_rotate:after {
   display: none;
 }
+.no-borderradius #chair_rotate {
+  background: url(../images/bg/rotate-circle.png) 50% no-repeat;
+}
 
 .no-borderradius .plus-circ {
   border: none;
