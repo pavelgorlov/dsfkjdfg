@@ -328,6 +328,12 @@ a.btn:hover {
   padding: 20px 0 15px;
   z-index: 50;
 }
+.rbc .header {
+  padding-top: 0;
+}
+.rbc .header .page-width {
+  padding-top: 20px;
+}
 
 .topnav {
   display: inline-block;
