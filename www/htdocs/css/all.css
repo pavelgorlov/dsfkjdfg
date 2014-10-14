@@ -2528,6 +2528,8 @@ a.btn:hover {
 }
 
 .main {
+  display: table;
+  height: 100%;
   background: #000 url(../images/bg/main.jpg) 50% 0 no-repeat;
   color: #fff;
 }
@@ -2552,7 +2554,7 @@ a.btn:hover {
   padding: 100px 0;
 }
 .main .footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
