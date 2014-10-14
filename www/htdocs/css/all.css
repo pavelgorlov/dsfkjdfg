@@ -2563,7 +2563,7 @@ a.btn:hover {
 .main-select {
   font-size: 18px;
   line-height: 20px;
-  padding: 75px 0 50px;
+  padding: 125px 0 2px;
   text-transform: uppercase;
 }
 .main-menu {
@@ -2654,7 +2654,7 @@ a.btn:hover {
   transform: scale(0.9);
 }
 .main-text {
-  padding-top: 55px;
+  padding-top: 37px;
   font: 19px/25px "Georgia", Times, "Times New Roman", serif;
 }
 
