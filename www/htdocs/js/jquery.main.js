@@ -675,10 +675,41 @@ aero.main = function() {
 aero.versa = function() {
   $('div.versa-js').each(function() {
     var vs = $(this),
+        vs_hidden = $('input:hidden', vs),
         vs_btn = $('a.btn-vote', vs);
 
     vs_btn.on('click.vs', function() {
-      vs.addClass('versa-done');
+      if ( $(this).hasClass('disabled') ) {
+        return false;
+      }
+
+      vs_btn.addClass('disabled');
+
+      var vote_value = $(this).attr('data-vote');
+      vs_hidden.val( vote_value );
+
+      $.ajax({
+        type: 'POST',
+        url: vs.attr('data-url'),
+        dataType: 'json',
+        data: {
+          vote: vote_value
+        },
+        success: function( response ) {
+          vs.addClass('versa-done');
+
+          $.each(response.votes, function(key, value) {
+            var rating = vs_btn.filter('[data-vote=' + key + ']').next('div.vote-rating'),
+                votes = response.votes[key];
+
+            $('i', rating).css({
+              width: votes/response.total * 100 + '%'
+            });
+            $('span', rating).text(votes + ' голосов');
+          });
+        }
+      });
+
       return false;
     });
   });
