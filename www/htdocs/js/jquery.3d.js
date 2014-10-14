@@ -215,6 +215,8 @@ aero.d3 = {
         aero.d3.rotate();
       });
     } else if ( aero.d3.frame !== aero.d3.settings.frames.expand - 1 && aero.d3.frame !== 0 ) {
+      aero.d3.parent.addClass('expanded');
+      aero.d3.state = 'expanded';
       aero.d3.expand(function() {
         aero.d3.rotate();
       });
@@ -322,6 +324,8 @@ aero.d3 = {
 
       rAFte = requestAnimationFrame( animateTableCollapse );
     } else if ( aero.d3.frame !== 0 ) {
+      aero.d3.parent.addClass('expanded');
+      aero.d3.state = 'expanded';
       aero.d3.expand(function() {
         aero.d3.table();
       })
@@ -361,7 +365,7 @@ aero.d3 = {
             aero.d3.el.attr('src', aero.d3.img_t[i].src);
           } catch(e) {
             aero.log(e);
-          } 
+          }
         }
       }
 
@@ -426,7 +430,7 @@ aero.d3 = {
             aero.d3.el.attr('src', aero.d3.img_x[i].src);
           } catch(e) {
             aero.log(e);
-          } 
+          }
         }
       }
 
@@ -475,7 +479,7 @@ aero.d3 = {
             aero.d3.el.attr('src', aero.d3.img_x[i].src);
           } catch(e) {
             aero.log(e);
-          } 
+          }
         }
       }
 
@@ -494,69 +498,72 @@ aero.d3 = {
     }
 
     if ( aero.d3.state === 'expanded' ) {
-      aero.d3.busy = true;
+      if ( aero.d3.frame !== aero.d3.settings.frames.expand - 1 ) {
+        aero.d3.state = '';
+        aero.d3.parent.removeClass('expanded');
+        aero.d3.light();
+      } else {
+        aero.d3.busy = true;
 
-      // turn on the light
-      var i, len;
-      var rAFon;
-      var bg, bg_w, bg_h;
-
-      if ( Modernizr.canvas ) {
-        bg = $('#canvas_bg');
-        bg_w = bg.width();
-        bg_h = bg.height();
-        bg.show();
-      }
-
-      i = 0;
-      len = aero.d3.settings.frames.light - 1;
-
-      function _lightStep() {
-        if ( i < len ) {
-          i++;
-        } else if (rAFon) {
-          cancelAnimationFrame(rAFon);
-          rAFon = null;
-          aero.d3.busy = false;
-
-          aero.d3.state = 'light';
-          aero.d3.parent.addClass('light');
-
-          if ( $.isFunction(callback) ) {
-            callback.apply(this);
-          }
-        }
+        // turn on the light
+        var i, len;
+        var rAFon;
+        var bg, bg_w, bg_h;
 
         if ( Modernizr.canvas ) {
-          try {
-            aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
-            aero.d3.ctx_bg.fillStyle = aero.d3.tlenbow[i];
-            aero.d3.ctx_bg.fillRect(0, 0, bg_w, bg_h);
-          } catch(e) {
-            aero.log(e);
-          }
-        } else {
-          aero.d3.bg.css({
-            backgroundColor: aero.d3.tlenbow[i]
-          });
-          try {
-            aero.d3.el.attr('src', aero.d3.img_l[i].src);
-          } catch(e) {
-            aero.log(e);
-          } 
+          bg = $('#canvas_bg');
+          bg_w = bg.width();
+          bg_h = bg.height();
+          bg.show();
         }
-      }
 
-      function animateLightOn() {
+        i = 0;
+        len = aero.d3.settings.frames.light - 1;
+
+        function _lightStep() {
+          if ( i < len ) {
+            i++;
+          } else if (rAFon) {
+            cancelAnimationFrame(rAFon);
+            rAFon = null;
+            aero.d3.busy = false;
+
+            aero.d3.state = 'light';
+            aero.d3.parent.addClass('light');
+
+            if ( $.isFunction(callback) ) {
+              callback.apply(this);
+            }
+          }
+
+          if ( Modernizr.canvas ) {
+            try {
+              aero.d3.ctx.drawImage(aero.d3.img_l[i], 0, 0);
+              aero.d3.ctx_bg.fillStyle = aero.d3.tlenbow[i];
+              aero.d3.ctx_bg.fillRect(0, 0, bg_w, bg_h);
+            } catch(e) {
+              aero.log(e);
+            }
+          } else {
+            aero.d3.bg.css({
+              backgroundColor: aero.d3.tlenbow[i]
+            });
+            try {
+              aero.d3.el.attr('src', aero.d3.img_l[i].src);
+            } catch(e) {
+              aero.log(e);
+            }
+          }
+        }
+
+        function animateLightOn() {
+          rAFon = requestAnimationFrame( animateLightOn );
+          _lightStep();
+        }
+
         rAFon = requestAnimationFrame( animateLightOn );
-        _lightStep();
+
       }
-
-      rAFon = requestAnimationFrame( animateLightOn );
-
-      // aero.d3.parent.css({
-      //   backgroundColor: '#000'
-      // });
     } else if ( aero.d3.state === 'light' ) {
       aero.d3.busy = true;
 
