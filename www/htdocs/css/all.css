@@ -2530,12 +2530,13 @@ a.btn:hover {
 .main {
   display: table;
   height: 100%;
-  background: #000 url(../images/bg/main.jpg) 50% 0 no-repeat;
+  background: #000 url(../images/bg/main.jpg) 50% 66px no-repeat;
   color: #fff;
 }
 .main-header {
-  font: 58px/60px "flightcbold", sans-serif;
+  font: 58px/68px "flightcbold", sans-serif;
   text-align: center;
+  margin-top: 90px;
   text-transform: uppercase;
 }
 .main-tab, .main-cell {
@@ -2551,7 +2552,7 @@ a.btn:hover {
   text-align: center;
 }
 .main-content {
-  padding: 100px 0;
+  padding: 100px 0 120px;
 }
 .main .footer {
   position: absolute;
@@ -2563,7 +2564,7 @@ a.btn:hover {
 .main-select {
   font-size: 18px;
   line-height: 20px;
-  padding: 125px 0 2px;
+  padding: 120px 0 2px;
   text-transform: uppercase;
 }
 .main-menu {
@@ -2654,7 +2655,7 @@ a.btn:hover {
   transform: scale(0.9);
 }
 .main-text {
-  padding-top: 37px;
+  padding-top: 46px;
   font: 19px/25px "Georgia", Times, "Times New Roman", serif;
 }
 
