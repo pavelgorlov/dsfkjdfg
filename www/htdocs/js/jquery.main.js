@@ -944,7 +944,7 @@ aero.space = {
         }
         aero.space.title = $('div.slider-chair-title').eq(0);
         if ( aero.space.title.length === 0 ) {
-          aero.space.title = $('<div class="slider-chair-title">Именно такое расстояние между креслами в бизнес-классе «Аэрофлота»</div>').appendTo(spc);
+          aero.space.title = $('<div class="slider-chair-title">Именно такое расстояние между креслами в Бизнес  классе Аэрофлота</div>').appendTo(spc);
         }
 
         aero.space.place();
