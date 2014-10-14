@@ -224,9 +224,15 @@ aero.openclose = function() {
       if ( oc.hasClass('open') ) {
         oc.removeClass('open');
         oc_slide.slideUp(250);
+        if ( oc.parent().hasClass('legendary') ) {
+          oc.parent().removeClass('legendary-open');
+        }
       } else {
         oc.addClass('open');
         oc_slide.slideDown(250);
+        if ( oc.parent().hasClass('legendary') ) {
+          oc.parent().addClass('legendary-open');
+        }
       }
 
       return false;
