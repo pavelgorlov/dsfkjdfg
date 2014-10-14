@@ -393,6 +393,9 @@ a.btn:hover {
   padding: 20px 0;
   background: #000;
 }
+.snob .footer {
+  height: 250px;
+}
 
 /* content */
 .content {
@@ -2554,6 +2557,9 @@ a.btn:hover {
 .main-content {
   padding: 100px 0 120px;
 }
+.snob .main-content {
+  padding-bottom: 320px;
+}
 .main .footer {
   position: absolute;
   left: 0;
@@ -3137,3 +3143,119 @@ a.btn:hover {
 }
 
 /* skype */
+.snob-nav {
+  float: right;
+}
+.snob-nav img {
+  float: left;
+}
+.snob-nav ul {
+  float: left;
+  margin: 0;
+  padding: 4px 0 0;
+  list-style: none;
+}
+.snob-nav ul li {
+  float: left;
+  padding: 0 12px 0 10px;
+  font: bold 15px/25px Arial, sans-serif;
+  border-left: 1px solid #4d4d4d;
+}
+.snob-nav ul li:first-child {
+  border-left: none;
+  padding-left: 25px;
+}
+.snob-nav ul a {
+  float: left;
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer__mainMenu {
+  color: #fff;
+  margin: 23px 0 40px 77px;
+}
+
+.footer__subMenu {
+  overflow: hidden;
+  padding-top: 7px;
+  font: 11px/14px Arial, sans-serif;
+}
+.footer__subMenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer__subMenu ul li {
+  padding-top: 7px;
+}
+.footer__subMenu ul a {
+  color: #fff;
+}
+.footer__subMenu dl {
+  float: left;
+  padding: 0;
+  margin: 0 52px 0 0;
+}
+.footer__subMenu dl.editorial {
+  margin-right: 75px;
+}
+.footer__subMenu dl.last {
+  margin-right: 0;
+}
+.footer__subMenu dd {
+  margin: 0;
+  padding: 0;
+}
+.footer__subMenu dt {
+  margin: 0 0 7px;
+  padding: 0;
+  font-weight: bold;
+}
+.footer__subMenu .itunes {
+  background: url("../images/snob/footer-itunes.png") no-repeat;
+  padding-left: 22px;
+  display: block;
+  color: white;
+  text-decoration: underline;
+}
+.footer__subMenu .itunes.black {
+  color: #000;
+  background: url("/i/i-sSnob.gif") no-repeat 0 -50px;
+}
+.footer__subMenu .zino {
+  display: block;
+  color: #FFF;
+  text-decoration: underline;
+  padding: 7px 0 0 22px;
+  position: relative;
+}
+.footer__subMenu .zino .ic {
+  margin: -3px 0 0 -23px;
+  padding: 0;
+  position: absolute;
+}
+.footer__subMenu .zino.black {
+  color: #000;
+}
+
+.footer__socialMenu a {
+  font: normal 11px/14px Arial;
+  color: #e5e5e5;
+  text-decoration: underline;
+  padding: 7px 0 0 26px;
+  position: relative;
+  display: block;
+}
+.footer__socialMenu a img {
+  position: absolute;
+  left: 0;
+}
+.footer__socialMenu a img.ic-li {
+  left: 1px;
+  position: absolute;
+  width: 14px;
+}
+.footer__socialMenu-white a {
+  color: #1A1A1A;
+}
