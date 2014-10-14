@@ -3062,11 +3062,20 @@ a.btn:hover {
   right: 0;
 }
 
-.ivanova {
+.legendary {
   background: #f4f3f2 url(../images/tmp/52.jpg) 0 100% no-repeat;
 }
-.ivanova .page-width {
+.legendary .page-width {
   min-height: 420px;
+}
+.legendary.legendary-open {
+  background-image: none;
+}
+.legendary .sleep-header {
+  text-align: left;
+}
+.legendary .inter-col {
+  width: 695px;
 }
 
 .ent-features {
