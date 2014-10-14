@@ -162,6 +162,11 @@ textarea:focus:-ms-input-placeholder {
 .page-content p {
   margin: 0;
 }
+.page-subline {
+  width: 450px;
+  margin: auto;
+  padding: 15px 0 0 78px;
+}
 
 /* buttons */
 .btn {
@@ -2610,7 +2615,7 @@ a.btn:hover {
   display: block;
   height: 86px;
   margin: 0 auto 15px;
-  transition: opacity 0.25s;
+  transition: opacity 0.25s ease, transform 0.25s ease;
   background: url(../images/bg/menu.png) 0 0 no-repeat;
 }
 .main-menu i.menu-1 {
@@ -2639,6 +2644,12 @@ a.btn:hover {
 }
 .collapsed .main-menu i, .fixed .main-menu i {
   opacity: 0;
+}
+.main-menu a:hover {
+  color: #b9b8b8;
+}
+.main-menu a:hover i {
+  transform: scale(0.9);
 }
 .main-text {
   padding-top: 55px;
@@ -2882,7 +2893,8 @@ a.btn:hover {
   padding-bottom: 10px;
 }
 
-.sky .page-header:after {
+.sky .page-header:after,
+.page-header.nobd:after {
   display: none;
 }
 

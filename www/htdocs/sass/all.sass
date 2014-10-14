@@ -35,6 +35,10 @@
         background: #fff
   &-content p
     margin: 0
+  &-subline
+    width: 450px
+    margin: auto
+    padding: 15px 0 0 78px
 
 /* buttons */
 .btn
@@ -2028,7 +2032,7 @@ a.btn
       display: block
       height: 86px
       margin: 0 auto 15px
-      transition: opacity .25s
+      transition: opacity .25s ease, transform .25s ease
       background: url(../images/bg/menu.png) 0 0 no-repeat
       &.menu-1
         width: 84px
@@ -2051,6 +2055,10 @@ a.btn
       .collapsed &,
       .fixed &
         opacity: 0
+    a:hover
+      color: #b9b8b8
+      i
+        transform: scale(.9)
   &-text
     padding-top: 55px
     font: 19px/25px $serif
@@ -2255,7 +2263,8 @@ a.btn
     min-height: 46px
     padding-bottom: 10px
 
-.sky .page-header:after
+.sky .page-header:after,
+.page-header.nobd:after
   display: none
 .sky-subheader
   text-align: center
