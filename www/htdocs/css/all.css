@@ -3075,13 +3075,21 @@ a.btn:hover {
 }
 
 .legendary {
-  background: #f4f3f2 url(../images/tmp/52.jpg) 0 100% no-repeat;
+  position: relative;
+  background: #f4f3f2;
+}
+.legendary-img {
+  position: absolute;
+  left: 0;
+  bottom: 53px;
+  width: 25%;
+  max-width: 417px;
+}
+.legendary-open .legendary-img {
+  display: none;
 }
 .legendary .page-width {
   min-height: 420px;
-}
-.legendary.legendary-open {
-  background-image: none;
 }
 .legendary .sleep-header {
   text-align: left;
