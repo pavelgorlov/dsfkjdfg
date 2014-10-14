@@ -1,6 +1,7 @@
 /* containers */
 .clearfix,
 .zfix,
-.easyfix {
+.easyfix,
+.footer__mainMenu {
 	zoom: 1;
 }
