@@ -2407,11 +2407,18 @@ a.btn
 .ui-slider-horizontal .ui-slider-range-max
   right: 0
 .legendary
-  background: #f4f3f2 url(../images/tmp/52.jpg) 0 100% no-repeat
+  position: relative
+  background: #f4f3f2
+  &-img
+    position: absolute
+    left: 0
+    bottom: 53px
+    width: 25%
+    max-width: 417px
+    .legendary-open &
+      display: none
   .page-width
     min-height: 420px
-  &.legendary-open
-    background-image: none
   .sleep-header
     text-align: left
   .inter-col
