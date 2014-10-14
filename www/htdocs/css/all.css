@@ -2193,7 +2193,7 @@ a.btn:hover {
 .travel-popup {
   position: absolute;
   left: 50%;
-  top: 0;
+  top: -60px;
   width: 0;
   margin-left: -228px;
   background-color: #F4F3F2;
@@ -2205,7 +2205,7 @@ a.btn:hover {
 }
 .active .travel-popup {
   opacity: 1;
-  top: 30px;
+  top: -60px;
   width: 396px;
   padding: 45px 25px 25px 35px;
   max-height: 1000px;
@@ -2225,20 +2225,20 @@ a.btn:hover {
 .travel-desc-header {
   color: #cf383f;
   font: 15px/20px "flightcbold", sans-serif;
-  padding: 0 0 30px;
   text-align: center;
 }
-.travel-desc-header:after {
+.travel-desc-content {
+  padding-top: 30px;
+  font-size: 15px;
+  text-align: left;
+}
+.travel-desc-content:before {
   content: "";
   display: block;
-  margin: 25px auto 0;
+  margin: 0 auto 30px;
   width: 50px;
   height: 2px;
   background: #000;
-}
-.travel-desc-content {
-  font-size: 15px;
-  text-align: left;
 }
 .travel-desc-content dl {
   margin: 0;
