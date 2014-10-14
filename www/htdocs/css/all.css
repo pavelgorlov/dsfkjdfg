@@ -2528,7 +2528,7 @@ a.btn:hover {
 }
 
 .main {
-  background: #000 url(../images/bg/main.jpg) 50% no-repeat;
+  background: #000 url(../images/bg/main.jpg) 50% 0 no-repeat;
   color: #fff;
 }
 .main-header {
