@@ -569,7 +569,7 @@ a.btn:hover {
   left: auto;
   top: auto;
 }
-.light .chair-expander, .rotated .chair-expander {
+.light .chair-expander, .rotated .chair-expander, .table .chair-expander {
   visibility: hidden;
 }
 
