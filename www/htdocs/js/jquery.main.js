@@ -1016,7 +1016,44 @@ aero.ent = function() {
   });
 };
 
+aero.lights = function() {
+  var light = [],
+      bone = $('div.bone');
+
+  if ( !bone.hasClass('main') ) {
+    return;
+  }
+
+  for ( var i = 0; i < 4; i++ ) {
+    var idx = i + 1;
+    var light_item = $('<div class="main-' + idx + '"></div>').prependTo(bone);
+    light.push( $('div.main-' + idx) );
+  }
+
+  var light_active = 0;
+  light[light_active].addClass('shown');
+
+  function _changeLight() {
+    setTimeout(function() {
+      light[light_active].removeClass('shown');
+      setTimeout(function() {
+        if ( light_active < light.length - 1 ) {
+          light_active++;
+        } else {
+          light_active = 0;
+        }
+
+        light[light_active].addClass('shown');
+      }, 1000);
+      _changeLight();
+    }, 5000);
+  }
+
+  _changeLight();
+};
+
 aero.init = function() {
+  aero.lights();
   aero.parallax('div.board', {
     bg: 'span.board-img',
     point: 'div.board-hint',

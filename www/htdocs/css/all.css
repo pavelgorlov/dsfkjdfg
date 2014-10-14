@@ -2591,6 +2591,33 @@ a.btn:hover {
   background: #000 url(../images/bg/main.jpg) 50% 66px no-repeat;
   color: #fff;
 }
+.main-1, .main-2, .main-3, .main-4 {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 66px;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+.main-1.shown, .main-2.shown, .main-3.shown, .main-4.shown {
+  opacity: 1;
+}
+.main-1 {
+  background-image: url(../images/bg/main-1.png);
+}
+.main-2 {
+  background-image: url(../images/bg/main-2.png);
+}
+.main-3 {
+  background-image: url(../images/bg/main-3.png);
+}
+.main-4 {
+  background-image: url(../images/bg/main-4.png);
+}
 .main-header {
   font: 58px/68px "flightcbold", sans-serif;
   text-align: center;
@@ -2610,7 +2637,9 @@ a.btn:hover {
   text-align: center;
 }
 .main-content {
+  position: relative;
   padding: 100px 0 120px;
+  z-index: 2;
 }
 .snob .main-content {
   padding-bottom: 320px;

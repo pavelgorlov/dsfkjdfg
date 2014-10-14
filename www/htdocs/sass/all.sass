@@ -2003,6 +2003,31 @@ a.btn
   background: #000 url(../images/bg/main.jpg) 50% 66px no-repeat
     //size: cover // background-scale
   color: #fff
+  &-1,
+  &-2,
+  &-3,
+  &-4
+    content: ""
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background:
+      position: 50% 66px
+      repeat: no-repeat
+    opacity: 0
+    transition: opacity 1s linear
+    &.shown
+      opacity: 1
+  &-1
+    background-image: url(../images/bg/main-1.png)
+  &-2
+    background-image: url(../images/bg/main-2.png)
+  &-3
+    background-image: url(../images/bg/main-3.png)
+  &-4
+    background-image: url(../images/bg/main-4.png)
   &-header
     font: 58px/68px $bold
     text-align: center
@@ -2019,7 +2044,9 @@ a.btn
     vertical-align: middle
     text-align: center
   &-content
+    position: relative
     padding: 100px 0 120px
+    z-index: 2
     .snob &
       padding-bottom: 320px
     .gq &
