@@ -701,14 +701,13 @@ aero.versa = function() {
         success: function( response ) {
           vs.addClass('versa-done');
 
-          $.each(response.votes, function(key, value) {
-            var rating = vs_btn.filter('[data-vote=' + key + ']').next('div.vote-rating'),
-                votes = response.votes[key];
-
-            $('i', rating).css({
-              width: votes/response.total * 100 + '%'
-            });
+          $.each(response.votes, function(key, votes) {
+          
+          	var rating = vs_btn.filter('[data-rel="vote' + (key+1) + '"]').next('div.vote-rating'),
+                
+            $('i', rating).css({width: votes/response.total * 100 + '%'});
             $('span', rating).text(votes + ' голосов');
+            
           });
         }
       });
