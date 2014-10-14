@@ -685,16 +685,19 @@ aero.versa = function() {
 
       vs_btn.addClass('disabled');
 
-      var vote_value = $(this).attr('data-vote');
+      var vote_value = $(this).attr('data-vote'),
+          vote_data = {};
+
       vs_hidden.val( vote_value );
+
+      vote_data['vote'] = vote_value;
+      vote_data[ vs_hidden.attr('name') ] = vote_value;
 
       $.ajax({
         type: 'POST',
         url: vs.attr('data-url'),
         dataType: 'json',
-        data: {
-          vote: vote_value
-        },
+        data: vote_data,
         success: function( response ) {
           vs.addClass('versa-done');
 
