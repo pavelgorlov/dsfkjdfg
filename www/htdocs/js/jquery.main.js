@@ -609,14 +609,19 @@ aero.wishes = function() {
 aero.main = function() {
   var main = $('div.promo').eq(0),
       main_bg = $('span.promo-img', main),
-      page_w,
+      main_menu = $('div.main-menu'),
+      main_menu_off = main_menu.offset(),
+      main_menu_top = main_menu_off.top,
       page_h,
       doc = $(document),
       bone = $('div.bone').eq(0);
 
+  //var test = $('<div style="position:fixed;left:10px;top:50px;color:#f00;font-size:24px;line-height:26px;z-index:100;"></div>').appendTo( $('body') );
+
   function resizePage() {
-    page_w = document.compatMode=='CSS1Compat' ? document.documentElement.clientWidth : document.body.clientWidth;
     page_h = document.compatMode=='CSS1Compat' ? document.documentElement.clientHeight : document.body.clientHeight;
+    main_menu_off = main_menu.offset();
+    main_menu_top = main_menu_off.top;
     page_h_61 = page_h - 61;
 
     if ( page_h_61 > 680 ) {
@@ -635,11 +640,13 @@ aero.main = function() {
   }
 
   function scrollPage() {
-    if ( doc.scrollTop() > page_h - 110 ) {
+    var scroll_t = doc.scrollTop();
+    //test.text('ScrollTop: ' + scroll_t + '; OffsetTop: ' + main_menu_top);
+    if ( scroll_t > main_menu_top + 55 ) {
       bone
         .removeClass('collapsed')
         .addClass('fixed');
-    } else if ( doc.scrollTop() > page_h - 210 ) {
+    } else if ( scroll_t > main_menu_top - 55 ) {
       bone
         .removeClass('fixed')
         .addClass('collapsed');
@@ -654,6 +661,9 @@ aero.main = function() {
   scrollPage();
 
   $(window)
+    .on('load', function() {
+      resizePage();
+    })
     .on('resize', function() {
       resizePage();
     })
