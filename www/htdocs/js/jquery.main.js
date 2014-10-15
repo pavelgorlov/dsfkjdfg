@@ -616,8 +616,6 @@ aero.main = function() {
       doc = $(document),
       bone = $('div.bone').eq(0);
 
-  //var test = $('<div style="position:fixed;left:10px;top:50px;color:#f00;font-size:24px;line-height:26px;z-index:100;"></div>').appendTo( $('body') );
-
   function resizePage() {
     page_h = document.compatMode=='CSS1Compat' ? document.documentElement.clientHeight : document.body.clientHeight;
     main_menu_off = main_menu.offset();
