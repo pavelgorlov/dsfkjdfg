@@ -10,6 +10,11 @@ aero.log = function(aerog) {
   }
 };
 
+aero.declOfNum = function (number, titles)  {
+    cases = [2, 0, 1, 1, 1, 2];
+    return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5]];
+}
+
 aero.parallax = function(el, settings) {
   var settings = settings || {};
 
@@ -616,8 +621,6 @@ aero.main = function() {
       doc = $(document),
       bone = $('div.bone').eq(0);
 
-  //var test = $('<div style="position:fixed;left:10px;top:50px;color:#f00;font-size:24px;line-height:26px;z-index:100;"></div>').appendTo( $('body') );
-
   function resizePage() {
     page_h = document.compatMode=='CSS1Compat' ? document.documentElement.clientHeight : document.body.clientHeight;
     main_menu_off = main_menu.offset();
@@ -708,6 +711,8 @@ aero.versa = function() {
             $('i', rating).css({width: votes/response.total * 100 + '%'});
             $('span', rating).text(votes + ' голосов');
 
+            var str = aero.declOfNum(votes, ['голос','голоса', 'голосов']);
+            $('span', rating).text(votes+' '+str);
           });
         }
       });
