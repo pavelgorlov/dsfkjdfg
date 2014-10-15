@@ -1939,6 +1939,7 @@ a.btn:hover {
 }
 
 .bonus-feats {
+  overflow: hidden;
   padding-bottom: 100px;
 }
 
