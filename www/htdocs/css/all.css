@@ -1261,6 +1261,7 @@ a.btn:hover {
   margin-top: 20px;
   max-width: 590px;
   padding-bottom: 10px;
+  padding-right: 53px;
   font: 18px/29px "Georgia", Times, "Times New Roman", serif;
 }
 .inter-quote-header {
@@ -1285,7 +1286,7 @@ a.btn:hover {
   background: url(../images/bg/inter-quote-before.png) 0 0 no-repeat;
 }
 .inter-quote:after {
-  right: -53px;
+  right: 0;
   bottom: 0;
   height: 32px;
   background: url(../images/bg/inter-quote-after.png) 0 0 no-repeat;
