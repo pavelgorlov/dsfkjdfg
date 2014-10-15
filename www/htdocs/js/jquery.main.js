@@ -1,3 +1,5 @@
+
+
 var aero = window.aero || {};
 
 aero.cfg = aero.cfg || {
@@ -9,6 +11,11 @@ aero.log = function(aerog) {
     window.console.log(aerog);
   }
 };
+
+aero.declOfNum = function (number, titles)  {  
+    cases = [2, 0, 1, 1, 1, 2];  
+    return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5]];  
+}  
 
 aero.parallax = function(el, settings) {
   var settings = settings || {};
@@ -704,7 +711,10 @@ aero.versa = function() {
           	var rating = vs_btn.filter('[data-rel="vote' + (key+1) + '"]').next('div.vote-rating');
                 
             $('i', rating).css({width: votes/response.total * 100 + '%'});
-            $('span', rating).text(votes + ' голосов');
+            
+            var str = aero.declOfNum(votes, ['голос','голоса', 'голосов']);
+            
+            $('span', rating).text(votes+' '+str);
             
           });
         }
