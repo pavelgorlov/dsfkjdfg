@@ -910,6 +910,9 @@ a.btn:hover {
 .open .sleep-open:before, .open .sleep-open:after {
   display: none;
 }
+.sleep-open span {
+  vertical-align: middle;
+}
 .open .sleep-open .o, .sleep-open .c {
   display: none;
 }
