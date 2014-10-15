@@ -702,12 +702,12 @@ aero.versa = function() {
           vs.addClass('versa-done');
 
           $.each(response.votes, function(key, votes) {
-          
+
           	var rating = vs_btn.filter('[data-rel="vote' + (key+1) + '"]').next('div.vote-rating');
-                
+
             $('i', rating).css({width: votes/response.total * 100 + '%'});
             $('span', rating).text(votes + ' голосов');
-            
+
           });
         }
       });
@@ -895,13 +895,15 @@ aero.space = {
     });
     if ( aero.space.w === 95 ) {
       aero.space.title.addClass('show');
+      aero.space.hint.removeClass('show');
     } else {
       aero.space.title.removeClass('show');
+      aero.space.hint.addClass('show');
     }
     aero.space.val.text(aero.space.w + 'см');
   },
 
-  slider: function() {
+  slider: function(initial) {
     var spc_slider = $("#slider_chair"),
         spc_slider_w = spc_slider.width();
 
@@ -919,7 +921,7 @@ aero.space = {
       step: 5,
       min: 0,
       max: 225,
-      value: 95,
+      value: initial,
       slide: function( event, ui ) {
         aero.space.w = 225 - ui.value;
         spc_slider_2.slider('value', aero.space.w);
@@ -931,7 +933,7 @@ aero.space = {
       step: 5,
       min: 0,
       max: 225,
-      value: 95,
+      value: initial,
       slide: function( event, ui ) {
         aero.space.w = ui.value;
         spc_slider_1.slider('value', 225 - aero.space.w);
@@ -940,7 +942,7 @@ aero.space = {
     });
 
     aero.space.w = spc_slider_2.slider('value');
-    spc_slider_1.slider('value', 120);
+    spc_slider_1.slider('value', 225 - initial);
     aero.space.place();
   },
 
@@ -948,7 +950,8 @@ aero.space = {
     aero.space.settings = settings || {
       width: 335,
       space: 0,
-      coef: 1
+      coef: 1,
+      initial: 45
     };
 
     var spc = $('#chair_space'),
@@ -975,15 +978,18 @@ aero.space = {
         if ( aero.space.val.length === 0 ) {
           aero.space.val = $('<div class="slider-chair-val"></div>').appendTo(spc);
         }
+
         aero.space.title = $('div.slider-chair-title').eq(0);
         if ( aero.space.title.length === 0 ) {
           aero.space.title = $('<div class="slider-chair-title">Именно такое расстояние между креслами в Бизнес  классе Аэрофлота</div>').appendTo(spc);
         }
 
+        aero.space.hint = $('<div class="slider-chair-title show">Потяните за слайдер, чтобы узнать правильное расстояние между креслами в нашем Бизнес классе</div>').appendTo(spc);
+
         aero.space.place();
 
         $('<div class="slider-chair-holder"><div id="slider_chair"></div></div>').appendTo(spc);
-        aero.space.slider();
+        aero.space.slider(settings.initial);
       })
       .attr({
         src: spc_img_src
@@ -1076,7 +1082,8 @@ aero.init = function() {
   aero.space.init({
     width: 335, // chair width
     space: 0, // initial space btw chairs
-    coef: 1.37 // space to monitor pix coef
+    coef: 1.37, // space to monitor pix coef
+    initial: 40 // start value
   });
   aero.ent();
 
