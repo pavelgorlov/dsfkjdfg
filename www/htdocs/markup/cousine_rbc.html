@@ -5,7 +5,8 @@
 	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
 	<title>Aeroflot</title>
 	<link rel="stylesheet" href="../css/all.css">
-	<link rel="stylesheet" href="../css/rbc-header.css">
+	<link rel="stylesheet" href="../css/rbc_main.css">
+	<link rel="stylesheet" href="../css/rbc_ie.css">
 	<!--[if lt IE 10]><link rel="stylesheet" href="../css/ie.css" media="screen"><![endif]-->
 	<!--[if lte IE 8]><link rel="stylesheet" href="../css/ie8.css" media="screen"><![endif]-->
 </head>
@@ -13,31 +14,141 @@
 	<div class="bone">
 		<!-- HEADER -->
 		<div class="header">
-			<div class="rbc-header">
-				<div class="menu-main js-sticky-block__menu-main">
-					<div class="l-row menu-main__items-container js-menu-main-dropdown__items-container">
-						<a href="http://www.rbc.ru/" data-atinternet="[logo_menu]" class="menu-main__item menu-main__item_logo menu-main__item_border">
-							<img src="http://dotmoscow.rbc.ru/wp-content/themes/msk/static/img/rbc-header/logo.png">
-						</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://rbctv.rbc.ru/">Телеканал</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://www.rbcdaily.ru/">Газета</a>
-						<a data-atinternet="[head]" class="menu-main__item menu-main__item_border" href="http://www.rbcdaily.ru/magazine">Журнал</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://quote.rbc.ru/">Quote</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://www.autonews.ru/">Авто</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://sport.rbc.ru/">Спорт</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://realty.rbc.ru/">Недвижимость</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://style.rbc.ru/">Стиль</a>
-						<a data-atinternet="[head]" class="menu-main__item menu-main__item_cnews" href="http://www.cnews.ru/"><span>C</span><span class="menu-main__item_cnews__dot">•</span><span>News</span></a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://marketing.rbc.ru/">Исследования</a>
-						<a data-atinternet="[head]" class="menu-main__item" href="http://bc.rbc.ru/">Конференции</a>
+			<div class="navbar js-navbar">
+					<div class="navbar__inner">
+							<ul class="navbar__main-list js-navbar-list">
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://www.autonews.ru/">
+													<span class="navbar__link__text">Авто</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://sport.rbc.ru/">
+													<span class="navbar__link__text">Спорт</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://realty.rbc.ru/">
+													<span class="navbar__link__text">Недвижимость</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://quote.rbc.ru/">
+													<span class="navbar__link__text">Quote</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://rbctv.rbc.ru/">
+													<span class="navbar__link__text">РБК-ТВ</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<span class="navbar__link navbar__link_state_active">
+													<span class="navbar__link__text">Стиль</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</span>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://rating.rbc.ru/">
+													<span class="navbar__link__text">Рейтинги</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://credit.rbc.ru/">
+													<span class="navbar__link__text">Кредиты</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://marketing.rbc.ru/">
+													<span class="navbar__link__text">Исследования</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://cnews.ru/">
+													<span class="navbar__link__text">Cnews</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://rbcdaily.ru/">
+													<span class="navbar__link__text">РБК DAILY</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://travel.rbc.ru/">
+													<span class="navbar__link__text">Travel</span>
+													<i class="navbar__link__active-left"></i>
+													<i class="navbar__link__active-right"></i>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://lf.rbc.ru/">
+													<span class="navbar__link__text">Личные финансы</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://tv.rbc.ru/">
+													<span class="navbar__link__text">ТВ</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://www.rbkmoney.ru/">
+													<span class="navbar__link__text">RBK Money</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://biztorg.ru/">
+													<span class="navbar__link__text">Продажа бизнеса</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://radio.qip.ru/">
+													<span class="navbar__link__text">Радио</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://seminar.rbc.ru/">
+													<span class="navbar__link__text">Семинары</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://www.hc.ru/ru/">
+													<span class="navbar__link__text">Хостинг</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://www.iglobe.ru/">
+													<span class="navbar__link__text">Отели iGlobe</span>
+											</a>
+									</li>
+									<li class="navbar__item">
+											<a class="navbar__link" href="http://tata.ru/">
+													<span class="navbar__link__text">Женский журнал</span>
+											</a>
+									</li>
+									<li class="navbar__item navbar__item_justify"></li>
+							</ul>
 					</div>
-					<div style="white-space: nowrap;">
-						<span class="menu-main__dropdown">
-							<a style="display: none;" class="menu-main__dropdown__handle js-menu-main-dropdown" href="#">Еще <span class="menu-main__dropdown__triangle">▼</span></a>
-							<span class="menu-main__dropdown__list js-menu-main-dropdown__list"></span>
-						</span>
-					</div>
-				</div>
 			</div>
 			<div class="clearfix page-width">
 				<img src="../images/bg/aeroflot.png" alt="" class="logo-aeroflot">
