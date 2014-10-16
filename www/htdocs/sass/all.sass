@@ -1025,9 +1025,23 @@ a.btn
     &.min
       max-width: 670px
 .haute-secrets
+  position: relative
   padding-top: 40px
   min-height: 310px
   background: url(../images/bg/haute-secrets.jpg) 68px 60px no-repeat
+  .expert
+    float: none
+    position: absolute
+    left: 50%
+    top: 57px
+    margin-left: 262px
+    font-size: 0
+    &-name
+      font-size: 0
+  &.open .expert
+    font-size: 15px
+    &-name
+      font-size: 19px
 .secrets-header
   margin: 15px 0 0
   font: 22px/24px $bold
