@@ -1,0 +1,267 @@
+@charset "utf-8";
+html
+	{
+		width:auto;
+	}
+
+* html #mainbody
+	{
+/*		height:100%; */
+/*		color: f0f0f0; */
+	}
+
+body
+	{
+		padding:0px;
+		margin:0px;
+		background: #02458d;
+		font-family:Tahoma;
+		line-height:15px;
+		font-size:12px;
+		color: #000;
+		width:auto;
+	}
+
+/* Закрываем блоки дизайна */
+#header {
+	display: none;
+	}
+#block_leftmenu {
+	display: none;
+	}
+	
+#bottom_banner {
+	display: none;
+	}
+/* end: Закрываем блоки дизайна */
+
+/* Шапка с логотипом для печати */
+#header_print_only {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0px 0px 0px 0px;
+		line-height: 18px;
+		color: #000;
+		top: 0px;
+		left: 0px;
+	}
+#header_print_only img {
+		float: left;
+		width: 200px;
+		height: 50px;
+	}
+#header_print_only .contact_info {
+		display:block;
+		float: right;
+		margin: 0px;
+		padding: 10px 0px 0px 0px;
+		text-align: right;
+	}
+.clear0
+	{
+		clear:both;
+		font-size:0px;
+		line-height:0px;
+		padding: 15px 0px 0px 0px;
+		margin: 0px;
+	}
+/* end: Шапка с логотипом для печати */
+
+
+#main_container, .block_content {
+	margin: 0px;
+	padding: 0px;
+	background: #ddd;
+	width: auto;
+	
+	}
+
+
+/* Навигация - хлебные крошки */
+#breadcrumbs {
+	height: 20px;
+	padding: 0px;
+	margin: 0px 0px 0px 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	display: none;
+}
+#breadcrumbs a { 
+	color: #000;
+	text-decoration: none;
+}
+
+#breadcrumbs b{  
+	color: #000;
+	font-weight: bold;
+}
+
+/* end: Навигация - хлебные крошки */
+
+.content {	zoom: 1;
+		display: block;
+		text-align: justify;
+
+		/* FP: Для печати */
+/*		position: relative; */
+		width: auto;
+		background: none;
+		
+		
+	}
+
+/* > content > */
+
+.content a {
+		color:#02458d;
+	}
+
+.content h1 {
+	display:block;
+/*	margin-right: 140px; */
+	color: #01458d;
+	height: 25px;
+	width: 100%;
+	line-height: 25px;
+	padding: 0px 0px 10px 0px;
+	margin: 0px;
+	font-size: 25px;
+	font-weight: normal;
+	background:url(/media/img/h1_line.gif) right 65px no-repeat;
+	
+	}
+
+.content h2 {
+	display:block;
+	font-size: 19px;
+	font-weight: normal;
+	color: #2d7cc7;
+	line-height: 22px;
+/*	height: 22px; */
+	padding: 15px 0px 5px 0px;
+	margin: 0px;
+	}
+
+.content h4 {
+	margin: 0px;
+	padding: 10px 0px 0px 0px;
+	}
+
+.content .leftphoto {
+	 float: left; 
+	 padding-right: 20px; 
+	 padding-bottom: 20px;
+	 margin: 0px;
+	}
+
+.content .rightquote {
+	background: #f9f9f9 0px 0px no-repeat;
+	display: block;
+/* _display: inline-block; */
+	padding: 9px 10px 9px 20px;
+	font-size:10px;
+	line-height:12px;
+	margin: 10px 0px 10px 20px;
+	width: 400px;
+	float: right;
+	}
+
+
+.content ol {
+	list-style-type:decimal;
+	margin: 0px;
+	padding: 5px 0px 10px 25px;
+
+	}
+
+.content ol li {
+		color: #000;
+		font-weight: bold;
+		padding: 5px 0px 5px 0px;
+	}
+.content ol li span {
+		font-weight: normal;
+	}
+
+
+.content ul {
+	  color: #000;
+	  margin-left: 15px;
+	  padding-left:0px;
+	  list-style:disc;
+	  list-style-position:inside;
+	}
+
+.content ul li {
+	  font-weight: normal;
+	  padding: 0px 0px 0px 17px;
+	  margin: 0px;
+	}
+	
+
+.content .info_important {
+	 padding: 20px 0px 20px 60px;
+	 margin: 10px 0px 10px 0px;
+	 border-bottom: 1px solid #E5E6E8;
+	 background: url(/media/img/important.gif) 0px 0px no-repeat;
+	}
+	
+.content .info_important h4 {
+	padding: 0px;
+	margin: 0px;
+	
+	}	
+/* end: > content > */
+
+
+
+/**
+ * Garland, for Drupal 5.0
+/*
+body, input, textarea, select {
+  color: #000;
+  background: none;
+}
+
+ul.primary-links, ul.secondary-links,
+#header-region, .sidebar {
+  display: none;
+}
+
+body.sidebars, body.sideber-left, body.sidebar-right, body {
+  width: 640px;
+}
+
+body.sidebar-left #center, body.sidebar-right #center, body.sidebars #center,
+body.sidebar-left #squeeze, body.sidebar-right #squeeze, body.sidebars #squeeze {
+  margin: 0;
+}
+
+#wrapper,
+#wrapper #container .breadcrumb,
+#wrapper #container #center,
+#wrapper #container #center .right-corner,
+#wrapper #container #center .right-corner .left-corner,
+#wrapper #container #footer,
+#wrapper #container #center #squeeze {
+  position: static;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  float: none;
+  clear: both;
+  background: none;
+}
+
+#wrapper #container #header {
+  height: 130px;
+}
+
+#wrapper #container #header h1, #wrapper #container #header h1 a:link, #wrapper #container #header h1 a:visited {
+  text-shadow: none;
+  color: #000;
+}
+*/

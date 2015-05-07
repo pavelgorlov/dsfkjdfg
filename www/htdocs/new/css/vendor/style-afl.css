@@ -1,0 +1,3787 @@
+@charset "utf-8";
+
+#three_level {
+    display: block;
+    margin: 0;
+    width: auto
+}
+
+#three_level li {
+    display: block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/three_menu_delim.gif) right top no-repeat;
+    height: 30px;
+    padding: 0 13px 5px 0;
+    margin: 0 13px 0 0;
+    float: left;
+    width: auto!important;
+    width: 0
+}
+
+#three_level li.last {
+    padding: 0 0 5px;
+    margin: 0;
+    background: 0 0
+}
+
+#three_level li a {
+    display: block;
+    color: #1d65a9;
+    text-decoration: none;
+    border-bottom: 1px dashed #b7b7b8;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 7px 1px 2px;
+    margin: 0 7px;
+    height: 14px;
+    white-space: nowrap
+}
+
+#three_level a.active {
+    background: #ffb20d;
+    text-decoration: none;
+    border: 0;
+    color: #fff;
+    padding: 7px 8px;
+    margin: 0
+}
+
+.block_dummy a {
+    margin-bottom: 20px
+}
+
+.overflow {
+    overflow: auto;
+    overflow-y: hidden
+}
+
+#cFrom,#cTo {
+    float: left;
+    width: 200px;
+    margin-right: 10px;
+    margin-top: 3px
+}
+
+.search_fights {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/button_bg.jpg) no-repeat scroll center top transparent;
+    border: 0 none;
+    color: #FFF;
+    cursor: pointer;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    height: 26px;
+    line-height: 10px;
+    margin: 0 10px;
+    padding: 0 0 3px;
+    text-shadow: none;
+    text-transform: uppercase;
+    width: 90px;
+    float: left
+}
+/*
+body {
+    background: #02458d
+}
+*/
+a#find {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 93px;
+    height: 26px;
+    display: block;
+    padding: 0;
+    margin: 10px 0;
+    text-decoration: none
+}
+
+a#find:hover {
+    text-decoration: none
+}
+
+a#enter {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 93px;
+    height: 26px;
+    display: block;
+    padding: 0;
+    margin: 10px 0;
+    text-decoration: none
+}
+
+a#enter:hover {
+    text-decoration: none
+}
+
+.content a.subscribe:active,.content a.subscribe:hover,.content a.subscribe:link,.content a.subscribe:visited {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/subscribe_to.jpg) no-repeat top left;
+    width: 137px;
+    height: 26px;
+    display: inline-block;
+    padding: 0;
+    margin: 0 0 0 10px;
+    text-decoration: none
+}
+
+.view-archive .view-content .item-list ul,.view-mess-share .view-content .item-list ul,.view-news .view-content .item-list ul,.view-news4page .view-content .item-list ul,.view-press-releases4page .view-content .item-list ul,.view-press-share-releases .view-content .item-list ul {
+    margin: 0;
+    padding: 0
+}
+
+.view-archive .view-content .item-list ul li,.view-mess-share .view-content .item-list ul li,.view-news .view-content .item-list ul li,.view-news4page .view-content .item-list ul li,.view-photobiblio4page .view-content .item-list ul li,.view-press-releases4page .view-content .item-list ul li,.view-press-share-releases .view-content .item-list ul li {
+    list-style-type: none;
+    background: 0 0;
+    padding: 0 0 15px
+}
+
+.view-archive .view-content .item-list ul li div.views-field-title a,.view-mess-share .view-content .item-list ul li div.views-field-title a,.view-news .view-content .item-list ul li div.views-field-title a,.view-news4page .view-content .item-list ul li div.views-field-title a,.view-photobiblio4page .view-content .item-list ul li div.views-field-title a,.view-press-releases4page .view-content .item-list ul li div.views-field-title a,.view-press-share-releases .view-content .item-list ul li div.views-field-title a {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d7dc8;
+    text-decoration: underline;
+    line-height: 18px
+}
+
+.view-archive .view-content .item-list ul li div.views-field-title a:hover,.view-mess-share .view-content .item-list ul li div.views-field-title a:hover,.view-news .view-content .item-list ul li div.views-field-title a:hover,.view-news4page .view-content .item-list ul li div.views-field-title a:hover,.view-photobiblio4page .view-content .item-list ul li div.views-field-title a:hover,.view-press-releases4page .view-content .item-list ul li div.views-field-title a:hover,.view-press-share-releases .view-content .item-list ul li div.views-field-title a:hover {
+    text-decoration: none
+}
+
+#three_level {
+    font-family: Arial,sans-serif;
+    padding: 25px 39px 0 0;
+    margin-bottom: 20px;
+    margin-top: 5px
+}
+
+#three_level span {
+    color: #b7b7b8
+}
+
+#three_level a {
+    color: #1d65a9;
+    text-decoration: none;
+    border-bottom: 1px dashed #b7b7b8;
+    margin-right: 13px;
+    margin-left: 13px;
+    font-size: 14px;
+    line-height: 1.5
+}
+
+#three_level a:hover {
+    border: 0
+}
+
+#three_level a.frist {
+    margin-left: 0
+}
+
+#three_level a.three_active {
+    background: #ffb20d;
+    text-decoration: none;
+    border: 0;
+    color: #fff;
+    padding: 7px 8px
+}
+
+form input,form select,form textarea {
+    border-top: 1px solid #ADACB2;
+    border-left: 1px solid #E2E8EF;
+    border-right: 1px solid #E2E8EF;
+    border-bottom: 1px solid #E2E8EF
+}
+
+a#afl_logo img {
+    display: none
+}
+
+#block_leftmenu ul.menu li a {
+    background-repeat: no-repeat
+}
+/*
+#breadcrumbs.dummy {
+    margin: 60px 0 0
+}
+*/
+/*
+.content h1 {
+    height: 25px
+}
+*/
+/*
+.content h2 {
+    float: left;
+    clear: both
+}
+*/
+.content .comment {
+    color: #F47920
+}
+
+#progressBar {
+    display: block;
+    padding: 0 0 1px;
+    list-style: none;
+    height: 29px;
+    border: 0;
+    margin: 0
+}
+
+#progressBar li {
+    list-style: none;
+    display: block;
+    float: left;
+    height: 22px;
+    padding: 7px 6px 0 10px;
+    margin: 0;
+    text-align: center;
+    color: #313131;
+    border: 0
+}
+
+#progressBar li.selected {
+    color: #fff;
+    background: #277fcf url(/cms/sites/all/themes/aeroflot/media/img/sabre_style/nav_active.gif) top left no-repeat
+}
+
+a.s_link {
+    display: block;
+    float: right;
+    margin: 5px 0 0
+}
+
+a#findflights {
+    clear: both;
+    display: block;
+    width: 161px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/sabre_style/button_def.gif) center top no-repeat;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 10px 0 10px 20px;
+    border: 0;
+    padding: 0;
+    CURSOR: pointer
+}
+
+a#findflights.passive {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/sabre_style/button_def_passive.gif) center top no-repeat
+}
+
+#main-Page fieldset {
+    border: none
+}
+
+#main-Page .information,#main-Page .passengers,#main-Page .preferences,#main-Page .promo,#main-Page .searchFlight {
+    display: block;
+    background: #F9F9F9;
+    border: 1px solid #CCC;
+    margin: 5px 0 0;
+    padding: 10px 0;
+    _padding: 0 0 10px;
+    width: 100%;
+    clear: both;
+    float: none
+}
+
+#main-Page .information legend,#main-Page .passengers legend,#main-Page .preferences legend,#main-Page .promo legend,#main-Page .searchFlight legend {
+    margin-left: -6px;
+    height: 0
+}
+
+#main-Page .tripType {
+    background: 0 0;
+    border: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 215px
+}
+
+#main-Page .tripDetails {
+    border: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 360px;
+    left: 0;
+    top: 0
+}
+
+#main-Page .tripDetails table {
+    border-collapse: separate;
+    border: none
+}
+
+ul#flight-place_in {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 5px;
+    width: 205px;
+    display: block
+}
+
+ul#flight-place_in li {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 20px;
+    width: 205px
+}
+
+ul#flight-place_in li.delimiter {
+    margin-top: 16px;
+    display: block
+}
+
+ul#flight-place_in li label {
+    margin: 0;
+    padding: 0
+}
+
+ul#flight-place_in input {
+    border: none;
+    margin: 3px 5px 3px 0;
+    _margin: 0 5px 0 0;
+    margin-left: 0;
+    outline: 0
+}
+
+#id_depDay,#id_depMonth,#id_depTime,#id_retDay,#id_retMonth,#id_retTime {
+    width: auto
+}
+
+#main-Page .passengers label {
+    display: block;
+    width: 22%;
+    float: left;
+    padding: 0 0 0 10px
+}
+
+#main-Page .passengers label select {
+    width: 100px;
+    margin: 5px 0 2px
+}
+
+#main-Page .passengers label span {
+    display: block;
+    font-size: 11px;
+    text-align: left
+}
+
+#main-Page .preferences label,#main-Page .promo label {
+    display: block;
+    float: left;
+    padding: 0 0 0 10px;
+    width: 270px;
+    line-height: 20px
+}
+
+#main-Page .preferences label span,#main-Page .promo label span {
+    display: block;
+    float: left;
+    text-align: right;
+    padding: 0 5px 0 0
+}
+
+#main-Page .preferences label select {
+    display: block;
+    float: left
+}
+
+ul#advanced_in {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 10px
+}
+
+ul#advanced_in li {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/overview_grey.gif) left 4px no-repeat;
+    padding: 2px 0 8px 20px;
+    height: 10px
+}
+
+#confirm {
+    margin-top: 15px
+}
+
+#confirm input {
+    border: none
+}
+
+table td {
+    vertical-align: top
+}
+
+.underlay {
+    display: none
+}
+
+#cal1_container,#cal2_container {
+    border: none;
+    z-index: 110
+}
+
+#cal1_container .bd form,#cal2_container .bd form {
+    clear: left;
+    display: none
+}
+
+#cal1_container .bd,#cal2_container .bd {
+    padding: 0
+}
+
+#cal1_container .hd,#cal2_container .hd {
+    text-align: left
+}
+
+#cal1_container .ft,#cal2_container .ft {
+    height: 0;
+    padding: 0;
+    font-size: 0
+}
+
+#cal1,#cal2 {
+    border: none;
+    font-size: 12px
+}
+
+#cal1_container_c.yui-overlay-hidden table,#cal2_container_c.yui-overlay-hidden table {
+    *display: none
+}
+
+#cal1 .calheader,#cal2 .calheader {
+    color: #222
+}
+
+.btn-cal img,.btn-cal-d img {
+    display: block;
+    border: 0;
+    margin: 0;
+    padding: 3px 5px 0 1px
+}
+
+.btn-cal-d {
+    display: none
+}
+
+.input-extended {
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+    border: 1px solid #777;
+    width: 256px
+}
+
+.input-extended span {
+    display: block;
+    float: right;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: #fff
+}
+
+.input-extended .expand {
+    background: #fff url(/cms/sites/all/modules/booking/images/icon-arrow-down.gif) 5px 5px no-repeat
+}
+
+.input-extended .close {
+    background: #fff url(/cms/sites/all/modules/booking/images/icon-close.gif) 5px 4px no-repeat
+}
+
+.input-extended input,.yui-skin-sam .yui-ac-input {
+    cursor: text;
+    position: static;
+    float: left;
+    display: block;
+    padding: 2px;
+    width: 232px;
+    height: 16px;
+    border: 0
+}
+
+.yui-skin-sam .btn-toggle {
+    display: block;
+    margin: 14px 0 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: url(/cms/sites/all/modules/booking/images/icon-toggle.gif) 0 0 no-repeat;
+    text-decoration: none
+}
+
+.ac-dialog {
+    display: none;
+    z-index: 110
+}
+
+.ac-dialog .yui-ac-content {
+    height: 150px;
+    overflow-y: auto;
+    _position: relative
+}
+
+.s-dialog {
+    display: none;
+    z-index: 110
+}
+
+.popup_wrapper {
+    width: 360px;
+    height: 150px;
+    border: 2px solid #84add6;
+    background: 0 0;
+    position: relative;
+    overflow: hidden
+}
+
+.popup_infoblock {
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 343px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow-x: hidden
+}
+
+.popup_infoblock_2 {
+    height: 127px;
+    position: absolute;
+    top: 23px;
+    left: 0;
+    background: #fff;
+    width: 343px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+.popup_infoblock ul,.popup_infoblock_2 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 11px;
+    color: #000;
+    height: 100%
+}
+
+.popup_infoblock ul li,.popup_infoblock_2 ul li {
+    display: block;
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative
+}
+
+.popup_infoblock ul li a,.popup_infoblock_2 ul li a {
+    display: block;
+    padding: 3px 0 3px 6px;
+    background: #fff;
+    color: #000;
+    line-height: 10px;
+    text-decoration: none
+}
+
+.popup_infoblock ul li a:hover,.popup_infoblock ul li.yui-ac-highlight a,.popup_infoblock_2 ul li a:hover,.popup_infoblock_2 ul li.yui-ac-highlight a {
+    background: #eee
+}
+
+.popup_infoblock ul li .match,.popup_infoblock_2 ul li .match {
+    font-weight: 700
+}
+
+.popup_closer {
+    cursor: pointer;
+    background: #508dd1 url(/cms/sites/all/modules/booking/images/bg_popup_closer.gif) left top no-repeat;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    border-left: 1px solid #84add6;
+    margin: 0;
+    padding: 0
+}
+
+.popup_closer_btn {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    top: 3px;
+    left: 3px;
+    background: url(/cms/sites/all/modules/booking/images/popup_closer_btn.gif) left top no-repeat;
+    margin: 0;
+    padding: 0
+}
+
+.top_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 340px;
+    border-bottom: 1px solid #84add6;
+    padding: 2px 0 1px 3px;
+    background: #508dd1
+}
+
+.top_btn a {
+    display: block;
+    height: 18px;
+    float: left;
+    width: 112px;
+    padding: 0;
+    margin: 0
+}
+
+.top_btn a#towns {
+    cursor: pointer;
+    background: url(/cms/sites/all/modules/booking/images/towns_btn.gif) left top no-repeat
+}
+
+.top_btn a#countries {
+    cursor: pointer;
+    background: url(/cms/sites/all/modules/booking/images/countries_btn.gif) left top no-repeat
+}
+
+#depCityAcBox,#retCityAcBox {
+    z-index: 120
+}
+
+.langDropdown {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 150px;
+    margin: 0;
+    padding: 0;
+    border: none
+}
+
+.langDropdown select {
+    border-top: 1px solid #ADACB2;
+    border-left: 1px solid #E2E8EF;
+    border-right: 1px solid #E2E8EF;
+    border-bottom: 1px solid #E2E8EF;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 21px;
+    width: 80px
+}
+
+#ModifySearch h3 {
+    margin: 31px 0 10px 18px;
+    font-weight: 400;
+    color: #feb71f
+}
+
+#ModifySearch div.form {
+    background-color: #1e64a9;
+    width: 234px
+}
+
+#ModifySearch div.form p {
+    display: block;
+    border-bottom: 1px dotted #FFF;
+    padding: 5px 0;
+    color: #fff;
+    margin-bottom: 10px
+}
+
+#ModifySearch form {
+    display: block;
+    padding: 20px
+}
+
+#ModifySearch a#button {
+    display: block;
+    width: 161px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background: url(http://www.aeroflot.ru/cms/sites/all/themes/aeroflot/media/img/sabre_style/button_def2.gif) center top no-repeat;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 auto;
+    border: 0;
+    padding: 0
+}
+
+#ModifySearch form .cityCode {
+    margin-bottom: 6px
+}
+
+#ModifySearch form .cityCode select {
+    width: 100%
+}
+
+#ModifySearch form .DDMMTime {
+    height: 35px
+}
+
+#ModifySearch form .DDMMTime select {
+    float: left;
+    margin-right: 6px
+}
+
+#ModifySearch form .DDMMTime select.DD {
+    width: 40px
+}
+
+#ModifySearch form .DDMMTime select.MM {
+    width: 47px
+}
+
+#ModifySearch form .DDMMTime select.Time {
+    width: 95px;
+    margin-right: 0
+}
+
+#Confirmation {
+    margin: 15px 0;
+    border-top: 1px solid #cbcbcb;
+    padding-top: 29px
+}
+
+#Confirmation table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+#Confirmation th.Order_number,#Confirmation th.Total {
+    line-height: 43px;
+    width: 50%;
+    text-align: center;
+    color: #fff
+}
+
+#Confirmation th.Order_number {
+    background-color: #fb9b2b
+}
+
+#Confirmation th.Total {
+    background-color: #297fcc
+}
+
+#Confirmation td {
+    text-align: center
+}
+
+#Confirmation td.sep {
+    background-color: #fff;
+    width: 1px
+}
+
+#Confirmation tr.OrTot td {
+    background-color: #f9f9f9;
+    line-height: 80px
+}
+
+#Confirmation form {
+    display: block;
+    margin: 10px 0
+}
+
+#Confirmation #divConf5 {
+    border: 1px solid #cdcdcd;
+    padding: 45px 0;
+    background-color: #f9f9f9;
+    margin-bottom: 20px
+}
+
+#Confirmation #Conf5 {
+    width: 560px;
+    margin: 0 auto;
+    border-collapse: collapse
+}
+
+#Confirmation #Conf5 th {
+    font-weight: 400;
+    width: 280px;
+    text-align: right;
+    vertical-align: top
+}
+
+#Confirmation #Conf5 td.on {
+    width: 280px
+}
+
+#Confirmation #Conf5 td {
+    text-align: left
+}
+
+#Confirmation #Conf5 td input {
+    margin-left: 7px;
+    width: 260px;
+    padding: 2px 0 3px;
+    margin-bottom: 10px
+}
+
+#Confirmation #Conf5 td.SED1 select {
+    margin-right: 7px
+}
+
+#Confirmation #Conf5 td.SED1 {
+    width: 94px
+}
+
+#Confirmation #Conf5 td.SED2 select {
+    margin-left: 0
+}
+
+#Confirmation #Conf5 td select {
+    margin-left: 7px;
+    width: 80px;
+    padding: 2px 0 3px;
+    margin-bottom: 10px
+}
+
+#Confirmation #Conf5 th span {
+    color: #929292
+}
+
+#Confirmation #end {
+    position: relative;
+    top: 0;
+    left: 0
+}
+
+#Confirmation #end a {
+    display: block;
+    width: 161px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background: url(http://www.aeroflot.ru/cms/sites/all/themes/aeroflot/media/img/sabre_style/button_def.gif) center top no-repeat;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 auto;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    top: 18px;
+    right: 0
+}
+
+#Confirmation #end #secver {
+    width: 263px;
+    height: 60px
+}
+
+#Confirmation #end #safetyTxt {
+    position: absolute;
+    top: 0;
+    left: 263px;
+    border-left: 1px solid #e8e8e8;
+    padding: 18px 0 18px 20px
+}
+
+#language .lang_list a {
+    color: #FFF;
+    display: block;
+    font-size: 11px;
+    margin: 0 7px 0 0;
+    text-transform: uppercase
+}
+
+.youth_text {
+    clear: both;
+    color: red;
+    margin: 5px 10px;
+    padding-top: 20px
+}
+
+#id_currency {
+    width: 160px!important
+}
+
+a.far_east {
+    display: block;
+    float: right;
+    background: url(/cms/sites/all/modules/booking/images/booking_new_small.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px;
+    margin: 5px 0 0
+}
+/*
+.content h1 {
+    width: 90%!important
+}
+*/
+.button_h1 {
+    display: block;
+    margin-top: 16px;
+    position: absolute;
+    right: 145px
+}
+/*
+html {
+    height: 100%;
+    width: 100%
+}
+*/
+/*
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #02458d;
+    font-family: Tahoma;
+    line-height: 15px;
+    height: 100%;
+    min-width: 987px;
+    font-size: 12px;
+    color: #313131
+}
+*/
+table {
+    border-collapse: separate!important
+}
+
+#mainbody {
+    width: expression(((document.documentElement.clientWidth || document.body.clientWidth) < 1000)? "987" : "100%");
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/wing.jpg) right top no-repeat;
+    position: relative;
+    z-index: 100;
+    min-width: 987px
+}
+
+#mainbody.dummy {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/fon.jpg) right top no-repeat
+}
+
+a {
+    text-decoration: underline;
+    color: #02458D;
+    outline: 0
+}
+
+a:hover {
+    text-decoration: none
+}
+
+a img {
+    border: 0
+}
+
+p {
+    padding: 5px 0;
+    margin: 0
+}
+
+form {
+    padding: 0;
+    margin: 0
+}
+
+form input {
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    height: 17px;
+    vertical-align: middle;
+    outline: 0
+}
+
+form input#edit-submit {
+    height: auto!important;
+    margin-top: 10px
+}
+
+form select {
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 21px
+}
+
+form textarea {
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: block
+}
+
+#header {
+    height: 148px
+}
+
+#main_container {
+    background: 0 0;
+    width: 100%;
+    float: right;
+    margin: 0 0 0 -295px;
+    padding: 0
+}
+
+#header_print_only {
+    display: none
+}
+
+#plates {
+    width: 384px;
+    height: 30px;
+    float: left;
+    background: #0F6
+}
+
+#search_plate {
+    width: 187px;
+    height: 30px;
+    background: url(../../cms/sites/all/themes/aeroflot/media/img/top_search_left.png) top left no-repeat
+}
+/*
+.block_content {
+    padding: 0 0 10px;
+    border: 0;
+    width: auto;
+    margin: 0 35px 20px 295px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/pixline_01.jpg) left bottom no-repeat;
+    position: relative
+}
+*/
+.block_dummy {
+    padding: 0 0 10px;
+    border: 0;
+    width: auto;
+    background: 0 0;
+    margin: 0 35px 20px 295px;
+    position: relative
+}
+
+#header a,#header a:hover {
+    text-decoration: none
+}
+
+a#afl_logo {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    width: 286px;
+    height: 80px;
+    border: 0;
+    margin: 20px 0 0 34px;
+    _margin: 20px 0 0 17px
+}
+
+a#afl_bonus {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: block;
+    float: left;
+    width: 250px;
+    height: 77px;
+    border: 0;
+    margin: 22px 0 0 34px;
+    _margin: 22px 0 0 17px
+}
+
+a#skyteam_logo {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/logo_skyteam.png) 0 0 no-repeat transparent;
+    display: block;
+    float: left;
+    width: 42px;
+    height: 80px;
+    border: 0;
+    margin: 20px 0 0
+}
+
+.top_tabs {
+    float: right;
+    height: 30px;
+    width: 123px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/top_search_left.jpg) left top no-repeat;
+    padding: 0;
+    margin: 30px 10px 0 0
+}
+
+#search input {
+    border-top: 1px solid #3D7BAD;
+    border-bottom: 1px solid #B7D9ED;
+    border-left: 1px solid #B7D9ED;
+    border-right: 1px solid #B7D9ED;
+    margin: 7px 0 0 8px;
+    color: #000;
+    font-size: 11px;
+    height: 12px;
+    width: 95px;
+    float: left
+}
+
+#search_inner input {
+    border-top: 1px solid #3D7BAD;
+    border-bottom: 1px solid #B7D9ED;
+    border-left: 1px solid #B7D9ED;
+    border-right: 1px solid #B7D9ED;
+    margin: 7px 0 0 8px;
+    color: #000;
+    font-size: 11px;
+    height: 12px;
+    width: 145px;
+    float: left
+}
+
+.top_tabs .txt {
+    margin: 7px 0 0 8px;
+    _margin: 7px 0 0 4px;
+    padding: 0;
+    float: left;
+    color: #fff;
+    font-size: 11px;
+    text-align: center
+}
+
+.top_tabs .btn_right {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/top_search_right.jpg) right top no-repeat;
+    height: 30px;
+    padding: 9px 5px 0 0;
+    float: right
+}
+
+.top_tabs .btn_right img {
+    border: 0;
+    cursor: pointer
+}
+
+#search_inner {
+    width: 182px
+}
+
+#cab_enter {
+    width: 115px
+}
+
+#represent {
+    width: 135px
+}
+
+#home {
+    float: right;
+    display: block;
+    height: 37px;
+    width: 45px;
+    padding: 0;
+    margin: 15px 1px 0 0;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/top_home.png) 0 0 no-repeat
+}
+
+#search {
+    float: right;
+    display: block;
+    height: 37px;
+    width: 45px;
+    padding: 0;
+    margin: 15px 3px 0 0;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/top_find.png) 0 0 no-repeat
+}
+
+#mail {
+    float: right;
+    display: block;
+    height: 37px;
+    width: 45px;
+    padding: 0;
+    margin: 15px 3px 0 0;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/top_mail.png) 0 0 no-repeat
+}
+
+#map {
+    float: right;
+    display: block;
+    height: 37px;
+    width: 45px;
+    padding: 0;
+    margin: 15px 1px 0 0;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/top_map.png) 0 0 no-repeat
+}
+
+#language {
+    float: right;
+    display: block;
+    height: 37px;
+    width: 45px;
+    padding: 0;
+    margin: 15px 28px 0 0;
+    _margin: 15px 14px 0 0
+}
+
+#login,.contact {
+    display: block;
+    height: 30px;
+    padding: 0;
+    margin: 15px 1px 0 0;
+    float: right
+}
+
+.clear0 {
+    height: 0;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    margin: 0
+}
+
+.clear1 {
+    height: 197px;
+    clear: both;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    margin: 0
+}
+
+#bottom_banner {
+    min-width: 987px;
+    position: absolute;
+    margin: -70px 0 0 0;
+    z-index: 1;
+    display: block;
+    width: expression(((document.documentElement.clientWidth || document.body.clientWidth) < 1000)? "987" : "100%")
+}
+
+.footer1 {
+    position: relative;
+    margin: 0 auto;
+    padding: 10px 0 0;
+    width: 100%;
+    height: 90px;
+    display: block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/footer.jpg) left top repeat-x
+}
+
+#block_leftmenu {
+    width: 250px;
+    padding: 0 0 70px 30px;
+    float: left;
+    margin: 0;
+    border: 0
+}
+
+#block_leftmenu ul.menu {
+    display: block;
+    width: 244px;
+    float: none;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 20px
+}
+
+#block_leftmenu ul.menu li {
+    font-family: Tahoma;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+#block_leftmenu ul.menu li.collapsed,#block_leftmenu ul.menu li.expanded,#block_leftmenu ul.menu li.leaf {
+    list-style: none;
+    list-style-image: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+#block_leftmenu ul.menu li a {
+    display: block;
+    width: 182px;
+    height: 29px;
+    margin: 0;
+    padding: 18px 0 0 62px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    background-position: 0 0
+}
+
+#block_leftmenu ul.menu li.last a {
+    height: 30px
+}
+
+#block_leftmenu ul.menu li a:link {
+    display: block;
+    text-decoration: none;
+    color: #fff
+}
+
+#block_leftmenu ul.menu li a:hover,#block_leftmenu ul.menu li.active-trail a {
+    color: #0c53a1
+}
+
+.banner_hide a img {
+    display: none!important
+}
+/*
+#breadcrumbs {
+    height: 30px;
+    padding: 0 0 0 15px;
+    margin: 0;
+    color: #fff;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/breadcumb_arrow.gif) left 4px no-repeat;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 400;
+    font-size: 14px
+}
+
+#breadcrumbs a {
+    color: #fff;
+    text-decoration: underline
+}
+
+#breadcrumbs a:hover {
+    text-decoration: none
+}
+
+#breadcrumbs a img {
+    float: left;
+    margin-right: 5px;
+    border: none
+}
+
+#breadcrumbs b {
+    color: #ffb20d;
+    font-weight: 400
+}
+*/
+/*
+.content {
+    zoom: 1;
+    display: block;
+    margin: 0;
+    padding: 0 50px 20px 35px;
+    background: #fff url(/cms/sites/all/themes/aeroflot/media/img/aero_ang_new1.png) right top no-repeat;
+    text-align: justify;
+    min-height: 490px;
+    height: auto!important;
+    height: 490px
+}
+*/
+.content a {
+    color: #02458d
+}
+/*
+.content h1 {
+    display: block;
+    color: #01458d;
+    line-height: 25px;
+    padding: 35px 0 5px;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/h1_line.gif) right bottom no-repeat;
+    text-align: left
+}
+*/
+/*
+.block_dummy h1 {
+    display: block;
+    color: #fff;
+    line-height: 25px;
+    padding: 5px 0 0;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: left
+}
+*/
+/*
+.content h2 {
+    display: block;
+    font-size: 19px;
+    font-weight: 400;
+    color: #2d7cc7;
+    line-height: 22px;
+    padding: 15px 0 5px;
+    margin: 0;
+    text-align: left
+}
+*/
+/*
+.content h2.line {
+    display: block;
+    font-size: 19px;
+    font-weight: 400;
+    color: #2d7cc7;
+    line-height: 22px;
+    padding: 15px 0 20px 10px;
+    margin: 0;
+    text-align: left;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/orange_line.gif) left 40px repeat-x
+}
+*/
+hr.orange {
+    border: none;
+    color: #ffb20d;
+    background-color: #ffb20d;
+    height: 2px
+}
+
+.content h4 {
+    margin: 0;
+    padding: 10px 0 0;
+    text-align: left
+}
+
+.content .leftphoto {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    margin: 0
+}
+
+.content .rightquote {
+    background: #f9f9f9 url(/cms/sites/all/themes/aeroflot/media/img/bg_rightquote.gif) 0 0 no-repeat;
+    display: block;
+    padding: 9px 10px 9px 20px;
+    font-size: 10px;
+    line-height: 12px;
+    margin: 10px 0 10px 20px;
+    width: 400px;
+    float: right
+}
+
+.content ol {
+    list-style-type: decimal;
+    margin: 0;
+    padding: 5px 0 10px 25px
+}
+
+.content ol li {
+    color: #000;
+    font-weight: 700;
+    padding: 5px 0
+}
+
+.content ol li span {
+    color: #313131;
+    font-weight: 400
+}
+
+.content ul {
+    color: #313131;
+    margin-left: 15px;
+    padding-left: 0;
+    list-style: none;
+    list-style-type: none
+}
+
+.content ul li {
+    font-weight: 400;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/tire.gif) left 8px no-repeat;
+    padding: 0 0 5px 17px;
+    margin: 0;
+    list-style: none!important
+}
+
+.content .info_important {
+    padding: 20px 0 20px 60px;
+    margin: 10px 0;
+    border-bottom: 1px solid #E5E6E8;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/important.gif) 0 0 no-repeat;
+    min-height: 85px;
+    height: auto!important
+}
+
+.content .info_important h4 {
+    padding: 0 0 10px;
+    margin: 0
+}
+
+.content span.comment,
+.content span.comment a {
+    color: #F47920
+}
+
+#down_line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/pixline.jpg) 0 0 repeat-x;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0
+}
+
+#fl_down {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    outline: 0;
+    min-height: 220px;
+    _height: 220px
+}
+
+#fl_down a {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #02458d;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+#fl_down a img {
+    position: absolute;
+    display: block;
+    border: none;
+    padding: 0;
+    margin: 0
+}
+
+.footer_left {
+    width: 450px;
+    float: left;
+    padding-left: 30px;
+    color: #fff
+}
+
+.footer_left a {
+    color: #FFF
+}
+
+.footer_right {
+    float: right;
+    padding-right: 30px;
+    padding-top: 10px;
+    width: 440px
+}
+
+.footer_right ul {
+    float: left;
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0
+}
+
+.footer_right ul li {
+    diplay: block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/aero_arrow.gif) left 5px no-repeat;
+    padding-left: 7px;
+    margin: 5px 20px 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1em
+}
+
+.footer_right a {
+    color: #fff
+}
+
+.footer_right img {
+    float: left;
+    margin-right: 12px;
+    margin-left: 40px
+}
+/*
+.phones {
+    position: relative;
+    margin: 5px 0 20px -5px!important;
+    padding: 0;
+    line-height: 18px;
+    display: inline-block
+}
+
+.phones span {
+    font-size: 12px;
+    color: #f88733
+}
+
+.phones span.comment {
+    font-size: 12px;
+    color: #fff
+}
+*/
+.copyright {
+    margin: 10px 0 0
+}
+
+.freecall_header {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 5px 0
+}
+
+.callbuttons {
+    text-align: center
+}
+
+#call_form {
+    padding: 6px
+}
+
+#call_form p {
+    padding: 0!important
+}
+/*
+.ph_office {
+    background: transparent url(/cms/sites/all/themes/aeroflot/media/img/ico_tel.gif) no-repeat left -1px;
+    padding-left: 20px
+}
+*/
+.ph_mob {
+    background: transparent url(/cms/sites/all/themes/aeroflot/media/img/ico_mobi.gif) no-repeat left -1px;
+    padding-left: 20px
+}
+
+.sm_lnk {
+    background: transparent url(/cms/sites/all/themes/aeroflot/media/img/ico_arroe.gif) no-repeat left -2px;
+    color: #FFF;
+    font-size: .8em;
+    font-weight: 400;
+    height: 20px;
+    margin: 0 0 0 24px;
+    padding: 0 0 0 16px
+}
+
+.sm_lnk a {
+    text-decoration: underline;
+    color: #fff
+}
+
+.sm_lnk a:hover {
+    text-decoration: none
+}
+
+.baner,.block-ad {
+    position: relative;
+    margin: 0;
+    display: block;
+    float: none
+}
+
+.baner img,.block-ad img {
+    margin: 20px 0 0
+}
+
+#nav {
+    bottom: 110px;
+    z-index: 40;
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 130px;
+    height: 30px;
+    border: none;
+    margin: 0;
+    padding: 0
+}
+
+#nav a {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none
+}
+
+a#nav1 {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/baners/1_b.gif) left top no-repeat
+}
+
+a#nav2 {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/baners/2_b.gif) left top no-repeat
+}
+
+a#nav3 {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/baners/3_b.gif) left top no-repeat
+}
+
+a#nav1.activeSlide,a:hover#nav1 {
+    background-image: url(/cms/sites/all/themes/aeroflot/media/img/baners/1_o.gif)
+}
+
+a#nav2.activeSlide,a#nav2:hover {
+    background-image: url(/cms/sites/all/themes/aeroflot/media/img/baners/2_o.gif)
+}
+
+a#nav3.activeSlide,a#nav3:hover {
+    background-image: url(/cms/sites/all/themes/aeroflot/media/img/baners/3_o.gif)
+}
+
+table.tariff_list {
+    border-collapse: separate;
+    text-align: left;
+    border-bottom: 1px solid #E5E6E8;
+    padding: 0;
+    margin: 5px 0
+}
+
+table.tariff_list tr.first th {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/orange_line1.gif) 0 bottom repeat-x;
+    vertical-align: middle;
+    text-indent: 0;
+    text-align: left;
+    border: none;
+    font-weight: 400;
+    padding: 4px 4px 8px;
+    margin: 0
+}
+
+table.tariff_list tr.first th.one {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/orange_line.gif) 0 bottom repeat-x;
+    vertical-align: middle;
+    text-indent: 0;
+    text-align: left;
+    border: none;
+    font-weight: 400;
+    padding: 4px 4px 8px;
+    margin: 0
+}
+
+table.tariff_list tr.first th div {
+    text-align: left;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -1px
+}
+
+table.tariff_list td {
+    border-collapse: collapse;
+    vertical-align: middle;
+    border: none;
+    padding: 4px;
+    margin: 1px
+}
+
+table.tariff_list .grey_bg {
+    background-color: #f6f6f6
+}
+
+table.tariff_list .white_bg {
+    background-color: #fff
+}
+
+table.list {
+    border-collapse: separate;
+    text-align: left;
+    border-bottom: 1px solid #E5E6E8;
+    padding: 0;
+    margin: 5px 0
+}
+
+table.list tr.first th {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/orange_line.gif) 0 18px repeat-x;
+    vertical-align: top;
+    text-indent: 5px;
+    text-align: left;
+    border: none;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap
+}
+
+table.list tr.first th div {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/orange_delim.gif) left 10px no-repeat;
+    text-align: left;
+    border: none;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    position: relative;
+    left: -1px;
+    white-space: nowrap
+}
+
+table.list td {
+    border-collapse: collapse;
+    vertical-align: middle;
+    border: none;
+    padding: 4px;
+    margin: 1px
+}
+
+.flight-info table.list td,.flight-info table.list th {
+    padding: 2px 4px;
+    line-height: normal;
+    font-size: 11px;
+    white-space: nowrap
+}
+
+.flight-info table.list th {
+    color: #2D7DC8;
+    text-align: left;
+    text-transform: uppercase
+}
+
+table.list .grey_bg {
+    background-color: #f6f6f6
+}
+
+table.list .white_bg {
+    background-color: #fff
+}
+
+table.underlined td {
+    border-bottom: 1px #ccc solid
+}
+
+p.s_phone {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/phone.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_fax {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/fax.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+a.s_link,p.s_link {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/link.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_clock {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/clock.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_adres {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/adress.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_mail {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/mail.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_www {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/www.gif) left 3px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_pdf {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/ico_pdf.gif) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_pdf a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/download.gif) right 3px no-repeat;
+    padding-right: 10px
+}
+
+p.s_ppt {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/ico_ppt.gif) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_ppt a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/download.gif) right 3px no-repeat;
+    padding-right: 10px
+}
+
+p.s_doc {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/icon_doc.gif) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_doc a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/download.gif) right 3px no-repeat;
+    padding-right: 10px
+}
+
+p.s_tiff {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/ico_tiff.gif) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_tiff a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/download.gif) right 3px no-repeat;
+    padding-right: 10px
+}
+
+p.s_xls {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/ico_xls.gif) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_xls a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/download.gif) right 3px no-repeat;
+    padding-right: 10px
+}
+
+p.s_gif,p.s_jpg {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/ico_jpg.gif) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_gif a,p.s_jpg a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/download.gif) right 3px no-repeat;
+    padding-right: 10px
+}
+
+p.s_audio {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/audio1.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_video {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/video1.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_rar {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/zip.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_aero {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/aero.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_km {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/km.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_bus {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/bus.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_car {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/car.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_su {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/su.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 45px
+}
+
+p.s_st {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/st.jpg) left 5px no-repeat;
+    padding: 5px 0 5px 45px
+}
+
+p.s_rsss {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/rss.jpg) left 6px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+a#continue,a#continue_de,a#continue_fr {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 137px;
+    height: 26px;
+    display: block;
+    padding: 0;
+    margin: 10px 0;
+    text-decoration: none
+}
+
+a#continue:hover,a#continue_de:hover,a#continue_fr:hover {
+    text-decoration: none
+}
+
+p.top_links {
+    text-align: right;
+    padding: 0 80px 0 0
+}
+
+p.top_links a.s_rss {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/rss.jpg) left 6px no-repeat;
+    padding: 5px 0 5px 20px;
+    margin: 0 20px 0 0
+}
+
+.view-ht .view-content table.list {
+    margin: 25px 0
+}
+
+.view-ht .view-content table.list td.views-field-field-tariff-type-value {
+    text-align: center
+}
+
+.view-ht .view-content table.list td.grey_bg {
+    background: #f6f6f6
+}
+
+.view-ht .view-content table.list td.views-field-field-tariff-value-value {
+    white-space: nowrap
+}
+
+.view-ht .view-content table.list td.views-field-field-link-book-url {
+    width: 150px
+}
+
+.view-ht .view-content table.list td.views-field-field-link-book-url p {
+    padding-top: 2px
+}
+
+.view-ht .view-content table.list td.views-field-field-link-book-url p a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/link.gif) left 1px no-repeat;
+    padding: 3px 0 3px 25px;
+    margin: 0
+}
+
+.view-ht .view-content table.list td.views-field-field-link-book-url.grey_bg p a {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/link_grey_f6.gif) left 1px no-repeat;
+    padding: 3px 0 3px 25px;
+    margin: 0
+}
+
+.view-hit-tariff-america .view-content,.view-hit-tariff-asia .view-content,.view-hit-tariff-east .view-content,.view-hit-tariff-eur .view-content,.view-hit-tariff-ru .view-content,.view-line-life .view-content {
+    padding: 20px 0
+}
+
+.view-hit-tariff-america .view-content td.views-field-field-link-book-url,.view-hit-tariff-america .view-content td.views-field-field-traffic-value,.view-hit-tariff-asia .view-content td.views-field-field-link-book-url,.view-hit-tariff-asia .view-content td.views-field-field-traffic-value,.view-hit-tariff-east .view-content td.views-field-field-link-book-url,.view-hit-tariff-east .view-content td.views-field-field-traffic-value,.view-hit-tariff-eur .view-content td.views-field-field-link-book-url,.view-hit-tariff-eur .view-content td.views-field-field-traffic-value,.view-hit-tariff-ru .view-content td.views-field-field-link-book-url,.view-hit-tariff-ru .view-content td.views-field-field-traffic-value,.view-line-life .view-content td.views-field-field-traffic-value {
+    text-align: center
+}
+
+.view-hit-tariff-america .view-content td.views-field-field-link-book-url p a,.view-hit-tariff-asia .view-content td.views-field-field-link-book-url p a,.view-hit-tariff-east .view-content td.views-field-field-link-book-url p a,.view-hit-tariff-eur .view-content td.views-field-field-link-book-url p a,.view-hit-tariff-ru .view-content td.views-field-field-link-book-url p a {
+    white-space: nowrap
+}
+
+p.s_oneway_trip {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/round_trip.gif) left 12px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_round_trip {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/1way_trip.gif) left 12px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.s_overview {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/overview.gif) left 7px no-repeat;
+    padding: 5px 0 5px 25px
+}
+
+p.top_links a.s_subscribe {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/overview.gif) left 7px no-repeat;
+    padding: 5px 0 5px 20px;
+    margin: 0 20px 0 0
+}
+
+.view-archive .view-content .item-list ul,.view-bonus-news .view-content .item-list ul,.view-capital-evaluation .view-content .item-list ul,.view-cargo-news .view-content .item-list ul,.view-commoninfo .view-content .item-list ul,.view-important-facts .view-content .item-list ul,.view-komersant-fund .view-content .item-list ul,.view-life-miles .view-content .item-list ul,.view-line-life .view-content .item-list ul,.view-mess-share .view-content .item-list ul,.view-news .view-content .item-list ul,.view-news-etp .view-content .item-list ul,.view-news-etp-archive .view-content .item-list ul,.view-press-releases .view-content .item-list ul,.view-press-share-releases .view-content .item-list ul,.view-sp-offers .view-content .item-list ul,.view-spivakov-fund .view-content .item-list ul {
+    margin: 0;
+    padding: 0
+}
+
+.view-archive .view-content .item-list ul li,.view-bonus-news .view-content .item-list ul li,.view-capital-evaluation .view-content .item-list ul li,.view-cargo-news .view-content .item-list ul li,.view-commoninfo .view-content .item-list ul li,.view-important-facts .view-content .item-list ul li,.view-komersant-fund .view-content .item-list ul li,.view-life-miles .view-content .item-list ul li,.view-line-life .view-content .item-list ul li,.view-mess-share .view-content .item-list ul li,.view-news .view-content .item-list ul li,.view-news-etp .view-content .item-list ul li,.view-news-etp-archive .view-content .item-list ul li,.view-press-releases .view-content .item-list ul li,.view-press-share-releases .view-content .item-list ul li,.view-skyteam-news .view-content .item-list ul li,.view-sp-offers .view-content .item-list ul li,.view-spivakov-fund .view-content .item-list ul li {
+    list-style-type: none;
+    background: 0 0;
+    padding: 0 0 15px
+}
+
+.view-archive .view-content .item-list ul li div.views-field-field-news-date-value,.view-bonus-news .view-content .item-list ul li div.views-field-field-news-date-value,.view-capital-evaluation .view-content .item-list ul li div.views-field-field-news-date-value,.view-cargo-news .view-content .item-list ul li div.views-field-field-news-date-value,.view-commoninfo .view-content .item-list ul li div.views-field-field-news-date-value,.view-important-facts .view-content .item-list ul li div.views-field-field-news-date-value,.view-komersant-fund .view-content .item-list ul li div.views-field-field-news-date-value,.view-life-miles .view-content .item-list ul li div.views-field-field-news-date-value,.view-line-life .view-content .item-list ul li div.views-field-field-news-date-value,.view-mess-share .view-content .item-list ul li div.views-field-field-news-date-value,.view-news .view-content .item-list ul li div.views-field-field-news-date-value,.view-news-etp .view-content .item-list ul li div.views-field-field-news-datetime-value,.view-news-etp-archive .view-content .item-list ul li div.views-field-field-news-datetime-value,.view-news4page .view-content .item-list ul li div.views-field-field-news-date-value,.view-press-releases .view-content .item-list ul li div.views-field-field-news-date-value,.view-press-releases4page .view-content .item-list ul li div.views-field-field-news-date-value,.view-press-share-releases .view-content .item-list ul li div.views-field-field-news-date-value,.view-sp-offers .view-content .item-list ul li div.views-field-field-news-date-value,.view-spivakov-fund .view-content .item-list ul li div.views-field-field-news-date-value {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/news_date.gif) left 3px no-repeat;
+    padding: 0 0 0 14px;
+    color: #929292;
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: 400
+}
+
+.view-archive .view-content .item-list ul li div.views-field-title a,.view-archive .view-content .item-list ul li div.views-field-title-2 a,.view-bonus-news .view-content .item-list ul li div.views-field-title a,.view-capital-evaluation .view-content .item-list ul li div.views-field-title a,.view-cargo-news .view-content .item-list ul li div.views-field-title a,.view-commoninfo .view-content .item-list ul li div.views-field-title a,.view-important-facts .view-content .item-list ul li div.views-field-title a,.view-komersant-fund .view-content .item-list ul li div.views-field-title a,.view-life-miles .view-content .item-list ul li div.views-field-title a,.view-line-life .view-content .item-list ul li div.views-field-title a,.view-mess-share .view-content .item-list ul li div.views-field-title a,.view-news .view-content .item-list ul li div.views-field-title a,.view-news-etp .view-content .item-list ul li div.views-field-title a,.view-news-etp-archive .view-content .item-list ul li div.views-field-title a,.view-news4page .view-content .item-list ul li div.views-field-title a,.view-press-releases .view-content .item-list ul li div.views-field-title a,.view-press-releases4page .view-content .item-list ul li div.views-field-title a,.view-press-share-releases .view-content .item-list ul li div.views-field-title a,.view-skyteam-news .view-content .item-list ul li div.views-field-title a,.view-sp-offers .view-content .item-list ul li div.views-field-title a,.view-spivakov-fund .view-content .item-list ul li div.views-field-title a {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d7dc8;
+    text-decoration: underline;
+    line-height: 18px
+}
+
+.view-archive .view-content .item-list ul li div.views-field-title a:hover,.view-bonus-news .view-content .item-list ul li div.views-field-title a:hover,.view-capital-evaluation .view-content .item-list ul li div.views-field-title a:hover,.view-cargo-news .view-content .item-list ul li div.views-field-title a:hover,.view-commoninfo .view-content .item-list ul li div.views-field-title a:hover,.view-important-facts .view-content .item-list ul li div.views-field-title a:hover,.view-komersant-fund .view-content .item-list ul li div.views-field-title a:hover,.view-life-miles .view-content .item-list ul li div.views-field-title a:hover,.view-line-life .item-list ul li div.views-field-title a:hover,.view-mess-share .view-content .item-list ul li div.views-field-title a:hover,.view-news .view-content .item-list ul li div.views-field-title a:hover,.view-news-etp .view-content .item-list ul li div.views-field-title a:hover,.view-news-etp-archive .view-content .item-list ul li div.views-field-title a:hover,.view-news4page .view-content .item-list ul li div.views-field-title a:hover,.view-press-releases .view-content .item-list ul li div.views-field-title a:hover,.view-press-releases4page .view-content .item-list ul li div.views-field-title a:hover,.view-press-share-releases .view-content .item-list ul li div.views-field-title a:hover,.view-skyteam-news .view-content .item-list ul li div.views-field-title a:hover,.view-sp-offers .view-content .item-list ul li div.views-field-title a:hover,.view-spivakov-fund .view-content .item-list ul li div.views-field-title a:hover {
+    text-decoration: none
+}
+
+.view-archive .view-content .item-list ul li div.views-field-field-intro-value,.view-bonus-news .view-content .item-list ul li div.views-field-field-intro-value,.view-capital-evaluation .view-content .item-list ul li div.views-field-field-intro-value,.view-cargo-news .view-content .item-list ul li div.views-field-field-intro-value,.view-commoninfo .view-content .item-list ul li div.views-field-field-intro-value,.view-important-facts .view-content .item-list ul li div.views-field-field-intro-value,.view-komersant-fund .view-content .item-list ul li div.views-field-field-intro-value,.view-life-miles .view-content .item-list ul li div.views-field-field-intro-value,.view-line-life .item-list ul li div.views-field-field-intro-value,.view-mess-share .view-content .item-list ul li div.views-field-field-intro-value,.view-news .view-content .item-list ul li div.views-field-field-intro-value,.view-news-etp .view-content .item-list ul li div.views-field-field-intro-value,.view-news-etp-archive .view-content .item-list ul li div.views-field-field-intro-value,.view-press-releases .view-content .item-list ul li div.views-field-field-intro-value,.view-press-share-releases .view-content .item-list ul li div.views-field-field-intro-value,.view-sp-offers .view-content .item-list ul li div.views-field-field-intro-value,.view-spivakov-fund .view-content .item-list ul li div.views-field-field-intro-value {
+    padding: 0
+}
+
+.view-archive .view-content .item-list ul li div.views-field-field-intro-value p,.view-bonus-news .view-content .item-list ul li div.views-field-field-intro-value p,.view-capital-evaluation .view-content .item-list ul li div.views-field-field-intro-value p,.view-cargo-news .view-content .item-list ul li div.views-field-field-intro-value p,.view-commoninfo .view-content .item-list ul li div.views-field-field-intro-value p,.view-important-facts .view-content .item-list ul li div.views-field-field-intro-value p,.view-komersant-fund .view-content .item-list ul li div.views-field-field-intro-value p,.view-life-miles .view-content .item-list ul li div.views-field-field-intro-value p,.view-line-life .view-content .item-list ul li div.views-field-field-intro-value p,.view-mess-share .view-content .item-list ul li div.views-field-field-intro-value p,.view-news .view-content .item-list ul li div.views-field-field-intro-value p,.view-news-etp .view-content .item-list ul li div.views-field-field-intro-value p,.view-news-etp-archive .view-content .item-list ul li div.views-field-field-intro-value p,.view-press-releases .view-content .item-list ul li div.views-field-field-intro-value p,.view-press-share-releases .view-content .item-list ul li div.views-field-field-intro-value p,.view-sp-offers .view-content .item-list ul li div.views-field-field-intro-value p,.view-spivakov-fund .view-content .item-list ul li div.views-field-field-intro-value p {
+    padding: 5px 0 0
+}
+
+.view-archive .item-list ul.pager,.view-bonus-news .item-list ul.pager,.view-capital-evaluation .item-list ul.pager,.view-cargo-news .item-list ul.pager,.view-commoninfo .item-list ul.pager,.view-important-facts .item-list ul.pager,.view-komersant-fund .item-list ul.pager,.view-life-miles .item-list ul.pager,.view-line-life .item-list ul.pager,.view-mess-share .item-list ul.pager,.view-news .item-list ul.pager,.view-news-etp-active .item-list ul.pager,.view-news-etp-archive .item-list ul.pager,.view-news-etp-results .item-list ul.pager,.view-press-releases .item-list ul.pager,.view-press-share-releases .item-list ul.pager,.view-skyteam-news .item-list ul.pager,.view-sp-offers .item-list ul.pager,.view-spivakov-fund .item-list ul.pager {
+    list-style: none;
+    padding: 10px 0 0 6px;
+    margin: 0 0 0 6px;
+    display: block;
+    height: 15px;
+    border-top: 1px solid #b3b3b3
+}
+
+.view-archive .item-list ul.pager li,.view-bonus-news .item-list ul.pager li,.view-capital-evaluation .item-list ul.pager li,.view-cargo-news .item-list ul.pager li,.view-commoninfo .item-list ul.pager li,.view-important-facts .item-list ul.pager li,.view-komersant-fund .item-list ul.pager li,.view-life-miles .item-list ul.pager li,.view-line-life .item-list ul.pager li,.view-mess-share .item-list ul.pager li,.view-news .item-list ul.pager li,.view-news-etp-active .item-list ul.pager li,.view-news-etp-archive .item-list ul.pager li,.view-news-etp-results .item-list ul.pager li,.view-press-releases .item-list ul.pager li,.view-press-share-releases .item-list ul.pager li,.view-skyteam-news .item-list ul.pager li,.view-sp-offers .item-list ul.pager li,.view-spivakov-fund .item-list ul.pager li {
+    list-style-type: none;
+    background: 0 0;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 2px;
+    font-size: 12px;
+    font-weight: 700;
+    height: 13px;
+    line-height: 9px
+}
+
+.view-archive .item-list ul.pager li span,.view-bonus-news .item-list ul.pager li span,.view-capital-evaluation .item-list ul.pager li span,.view-cargo-news .item-list ul.pager li span,.view-commoninfo .item-list ul.pager li span,.view-important-facts .item-list ul.pager li span,.view-komersant-fund .item-list ul.pager li span,.view-life-miles .item-list ul.pager li span,.view-line-life .item-list ul.pager li span,.view-mess-share .item-list ul.pager li span,.view-news .item-list ul.pager li span,.view-news-etp-active .item-list ul.pager li span,.view-news-etp-archive .item-list ul.pager li span,.view-news-etp-results .item-list ul.pager li span,.view-press-releases .item-list ul.pager li span,.view-press-share-releases .item-list ul.pager li span,.view-skyteam-news .item-list ul.pager li span,.view-sp-offers .item-list ul.pager li span,.view-spivakov-fund .item-list ul.pager li span {
+    padding: 0 6px;
+    color: #b3b3b3
+}
+
+.view-archive .item-list ul.pager li a,.view-bonus-news .item-list ul.pager li a,.view-capital-evaluation .item-list ul.pager li a,.view-cargo-news .item-list ul.pager li a,.view-commoninfo .item-list ul.pager li a,.view-important-facts .item-list ul.pager li a,.view-komersant-fund .item-list ul.pager li a,.view-life-miles .item-list ul.pager li a,.view-line-life .item-list ul.pager li a,.view-mess-share .item-list ul.pager li a,.view-news .item-list ul.pager li a,.view-news-etp-active .item-list ul.pager li a,.view-news-etp-archive .item-list ul.pager li a,.view-news-etp-results .item-list ul.pager li a,.view-press-releases .item-list ul.pager li a,.view-press-share-releases .item-list ul.pager li a,.view-skyteam-news .item-list ul.pager li a,.view-sp-offers .item-list ul.pager li a,.view-spivakov-fund .item-list ul.pager li a {
+    padding: 0 6px;
+    color: #02458D;
+    text-decoration: none
+}
+
+.view-archive .item-list ul.pager li a:hover,.view-bonus-news .item-list ul.pager li a:hover,.view-capital-evaluation .item-list ul.pager li a:hover,.view-cargo-news .item-list ul.pager li a:hover,.view-commoninfo .item-list ul.pager li a:hover,.view-important-facts .item-list ul.pager li a:hover,.view-komersant-fund .item-list ul.pager li a:hover,.view-life-miles .item-list ul.pager li a:hover,.view-line-life .item-list ul.pager li a:hover,.view-mess-share .item-list ul.pager li a:hover,.view-news .item-list ul.pager li a:hover,.view-news-etp-active .item-list ul.pager li a:hover,.view-news-etp-archive .item-list ul.pager li a:hover,.view-news-etp-results .item-list ul.pager li a:hover,.view-press-releases .item-list ul.pager li a:hover,.view-press-share-releases .item-list ul.pager li a:hover,.view-skyteam-news .item-list ul.pager li a:hover,.view-sp-offers .item-list ul.pager li a:hover,.view-spivakov-fund .item-list ul.pager li a:hover {
+    color: #FC741B;
+    text-decoration: none
+}
+
+.view-archive .item-list ul.pager li.pager-current,.view-archive .item-list ul.pager li.pager-item,.view-bonus-news .item-list ul.pager li.pager-current,.view-bonus-news .item-list ul.pager li.pager-item,.view-capital-evaluation .item-list ul.pager li.pager-current,.view-capital-evaluation .item-list ul.pager li.pager-item,.view-cargo-news .item-list ul.pager li.pager-current,.view-cargo-news .item-list ul.pager li.pager-item,.view-commoninfo .item-list ul.pager li.pager-current,.view-commoninfo .item-list ul.pager li.pager-item,.view-important-facts .item-list ul.pager li.pager-current,.view-important-facts .item-list ul.pager li.pager-item,.view-komersant-fund .item-list ul.pager li.pager-current,.view-komersant-fund .item-list ul.pager li.pager-item,.view-life-miles .item-list ul.pager li.pager-current,.view-life-miles .item-list ul.pager li.pager-item,.view-line-life .item-list ul.pager li.pager-current,.view-line-life .item-list ul.pager li.pager-item,.view-mess-share .item-list ul.pager li.pager-current,.view-mess-share .item-list ul.pager li.pager-item,.view-news .item-list ul.pager li.pager-current,.view-news .item-list ul.pager li.pager-item,.view-news-etp-active .item-list ul.pager li.pager-current,.view-news-etp-active .item-list ul.pager li.pager-item,.view-news-etp-archive .item-list ul.pager li.pager-current,.view-news-etp-archive .item-list ul.pager li.pager-item,.view-news-etp-results .item-list ul.pager li.pager-current,.view-news-etp-results .item-list ul.pager li.pager-item,.view-press-releases .item-list ul.pager li.pager-current,.view-press-releases .item-list ul.pager li.pager-item,.view-press-share-releases .item-list ul.pager li.pager-current,.view-press-share-releases .item-list ul.pager li.pager-item,.view-skyteam-news .item-list ul.pager li.pager-current,.view-skyteam-news .item-list ul.pager li.pager-item,.view-sp-offers .item-list ul.pager li.pager-current,.view-sp-offers .item-list ul.pager li.pager-item,.view-spivakov-fund .item-list ul.pager li.pager-current,.view-spivakov-fund .item-list ul.pager li.pager-item {
+    border-right: 1px solid #b3b3b3
+}
+
+.view-archive .item-list ul.pager li.plast,.view-bonus-news .view-press-releases .item-list ul.pager li.plast,.view-capital-evaluation .view-press-releases .item-list ul.pager li.plast,.view-cargo-news .view-press-releases .item-list ul.pager li.plast,.view-commoninfo .item-list ul.pager li.plast,.view-important-facts .view-press-releases .item-list ul.pager li.plast,.view-komersant-fund .view-press-releases .item-list ul.pager li.plast,.view-life-miles .view-press-releases .item-list ul.pager li.plast,.view-line-life .view-press-releases .item-list ul.pager li.plast,.view-mess-share .item-list ul.pager li.plast,.view-news .item-list ul.pager li.plast,.view-news-etp-active .view-press-releases .item-list ul.pager li.plast,.view-news-etp-archive .view-press-releases .item-list ul.pager li.plast,.view-news-etp-results .view-press-releases .item-list ul.pager li.plast,.view-press-releases .item-list ul.pager li.plast,.view-press-share-releases .item-list ul.pager li.plast,.view-skyteam-news .view-press-releases .item-list ul.pager li.plast,.view-sp-offers .view-press-releases .item-list ul.pager li.plast,.view-spivakov-fund .view-press-releases .item-list ul.pager li.plast {
+    border: none
+}
+
+.view-archive .item-list ul.pager li.pager-item a,.view-bonus-news .item-list ul.pager li.pager-item a,.view-capital-evaluation .item-list ul.pager li.pager-item a,.view-cargo-news .item-list ul.pager li.pager-item a,.view-commoninfo .item-list ul.pager li.pager-item a,.view-important-facts .item-list ul.pager li.pager-item a,.view-komersant-fund .item-list ul.pager li.pager-item a,.view-life-miles .item-list ul.pager li.pager-item a,.view-line-life .item-list ul.pager li.pager-item a,.view-mess-share .item-list ul.pager li.pager-item a,.view-news .item-list ul.pager li.pager-item a,.view-news-etp-active .item-list ul.pager li.pager-item a,.view-news-etp-archive .item-list ul.pager li.pager-item a,.view-news-etp-results .item-list ul.pager li.pager-item a,.view-press-releases .item-list ul.pager li.pager-item a,.view-press-share-releases .item-list ul.pager li.pager-item a,.view-skyteam-news.item-list ul.pager li.pager-item a,.view-sp-offers .item-list ul.pager li.pager-item a,.view-spivakov-fund .item-list ul.pager li.pager-item a {
+    text-decoration: underline;
+    font-weight: 400
+}
+
+.view-archive .item-list ul.pager li.pager-item a:hover,.view-bonus-news .item-list ul.pager li.pager-item a:hover,.view-capital-evaluation .item-list ul.pager li.pager-item a:hover,.view-cargo-news .item-list ul.pager li.pager-item a:hover,.view-commoninfo .item-list ul.pager li.pager-item a:hover,.view-important-facts .item-list ul.pager li.pager-item a:hover,.view-komersant-fund .item-list ul.pager li.pager-item a:hover,.view-life-miles .item-list ul.pager li.pager-item a:hover,.view-line-life .item-list ul.pager li.pager-item a:hover,.view-mess-share .item-list ul.pager li.pager-item a:hover,.view-news .item-list ul.pager li.pager-item a:hover,.view-news-etp-active .item-list ul.pager li.pager-item a:hover,.view-news-etp-archive .item-list ul.pager li.pager-item a:hover,.view-news-etp-results .item-list ul.pager li.pager-item a:hover,.view-press-releases .item-list ul.pager li.pager-item a:hover,.view-press-share-releases .item-list ul.pager li.pager-item a:hover,.view-skyteam-news .item-list ul.pager li.pager-item a:hover,.view-sp-offers .item-list ul.pager li.pager-item a:hover,.view-spivakov-fund .item-list ul.pager li.pager-item a:hover {
+    text-decoration: none;
+    font-weight: 400;
+    color: #FC741B
+}
+
+.view-archive .item-list ul.pager li.pager-first a,.view-archive .item-list ul.pager li.pager-first span,.view-archive .item-list ul.pager li.pager-last a,.view-archive .item-list ul.pager li.pager-last span,.view-archive .item-list ul.pager li.pager-next a,.view-archive .item-list ul.pager li.pager-next span,.view-archive .item-list ul.pager li.pager-previous a,.view-archive .item-list ul.pager li.pager-previous span,.view-bonus-news .item-list ul.pager li.pager-first a,.view-bonus-news .item-list ul.pager li.pager-first span,.view-bonus-news .item-list ul.pager li.pager-last a,.view-bonus-news .item-list ul.pager li.pager-last span,.view-bonus-news .item-list ul.pager li.pager-next a,.view-bonus-news .item-list ul.pager li.pager-next span,.view-bonus-news .item-list ul.pager li.pager-previous a,.view-bonus-news .item-list ul.pager li.pager-previous span,.view-capital-evaluation .item-list ul.pager li.pager-first a,.view-capital-evaluation .item-list ul.pager li.pager-first span,.view-capital-evaluation .item-list ul.pager li.pager-last a,.view-capital-evaluation .item-list ul.pager li.pager-last span,.view-capital-evaluation .item-list ul.pager li.pager-next a,.view-capital-evaluation .item-list ul.pager li.pager-next span,.view-capital-evaluation .item-list ul.pager li.pager-previous a,.view-capital-evaluation .item-list ul.pager li.pager-previous span,.view-cargo-news .item-list ul.pager li.pager-first a,.view-cargo-news .item-list ul.pager li.pager-first span,.view-cargo-news .item-list ul.pager li.pager-last a,.view-cargo-news .item-list ul.pager li.pager-last span,.view-cargo-news .item-list ul.pager li.pager-next a,.view-cargo-news .item-list ul.pager li.pager-next span,.view-cargo-news .item-list ul.pager li.pager-previous a,.view-cargo-news .item-list ul.pager li.pager-previous span,.view-commoninfo .item-list ul.pager li.pager-first a,.view-commoninfo .item-list ul.pager li.pager-first span,.view-commoninfo .item-list ul.pager li.pager-last a,.view-commoninfo .item-list ul.pager li.pager-last span,.view-commoninfo .item-list ul.pager li.pager-next a,.view-commoninfo .item-list ul.pager li.pager-next span,.view-commoninfo .item-list ul.pager li.pager-previous a,.view-commoninfo .item-list ul.pager li.pager-previous span,.view-important-facts .item-list ul.pager li.pager-first a,.view-important-facts .item-list ul.pager li.pager-first span,.view-important-facts .item-list ul.pager li.pager-last a,.view-important-facts .item-list ul.pager li.pager-last span,.view-important-facts .item-list ul.pager li.pager-next a,.view-important-facts .item-list ul.pager li.pager-next span,.view-important-facts .item-list ul.pager li.pager-previous a,.view-important-facts .item-list ul.pager li.pager-previous span,.view-komersant-fund .item-list ul.pager li.pager-first a,.view-komersant-fund .item-list ul.pager li.pager-first span,.view-komersant-fund .item-list ul.pager li.pager-last a,.view-komersant-fund .item-list ul.pager li.pager-last span,.view-komersant-fund .item-list ul.pager li.pager-next a,.view-komersant-fund .item-list ul.pager li.pager-next span,.view-komersant-fund .item-list ul.pager li.pager-previous a,.view-komersant-fund .item-list ul.pager li.pager-previous span,.view-life-miles .item-list ul.pager li.pager-first a,.view-life-miles .item-list ul.pager li.pager-first span,.view-life-miles .item-list ul.pager li.pager-last a,.view-life-miles .item-list ul.pager li.pager-last span,.view-life-miles .item-list ul.pager li.pager-next a,.view-life-miles .item-list ul.pager li.pager-next span,.view-life-miles .item-list ul.pager li.pager-previous a,.view-life-miles .item-list ul.pager li.pager-previous span,.view-line-life .item-list ul.pager li.pager-first a,.view-line-life .item-list ul.pager li.pager-first span,.view-line-life .item-list ul.pager li.pager-last a,.view-line-life .item-list ul.pager li.pager-last span,.view-line-life .item-list ul.pager li.pager-next a,.view-line-life .item-list ul.pager li.pager-next span,.view-line-life .item-list ul.pager li.pager-previous a,.view-line-life .item-list ul.pager li.pager-previous span,.view-mess-share .item-list ul.pager li.pager-first a,.view-mess-share .item-list ul.pager li.pager-first span,.view-mess-share .item-list ul.pager li.pager-last a,.view-mess-share .item-list ul.pager li.pager-last span,.view-mess-share .item-list ul.pager li.pager-next a,.view-mess-share .item-list ul.pager li.pager-next span,.view-mess-share .item-list ul.pager li.pager-previous a,.view-mess-share .item-list ul.pager li.pager-previous span,.view-news .item-list ul.pager li.pager-first a,.view-news .item-list ul.pager li.pager-first span,.view-news .item-list ul.pager li.pager-last a,.view-news .item-list ul.pager li.pager-last span,.view-news .item-list ul.pager li.pager-next a,.view-news .item-list ul.pager li.pager-next span,.view-news .item-list ul.pager li.pager-previous a,.view-news .item-list ul.pager li.pager-previous span,.view-news-etp .item-list ul.pager li.pager-first a,.view-news-etp .item-list ul.pager li.pager-first span,.view-news-etp .item-list ul.pager li.pager-last a,.view-news-etp .item-list ul.pager li.pager-last span,.view-news-etp .item-list ul.pager li.pager-next a,.view-news-etp .item-list ul.pager li.pager-next span,.view-news-etp .item-list ul.pager li.pager-previous a,.view-news-etp .item-list ul.pager li.pager-previous span,.view-press-releases .item-list ul.pager li.pager-first a,.view-press-releases .item-list ul.pager li.pager-first span,.view-press-releases .item-list ul.pager li.pager-last a,.view-press-releases .item-list ul.pager li.pager-last span,.view-press-releases .item-list ul.pager li.pager-next a,.view-press-releases .item-list ul.pager li.pager-next span,.view-press-releases .item-list ul.pager li.pager-previous a,.view-press-releases .item-list ul.pager li.pager-previous span,.view-press-share-releases .item-list ul.pager li.pager-first a,.view-press-share-releases .item-list ul.pager li.pager-first span,.view-press-share-releases .item-list ul.pager li.pager-last a,.view-press-share-releases .item-list ul.pager li.pager-last span,.view-press-share-releases .item-list ul.pager li.pager-next a,.view-press-share-releases .item-list ul.pager li.pager-next span,.view-press-share-releases .item-list ul.pager li.pager-previous a,.view-press-share-releases .item-list ul.pager li.pager-previous span,.view-skyteam-news .item-list ul.pager li.pager-first a,.view-skyteam-news .item-list ul.pager li.pager-first span,.view-skyteam-news .item-list ul.pager li.pager-last a,.view-skyteam-news .item-list ul.pager li.pager-last span,.view-skyteam-news .item-list ul.pager li.pager-next a,.view-skyteam-news .item-list ul.pager li.pager-next span,.view-skyteam-news .item-list ul.pager li.pager-previous a,.view-skyteam-news .item-list ul.pager li.pager-previous span,.view-sp-offers .item-list ul.pager li.pager-first a,.view-sp-offers .item-list ul.pager li.pager-first span,.view-sp-offers .item-list ul.pager li.pager-last a,.view-sp-offers .item-list ul.pager li.pager-last span,.view-sp-offers .item-list ul.pager li.pager-next a,.view-sp-offers .item-list ul.pager li.pager-next span,.view-sp-offers .item-list ul.pager li.pager-previous a,.view-sp-offers .item-list ul.pager li.pager-previous span,.view-spivakov-fund .item-list ul.pager li.pager-first a,.view-spivakov-fund .item-list ul.pager li.pager-first span,.view-spivakov-fund .item-list ul.pager li.pager-last a,.view-spivakov-fund .item-list ul.pager li.pager-last span,.view-spivakov-fund .item-list ul.pager li.pager-next a,.view-spivakov-fund .item-list ul.pager li.pager-next span,.view-spivakov-fund .item-list ul.pager li.pager-previous a,.view-spivakov-fund .item-list ul.pager li.pager-previous span {
+    padding: 0 4px
+}
+,.view-bonus-news .view-footer,.view-capital-evaluation .view-footer,.view-cargo-news .view-footer,.view-important-facts .view-footer,.view-komersant-fund .view-footer,.view-life-miles .view-footer,.view-line-life .view-footer,.view-news .view-footer,.view-news-etp .view-footer,.view-news-etp-results .view-footer,.view-skyteam-news .view-footer,.view-sp-offers .view-footer,.view-spivakov-fund .view-footer {
+    padding-top: 15px;
+    display: block
+}
+
+.view-bonus-news .view-footer table td,.view-capital-evaluation .view-footer table td,.view-important-facts .view-footer table td,.view-komersant-fund .view-footer table td,.view-life-miles .view-footer table td,.view-line-life .view-footer table td,.view-news .view-footer table td,.view-news-etp .view-footer table td,.view-news-etp-results .view-footer table td,.view-skyteam-news .view-footer table td,.view-sp-offers .view-footer table td,.view-spivakov-fund .view-footer table td {
+    font-size: 11px;
+    font-weight: 700;
+    vertical-align: top
+}
+
+.view-bonus-news .view-footer .view-archive,.view-capital-evaluation .view-footer .view-archive,.view-cargo-news .view-footer .view-archive,.view-important-facts .view-footer .view-archive,.view-komersant-fund .view-footer .view-archive,.view-life-miles .view-footer .view-archive,.view-line-life .view-footer .view-archive,.view-news .view-footer .view-archive,.view-news-etp .view-footer .view-archive,.view-news-etp-results .view-footer .view-news-etp-archive,.view-skyteam-news .view-footer .view-archive,.view-sp-offers .view-footer .view-archive,.view-spivakov-fund .view-footer .view-archive {
+    display: block;
+    margin: 0;
+    padding: 0
+}
+
+.view-bonus-news .view-footer .full_archive,.view-capital-evaluation .view-footer .full_archive,.view-cargo-news .view-footer .full_archive,.view-important-facts .view-footer .full_archive,.view-komersant-fund .view-footer .full_archive,.view-life-miles .view-footer .full_archive,.view-line-life .view-footer .full_archive,.view-news .view-footer .full_archive,.view-news-etp .view-footer .full_archive,.view-news-etp-archive .view-footer .full_archive,.view-skyteam-news .view-footer .full_archive,.view-sp-offers .view-footer .full_archive,.view-spivakov-fund .view-footer .full_archive {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 17px;
+    display: block;
+    float: right;
+    height: 15px;
+    margin: 0;
+    padding: 0
+}
+
+.view-bonus-news .view-footer .view-archive .view-content .item-list ul.views-summary,.view-capital-evaluation .view-footer .view-archive .view-content .item-list ul.views-summary,.view-cargo-news .view-footer .view-archive .view-content .item-list ul.views-summary,.view-important-facts .view-footer .view-archive .view-content .item-list ul.views-summary,.view-komersant-fund .view-footer .view-archive .view-content .item-list ul.views-summary,.view-life-miles .view-footer .view-archive .view-content .item-list ul.views-summary,.view-line-life .view-footer .view-archive .view-content .item-list ul.views-summary,.view-news .view-footer .view-archive .view-content .item-list ul.views-summary,.view-news-etp .view-footer .view-archive .view-content .item-list ul.views-summary,.view-news-etp-results .view-footer .view-news-etp-archive .view-content .item-list ul.views-summary,.view-skyteam-news .view-footer .view-archive .view-content .item-list ul.views-summary,.view-sp-offers .view-footer .view-archive .view-content .item-list ul.views-summary,.view-spivakov-fund .view-footer .view-archive .view-content .item-list ul.views-summary {
+    font-size: 11px;
+    list-style: none;
+    display: block;
+    margin: 0 0 0 5px;
+    padding: 0
+}
+
+.view-bonus-news .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-capital-evaluation .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-cargo-news .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-important-facts .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-komersant-fund .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-life-miles .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-line-life .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-news .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-news-etp .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-news-etp-results .view-footer .view-news-etp-archive .view-content .item-list ul.views-summary li,.view-skyteam-news .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-sp-offers .view-footer .view-archive .view-content .item-list ul.views-summary li,.view-spivakov-fund .view-footer .view-archive .view-content .item-list ul.views-summary li {
+    list-style-type: none;
+    display: block;
+    float: left;
+    padding: 0 5px;
+    margin: 0
+}
+
+.view-news .view-footer .view-archive .view-content .item-list ul.views-summary li a,.view-news-etp .view-footer .view-archive .view-content .item-list ul.views-summary li a,.view-news-etp-results .view-footer .view-news-etp-archive .view-content .item-list ul.views-summary li a {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.view-bonus-news-item .view-content .views-row,.view-capital-evaluation .view-content .views-row,.view-cargo-news-item .view-content .views-row,.view-kommersant-fund-item .view-content .views-row,.view-life-mile .view-content .views-row,.view-line-life-item .view-content .views-row,.view-news-item-etp .view-content .views-row,.view-news-personal .view-content .views-row,.view-news-test-item .view-content .views-row,.view-sp-offer .view-content .views-row,.view-spivakov-fund-item .view-content .views-row {
+    padding: 0 0 10px
+}
+
+.view-bonus-news-item .view-content .views-row .views-field-field-news-date-value,.view-capital-evaluation .view-content .views-row .views-field-field-news-date-value,.view-cargo-news-item .view-content .views-row .views-field-field-news-date-value,.view-important-facts .view-content .views-row .views-field-field-news-date-value,.view-kommersant-fund-item .view-content .views-row .views-field-field-news-date-value,.view-life-mile .view-content .views-row .views-field-field-news-date-value,.view-line-life-item .view-content .views-row .views-field-field-news-date-value,.view-mess-share-personal .view-content .views-row .views-field-field-news-date-value,.view-news-item-etp .view-content .views-row .views-field-field-news-datetime-value,.view-news-personal .view-content .views-row .views-field-field-news-date-value,.view-news-test-item .view-content .views-row .views-field-field-news-date-value,.view-news4page .view-content .views-row .views-field-field-news-date-value,.view-press-personal .view-content .views-row .views-field-field-news-date-value,.view-press-releases4page .view-content .views-row .views-field-field-news-date-value,.view-pressshare-personal .view-content .views-row .views-field-field-news-date-value,.view-sp-offer .view-content .views-row .views-field-field-news-date-value,.view-spivakov-fund-item .view-content .views-row .views-field-field-news-date-value {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/news_date.gif) left 3px no-repeat;
+    padding: 0 0 0 14px;
+    color: #929292;
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: 400
+}
+
+.view-bonus-news-item .view-content .views-row .views-field-title,.view-capital-evaluation .view-content .views-row .views-field-title,.view-cargo-news-item .view-content .views-row .views-field-title,.view-important-facts .view-content .views-row .views-field-title,.view-kommersant-fund-item .view-content .views-row .views-field-title,.view-life-mile .view-content .views-row .views-field-title,.view-line-life-item .view-content .views-row .views-field-title,.view-news-item-etp .view-content .views-row .views-field-title,.view-news-personal .view-content .views-row .views-field-title,.view-news-test-item .view-content .views-row .views-field-title,.view-press-personal .view-content .views-row .views-field-title,.view-sp-offer .view-content .views-row .views-field-title,.view-spivakov-fund-item .view-content .views-row .views-field-title {
+    padding: 0 0 10px
+}
+
+.view-bonus-news-item .view-content .views-row .views-field-title span.field-content,.view-capital-evaluation .view-content .views-row .views-field-title span.field-content,.view-cargo-news-item .view-content .views-row .views-field-title span.field-content,.view-important-facts .view-content .views-row .views-field-title span.field-content,.view-kommersant-fund-item .view-content .views-row .views-field-title span.field-content,.view-life-mile .view-content .views-row .views-field-title span.field-content,.view-line-life-item .view-content .views-row .views-field-title span.field-content,.view-news-item-etp .view-content .views-row .views-field-title span.field-content,.view-news-personal .view-content .views-row .views-field-title span.field-content,.view-news-test-item .view-content .views-row .views-field-title span.field-content,.view-press-personal .view-content .views-row .views-field-title span.field-content,.view-sp-offer .view-content .views-row .views-field-title span.field-content,.view-spivakov-fund-item .view-content .views-row .views-field-title span.field-content {
+    font-size: 20px;
+    font-weight: 400;
+    color: #2d7dc8;
+    text-decoration: none;
+    line-height: 22px
+}
+
+.view-another-region-items .views-row {
+    margin-bottom: 20px
+}
+
+.view-bonus-news-item .view-content .views-row .views-field-field-file-fid,.view-capital-evaluation-item .view-content .views-row .views-field-field-file-fid,.view-cargo-news-item .view-content .views-row .views-field-field-file-fid,.view-kommersant-fund-item .view-content .views-row .views-field-field-file-fid,.view-life-mile .view-content .views-row .views-field-field-file-fid,.view-line-life-item .view-content .views-row .views-field-field-file-fid,.view-news-item-etp .view-content .views-row .views-field-field-file-fid,.view-news-personal .view-content .views-row .views-field-field-file-fid,.view-news-test-item .view-content .views-row .views-field-field-file-fid,.view-press-personal .view-content .views-row .views-field-field-file-fid,.view-sp-offer .view-content .views-row .views-field-field-file-fid,.view-spivakov-fund-item .view-content .views-row .views-field-field-file-fid {
+    padding: 20px 0
+}
+
+.view-bonus-news-item .view-content .views-row .views-field-field-file-fid label,.view-capital-evaluation-item .view-content .views-row .views-field-field-file-fid label,.view-cargo-news-item .view-content .views-row .views-field-field-file-fid label,.view-kommersant-fund-item .view-content .views-row .views-field-field-file-fid label,.view-life-mile .view-content .views-row .views-field-field-file-fid label,.view-line-life-item .view-content .views-row .views-field-field-file-fid label,.view-news-item-etp .view-content .views-row .views-field-field-file-fid label,.view-news-personal .view-content .views-row .views-field-field-file-fid label,.view-news-test-item .view-content .views-row .views-field-field-file-fid label,.view-press-personal .view-content .views-row .views-field-field-file-fid label,.view-sp-offer .view-content .views-row .views-field-field-file-fid label,.view-spivakov-fund-item .view-content .views-row .views-field-field-file-fid label {
+    font-weight: 700
+}
+
+.view-bonus-news-item .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-capital-evaluation-item .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-cargo-news-item .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-kommersant-fund-item .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-life-mile .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-line-life-item .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-news-item-etp .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-news-personal .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-news-test-item .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-press-personal .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-sp-offer .view-content .views-row .views-field-field-file-fid .field-content .field-item,.view-spivakov-fund-item .view-content .views-row .views-field-field-file-fid .field-content .field-item {
+    display: block;
+    height: 10px;
+    padding: 10px 0 0
+}
+
+.view-bonus-news-item .view-content .views-row .views-field-title span.field-content,.view-capital-evaluation-item .view-content .views-row .views-field-title span.field-content,.view-commoninfo-personal .view-content .views-row .views-field-title span.field-content,.view-experts-personal .view-content .views-row .views-field-title span.field-content,.view-important-fact .view-content .views-row .views-field-title span.field-content,.view-kommersant-fund-item .view-content .views-row .views-field-title span.field-content,.view-life-mile .view-content .views-row .views-field-title span.field-content,.view-mess-share-personal .view-content .views-row .views-field-title span.field-content,.view-news-item-etp .view-content .views-row .views-field-title span.field-content,.view-news-test-item .view-content .views-row .views-field-title span.field-content,.view-offices-items .view-content .views-row .views-field-title span.field-content,.view-photobiblio-personal .view-content .views-row .views-field-title span.field-content,.view-presentation-personal .view-content .views-row .views-field-title span.field-content,.view-pressshare-personal .view-content .views-row .views-field-title span.field-content,.view-reports-item .view-content .views-row .views-field-title span.field-content,.view-skyteam-new-item .view-content .views-row .views-field-title span.field-content,.view-sp-offer .view-content .views-row .views-field-title span.field-content,.view-spivakov-fund-item .view-content .views-row .views-field-title span.field-content,.view-vac-items .view-content .views-row .views-field-title span.field-content {
+    font-size: 20px;
+    font-weight: 400;
+    color: #2d7dc8;
+    text-decoration: none;
+    line-height: 22px
+}
+
+.webform-client-form label {
+    display: inline-block;
+    width: 260px;
+    text-align: left;
+    font-size: 11px;
+    float: left
+}
+
+.form-item {
+    margin-top: 20px
+}
+
+.form-required {
+    color: #e78500
+}
+
+.content .h2:active,.content .h2:hover,.content .h2:link,.content .h2:visited {
+    display: block;
+    font-size: 19px;
+    font-weight: 400;
+    color: #2d7cc7;
+    line-height: auto;
+    padding: 0 0 5px;
+    margin: 0;
+    text-align: left;
+    text-decoration: underline
+}
+
+#block_leftmenu a {
+    background-repeat: no-repeat;
+    background-position: center 0;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 11px!important;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px
+}
+
+.block_dummy .dummy a {
+    padding-top: 0!important;
+    display: inline!important;
+    text-transform: none!important;
+    font-size: 14px!important
+}
+
+.block_dummy a {
+    background-repeat: no-repeat;
+    background-position: center 0;
+    font-family: Tahoma,Geneva,sans-serif;
+    font-size: 11px!important;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+    padding-top: 76px!important;
+    height: 43px;
+    text-align: center!important;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block
+}
+
+.lang_list {
+    text-align: center;
+    top: 47px;
+    padding: 5px 0 10px;
+    margin-left: 2px;
+    position: absolute;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/lang_bg.jpg) no-repeat bottom left;
+    width: 47px;
+    z-index: 6;
+    right: 26px
+}
+
+.lang_list a {
+    color: #FFF;
+    display: block;
+    font-size: 11px;
+    margin: 0 7px 0 0;
+    text-transform: uppercase
+}
+
+.lang_list a.small {
+    color: #FFF;
+    display: block;
+    font-size: 10px;
+    margin: 0 3px 0 0;
+    text-transform: uppercase
+}
+
+.bonus_logo {
+    float: left;
+    margin: 35px 5px 10px
+}
+
+.bonus_card {
+    width: 259px
+}
+
+.card_left {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/tempcardl.gif) no-repeat top left;
+    padding: 10px 30px;
+    text-align: center
+}
+
+.card_right {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/tempcardr.gif) no-repeat top right
+}
+
+.timetable h2 {
+    font-size: 15px;
+    font-weight: 700
+}
+
+.timetable ul li {
+    display: block;
+    color: #02458d;
+    margin-right: 40px;
+    font-size: 11px
+}
+
+.content .timetable ul li {
+    display: inline-block;
+    color: #02458d;
+    margin-right: 40px;
+    font-size: 11px;
+    width: 200px;
+    float: left
+}
+
+.timetable fieldset {
+    border: none
+}
+
+.timetable fieldset ul {
+    border: none;
+    margin: 25px 0 0
+}
+
+.timetable ul {
+    padding-left: 10px
+}
+
+.content .timetable ul {
+    padding-left: 10px;
+    clear: both
+}
+
+.timetable fieldset li.arrival,.timetable fieldset li.depart {
+    margin-right: 0;
+    display: block;
+    padding-left: 52px;
+    margin-bottom: 5px
+}
+
+.timetable fieldset .shv_b,.timetable fieldset .shv_d,.timetable fieldset .shv_f {
+    float: left;
+    border-right: 1px solid #ececed;
+    padding-right: 20px;
+    margin-right: 20px
+}
+
+.timetable fieldset .shv_d {
+    border-right: none;
+    padding-right: 20px;
+    margin-right: 0
+}
+
+.timetable fieldset .depart {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/depart_ico.png) no-repeat left center
+}
+
+.timetable fieldset .arrival {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/arrival_ico.png) no-repeat left center
+}
+
+#id_airports {
+    float: left;
+    margin-right: 30px
+}
+
+.other_airports input {
+    margin: 0 2px
+}
+
+.other_airports label {
+    margin: 0 20px 0 0;
+    float: left;
+    color: #6d6d6f
+}
+
+.p_info {
+    border-top: 1px solid #dadadb;
+    color: #6d6d6f;
+    font-size: 11px;
+    padding-top: 25px;
+    margin-top: 40px
+}
+
+.info_title {
+    border-bottom: 1px solid #c7c7c8;
+    margin-bottom: 30px;
+    height: 50px
+}
+
+.timetable h2.arrival,.timetable h2.depart {
+    padding-left: 45px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/arrival_grey_ico.png) no-repeat left center;
+    float: left;
+    padding-top: 0;
+    margin-top: 20px
+}
+
+.timetable h2.depart {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/depart_grey_ico.png) no-repeat left center
+}
+
+.timetable h2 span {
+    color: #ffb20d;
+    font-size: 15px;
+    font-weight: 700
+}
+
+.info_title img {
+    float: right;
+    margin-top: 20px
+}
+
+.timetable table.list tr td,.timetable table.list tr td div,.timetable table.list tr th,.timetable table.list tr th div {
+    text-align: center
+}
+
+.timetable table.list tr td {
+    color: #02458d;
+    font-size: 11px
+}
+
+.timetable table.list tr td.left_text {
+    text-align: left
+}
+
+.timetable table.list tr td div {
+    color: #02458d;
+    font-size: 11px;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+.timetable table.list tr th div {
+    padding-right: 5px
+}
+
+.timetable table.list tr td a {
+    color: #02458d;
+    font-weight: 700
+}
+
+.search_block {
+    float: left;
+    font-size: 10px;
+    margin-left: 12px
+}
+
+.flight-info {
+    width: 750px;
+    padding-bottom: 15px!important
+}
+
+.flight-info h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffb20d;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+    text-align: left;
+    float: left;
+    width: 90%
+}
+
+.flight-info h2 span {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #2d7dc8
+}
+
+.flight-info h2 span span {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #FFB20D
+}
+
+.info_flight a:active,.info_flight a:hover,.info_flight a:link,.info_flight a:visited,.info_flight input {
+    float: left;
+    margin-right: 10px
+}
+
+.info_flight input {
+    margin-top: 2px
+}
+
+.more_info {
+    display: block;
+    margin: 10px 20px
+}
+
+.tmtbl_line .more_info td,.tmtbl_line .more_info th {
+    text-align: left
+}
+
+.tmtbl_line .more_info th {
+    text-align: left;
+    color: #2d7dc8
+}
+
+.more_info th span {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffb20d;
+    text-align: left
+}
+
+.date_item input,.date_item label,.find_flight img,.find_flight input,.find_flight label,.search_block img,.search_block input,.search_block label {
+    float: left;
+    font-size: 11px;
+    margin-right: 5px;
+    font-family: Arial,Helvetica,sans-serif;
+    margin-top: 3px
+}
+
+.search_block input {
+    border: 0 none;
+    width: 90px;
+    margin-right: 0;
+    margin-top: 0
+}
+
+.search_block .search_reset {
+    float: left;
+    border: 1px solid #999;
+    width: 110px;
+    background-color: #FFF;
+    margin-right: 5px
+}
+
+.search_block .search_reset img {
+    margin: 3px 2px 0 0;
+    float: right;
+    cursor: pointer
+}
+
+#cboxLoadedContent {
+    overflow: hidden!important
+}
+
+.search_block img {
+    margin-top: 1px
+}
+
+.date_item input {
+    padding: 0 3px;
+    width: 100px;
+    margin-top: 0;
+    height: 18px
+}
+
+.frequency span {
+    display: inline-block;
+    margin-right: 3px;
+    color: #999
+}
+
+.frequency span strong {
+    color: #01458D
+}
+
+.popClose {
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px
+}
+
+.date_item {
+    float: right;
+    margin-right: 20px
+}
+
+.date_item label,.search_block label {
+    text-transform: uppercase;
+    color: #fff
+}
+
+.date_item label,.date_item select {
+    float: left;
+    margin-left: 5px
+}
+
+.date_item select {
+    height: 18px
+}
+
+#id_dep_day,#id_dep_month,#id_ret_day,#id_ret_month {
+    float: left;
+    margin-right: 20px
+}
+
+.search_tbl td {
+    padding-right: 20px
+}
+
+.find_flight img {
+    margin-top: 0
+}
+
+table.time_table {
+    border-collapse: collapse!important;
+    width: 984px
+}
+
+table.time_table tbody {
+    border: none!important
+}
+
+table.time_table td {
+    padding: 0;
+    margin: 0
+}
+
+.tmtbl_header {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/timetable_header.png) no-repeat left center;
+    height: 27px
+}
+
+.arrival {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/timetable_header_arr.png) no-repeat left center;
+    height: 27px
+}
+
+.tmtbl_header1 {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/timetable1_header.png) no-repeat left center;
+    height: 27px
+}
+
+.arrival1 {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/timetable1_header_arr.png) no-repeat left center;
+    height: 27px
+}
+
+.tmtbl_header td {
+    height: 27px
+}
+
+.tmtbl_footer {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/timetable_footer.png) no-repeat left center
+}
+
+.tmtbl_footer td {
+    height: 45px
+}
+
+.tmtbl_line {
+    cursor: pointer
+}
+
+.tmtbl_line td {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/td_bg.png) no-repeat left center;
+    font-family: Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 14px;
+    width: 16px;
+    height: 24px;
+    text-align: center
+}
+
+#flight_info {
+    background-color: #FFF;
+    position: absolute;
+    margin: 20px
+}
+
+.tmtbl_line td.stoped {
+    color: #ff3
+}
+
+.tmtbl_line td.arrived {
+    color: #ffb20e
+}
+
+.tmtbl_line .first {
+    width: 12px;
+    background-color: #102f51;
+    background-image: none
+}
+
+#boxAairportsPopup {
+    width: 300px
+}
+
+#boxAairportsPopup label {
+    color: #02458d;
+    font-family: Arial,Helvetica,sans-serif;
+    float: left;
+    margin-top: 5px
+}
+
+table.time_table .list td {
+    background: 0 0;
+    color: #313131;
+    font-size: 11px;
+    height: auto;
+    text-transform: none;
+    width: auto
+}
+
+.jScrollPaneContainer {
+    position: relative;
+    overflow: hidden;
+    z-index: 1
+}
+
+.jScrollPaneTrack {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    height: 270px!important;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/slide_bg.jpg) repeat-y top left
+}
+
+.jScrollPaneDrag {
+    position: absolute;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/slide.jpg) repeat-y center center;
+    cursor: pointer;
+    overflow: hidden
+}
+
+.jScrollPaneDragTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 2px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/slide_top.jpg) no-repeat top left
+}
+
+.jScrollPaneDragBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    height: 2px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/slide_bottom.jpg) no-repeat bottom left
+}
+
+a.jScrollArrowUp {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    text-indent: -2000px;
+    overflow: hidden;
+    height: 9px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/scrollUp.jpg) no-repeat top left;
+    cursor: pointer
+}
+
+a.jScrollArrowDown {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    text-indent: -2000px;
+    overflow: hidden;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/scrollDown.jpg) no-repeat top left;
+    height: 9px
+}
+
+.holder {
+    float: left;
+    margin: 10px
+}
+
+.scroll-pane {
+    width: 984px;
+    height: 288px;
+    overflow: auto;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/td_bg.jpg) repeat left top;
+    float: left
+}
+
+.wide {
+    width: 400px
+}
+
+.super-wide {
+    width: 700px
+}
+
+.tall {
+    height: 400px
+}
+
+#pane4 {
+    height: 190px
+}
+
+#id_airports_popup {
+    width: 175px;
+    color: #000
+}
+
+span.delayed {
+    color: #ff3
+}
+
+span.arrived,span.departed {
+    color: #24f808
+}
+
+span.canceled {
+    color: #ff6464
+}
+
+.reg-1 {
+    display: inline-block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/reg1.png) no-repeat center left;
+    width: 16px
+}
+
+.reg-2 {
+    display: inline-block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/reg2.png) no-repeat center left;
+    width: 16px
+}
+
+.reg-3 {
+    display: inline-block;
+    background: 0 0;
+    width: 16px
+}
+
+.timetable ul.reg_status {
+    display: block;
+    float: left;
+    margin-bottom: 0
+}
+
+.timetable ul li.reg1,.timetable ul li.reg2 {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/reg1.png) no-repeat bottom left;
+    font-size: 11px;
+    color: ##02458D;
+    padding-left: 12px;
+    display: block;
+    list-style: none
+}
+
+.timetable ul li.reg2 {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/reg2.png) no-repeat center left
+}
+
+.timetable .time_info {
+    display: block;
+    float: right
+}
+
+.time_table_direction1 .tbl_title {
+    color: #ffb20e;
+    display: inline-block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/depart_grey_ico.png) no-repeat center left;
+    padding-left: 50px
+}
+
+.time_table_direction0 .tbl_title {
+    color: #ffb20e;
+    display: inline-block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/arrival_grey_ico.png) no-repeat center left;
+    padding-left: 50px
+}
+
+#edit-captcha-response-wrapper .description,#edit-captcha-response-wrapper label,.captcha .form-item description,.captcha .form-item label,.captcha legend {
+    display: none
+}
+
+#webform-client-form-3836 {
+    width: 600px
+}
+
+#webform-client-form-157 .form-submit,#webform-client-form-3836 .form-submit,#webform-client-form-3881 #edit-submitted-email-send-to-wrapper,#webform-client-form-3881 .form-submit,#webform-client-form-4143 .form-submit,#webform-client-form-4154 .form-submit,#webform-client-form-4159 .form-submit,#webform-client-form-4944 .form-submit,#webform-client-form-8452 #edit-submitted-email-send-to-wrapper {
+    display: none
+}
+
+#webform-component-naibolee_vazhnye_dostizheniya_v_zhizni_i_karere {
+    clear: both
+}
+
+#webform-client-form-3881 .form-checkboxes .form-item,#webform-client-form-8452 .form-checkboxes .form-item,.form-radios .form-item {
+    width: 50px;
+    float: left
+}
+
+#webform-client-form-4154 .form-checkboxes .form-item,#webform-client-form-4154 .form-radios .form-item {
+    width: 500px
+}
+
+#webform-client-form-4154 .form-checkboxes label,#webform-client-form-4154 .form-radios label,#webform-client-form-8452 .form-checkboxes label {
+    display: inline-block;
+    width: 460px;
+    text-align: left;
+    font-size: 11px;
+    float: left
+}
+
+#webform-client-form-8452 fieldset.collapsed div.fieldset-wrapper {
+    display: none
+}
+
+#webform-client-form-4154 .form-radios .form-item,#webform-client-form-4159 .form-checkboxes .form-item {
+    width: 500px;
+    float: none
+}
+
+#webform-client-form-3881 select,#webform-client-form-4154 select,#webform-client-form-4159 select,#webform-client-form-4944 select,#webform-client-form-8452 select {
+    width: 322px
+}
+
+#webform-client-form-4159 .form-checkboxes label {
+    display: inline-block;
+    width: 460px;
+    text-align: left;
+    font-size: 11px;
+    float: left
+}
+
+#webform-client-form-157 .form-submit,#webform-client-form-3836 .form-submit,#webform-client-form-3881 #edit-submitted-email-send-to-wrapper,#webform-client-form-3881 .form-submit,#webform-client-form-4143 .form-submit,#webform-client-form-4154 .form-submit,#webform-client-form-4159 .form-submit,#webform-client-form-4944 .form-submit,#webform-client-form-8452 .form-submit {
+    display: none
+}
+
+#webform-client-form-3881 select,#webform-client-form-4154 select,#webform-client-form-4159 select,#webform-client-form-4944 select {
+    width: 322px
+}
+
+.webform-client-form-157_lnk,.webform-client-form-3836_lnk,.webform-client-form-3881_lnk,.webform-client-form-4143_lnk,.webform-client-form-4154_lnk,.webform-client-form-4159_lnk,.webform-client-form-4944_lnk,.webform-client-form-8452_lnk {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/send_ru.png) no-repeat left center;
+    width: 171px;
+    height: 26px;
+    display: block;
+    text-decoration: none
+}
+
+.title {
+    display: block;
+    color: #01458d;
+    width: 90%;
+    line-height: 25px;
+    padding: 35px 0 5px;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/h1_line.gif) left bottom no-repeat;
+    text-align: left;
+    float: left
+}
+
+.content .title h1 {
+    display: block;
+    color: #01458d;
+    width: 50%;
+    line-height: 25px;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 0;
+    background: 0 0;
+    text-align: left;
+    float: left
+}
+
+.title_links {
+    float: right;
+    font-size: 11px;
+    color: #8e8e8f;
+    margin-top: 5px
+}
+
+.welcome {
+    color: #1d65a9
+}
+
+a.logout {
+    color: #f47b1f
+}
+
+.additional_menu {
+    margin-left: 20px
+}
+
+.additional_menu a {
+    display: inline-block;
+    padding: 4px 12px 6px 20px;
+    background: #f1f1f1 url(/cms/sites/all/themes/aeroflot/media/img/passive_lnk_arrow.png) no-repeat left center;
+    margin-right: 5px
+}
+
+.additional_menu a.active,.content .additional_menu ul li.selected a {
+    background: #ffb10d url(/cms/sites/all/themes/aeroflot/media/img/active_lnk_arrow.png) no-repeat left center;
+    color: #FFF
+}
+
+.personal_info_blk {
+    margin: 35px 0 0 45px
+}
+
+.personal_info_blk img {
+    border: solid 3px #d9d9d9;
+    width: 116px;
+    float: left;
+    margin-right: 10px
+}
+
+.personal_info {
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    border: solid 3px #d9d9d9
+}
+
+.personal_info .number {
+    color: #02458D
+}
+
+.personal_info .name {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/blue_arrow.png) no-repeat left top;
+    color: #1d65a9;
+    margin-bottom: 20px
+}
+
+.personal_info .login {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/orange_arrow.png) no-repeat left top;
+    color: #f47920;
+    text-decoration: underline;
+    margin-bottom: 20px
+}
+
+.personal_info .city {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/grey_arrow.png) no-repeat left top;
+    color: #626262;
+    font-size: 12px;
+    font-weight: 400
+}
+
+.personal_contacts {
+    padding-top: 20px
+}
+
+.personal_contacts .mail,.personal_contacts .skype {
+    font-weight: 400;
+    font-family: tahoma;
+    font-size: 12px;
+    color: #1d65a9;
+    margin-bottom: 20px
+}
+
+.personal_contacts .icq,.personal_contacts .phones {
+    display: block;
+    padding-left: 20px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/b_phone.jpg) no-repeat left center;
+    font-family: tahoma;
+    font-size: 14px;
+    color: #626262;
+    font-weight: 700;
+    height: auto;
+    margin-bottom: 20px
+}
+
+.personal_contacts .icq {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/b_icq.jpg) no-repeat left center
+}
+
+.personal_data tbody th,.personal_data tbody th.one,.personal_data tr.first th,.personal_data tr.first th.one {
+    border-bottom: solid 2px #FFB10D;
+    font-weight: 700
+}
+
+.personal_contacts .skype {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/b_skype.jpg) no-repeat left center
+}
+
+.miles_count {
+    width: 304px;
+    margin-top: 20px
+}
+
+.miles_count p {
+    color: #626262;
+    font-size: 11px;
+    text-align: center
+}
+
+.miles_count div {
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    width: 304px;
+    height: 78px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/miles_bg.png) no-repeat left center
+}
+
+.miles_count div p {
+    color: #fff;
+    font-size: 42px;
+    text-align: center;
+    padding-top: 30px
+}
+
+.content fieldset,.pers_page .login fieldset {
+    border: none;
+    padding: 5px 0;
+    margin: 0
+}
+
+.webform-component-fieldset {
+    clear: both
+}
+
+.webform-component-fieldset legend {
+    margin: 0;
+    padding: 10px 0 0;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.webform-component-fieldset .description,.webform-component-fieldset .description small,.webform-component-textfield .description,.webform-component-textfield .description small {
+    margin: 0;
+    color: #666;
+    text-align: left;
+    font-size: 10px
+}
+
+.webform-component-fieldset .description,.webform-component-textfield .description {
+    margin-left: 260px
+}
+
+.pers_page fieldset fieldset {
+    border: none;
+    padding: 5px 0;
+    margin-left: 250px;
+    font-size: 9px;
+    color: #333;
+    text-align: left
+}
+
+.pstrength-minchar {
+    font-size: 9px;
+    color: #333;
+    text-align: left
+}
+
+.pers_page input.button {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/button_bg.png) no-repeat top left;
+    border: 0 none;
+    color: #FFF;
+    height: 26px;
+    width: 226px;
+    text-align: center
+}
+
+.content a.button_link {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/button_bg.png) no-repeat top left;
+    border: 0 none;
+    color: #FFF;
+    height: 26px;
+    width: 226px;
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+    line-height: 26px
+}
+
+.content .additional_menu ul li {
+    font-weight: 400;
+    background: 0 0;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    list-style: none!important
+}
+
+.pers_page .has_errors .error_messages {
+    border: 2px solid #E78500;
+    background-color: #ffcc60;
+    margin-bottom: 10px
+}
+
+.content .optional,.pers_page .required {
+    width: 420px
+}
+
+.pers_page .required label {
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    text-align: left;
+    padding-right: 10px;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/required.jpg) no-repeat top right;
+    font-weight: 700
+}
+
+.pers_page .optional label {
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    text-align: left;
+    padding-right: 10px;
+    background: 0 0;
+    font-weight: 700
+}
+
+.pers_page .login .required label {
+    display: block;
+    float: none;
+    font-size: 11px;
+    text-align: left;
+    padding-right: 10px;
+    background: 0 0
+}
+
+.pers_page .optional input,.pers_page .optional select,.pers_page .required input,.v .required select {
+    color: #000;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: 400;
+    height: 17px;
+    outline: medium none;
+    vertical-align: middle;
+    width: 200px
+}
+
+.pers_page legend {
+    display: block;
+    font-size: 19px;
+    font-weight: 400;
+    color: #2d7cc7;
+    line-height: 22px;
+    padding: 15px 0 5px;
+    margin: 0;
+    text-align: left
+}
+
+.pers_page .error {
+    padding: 20px 0 20px 60px;
+    margin: 10px 0;
+    border-bottom: 1px solid #E5E6E8;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/important.gif) 0 0 no-repeat;
+    min-height: 85px;
+    height: 85px;
+    height: auto!important
+}
+
+.pers_page .info {
+    padding: 20px 0 20px 60px;
+    margin: 10px 0;
+    border-bottom: 1px solid #E5E6E8;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/info.gif) 0 0 no-repeat;
+    min-height: 85px;
+    height: 85px;
+    height: auto!important
+}
+
+.rules span.corners-top {
+    margin: 0 -10px 5px
+}
+
+span.corners-top {
+    background-image: none;
+    background-position: 0 0;
+    margin: 0 -5px
+}
+
+.rules span.corners-bottom {
+    margin: 5px 20px 0
+}
+
+span.corners-bottom {
+    background-image: none;
+    background-position: 0 100%;
+    clear: both;
+    margin: 0 -5px
+}
+
+span.corners-bottom,span.corners-bottom span,span.corners-top,span.corners-top span {
+    background-repeat: no-repeat;
+    display: block;
+    font-size: 1px;
+    height: 5px;
+    line-height: 1px
+}
+
+.view-vac select {
+    float: left;
+    margin-right: 20px
+}
+
+#block_leftmenu ul.menu li.active-trail ul {
+    list-style-type: none;
+    padding: 15px 0;
+    margin: 0;
+    display: block;
+    float: none;
+    width: 234px;
+    border: none;
+    background: #0B4F96
+}
+
+#block_leftmenu ul.menu li.active-trail ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: none;
+    border: none
+}
+
+#block_leftmenu ul.menu li.active-trail ul li a {
+    padding: 3px 0 3px 34px;
+    margin: 0;
+    display: block;
+    float: none;
+    border: none;
+    width: 200px;
+    height: auto;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #fff;
+    background: url(/cms/sites/all/themes/aeroflot/images/menu/dot_submenu.gif) 20px 8px no-repeat
+}
+
+#block_leftmenu ul.menu li.active-trail ul li a.active,#block_leftmenu ul.menu li.active-trail ul li a:hover,#block_leftmenu ul.menu li.active-trail ul li.expanded a {
+    text-decoration: none;
+    background: #FFB20E url(/cms/sites/all/themes/aeroflot/images/menu/dot_submenu_active.gif) 20px 8px no-repeat;
+    color: #02458C;
+    height: auto;
+    padding-bottom: 3px
+}
+
+.tbl-calculator td {
+    color: #636363;
+    padding: 4px 18px;
+    border-right: solid 1px #f2f2f2
+}
+
+.tbl-calculator td strong {
+    font-weight: 400
+}
+
+#id_button_box a {
+    display: block;
+    width: 100px;
+    background: #e27800;
+    line-height: 50px;
+    margin: 10px 0;
+    text-align: center
+}
+
+.calculator label {
+    display: block;
+    margin: 10px 0 5px
+}
+
+.calculator #id_company,.calculator #id_service_class,.calculator #id_status,.calculator #id_tariff {
+    width: 160px
+}
+
+#id_button_box {
+    margin-bottom: 20px
+}
+
+#idResultBox {
+    margin-top: 20px
+}
+
+table.tariff_list .rt {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/round_trip.gif) no-repeat center left;
+    padding-left: 20px
+}
+
+table.tariff_list .ow {
+    background: url(/cms/sites/all/themes/aeroflot/media/img/1way_trip.gif) no-repeat center left;
+    padding-left: 20px
+}
+
+.footer_right ul li.small_link,.footer_right ul li.small_link a:active,.footer_right ul li.small_link a:hover,.footer_right ul li.small_link a:link,.footer_right ul li.small_link a:visited {
+    font-size: 11px
+}
+
+.footer_lnk {
+    float: right;
+    font-size: 11px;
+    width: 175px
+}
+
+.footer_lnk a:active,.footer_lnk a:hover,.footer_lnk a:link,.footer_lnk a:visited {
+    margin: 22px 0 0;
+    padding: 0 0 0 40px;
+    display: block
+}
+
+.view-news-etp-active th,.view-news-etp-archive th,.view-news-etp-results th {
+    text-align: left;
+    vertical-align: top;
+    font-weight: 400
+}
+
+.view-news-etp-active #etpFilterContainer table,.view-news-etp-archive #etpFilterContainer table,.view-news-etp-results table {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 6px 5px 2px;
+    width: 100%
+}
+
+.view-news-etp-active #etpFilterContainer table.list,.view-news-etp-archive #etpFilterContainer table.list,.view-news-etp-results .view-footer table,.view-news-etp-results table.list {
+    background: 0 0;
+    border: none
+}
+
+.view-news-etp-active #etpFilterContainer table table,.view-news-etp-archive #etpFilterContainer table table,.view-news-etp-results table table {
+    background: 0 0;
+    border: none;
+    width: auto
+}
+
+.ui-datepicker-trigger {
+    margin-left: 12px;
+    margin-right: 18px
+}
+
+.view-news-item-etp-active .etp-item table.list tr.first th.one,.view-news-item-etp-archive .etp-item table.list tr.first th.one,.view-news-item-etp-results .etp-item table.list tr.first th.one {
+    width: 30%
+}
+
+.footer_all {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: #FFF;
+    margin-bottom: 5px;
+    margin-top: 10px
+}
+
+.footer_all a {
+    color: #fff
+}
+
+.footer_all td {
+    vertical-align: top;
+    padding-left: 10px;
+    text-align: left
+}
+
+.footer_all h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: 400;
+    color: #fff;
+    margin: 5px 0 13px;
+    line-height: normal
+}
+
+.footer_all ul {
+    float: left;
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0
+}
+
+.footer_all ul li {
+    diplay: block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/aero_arrow.gif) left 5px no-repeat;
+    padding-left: 7px;
+    margin: 8px 20px 0 0;
+    font-size: 12px;
+    font-weight: 400
+}
+/*
+li.mob a {
+    color: #FFB20D;
+    font-weight: 700
+}
+
+#corporate_entrance {
+    display: block;
+    background: url(/cms/sites/all/themes/aeroflot/media/img/corps.jpg) 0 2px no-repeat;
+    padding: 0 0 0 40px;
+    margin: 2px 0 7px;
+    font-size: 12px;
+    line-height: 22px
+}
+
+#agents_entrance {
+    display: block;
+    background: url(/cms/sites/all/themes/aeroflot/images/agents.gif) 0 2px no-repeat;
+    padding: 0 0 0 40px;
+    margin: 2px 0 7px;
+    font-size: 12px;
+    line-height: 22px;
+    float: none
+}
+*/
+#vs {
+    display: block;
+    background: url(/cms/sites/all/themes/aeroflot/images/vs.gif) 0 2px no-repeat;
+    padding: 0 0 0 40px;
+    margin: 2px 0 7px;
+    font-size: 12px;
+    line-height: 22px
+}
+/*
+#cargo_trans {
+    display: block;
+    background: url(/cms/sites/all/themes/aeroflot/images/gruz.gif) 0 2px no-repeat;
+    padding: 0 0 0 40px;
+    margin: 2px 0;
+    font-size: 12px;
+    line-height: 22px
+}
+*/
+.raz {
+    background: url(/cms/sites/all/themes/aeroflot/images/razdelitel.gif) no-repeat;
+    padding-left: 0;
+    width: 1px;
+    height: 166px
+}
+
+.raz td {
+    padding-left: 0
+}
+/*
+.ph_rss {
+    background: transparent url(/cms/sites/all/themes/aeroflot/images/rss.gif) no-repeat left -1px;
+    padding-left: 30px!important;
+    margin-left: 10px!important;
+    padding-top: 0!important;
+    margin-top: 15px!important
+}
+*/
+/*
+.mar {
+    margin-left: 20px
+}
+*/
+#user-login label {
+    display: inline-block;
+    width: 150px
+}
+
+#user-login #edit-submit,#user-login .description {
+    margin-left: 155px
+}
+/*
+.footer_all p.cop {
+    padding: 5px 0;
+    margin: 10px 0 0
+}
+*/
+body div.main-container div.main-content .content u{
+    text-decoration: underline;
+}
+body div.main-container div.main-content .content strong em{
+    font-style: italic;
+    font-weight: bold;
+}
+body div.main-container div.main-content .content em strong{
+    font-style: italic;
+    font-weight: bold;
+}
+body div.main-container div.main-content .content sup{
+    vertical-align:super;
+	font-size:0.8em;
+}
+body div.main-container div.main-content .content sub{
+    vertical-align:sub;
+	font-size:0.8em;
+}
+/* #5101*/
+.page-type-booking div.main-body {
+    min-width: 1050px;
+}
+.page-type-booking div.content {
+    min-width: 690px;
+}
+
+/* Important Info Block */
+
+.s_i_info {
+
+}
+
+.s_i_info hr {
+	width: 300px;
+	float: left;
+	border-top: solid #f47920 2px;
+}
+
+.s_i_info p {
+	clear: both;
+}
+
+.s_i_info span {
+	font-size: 12px;
+	color: #2da3e0;
+	vertical-align: top;
+}
+
+
+.s_i_info span.icon {
+	display: inline-block;
+	font-size: 75px;
+	line-height: 60px;
+	width: 60px;
+	text-align: center;
+	color: #f47920;
+}
+
+
+/*6369*/
+#ttDirectionTab {
+    background: url("/cms/sites/all/themes/aeroflot/common/images/wide_direction_bg.png") no-repeat 0 0;
+    height: 37px;
+    margin: 2px 2px 6px;
+    width: 311px;
+}
+#ttDirectionTab a#ttRT {
+    background: url("/cms/sites/all/themes/aeroflot/common/images/rt.png") no-repeat scroll 15px -36px;
+}
+#ttDirectionTab a#ttRT.current, #ttDirectionTab a#ttRT:hover {
+    background-position:15px 0;
+}
+#ttDirectionTab a#ttOW {
+    background: url("/cms/sites/all/themes/aeroflot/common/images/ow.png") no-repeat scroll 15px 0px;
+}
+#ttDirectionTab a#ttOW.current, #ttDirectionTab a#ttOW:hover {
+     background-position:15px -36px;
+}
+#ttDirectionTab a#ttMC {
+    background: url("/cms/sites/all/themes/aeroflot/common/images/mt.png") no-repeat scroll 15px 0px;
+}
+#ttDirectionTab a#ttMC.current, #ttDirectionTab a#ttMC:hover {
+     background-position:15px -36px;
+}
