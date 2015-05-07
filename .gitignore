@@ -1,5 +1,5 @@
 .DS_Store
-/www/htdocs/node_modules/
-/www/htdocs/.sass-cache/
+node_modules
+.sass-cache
 Gruntfile.coffee
 package.json
