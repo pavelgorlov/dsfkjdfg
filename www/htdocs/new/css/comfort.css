@@ -486,11 +486,6 @@ body {
 .ccl_bg .cclText {
   padding: 0 79px 0 76px;
 }
-.cclText_hint {
-  margin: 10px 0 0;
-  color: #02458d;
-  font-style: italic;
-}
 .cclText_header {
   margin: 20px 0 0;
   font-weight: bold;
@@ -535,6 +530,9 @@ body {
 }
 .cclText_hint li:before, .cclText .cclText_hint li:before {
   display: none;
+}
+.cclText_hint a, .cclText .cclText_hint a {
+  color: #02458D;
 }
 .cclText img {
   border-radius: 5px;
@@ -971,6 +969,15 @@ body {
 }
 .cclFormIcon_4 {
   background-position: -200px -120px;
+}
+.ccl_hints {
+  margin-top: 20px;
+  color: #02458d;
+  font: italic 12px/14px Arial, sans-serif;
+}
+.ccl_hints p {
+  margin: 0;
+  padding: 0;
 }
 
 .custom-combobox {
