@@ -211,9 +211,87 @@ aeroclass.combo = function() {
     $('#combobox').combobox();
 };
 
+aeroclass.nav = function() {
+    var win = $(window);
+    var ccl = $('div.cclWrapper');
+    if (ccl.length === 0 || typeof $.fn.scrollTo === 'undefined') {
+        return;
+    }
+    var cclHeight = parseInt(ccl.height(), 10);
+    var cclHeightHalf = cclHeight/2;
+    var cclTop = ccl.offset().top + cclHeight;
+    var winTop, winST;
+
+    $('div.ccl-anchor-js').each(function() {
+        var ccl_nav = $(this);
+        var ccl_navParent = ccl_nav.parent();
+        var ccl_navLink = $('a', ccl_nav);
+        var ccl_navArr = [];
+
+        ccl_nav.css({
+            marginTop: -parseInt(ccl_nav.height(), 10)/2
+        })
+
+        ccl_navLink.each(function() {
+            var anchor = $(this).attr('href');
+            anchor = anchor.substr(anchor.indexOf('#'));
+            var anchor_box = $(anchor);
+            var anchor_item = {
+                'anchor': anchor,
+                'offset': anchor_box.offset().top
+            };
+            ccl_navArr.push(anchor_item);
+        });
+
+        win.on('load.nav', function() {
+            for (var i=0, n=ccl_navArr.length; i<n; i++) {
+                var hash = $(ccl_navArr[i].anchor);
+
+                if (hash.length){
+                    ccl_navArr[i].offset = hash.offset().top
+                }
+            }
+        });
+
+        // click nav
+        ccl_navLink.on('click', function() {
+            var anchor = $(this).attr('href');
+            anchor = anchor.substr(anchor.indexOf('#'))
+            win.scrollTo(anchor, 250);
+            return false;
+        });
+
+        function ccl_navSet() {
+            winTop = ccl_navParent.offset().top;
+            winST = win.scrollTop();
+
+            if (winTop > cclHeight) {
+                ccl_nav.addClass('hide');
+            } else {
+                ccl_nav.removeClass('hide');
+            }
+
+            ccl_navLink.removeClass('current');
+
+            for (var i = 0, n = ccl_navArr.length; i < n; i++) {
+                if ( winST >= ccl_navArr[i].offset ) {
+                    ccl_navLink.removeClass('current');
+                    ccl_navLink.eq(i).addClass('current');
+                }
+            }
+        }
+
+        // position nav
+        win.on('scroll.nav', function() {
+            ccl_navSet();
+        });
+    });
+};
+
 aeroclass.init = function() {
   aeroclass.plus();
   aeroclass.combo();
+  aeroclass.nav();
 }
 
 $(aeroclass.init)

@@ -43,7 +43,8 @@
     <script type="text/javascript" src="../js/vendor/i18n.min.js?3"></script>
     <script type="text/javascript" src="../js/vendor/afl.js?3"></script>
     <script src="../js/vendor/fancybox.js"></script>
-    <script src="../js/interior.js"></script>
+    <script src="../js/jquery.scrollTo.min.js"></script>
+    <script src="../js/jquery.class.js"></script>
     <script type="text/javascript">
     <!--//--><![CDATA[//><!--
     jQuery.extend(Drupal.settings, {"basePath":"\/cms\/","jumpSelectTimeHide":"500"});
@@ -172,6 +173,18 @@
         <div class="af_content">
             <!-- comfort BEGIN -->
             <div class="cclWrapper">
+                <div class="cclAnchor_wrapper">
+                    <div class="cclAnchor ccl-anchor-js">
+                        <a href="#anchor1">
+                            <i class="cclIco cclIco-1"></i>
+                            <span>Багаж</span>
+                        </a>
+                        <a href="#anchor2">
+                            <i class="cclIco cclIco-2"></i>
+                            <span>Программа лояльности</span>
+                        </a>
+                    </div>
+                </div>
                 <div class="cclTop">
                     <div class="cclNav">
                         <a href="#" class="cclNav-before current">Перед полетом</a>
@@ -188,7 +201,7 @@
                         <p>Один из самых молодых авиапарков Европы, удобные кресла,  вкусные блюда с возможностью выбора подходящего Вам специального питания, мультимедийная система развлечений на дальнемагистральных рейсах, а также приветливые бортпроводники и сервис на высоте —это то, что ждет Вас при перелете в классе Эконом на рейсах Аэрофлота.</p>
                     </div>
                     <!-- promo END -->
-                    <div class="cclHeader">
+                    <div class="cclHeader" id="anchor1">
                         <i class="cclIco cclIco-1"></i>
                         Багаж
                     </div>
@@ -205,7 +218,7 @@
                         </div>
 
                     </div>
-                    <div class="cclHeader">
+                    <div class="cclHeader" id="anchor2">
                         <i class="cclIco cclIco-2"></i>
                         Программа лояльности
                     </div>

@@ -12,15 +12,86 @@ body
             display: block
     &_zfix
         overflow: hidden
-        z-index: 00
+        zoom: 1
     &_bg
         background-color: #f5f6f8
         margin: 25px 25px 0
         padding-bottom: 35px
     &Wrapper
+        position: relative
         width: 981px
         margin: auto
         padding-right: 179px
+    &Anchor
+        position: absolute
+        left: 50%
+        top: 0
+        width: 62px
+        margin-left: 401px
+        &.hide
+            display: none
+        &_wrapper
+            position: fixed
+            left: 0
+            top: 50%
+            width: 100%
+            height: 0
+            z-index: 2
+        a
+            display: block
+            position: relative
+            height: 62px
+            background-color: #003976
+            border-top: 1px solid #02458d
+            &:first-child
+                border-top: none
+            &.current
+                background-color: #fff
+            .cclIco
+                left: 50%
+                top: 50%
+                margin: -20px 0 0 -20px
+            span
+                display: none
+                position: absolute
+                right: 100%
+                top: 50%
+                margin: -18px 3px 0 0
+                padding: 9px 30px
+                color: #fff
+                background-color: #ff8b00
+                white-space: nowrap
+                font: 16px/19px Arial,sans-serif
+                &:before,
+                &:after
+                    content: ""
+                    position: absolute
+                    top: 50%
+                    left: 100%
+                    border: outset transparent
+                        left:
+                            style: solid
+                    .current &
+                        display: none
+                &:before
+                    margin-top: -12px
+                    border:
+                        width: 12px
+                        left:
+                            color: #fff
+                &:after
+                    margin-top: -8px
+                    border:
+                        width: 8px
+                        left:
+                            color: #ff8b00
+            &:hover
+                span
+                    display: block
+            &.current,
+            &.current:hover
+                span
+                    display: none
     &Top
         position: relative
         img
@@ -105,10 +176,10 @@ body
             margin: 10px 0 0
     &Header
         position: relative
-        margin: 60px 104px 0 0
+        margin: 50px 104px 0 0
         border-bottom: 1px solid #b3c7dd
         color: #02458d
-        padding: 0 0 10px 102px
+        padding: 10px 0 10px 102px
         font: 32px/34px Arial,sans-serif
         .ccl_bg &
             padding-left: 77px
@@ -173,7 +244,7 @@ body
     &Ico
         position: absolute
         left: 45px
-        top: -5px
+        top: 5px
         width: 40px
         height: 40px
         background:
@@ -183,22 +254,80 @@ body
             left: 20px
         &-1
             background-position: -100px 0
+            .cclAnchor &
+                background-position: -240px 0
+            .cclAnchor a:hover &
+                background-position: -340px 0
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: -100px 0
         &-2
             background-position: -100px -50px
+            .cclAnchor &
+                background-position: -240px -50px
+            .cclAnchor a:hover &
+                background-position: -340px -50px
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: -100px -50px
         &-3
             background-position: -150px 0
+            .cclAnchor &
+                background-position: -290px 0
+            .cclAnchor a:hover &
+                background-position: -390px 0
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: -150px 0
         &-4
             background-position: -150px -50px
+            .cclAnchor &
+                background-position: -290px -50px
+            .cclAnchor a:hover &
+                background-position: -390px -50px
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: -290px -100px
         &-5
             background-position: 0 -100px
+            .cclAnchor &
+                background-position: -150px -100px
+            .cclAnchor a:hover &
+                background-position: -390px -100px
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: 0 -100px
         &-6
             background-position: -50px -100px
+            .cclAnchor &
+                background-position: -240px -100px
+            .cclAnchor a:hover &
+                background-position: -340px -100px
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: -50px -100px
         &-7
             background-position: -100px -100px
+            .cclAnchor &
+                background-position: -150px -150px
+            .cclAnchor a:hover &
+                background-position: -390px -150px
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: -100px -100px
         &-8
             left: 43px
             width: 44px
             background-position: -100px -150px
+        &-9
+            background-position: -240px -150px
+            .cclAnchor &
+                background-position: -290px -150px
+            .cclAnchor a:hover &
+                background-position: -340px -150px
+            .cclAnchor .current &,
+            .cclAnchor .current:hover &
+                background-position: -240px -150px
     &OnBoard
         display: block
         text-align: right
@@ -315,6 +444,8 @@ body
                 position: static
                 line-height: 14px
                 padding: 6px 0 0
+                &:before
+                    display: none
         img
             border-radius: 5px
             margin-top: 12px

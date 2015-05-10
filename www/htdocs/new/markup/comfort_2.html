@@ -46,7 +46,8 @@
     <script type="text/javascript" src="../js/vendor/afl.js?3"></script>
     <script type="text/javascript" src="../js/vendor/comfort.js"></script>
     <script src="../js/vendor/fancybox.js"></script>
-    <script src="../js/interior.js"></script>
+    <script src="../js/jquery.scrollTo.min.js"></script>
+    <script src="../js/jquery.class.js"></script>
     <script type="text/javascript">
     <!--//--><![CDATA[//><!--
     jQuery.extend(Drupal.settings, {"basePath":"\/cms\/","jumpSelectTimeHide":"500"});
@@ -200,6 +201,30 @@
         <div class="af_content">
             <!-- comfort BEGIN -->
             <div class="cclWrapper">
+                <div class="cclAnchor_wrapper">
+                    <div class="cclAnchor ccl-anchor-js">
+                        <a href="#anchor1">
+                            <i class="cclIco cclIco-3"></i>
+                            <span>Пространство класса Комфорт</span>
+                        </a>
+                        <a href="#anchor2">
+                            <i class="cclIco cclIco-4"></i>
+                            <span>Кресло</span>
+                        </a>
+                        <a href="#anchor3">
+                            <i class="cclIco cclIco-5"></i>
+                            <span>Система развлечений</span>
+                        </a>
+                        <a href="#anchor4">
+                            <i class="cclIco cclIco-6"></i>
+                            <span>Кухня</span>
+                        </a>
+                        <a href="#anchor5">
+                            <i class="cclIco cclIco-7"></i>
+                            <span>Напитки</span>
+                        </a>
+                    </div>
+                </div>
                 <div class="cclTop">
                     <div class="cclNav">
                         <a href="#" class="cclNav-before">Перед полетом</a>
@@ -216,7 +241,7 @@
                         <p>Комфорт на борту — это продуманное до мелочей окружающее пассажиров пространство. Каждая деталь имеет значение: расстояние между креслами, угол наклона спинки кресла, наличие USB-порта или разетки для зарядки мобильных устройств, материалы, освещение и многое другое.</p>
                     </div>
                     <!-- promo END -->
-                    <div class="cclHeader">
+                    <div class="cclHeader" id="anchor1">
                         <i class="cclIco cclIco-3"></i>
                         Пространство класса Комфорт
                     </div>
@@ -277,7 +302,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cclHeader cclHeader-nobd">
+                    <div class="cclHeader cclHeader-nobd" id="anchor2">
                         <i class="cclIco cclIco-4"></i>
                         Кресло
                     </div>
@@ -421,7 +446,7 @@
                             <p>Ваш перелет может быть не только комфортным, но и продуктивным. Для этого кресло класса Комфорт оборудовано USB-портом и розеткой для подзарядки компьютера и мобильных устройств, индивидуальной системой подсветки и раздвижным столиком.</p>
                         </div>
                     </div>
-                    <div class="cclHeader">
+                    <div class="cclHeader" id="anchor3">
                         <i class="cclIco cclIco-5"></i>
                         Система развлечений
                     </div>
@@ -438,7 +463,7 @@
                         </div>
                     </div>
                     <img src="../images/comfort/8.jpg" class="ccl_dv" alt="">
-                    <div class="cclHeader">
+                    <div class="cclHeader" id="anchor4">
                         <i class="cclIco cclIco-6"></i>
                         Кухня
                     </div>
@@ -456,7 +481,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cclHeader">
+                    <div class="cclHeader" id="anchor5">
                         <i class="cclIco cclIco-7"></i>
                         Напитки
                     </div>
