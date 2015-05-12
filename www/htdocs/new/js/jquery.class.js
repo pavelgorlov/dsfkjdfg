@@ -288,10 +288,23 @@ aeroclass.nav = function() {
     });
 };
 
+aeroclass.cycle = function() {
+    $('div.ccl_cycle-js').cycle({
+        timeout: 5000,
+        speed: 1000,
+        fx: 'fade',
+        slideExpr: 'div.cclCycle a',
+        next: '#ccl_cycle_next',
+        prev: '#ccl_cycle_prev',
+        pager: '#ccl_cycle_pager'
+    });
+};
+
 aeroclass.init = function() {
   aeroclass.plus();
   aeroclass.combo();
   aeroclass.nav();
+  aeroclass.cycle();
 }
 
 $(aeroclass.init)
