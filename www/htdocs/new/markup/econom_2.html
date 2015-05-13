@@ -60,15 +60,79 @@
         <script>
             ;(function($) {
                     $(function() {
+                        
+                        
+                        window.chairItems = {
+	                        
+	                        chair_benefit: 	['Преимущество кресел', 'Кресла устроены так, чтобы пассажиры чувствовали себя максимально удобно. Специальный механизм позволяет не откидывать для этого спинку кресла, а значит Ваш лиичный комфорт не будет нарушен.'],
+	                        table: 			['Раскладывающийся столик', 'Каждое кресло оборудовано удобным раскладывающимся столиком.Ваш перелет может быть не только комфортным, но и продуктивным.'],
+	                        road_complect: 	['Дорожный набор', 'Для удобства во время полёта Вам предоставят дорожный набор.'],
+	                        monitor: 		['Монитор']
+                        };
+                        
+                        window._flyData = {
+	                      	/*****************/
+	                      	Aerobus_330: {
+		                      	info: ['11 200', "241/302/296/301", 'http://lavdanskie.ru/aeroflotfeb2015/a330_1/'],
+		                      	ent: ["<p>К услугам пассажиров на борту самолетов Airbus А330 8,9-дюймовые мониторы мультимедийной развлекательной системы Panasonic. Ознакомьтесь с новинками кинематографа, прослушайте аудиокниги или музыкальные альбомы. Летите с детьми? Включите им мультфильмы или компьютерные игры, и перелет станет действительно увлекательным.</p>","Содержание развлекательной системы на борту Airbus А330","http://www.aeroflot.ru/cms/flight/entertainment_a330"],
+		                      	wifi: ["<p>С интернетом на борту Вы можете оставаться на связи с семьей, друзьями и коллегами даже в полете!</p><p>В 2012 году на ряде воздушных судов Аэрофлота запущена услуга «Интернет на борту», позволяющая пассажирам пользоваться Wi-Fi доступом в Интернет во время полета.</p><p>Оплатить Wi-Fi на борту можно кредитной или дебетовой картой во время полета. К оплате принимаются карты VISA, MasterCard, American Express, JCB и Discover.</p>","Самолеты с Wi-Fi на борту</p>","http://www.aeroflot.ru/cms/flight/on_board/at_height"],					
+		                      	chairItems: {
+			                      	chair_benefit:  ['100px','100px','/img/'], 
+			                      	table: 			['100px','100px','/img/'], 
+			                      	road_complect:  ['100px','100px','/img/'], 
+			                      	monitor: 		['100px','100px','/img/','Спинки кресел на борту Boeing 777 оснащены мониторами с диагональю от 8,9 до 15,4 дюймов новой системы развлечения Thales в зависимости от класса обслуживания.']
+			                    }
+	                      	},
+	                      	/*****************/
+	                      	Boing_777: {
+		                      	info: ['11 200', "402", 'http://lavdanskie.ru/aeroflotfeb2015/777_1/'],
+		                      	ent: ["<p>Перелет не покажется скучным с развлекательной мультимедийной системой Thales. Классика и новинки кинематографа, аудиокниги и более 600 музыкальных альбомов, компьютерные игры и мультфильмы для детей — это далеко не вся программа, предлагаемая к услугам пассажиров на дальнемагистральных рейсах Аэрофлота. Вы также можете увидеть в режиме реального времени карту Вашего полета или картинку с внешней видео-камеры.</p>","Узнайте больше о мультимедийных возможностях","http://www.aeroflot.ru/cms/flight/entertaiment_B777_ec"],
+		                      	wifi: ["<p>На всех самолетах типа Boeing 777 парка Аэрофлота Вы сможете воспользоваться беспроводным доступом в Интернет.</p><p>Оплатить Wi-Fi на борту можно кредитной или дебетовой картой во время полета. К оплате принимаются карты VISA, MasterCard, American Express, JCB и Discover.</p>","Самолеты с Wi-Fi на борту</p>","http://www.aeroflot.ru/cms/flight/on_board/at_height"],
+		                      	chairItems: {
+			                      	chair_benefit:  ['100px','100px','/img/'], 
+			                      	table: 			['100px','100px','/img/'], 
+			                      	road_complect:  ['100px','100px','/img/'], 
+			                      	monitor: 		['100px','100px','/img/','Спинки кресел на борту Boeing 777 оснащены мониторами с диагональю от 8,9 до 15,4 дюймов новой системы развлечения Thales в зависимости от класса обслуживания.']
+			                    }
+	                      	}, 
+	                      	/*****************/
+	                      	SSJ100: {
+		                      	info: ['2 400', "87", 'http://lavdanskie.ru/aeroflotfeb2015/SSJ_1/'],
+		                      	chairItems: {
+			                      	chair_benefit:  ['100px','100px','/img/'], 
+			                      	table: 			['100px','100px','/img/']
+			                    }
+		                    },
+		                    /*****************/
+	                      	Aerobus320: {
+		                      	info: ['4 000', "140/158/116/170/", 'http://lavdanskie.ru/aeroflotfeb2015/a320_2/'],
+		                      	chairItems: {
+			                      	chair_benefit:  ['100px','100px','/img/'], 
+			                      	table: 			['100px','100px','/img/']
+			                    }
+			                },
+		                    /*****************/
+	                      	Boing737: {
+		                      	info: ['4 500', "158", 'http://lavdanskie.ru/aeroflotfeb2015/737_1/'],
+		                      	chairItems: {
+			                      	chair_benefit:  ['100px','100px','/img/'], 
+			                      	table: 			['100px','100px','/img/']
+			                    }
+		                    },  
+                        };
+                        
+                        
                         $('a.fancy-img').fancybox({
                             padding: 30
                         });
+                        
                         $('a.fancy-iframe').fancybox({
                             type: 'iframe',
                             width: 911,
                             height: 480,
                             padding: 30
                         });
+                        
                         $('a.fancy-video').fancybox({
                             'padding': 30,
                             'autoScale'     : false,
@@ -82,9 +146,29 @@
                                 'allowfullscreen'   : 'true'
                             }
                         });
+                    
+                    
+						var cclTabs = $('.cclTabs > .cclTabs_item-text');
+                    
+	                    cclTabs.click(function(){
+		                    
+		                    var t = $(this);
+		                    
+		                    cclTabs.toggleClass('current');
+		                    
+		                    $('.ccl_bg').hide();
+		                    
+		                    $('#'+t.data('rel')).show();
+		                
+							console.log(t);
+		                    
+		                    return false;
+	                    });
+                    
                     });
                 })(jQuery);
         </script>
+        
         <div class="af_content">
             <!-- comfort BEGIN -->
             <div class="cclWrapper">
@@ -117,6 +201,7 @@
                     <img src="../images/econom/top_2.jpg" alt="">
                     <div class="cclTitle">класс Эконом</div>
                 </div>
+                
                 <div class="cclContent cclContent-bg">
                     <!-- promo BEGIN -->
                     <div class="cclPromoText">
@@ -124,20 +209,23 @@
                         <p>Чтобы перелет прошел в комфортной обстановке, мы продумали каждую деталь в пространстве салонов класса Эконом на рейсах Аэрофлота. Эргономичные кресла с раскладывающимися столиками позволят провести время с пользой: разместите на столике Вашу книгу, ноутбук или раскраску Вашего ребенка.</p>
                     </div>
                     <!-- promo END -->
+                    
                     <!-- tabs BEGIN -->
                     <div class="cclTabs">
-                        <a href="#" class="cclTabs_item cclTabs_item-text current">Дальнемагистральные</a>
-                        <a href="#" class="cclTabs_item cclTabs_item-text">Средне- и ближне- магистральные</a>
+                        <a href="#longdistance"   class="cclTabs_item cclTabs_item-text current" data-rel="ccl-longdistance">Дальнемагистральные</a>
+                        <a href="#middledistance" class="cclTabs_item cclTabs_item-text" data-rel="ccl-middledistance">Средне- и ближне- магистральные</a>
                         <a href="#" class="cclTabs_item"><i class="cclFormIcon cclFormIcon_1"></i></a>
                     </div>
-                    <div class="ccl_bg">
+                    <!-- tabs END -->
+                    
+                    <!-- Longdistance -->
+                    <div class="ccl_bg ccl_bg1" id="ccl-longdistance">
                         <div class="cclForm">
                             <div class="cclForm_label">Самолет</div>
                             <div class="cclForm_select">
-                                <select id="combobox">
-                                    <option value="">Выберите...</option>
+                                <select class="combobox-distance combobox-longdistance">
+                                    <option value="Airbus_330">Airbus 330</option>
                                     <option value="Вoeing_777">Вoeing 777</option>
-                                    <option value="Airbus_320">Airbus 320</option>
                                 </select>
                             </div>
                             <ul class="cclForm_list">
@@ -146,7 +234,7 @@
                             </ul>
                             <ul class="cclForm_list">
                                 <li>Пассажиромест— 400</li>
-                                <li>Самолёт с двумя турбинами.</li>
+                                <li><a style="color:gray" href="http://www.aeroflot.com/cms/flight/plane_park">Схема посадочных мест</a></li>
                             </ul>
                         </div>
                         <div class="cclHeader" id="anchor1">
@@ -332,29 +420,238 @@
                             </div>
                         </div>
                     </div>
-                    <!-- tabs END -->
+                    <!-- /Longdistance -->
+
+                    <!-- Middle -->
+                    <div class="ccl_bg ccl_bg2" id="ccl-middledistance" style="display: none">
+                        <div class="cclForm">
+                            <div class="cclForm_label">Самолет</div>
+                            <div class="cclForm_select">
+                                <select class="combobox-distance combobox-longdistance">
+                                    <option value="SSJ_100">SSJ 100</option>
+                                    <option value="Aerobus_320">Aerobus 320/319/321</option>
+                                    <option value="Вoeing_737">Вoeing 737</option>
+                                </select>
+                            </div>
+                            <ul class="cclForm_list">
+                                <li>Дальности полёта — 21 501 км;</li>
+                                <li>Самолёт с двумя турбинами.</li>
+                            </ul>
+                            <ul class="cclForm_list">
+                                <li>Пассажиромест— 400</li>
+                                <li><a style="color:gray" href="http://www.aeroflot.com/cms/flight/plane_park">Схема посадочных мест</a></li>
+                            </ul>
+                        </div>
+                        <div class="cclHeader" id="anchor1">
+                            <i class="cclIco cclIco-3"></i>
+                            Пространство класса Эконом
+                        </div>
+                        <div class="ccl_clear cclText">
+                            <div class="cclText_header">Факты о классе Эконом </div>
+                            <div class="ccl_clear">
+                                <div class="cclText_column side">
+                                    <ul>
+                                        <li>Индивидуальные пледы, подушки и дорожные наборы.**</li>
+                                        <li>Индивидуальная мультимедийнаяй система.</li>
+                                    </ul>
+                                </div>
+                                <div class="cclText_column">
+                                    <ul>
+                                        <li>15 видов спецпитания.*</li>
+                                        <li>Места повышенной комфортности с дополнительным пространством для ног.</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ccl_hints">
+                                <p>* Услуга предоставляется не на всех направлениях.</p>
+                                <p>** Услуга предоставляется в зависимости от длительности полета. Дорожные наборы на рейсах от 8 часов и более. Подушки – на рейсах от 6 часов и более. Пледы – на рейсах от 3 часов и более.</p>
+                            </div>
+                        </div>
+                        <div class="ccl_clear cclText cclMedia_columns">
+                            <div class="cclText_column side">
+                                <div class="cclText_header">Space+ — больше пространства в полете!</div>
+                                <p>Space+ - это места с увеличенным пространством для ног, представляемые пассажирам при регистрации на рейс. Оформление и оплата услуги возможны только при наличии на борту свободных мест Space+, число и компоновка которых зависят от типа и конфигурации воздушного судна.</p>
+                                <ul class="cclText_hint">
+                                    <li><a href="#">Схемы расположения мест Space+</a></li>
+                                    <li><a href="#">Стоимость и подробные условия оформления Space+</a></li>
+                                </ul>
+                            </div>
+                            <div class="cclText_column">
+                                <a class="cclMedia_item fancy-iframe" href="http://www.aeroflot.ru/cms/special_offers/class_comfort_promo/userfiles/3dtour/PEC_output/PEC_360.html">
+                                    <img src="../images/comfort/3.jpg" width="360" height="209" alt="">
+                                    <span class="cclMedia_title">3D панорама <br> салона</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ccl_clear cclText cclMedia_columns">
+                            <img src="../images/econom/3.jpg" width="341" height="228" class="cclText-r" alt="">
+                            <div class="ccl_zfix">
+                                <div class="cclText_header">Подарки для детей</div>
+                                <p>Летите с ребенком? После взлета наши бортпроводники предоставят развлекательные детские наборы — проведите время с Вашим ребенком за увлекательными играми и раскрасками.*</p>
+                                <div class="ccl_hints">* На собственных рейсах Аэрофлота для детей от 3-х до 11-ти лет включительно.</div>
+                            </div>
+                        </div>
+                        <div class="cclAccessories">
+                            <div class="cclAccessories_header">Аксессуары на борту</div>
+                            <div class="cclAccessories_list">
+                                <div class="cclAccessories_item">
+                                    <div class="cclAccessories_img"><div class="cclAccessories_tab"><div class="cclAccessories_cell">
+                                        <img src="../images/comfort/interior/1.jpg" alt="">
+                                    </div></div></div>
+                                    <div class="cclAccessories_label">Удобная подушка</div>
+                                </div>
+                                <div class="cclAccessories_item">
+                                    <div class="cclAccessories_img"><div class="cclAccessories_tab"><div class="cclAccessories_cell">
+                                        <img src="../images/comfort/interior/2.jpg" alt="">
+                                    </div></div></div>
+                                    <div class="cclAccessories_label">Маска для сна</div>
+                                </div>
+                                <div class="cclAccessories_item">
+                                    <div class="cclAccessories_img"><div class="cclAccessories_tab"><div class="cclAccessories_cell">
+                                        <img src="../images/comfort/interior/3.jpg" alt="">
+                                    </div></div></div>
+                                    <div class="cclAccessories_label">Плед</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cclHeader cclHeader-nobd" id="anchor2">
+                            <i class="cclIco cclIco-4"></i>
+                            Кресло
+                        </div>
+                        <div class="cclInterior cclInterior-econom">
+                            <!-- interior BEGIN -->
+                            <div class="cclInterior_imgHolder">
+                                <img alt="" class="cclInterior_img" src="../images/econom/interior.jpg">
+                            </div>
+                            <div class="cclInterior_links">
+                                <div class="cclInterior_plus cclInterior_econom-1">
+                                    <div class="cclInterior_icon">
+                                        <img alt="" src="../images/comfort/tmp/3.jpg">
+                                        <div class="cclInterior_title">
+                                            Преимущество кресел
+                                        </div>
+                                    </div>
+                                    <div class="cclInterior_text">
+                                        <div class="cclInterior_textTitle">
+                                            Преимущество кресел
+                                        </div>
+                                        <div class="cclInterior_desc">
+                                            Преимущество кресел
+                                        </div><span class="cclInterior_textBg"></span> <a class="cclInterior_close" href="#">x</a>
+                                    </div>
+                                </div>
+                                <div class="cclInterior_plus cclInterior_econom-2">
+                                    <div class="cclInterior_icon">
+                                        <img alt="" src="../images/comfort/tmp/4.jpg">
+                                        <div class="cclInterior_title">
+                                            Дорожный набор
+                                        </div>
+                                    </div>
+                                    <div class="cclInterior_text">
+                                        <div class="cclInterior_textTitle">
+                                            Дорожный набор
+                                        </div>
+                                        <div class="comfort-plus-desc">
+                                            Для удобства во время полёта Вам предоставят дорожный набор.
+                                        </div><span class="cclInterior_textBg"></span> <a class="cclInterior_close" href="#">x</a>
+                                    </div>
+                                </div>
+                                <div class="cclInterior_plus cclInterior_econom-3 reverse">
+                                    <div class="cclInterior_icon">
+                                        <img alt="" src="../images/comfort/tmp/5.jpg">
+                                        <div class="cclInterior_title">
+                                            Монитор
+                                        </div>
+                                    </div>
+                                    <div class="cclInterior_text">
+                                        <div class="cclInterior_textTitle">
+                                            Монитор
+                                        </div>
+                                        <div class="comfort-plus-desc">
+                                            Для удобства во время полёта Вам предоставят Монитор.
+                                        </div><span class="cclInterior_textBg"></span> <a class="cclInterior_close" href="#">x</a>
+                                    </div>
+                                </div>
+                                <div class="cclInterior_plus cclInterior_econom-4 reverse">
+                                    <div class="cclInterior_icon">
+                                        <img alt="" src="../images/comfort/tmp/6.jpg">
+                                        <div class="cclInterior_title">
+                                            Раскладывающийся столик
+                                        </div>
+                                    </div>
+                                    <div class="cclInterior_text">
+                                        <div class="cclInterior_textTitle">
+                                            Раскладывающийся столик
+                                        </div>
+                                        <div class="comfort-plus-desc">
+                                            Раскладывающийся столик
+                                        </div><span class="cclInterior_textBg"></span> <a class="cclInterior_close" href="#">x</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cclInterior_overlay"></div>
+                        </div>
+                        <!-- interior END -->
+                        <div class="cclHeader" id="anchor3">
+                            <i class="cclIco cclIco-5"></i>
+                            Система развлечений
+                        </div>
+                        <div class="ccl_clear cclText">
+                            <img src="../images/comfort/7.jpg" class="cclText-r" alt="">
+                            <div class="ccl_zfix">
+                                <div class="cclText_header">Описание мультимедийных возможностей</div>
+                                <p>Длительный перелет не покажется скучным с развлекательной мультимедийной системой Thales. Классика и новинки кинематографа, аудиокниги и более 600 музыкальных альбомов, компьютерные игры и мультфильмы для детей — это далеко не вся программа, предлагаемая к услугам пассажиров на дальнемагистральных рейсах Аэрофлота. Вы также можете увидеть в режиме реального времени карту Вашего полета или картинку с внешней видео-камеры.</p>
+                                <p><a href="http://www.aeroflot.ru/cms/flight/entertaiment_B777_ec">Узнайте больше о мультимидийных возможностях</a></p>
+                                <div class="cclText_header">Интернет на борту</div>
+                                <p>На всех самолетах типа Boeing 777 парка Аэрофлота Вы сможете воспользоваться беспроводным доступом в Интернет.</p>
+                                <p>Оплатить Wi-Fi на борту можно кредитной или дебетовой картой во время полета. К оплате принимаются карты VISA, MasterCard, American Express, JCB и Discover.</p>
+                                <p><a href="http://www.aeroflot.ru/cms/flight/on_board/at_height">Самолеты с Wi-Fi на борту</a></p>
+                            </div>
+                        </div>
+                        <img src="../images/econom/1.jpg" class="ccl_dv" alt="">
+                        <div class="cclHeader" id="anchor4">
+                            <i class="cclIco cclIco-6"></i>
+                            Кухня
+                        </div>
+                        <div class="ccl_clear cclText">
+                            <img src="../images/econom/2.jpg" width="359" height="209" class="cclText-r" alt="">
+                            <div class="ccl_zfix">
+                                <div class="cclText_header">Питание на борту</div>
+                                <p>Перелет — это прежде всего впечатления, среди которых не последнее место занимает аппетитное и вкусное меню. Поэтому мы ежемесячно обновляем меню для пассажиров класса Эконом, и помогают нам в этом лучшие российские и иностранные шеф-повара.</p>
+                                <p>Помимо детского питания Аэрофлот предоставляет 15 видов специального питания, включая вегетарианское и диетическое.*</p>
+                                <div class="ccl_hints">*Услуга предоставляется не на всех направлениях.</div>
+                                <a href="#" class="cclBtn">Посмотреть меню</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Middle -->
+                    
                 </div>
+                
                 <!-- links BEGIN -->
                 <div class="cclLinks">
-                    <a href="#" class="cclLinks_item">
+                    <a href="http://www.aeroflot.ru/cms/before_and_after_fly/taxi" class="cclLinks_item">
                         <span class="cclLinks_title">Заказ такси</span>
                         <img src="../images/links/11.jpg" alt="">
                     </a>
-                    <a href="#" class="cclLinks_item">
+                    <a href="http://www.aeroflot.ru/cms/flight/shopping_onboard_ec" class="cclLinks_item">
                         <span class="cclLinks_title">Покупки <br> на борту <br> и Duty Free</span>
                         <img src="../images/links/12.jpg" alt="">
                     </a>
-                    <a href="#" class="cclLinks_item marked">
+                    <a href="http://www.aeroflot.ru/cms/flight/on_board/at_height" class="cclLinks_item marked">
                         <span class="cclLinks_title">Интернет <br> на борту</span>
                         <img src="../images/links/13.jpg" alt="">
                     </a>
-                    <a href="#" class="cclLinks_item">
+                    <a href="https://www.aeroflot.ru/cms/before_and_after_fly/medical_info" class="cclLinks_item">
                         <span class="cclLinks_title">Медицинская информация</span>
                         <img src="../images/links/14.jpg" alt="">
                     </a>
                 </div>
                 <!-- links END -->
-                <a href="#" class="cclOnBoard_reverse">На борту</a>
+                <!-- TODO: сделать в одну строку -->
+                <a href="econom_1.html" class="cclOnBoard_reverse">Перед полетом</a>
+                <a href="econom_3.html" class="cclOnBoard">После полета</a>
             </div>
             <!-- comfort END -->
         </div>
