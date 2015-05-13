@@ -128,7 +128,7 @@ aeroclass.combo = function() {
 
         $( "<a>" )
           .attr( "tabIndex", -1 )
-          .attr( "title", "Show All Items" )
+          //.attr( "title", "Show All Items" )
           .tooltip()
           .appendTo( this.wrapper )
           .button({
@@ -208,7 +208,8 @@ aeroclass.combo = function() {
         this.element.show();
       }
     });
-    $('#combobox').combobox();
+    
+    //$('.combobox-distance').combobox();
 };
 
 aeroclass.nav = function() {
