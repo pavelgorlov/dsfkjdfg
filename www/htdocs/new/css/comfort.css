@@ -39,14 +39,14 @@ body {
   position: relative;
   width: 981px;
   margin: auto;
-  padding-right: 179px;
+/*   padding-right: 179px; */
 }
 .cclAnchor {
   position: absolute;
   left: 50%;
   top: 0;
   width: 62px;
-  margin-left: 401px;
+  margin-left: 490px;
 }
 .cclAnchor.hide {
   display: none;
@@ -136,7 +136,7 @@ body {
 .cclNav {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
   text-align: center;
 }
