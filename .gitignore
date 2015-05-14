@@ -3,3 +3,4 @@ node_modules
 .sass-cache
 Gruntfile.coffee
 package.json
+.idea
