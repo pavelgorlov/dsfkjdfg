@@ -39,7 +39,7 @@ body {
   position: relative;
   width: 981px;
   margin: auto;
-  padding-right: 179px;
+/*   padding-right: 179px; */
 }
 .cclAnchor {
   position: absolute;
@@ -645,7 +645,7 @@ body {
 }
 .cclInterior {
   position: relative;
-  height: 583px;
+  height: 493px;
   width: 930px;
   overflow: hidden;
   margin: 20px auto 0;
