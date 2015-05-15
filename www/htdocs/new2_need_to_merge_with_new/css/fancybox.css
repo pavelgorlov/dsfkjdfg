@@ -1,0 +1,38 @@
+/* fancybox */
+#fancybox-loading {position: fixed;top: 50%;left: 50%;height: 40px;width: 40px;margin-top: -20px;margin-left: -20px;cursor: pointer;overflow: hidden;z-index: 1104;display: none;}
+#fancybox-loading div {position: absolute;top: 0;left: 0;width: 40px;height: 480px;background-image: url('../images/fancy/fancybox.png');}
+#fancybox-overlay {position: fixed;top: 0;left: 0;bottom: 0;right: 0;background: #000;z-index: 1100;display: none;}
+#fancybox-loading {position: fixed;top: 50%;left: 50%;width: 40px;height: 40px;margin-top: -20px;margin-left: -20px;cursor: pointer;overflow: hidden;z-index: 1104;display: none;}
+#fancybox-loading div {position: absolute;top: 0;left: 0;width: 40px;height: 480px;background-image: url('../images/fancy/fancybox.png');}
+#fancybox-tmp {padding: 0;margin: 0;border: 0;overflow: auto;display: none;}
+#fancybox-wrap {position: absolute;top: 0;left: 0;padding: 20px;background: #fff;z-index: 1101;outline: none;display: none;}
+#fancybox-outer {position: relative;width: 100%;height: 100%;background: #fff;}
+#fancybox-inner {padding: 30px;}
+#fancybox-content {width: 0;height: 0;padding: 0;outline: none;position: relative;overflow: hidden;z-index: 1102;border: 0px solid #fff;}
+#fancybox-hide-sel-frame {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: transparent;z-index: 1101;}
+#fancybox-close {position: absolute;right: -5px;top: -5px;width: 29px;height: 29px;background: url(../images/fancy/fancy_close.png) 0 0 no-repeat;cursor: pointer;z-index: 1103;display: none;}
+#fancybox-error {color: #444;font: normal 12px/20px Arial;padding: 14px;margin: 0;}
+#fancybox-img {width: 100%;height: 100%;padding: 0;margin: 0;border: none;outline: none;line-height: 0;vertical-align: top;}
+#fancybox-frame {width: 100%;height: 100%;border: none;display: block;}
+#fancybox-left,
+#fancybox-right {position: absolute;bottom: 0px;height: 100%;width: 35%;cursor: pointer;outline: none;background: transparent url('../images/fancy/blank.gif');z-index: 1102;display: none;}
+#fancybox-left {left: -90px;}
+#fancybox-right {right: -90px;}
+#fancybox-left-ico,
+#fancybox-right-ico {position: absolute;top: 50%;left: -9999px;width: 36px;height: 64px;margin-top: -18px;cursor: pointer;z-index: 1102;display: block;}
+#fancybox-left-ico {background: url(../images/fancy/arrows.png) 0 0 no-repeat;}
+#fancybox-right-ico {background: url(../images/fancy/arrows.png) -50px 0 no-repeat;}
+#fancybox-left:hover span {left: 0px;}
+#fancybox-right:hover span {left: auto;right: 0px;}
+.fancybox-bg {display: none;}
+#fancybox-title {z-index: 1102;}
+.fancybox-title-inside {padding: 20px 0;text-align: center;position: relative;color: #383838;font: 24px/26px Arial,sans-serif;text-transform: uppercase;}
+.fancybox-title-outside {padding-top: 10px;color: #fff;}
+.fancybox-title-over {position: absolute;bottom: 0;left: 0;color: #FFF;text-align: left;}
+#fancybox-title-over {padding: 10px;background-image: url('../images/fancy/fancy_title_over.png');display: block;}
+.fancybox-title-float {position: absolute;left: 0;bottom: -20px;height: 32px;}
+#fancybox-title-float-wrap {border: none;border-collapse: collapse;width: auto;}
+#fancybox-title-float-wrap td {border: none;white-space: nowrap;}
+#fancybox-title-float-left {padding: 0 0 0 15px;background: url('../images/fancy/fancybox.png') -40px -90px no-repeat;}
+#fancybox-title-float-main {color: #FFF;line-height: 29px;font-weight: bold;padding: 0 0 3px 0;background: url('../images/fancy/fancybox-x.png') 0px -40px;}
+#fancybox-title-float-right {padding: 0 0 0 15px;background: url('../images/fancy/fancybox.png') -55px -90px no-repeat;}

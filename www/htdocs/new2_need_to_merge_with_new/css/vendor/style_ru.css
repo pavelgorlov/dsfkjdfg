@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* header - логотип */
+a#afl_logo {background-image:url('/cms/sites/all/themes/aeroflot/media/img/logo_aero_ru.gif');}
+a#afl_bonus {background-image: url('/cms/sites/all/themes/aeroflot/media/img/bonus_logo_new.png');}
+
+#language {background:url(/cms/sites/all/themes/aeroflot/media/img/top_lang_en.png) 0px 0px no-repeat;}
+
+/* Кнопка "Продолжить"  - (онлайн-регистрация) */
+a#continue {background-image:url('/cms/sites/all/themes/aeroflot/media/img/continue_active.jpg');}
+a#continue.passive {
+	background-image:url('/cms/sites/all/themes/aeroflot/media/img/continue_passive.jpg');
+	cursor: default;
+	}
+/*			Кнопка "Найти"				*/
+a#find {background-image:url('/cms/sites/all/themes/aeroflot/media/img/find.gif');
+
+
+display:block;
+height:26px;
+text-decoration:none;
+width:93px;}
+
+
+/*			Кнопка "Войти"				*/
+a#enter {background-image:url('/cms/sites/all/themes/aeroflot/media/img/enter.gif');}
+
+/*#language .lang_list{background:url("/cms/sites/all/themes/aeroflot/media/img/langs-ru.png") 0 0 no-repeat scroll transparent; margin-left:0px; padding:24px 0 10px 0; position:absolute; right:29px; text-align:center; top:19px; width:43px; z-index:6;}
+#language .lang_list a{ font-size: 9px; margin: 0 7px 0 0;}*/
+
+/*#language .lang_list{background:url('/cms/sites/all/themes/aeroflot/media/img/langs-jp.png') 0 0 no-repeat scroll transparent; margin-left:0px; padding:24px 0 10px 0; position:absolute; right:29px; text-align:center; top:19px; width:43px; z-index:500;}
+#language .lang_list a{ font-size: 9px; margin: 0 7px 0 0; color:#fff; text-transform:uppercase; font-size:11px; display:block;}*/
+
+/* Booking Forms */
+#bookingTabToggleBtn {
+    background: url("../../modules/booking_forms/images/lang/buy_ticket_btt_ru.png") no-repeat transparent;
+    width: 31px;
+    height: 150px;
+}
