@@ -308,4 +308,21 @@ aeroclass.init = function() {
   aeroclass.cycle();
 }
 
-$(aeroclass.init)
+$(aeroclass.init);
+
+
+
+
+/*TEMP!!!*/
+$(function(){
+
+var css = '';
+	css += '.cclContent *{outline: 1px solid rgba(255,0,0,.2);}';
+	css += '.cclContent p{outline: 1px solid rgba(0,0,255,.5);}';
+	css += '.cclContent img{outline: 1px solid rgba(0,255,0,.5);}';
+
+$('head').append('<style>'+css+'</style>');
+
+$('body').append('<div style="z-index:1234;width: 2px; background:purple; position: fixed; height: 100%; top:0;left: 50%; margin-left:-1px;"></div>')
+	
+});
