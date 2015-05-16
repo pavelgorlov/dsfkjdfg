@@ -559,7 +559,6 @@ aeroclass.chair = function (obj) {
                         try {
                             ctx.drawImage(that.images['light'][i], 0, 0);
                             if (plane_id === '330') {
-                                console.log('tlenbow330')
                                 bg.fillStyle = aeroclass.tlenbow330[i];
                             } else {
                                 bg.fillStyle = aeroclass.tlenbow[i];
@@ -570,7 +569,6 @@ aeroclass.chair = function (obj) {
                         }
                     } else {
                         if (plane_id === '330') {
-                            console.log('tlenbow330')
                             bg.css({
                                 backgroundColor: aeroclass.tlenbow330[i]
                             });
@@ -637,7 +635,6 @@ aeroclass.chair = function (obj) {
                     try {
                         ctx.drawImage(that.images['light'][i], 0, 0);
                         if (plane_id === '330') {
-                            console.log('tlenbow330')
                             bg.fillStyle = aeroclass.tlenbow330[i];
                         } else {
                             bg.fillStyle = aeroclass.tlenbow[i];
@@ -654,7 +651,6 @@ aeroclass.chair = function (obj) {
                         aeroclass.log(e);
                     }
                     if (plane_id === '330') {
-                        console.log('tlenbow330')
                         bg.css({
                             backgroundColor: aeroclass.tlenbow330[i]
                         });
