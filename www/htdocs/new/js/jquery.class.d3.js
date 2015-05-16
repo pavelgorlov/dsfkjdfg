@@ -183,7 +183,6 @@ aeroclass.chair = function (obj) {
 
     // process images on start
     function loadImages() {
-        var drawFirst = false;
         obj.removeClass('ready');
         for (var key in images) {
             if ( typeof images[key] !== 'undefined' ) {
@@ -193,6 +192,7 @@ aeroclass.chair = function (obj) {
                 toLoad += key_len;
 
                 for (var i = 0; i < key_len; i++) {
+                    var drawFirst = false;
                     if (key === 'expand' && i === 0) {
                         drawFirst = true;
                     }

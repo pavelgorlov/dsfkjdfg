@@ -226,6 +226,7 @@ aeroclass.nav = function() {
     $('div.ccl-anchor-js').each(function() {
         var ccl_nav = $(this);
         var ccl_navParent = ccl_nav.parent();
+        var winPosTop = $('div.cclContent').position().top;
         var ccl_navLink = $('a', ccl_nav);
         var ccl_navArr = [];
 
@@ -265,8 +266,7 @@ aeroclass.nav = function() {
         function ccl_navSet() {
             winTop = ccl_navParent.offset().top;
             winST = win.scrollTop();
-
-            if (winTop > cclHeight) {
+            if (winTop > cclHeight || winST < winPosTop) {
                 ccl_nav.addClass('hide');
             } else {
                 ccl_nav.removeClass('hide');
@@ -283,6 +283,7 @@ aeroclass.nav = function() {
         }
 
         // position nav
+        ccl_navSet();
         win.on('scroll.nav', function() {
             ccl_navSet();
         });
