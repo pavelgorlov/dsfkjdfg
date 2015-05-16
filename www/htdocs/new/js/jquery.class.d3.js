@@ -81,11 +81,13 @@ aeroclass.chair = function (obj) {
         obj.prepend(bg);
     }
 
-    images.rotate = $('div.rotate img', obj);
-    images.expand = $('div.expand img', obj);
-    images.light = $('div.light img', obj);
-    images.table = $('div.table img', obj);
-    images.pedal = $('div.pedal img', obj).length ? $('div.pedal', obj) : null;
+    var images_path = obj.attr('data-path');
+    var images_ext = obj.attr('data-ext');
+    images.rotate = obj.attr('data-rotate');
+    images.expand = obj.attr('data-expand');
+    images.light = obj.attr('data-light');
+    images.table = obj.attr('data-table');
+    images.pedal = obj.attr('data-pedal');
 
     // load image
     that.process = function(src, draw) {
@@ -133,22 +135,35 @@ aeroclass.chair = function (obj) {
         return img;
     };
 
+    // image name add zero
+    function addZero(name) {
+        name = name.toString();
+
+        if (name.length === 2) {
+            return '0' + name;
+        } else if (name.length === 1) {
+            return '00' + name;
+        }
+
+        return name;
+    }
+
     // process images on start
     function loadImages() {
         var drawFirst = false;
         obj.removeClass('ready');
         for (var key in images) {
-            if ( images[key] !== null ) {
+            if ( typeof images[key] !== 'undefined' ) {
                 that.images[key] = [];
-                var key_len = images[key].length;
+                var key_len = parseInt(images[key], 10);
+
                 toLoad += key_len;
-                if (key_len > 0) {
-                    for (var i = 0; i < key_len; i++) {
-                        if (key === 'expand' && i === 0) {
-                            drawFirst = true;
-                        }
-                        that.images[key][i] = that.process( images[key][i].src, drawFirst);
+
+                for (var i = 0; i < key_len; i++) {
+                    if (key === 'expand' && i === 0) {
+                        drawFirst = true;
                     }
+                    that.images[key][i] = that.process( images_path + key + '/' + addZero(i) + '.' + images_ext, drawFirst);
                 }
             }
         }
@@ -649,34 +664,49 @@ aeroclass.chair = function (obj) {
         });
     }
 
-    loadImages();
+    that.inited = false;
 
-    sliderInit();
+    that.init = function() {
+        if (that.inited) {
+            return;
+        }
 
-    $('a.rotate', obj).on('click', function() {
-        that.anim('rotate');
-        return false;
-    });
+        loadImages();
+        sliderInit();
 
-    $('a.light', obj).on('click', function() {
-        that.anim('light');
-        return false;
-    });
+        $('a.rotate', obj).on('click', function() {
+            that.anim('rotate');
+            return false;
+        });
 
-    $('a.expand', obj).on('click', function() {
-        that.anim('expand');
-        return false;
-    });
+        $('a.light', obj).on('click', function() {
+            that.anim('light');
+            return false;
+        });
 
-    $('a.table', obj).on('click', function() {
-        that.anim('table');
-        return false;
-    });
+        $('a.expand', obj).on('click', function() {
+            that.anim('expand');
+            return false;
+        });
+
+        $('a.table', obj).on('click', function() {
+            that.anim('table');
+            return false;
+        });
+
+        that.inited = true;
+    };
+
+    obj.data('3d', that);
 
     return obj;
 };
 $(function() {
     $('div.aerod3-js').each(function() {
         var acl3d = new aeroclass.chair(this);
+        if ( acl3d.is(':visible') ) {
+            var acl3d_api = $(this).data('3d');
+            acl3d_api.init();
+        }
     });
 });
