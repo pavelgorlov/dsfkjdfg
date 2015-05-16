@@ -1172,7 +1172,7 @@ body {
 .aerod3_img {
   display: none;
 }
-.aerod3_cnv {
+.aerod3_cnv, .aerod3_image {
   display: block;
   margin: 0 auto;
   position: relative;
@@ -1183,6 +1183,10 @@ body {
   left: 0;
   top: 0;
   z-index: 1;
+}
+.aerod3 img.aerod3_bg {
+  width: 100%;
+  height: 100%;
 }
 
 .chair-hint {

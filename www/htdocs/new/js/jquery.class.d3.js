@@ -68,13 +68,13 @@ aeroclass.chair = function (obj) {
         obj.prepend(cnv_bg);
         bg = cnv_bg.get(0).getContext('2d');
     } else {
-        el = $('<img alt="">');
+        el = $('<img class="aerod3_image" alt="">');
         el.attr({
             width: obj.attr('data-w'),
             height: obj.attr('data-h')
         });
         obj.prepend(el);
-        bg = $('<img alt="">');
+        bg = $('<img class="aerod3_bg" alt="">');
         bg.attr({
             width: that.parent.width(),
             height: obj.attr('data-h')
@@ -501,6 +501,8 @@ aeroclass.chair = function (obj) {
                     bg_w = cnv_bg.width();
                     bg_h = cnv_bg.height();
                     cnv_bg.show();
+                } else {
+                    bg.show();
                 }
 
                 i = 0;
@@ -576,7 +578,11 @@ aeroclass.chair = function (obj) {
                     that.state = 'expanded';
                     that.parent.removeClass('light');
                     that.parent.addClass('expanded');
-                    cnv_bg.hide();
+                    if ( Modernizr.canvas ) {
+                        cnv_bg.hide();
+                    } else {
+                        bg.hide();
+                    }
 
                     if ( $.isFunction(callback) ) {
                         callback.apply(this);
