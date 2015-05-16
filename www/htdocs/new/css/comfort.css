@@ -35,6 +35,9 @@ body {
   margin: 25px 25px 0;
   padding-bottom: 35px;
 }
+.ccl_bg-first {
+  padding-bottom: 0;
+}
 .cclWrapper {
   position: relative;
   width: 981px;
@@ -1166,22 +1169,26 @@ body {
 .aerod3.ready {
   opacity: 1;
 }
+.aerod3_img {
+  display: none;
+}
+.aerod3_cnv {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
 .aerod3_bg {
   position: absolute;
   left: 0;
   top: 0;
-}
-.aerod3_img {
-  display: none;
-}
-.aerod3 canvas {
-  display: block;
-  margin: 0 auto;
+  z-index: 1;
 }
 
 .chair-hint {
   display: none;
   position: absolute;
+  z-index: 4;
 }
 
 .ready .chair-hint {
@@ -1197,6 +1204,7 @@ body {
   color: #fff;
   text-shadow: 0 1px 1px #000;
   text-align: center;
+  z-index: 4;
 }
 
 .chair_loading i {
@@ -1348,6 +1356,7 @@ a.rotate:before, a.rotate:after {
   position: relative;
   left: auto;
   top: auto;
+  z-index: 4;
 }
 
 .light .chair-expander,

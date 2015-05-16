@@ -17,6 +17,8 @@ body
         background-color: #f5f6f8
         margin: 25px 25px 0
         padding-bottom: 35px
+        &-first
+            padding-bottom: 0
     &Wrapper
         position: relative
         width: 981px
@@ -973,18 +975,22 @@ body
         position: relative
     &.ready
         opacity: 1
+    &_img
+        display: none
+    &_cnv
+        display: block
+        margin: 0 auto
+        position: relative
+        z-index: 2
     &_bg
         position: absolute
         left: 0
         top: 0
-    &_img
-        display: none
-    canvas
-        display: block
-        margin: 0 auto
+        z-index: 1
 .chair-hint
     display: none
     position: absolute
+    z-index: 4
 .ready .chair-hint
     display: block
 .chair_loading
@@ -996,6 +1002,7 @@ body
     color: #fff
     text-shadow: 0 1px 1px #000
     text-align: center
+    z-index: 4
 .chair_loading i
     display: block
     width: 34px
@@ -1102,6 +1109,7 @@ a.rotate:before, a.rotate:after
     position: relative
     left: auto
     top: auto
+    z-index: 4
 .light .chair-expander,
 .rotated .chair-expander,
 .table .chair-expander
