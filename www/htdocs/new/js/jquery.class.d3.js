@@ -36,6 +36,36 @@ aeroclass.tlenbow = [
     "#000000"
 ];
 
+aeroclass.tlenbow330 = [
+    "#ffffff",
+    "#00ff00",
+    "#0022ff",
+    "#33bbcc",
+    "#bada55",
+    "#336699",
+    "#ff33ff",
+    "#0022ff",
+    "#33bbcc",
+    "#bada55",
+    "#336699",
+    "#ff33ff",
+    "#00ffff",
+    "#ffff00",
+    "#00ff00",
+    "#ff00ff",
+    "#ff0000",
+    "#0022ff",
+    "#33bbcc",
+    "#bada55",
+    "#336699",
+    "#ff33ff",
+    "#00ffff",
+    "#ffff00",
+    "#00ff00",
+    "#000000",
+    "#000000"
+];
+
 aeroclass.chair = function (obj) {
     obj = $(obj);
 
@@ -84,6 +114,7 @@ aeroclass.chair = function (obj) {
 
     var images_path = obj.attr('data-path');
     var images_ext = obj.attr('data-ext');
+    var plane_id = obj.attr('data-id');
     images.rotate = obj.attr('data-rotate');
     images.expand = obj.attr('data-expand');
     images.light = obj.attr('data-light');
@@ -527,15 +558,28 @@ aeroclass.chair = function (obj) {
                     if ( Modernizr.canvas ) {
                         try {
                             ctx.drawImage(that.images['light'][i], 0, 0);
-                            bg.fillStyle = aeroclass.tlenbow[i];
+                            if (plane_id === '330') {
+                                console.log('tlenbow330')
+                                bg.fillStyle = aeroclass.tlenbow330[i];
+                            } else {
+                                bg.fillStyle = aeroclass.tlenbow[i];
+                            }
                             bg.fillRect(0, 0, bg_w, bg_h);
                         } catch(e) {
                             aeroclass.log(e);
                         }
                     } else {
-                        bg.css({
-                            backgroundColor: aeroclass.tlenbow[i]
-                        });
+                        if (plane_id === '330') {
+                            console.log('tlenbow330')
+                            bg.css({
+                                backgroundColor: aeroclass.tlenbow330[i]
+                            });
+                        } else {
+                            bg.css({
+                                backgroundColor: aeroclass.tlenbow[i]
+                            });
+                        }
+
                         try {
                             el.attr('src', that.images['light'][i].src);
                         } catch(e) {
@@ -592,7 +636,13 @@ aeroclass.chair = function (obj) {
                 if ( Modernizr.canvas ) {
                     try {
                         ctx.drawImage(that.images['light'][i], 0, 0);
-                        bg.fillStyle = aeroclass.tlenbow[i];
+                        if (plane_id === '330') {
+                            console.log('tlenbow330')
+                            bg.fillStyle = aeroclass.tlenbow330[i];
+                        } else {
+                            bg.fillStyle = aeroclass.tlenbow[i];
+                        }
+
                         bg.fillRect(0, 0, bg_w, bg_h);
                     } catch(e) {
                         aeroclass.log(e);
@@ -603,9 +653,17 @@ aeroclass.chair = function (obj) {
                     } catch(e) {
                         aeroclass.log(e);
                     }
-                    bg.css({
-                        backgroundColor: aeroclass.tlenbow[i]
-                    });
+                    if (plane_id === '330') {
+                        console.log('tlenbow330')
+                        bg.css({
+                            backgroundColor: aeroclass.tlenbow330[i]
+                        });
+                    } else {
+                        bg.css({
+                            backgroundColor: aeroclass.tlenbow[i]
+                        });
+                    }
+
                 }
             }
 
