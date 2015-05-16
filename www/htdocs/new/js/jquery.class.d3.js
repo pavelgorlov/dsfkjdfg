@@ -86,8 +86,9 @@ aeroclass.chair = function (obj) {
     images.rotate = obj.attr('data-rotate');
     images.expand = obj.attr('data-expand');
     images.light = obj.attr('data-light');
+    images.header = obj.attr('data-podgolovnik');
     images.table = obj.attr('data-table');
-    images.pedal = obj.attr('data-pedal');
+    images.footer = obj.attr('data-footer');
 
     // load image
     that.process = function(src, draw) {
@@ -176,6 +177,14 @@ aeroclass.chair = function (obj) {
                 that.anim('expand', function() {
                     that.anim('table');
                 });
+            });
+        } else if ( that.state === 'footer' ) {
+            that.anim('footer', function() {
+                that.anim('table');
+            });
+        } else if ( that.state === 'header' ) {
+            that.anim('header', function() {
+                that.anim('table');
             });
         } else if ( that.state === 'expanded' ) {
             that.anim('expand', function() {
@@ -289,6 +298,14 @@ aeroclass.chair = function (obj) {
                     that.anim('rotate');
                 });
             });
+        } else if ( that.state === 'footer' ) {
+            that.anim('footer', function() {
+                that.anim('rotate');
+            });
+        } else if ( that.state === 'header' ) {
+            that.anim('header', function() {
+                that.anim('rotate');
+            });
         } else if ( that.state === 'table' ) {
             that.anim('table', function() {
                 that.anim('rotate');
@@ -352,6 +369,14 @@ aeroclass.chair = function (obj) {
     function _expandAnim(callback) {
         if ( that.state === 'table' ) {
             that.anim('table', function() {
+                that.anim('expand');
+            });
+        } else if ( that.state === 'header' ) {
+            that.anim('header', function() {
+                that.anim('expand');
+            });
+        } else if ( that.state === 'footer' ) {
+            that.anim('footer', function() {
                 that.anim('expand');
             });
         } else if ( that.state === 'light' ) {
@@ -455,7 +480,6 @@ aeroclass.chair = function (obj) {
             rAFc = requestAnimationFrame( animateExpand );
         }
     }
-
 
     // light animation
     function _lightAnim(callback) {
@@ -594,11 +618,271 @@ aeroclass.chair = function (obj) {
                     that.anim('light');
                 });
             });
+        } else if ( that.state === 'header' ) {
+            that.anim('header', function() {
+                that.anim('expand', function() {
+                    that.anim('light');
+                });
+            });
+        } else if ( that.state === 'footer' ) {
+            that.anim('footer', function() {
+                that.anim('expand', function() {
+                    that.anim('light');
+                });
+            });
         } else {
             // expand and turn on the light
             that.anim('expand', function() {
                 that.anim('light');
             });
+        }
+    }
+
+    // footer animation
+    function _footerAnim(callback) {
+        if ( that.state === 'expanded' ) {
+            // turn off expand
+            that.anim('expand', function() {
+                // turn on footer
+                that.anim('footer');
+            });
+        } else if ( that.state === 'table' ) {
+            // turn off table
+            that.anim('table', function() {
+                // turn on footer
+                that.anim('footer');
+            });
+        } else if ( that.state === 'header' ) {
+            // turn off header
+            that.anim('header', function() {
+                // turn on footer
+                that.anim('footer');
+            });
+        } else if ( that.state === 'light' ) {
+            // turn off light
+            that.anim('light', function() {
+                // turn off expand
+                that.anim('expand', function() {
+                    // turn on footer
+                    that.anim('footer');
+                });
+            });
+        } else if ( that.state === 'footer' ) {
+            // turn off footer
+            that.busy = true;
+
+            var i, len;
+            var rAFfe;
+
+            i = that.images['footer'].length - 1;
+
+            function _collapseFooterStep() {
+                if ( i > 0 ) {
+                    i--;
+                } else if (rAFfe) {
+                    cancelAnimationFrame(rAFfe);
+                    rAFfe = null;
+                    that.busy = false;
+
+                    that.state = '';
+                    that.parent.removeClass('footer');
+
+                    if ( $.isFunction(callback) ) {
+                        callback.apply(this);
+                    }
+                }
+
+                if ( Modernizr.canvas ) {
+                    try {
+                        ctx.drawImage(that.images['footer'][i], 0, 0);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                } else {
+                    try {
+                        el.attr('src', that.images['footer'][i].src);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                }
+            }
+
+            function animateFooterCollapse() {
+                rAFfe = requestAnimationFrame( animateFooterCollapse );
+                _collapseFooterStep();
+            }
+
+            rAFfe = requestAnimationFrame( animateFooterCollapse );
+        } else {
+            // turn on footer
+            that.busy = true;
+
+            var i, len;
+            var rAFfc;
+
+            i = 0;
+            len = that.images['footer'].length - 1;
+
+            function _expandFooterStep() {
+                if ( i < len ) {
+                    i++;
+                } else if (rAFfc) {
+                    cancelAnimationFrame(rAFfc);
+                    rAFfc = null;
+                    that.busy = false;
+
+                    that.state = 'footer';
+                    that.parent.addClass('footer');
+
+                    if ( $.isFunction(callback) ) {
+                        callback.apply(this);
+                    }
+                }
+
+                if ( Modernizr.canvas ) {
+                    try {
+                        ctx.drawImage(that.images['footer'][i], 0, 0);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                } else {
+                    try {
+                        el.attr('src', that.images['footer'][i].src);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                }
+            }
+
+            function animateFooterExpand() {
+                rAFfc = requestAnimationFrame( animateFooterExpand );
+                _expandFooterStep();
+            }
+
+            rAFfc = requestAnimationFrame( animateFooterExpand );
+        }
+    }
+
+    // header animation
+    function _headerAnim(callback) {
+        if ( that.state === 'expanded' ) {
+            // turn off expand
+            that.anim('expand', function() {
+                // turn on footer
+                that.anim('footer');
+            });
+        } else if ( that.state === 'footer' ) {
+            that.anim('footer', function() {
+                that.anim('header');
+            });
+        } else if ( that.state === 'table' ) {
+            // turn off table
+            that.anim('table', function() {
+                // turn on footer
+                that.anim('footer');
+            });
+        } else if ( that.state === 'light' ) {
+            // turn off light
+            that.anim('light', function() {
+                // turn off expand
+                that.anim('expand', function() {
+                    // turn on footer
+                    that.anim('footer');
+                });
+            });
+        } else if ( that.state === 'header' ) {
+            // turn off header
+            that.busy = true;
+
+            var i, len;
+            var rAFhe;
+
+            i = that.images['header'].length - 1;
+
+            function _collapseHeaderStep() {
+                if ( i > 0 ) {
+                    i--;
+                } else if (rAFhe) {
+                    cancelAnimationFrame(rAFhe);
+                    rAFhe = null;
+                    that.busy = false;
+
+                    that.state = '';
+                    that.parent.removeClass('header');
+
+                    if ( $.isFunction(callback) ) {
+                        callback.apply(this);
+                    }
+                }
+
+                if ( Modernizr.canvas ) {
+                    try {
+                        ctx.drawImage(that.images['header'][i], 0, 0);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                } else {
+                    try {
+                        el.attr('src', that.images['header'][i].src);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                }
+            }
+
+            function animateHeaderCollapse() {
+                rAFhe = requestAnimationFrame( animateHeaderCollapse );
+                _collapseHeaderStep();
+            }
+
+            rAFhe = requestAnimationFrame( animateHeaderCollapse );
+        } else {
+            // turn on header
+            that.busy = true;
+
+            var i, len;
+            var rAFhc;
+
+            i = 0;
+            len = that.images['header'].length - 1;
+
+            function _expandHeaderStep() {
+                if ( i < len ) {
+                    i++;
+                } else if (rAFhc) {
+                    cancelAnimationFrame(rAFhc);
+                    rAFhc = null;
+                    that.busy = false;
+
+                    that.state = 'header';
+                    that.parent.addClass('header');
+
+                    if ( $.isFunction(callback) ) {
+                        callback.apply(this);
+                    }
+                }
+
+                if ( Modernizr.canvas ) {
+                    try {
+                        ctx.drawImage(that.images['header'][i], 0, 0);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                } else {
+                    try {
+                        el.attr('src', that.images['header'][i].src);
+                    } catch(e) {
+                        aeroclass.log(e);
+                    }
+                }
+            }
+
+            function animateHeaderExpand() {
+                rAFhc = requestAnimationFrame( animateHeaderExpand );
+                _expandHeaderStep();
+            }
+
+            rAFhc = requestAnimationFrame( animateHeaderExpand );
         }
     }
 
@@ -621,6 +905,11 @@ aeroclass.chair = function (obj) {
             case 'table':
                 _tableAnim(callback);
                 break;
+            case 'footer':
+                _footerAnim(callback);
+                break;
+            case 'header':
+                _headerAnim(callback);
         }
     };
 
@@ -691,6 +980,16 @@ aeroclass.chair = function (obj) {
 
         $('a.table', obj).on('click', function() {
             that.anim('table');
+            return false;
+        });
+
+        $('a.footer', obj).on('click', function() {
+            that.anim('footer');
+            return false;
+        });
+
+        $('a.podgolovnik', obj).on('click', function() {
+            that.anim('header');
             return false;
         });
 
