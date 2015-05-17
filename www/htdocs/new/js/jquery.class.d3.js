@@ -118,7 +118,7 @@ aeroclass.chair = function (obj) {
     images.rotate = obj.attr('data-rotate');
     images.expand = obj.attr('data-expand');
     images.light = obj.attr('data-light');
-    images.header = obj.attr('data-podgolovnik');
+    images.podgolovnik = obj.attr('data-podgolovnik');
     images.table = obj.attr('data-table');
     images.footer = obj.attr('data-footer');
 
@@ -214,8 +214,8 @@ aeroclass.chair = function (obj) {
             that.anim('footer', function() {
                 that.anim('table');
             });
-        } else if ( that.state === 'header' ) {
-            that.anim('header', function() {
+        } else if ( that.state === 'podgolovnik' ) {
+            that.anim('podgolovnik', function() {
                 that.anim('table');
             });
         } else if ( that.state === 'expanded' ) {
@@ -334,8 +334,8 @@ aeroclass.chair = function (obj) {
             that.anim('footer', function() {
                 that.anim('rotate');
             });
-        } else if ( that.state === 'header' ) {
-            that.anim('header', function() {
+        } else if ( that.state === 'podgolovnik' ) {
+            that.anim('podgolovnik', function() {
                 that.anim('rotate');
             });
         } else if ( that.state === 'table' ) {
@@ -403,8 +403,8 @@ aeroclass.chair = function (obj) {
             that.anim('table', function() {
                 that.anim('expand');
             });
-        } else if ( that.state === 'header' ) {
-            that.anim('header', function() {
+        } else if ( that.state === 'podgolovnik' ) {
+            that.anim('podgolovnik', function() {
                 that.anim('expand');
             });
         } else if ( that.state === 'footer' ) {
@@ -679,8 +679,8 @@ aeroclass.chair = function (obj) {
                     that.anim('light');
                 });
             });
-        } else if ( that.state === 'header' ) {
-            that.anim('header', function() {
+        } else if ( that.state === 'podgolovnik' ) {
+            that.anim('podgolovnik', function() {
                 that.anim('expand', function() {
                     that.anim('light');
                 });
@@ -713,9 +713,9 @@ aeroclass.chair = function (obj) {
                 // turn on footer
                 that.anim('footer');
             });
-        } else if ( that.state === 'header' ) {
-            // turn off header
-            that.anim('header', function() {
+        } else if ( that.state === 'podgolovnik' ) {
+            // turn off podgolovnik
+            that.anim('podgolovnik', function() {
                 // turn on footer
                 that.anim('footer');
             });
@@ -824,8 +824,8 @@ aeroclass.chair = function (obj) {
         }
     }
 
-    // header animation
-    function _headerAnim(callback) {
+    // podgolovnik animation
+    function _podgolovnikAnim(callback) {
         if ( that.state === 'expanded' ) {
             // turn off expand
             that.anim('expand', function() {
@@ -834,7 +834,7 @@ aeroclass.chair = function (obj) {
             });
         } else if ( that.state === 'footer' ) {
             that.anim('footer', function() {
-                that.anim('header');
+                that.anim('podgolovnik');
             });
         } else if ( that.state === 'table' ) {
             // turn off table
@@ -851,16 +851,16 @@ aeroclass.chair = function (obj) {
                     that.anim('footer');
                 });
             });
-        } else if ( that.state === 'header' ) {
-            // turn off header
+        } else if ( that.state === 'podgolovnik' ) {
+            // turn off podgolovnik
             that.busy = true;
 
             var i, len;
             var rAFhe;
 
-            i = that.images['header'].length - 1;
+            i = that.images['podgolovnik'].length - 1;
 
-            function _collapseHeaderStep() {
+            function _collapsePodgolovnikStep() {
                 if ( i > 0 ) {
                     i--;
                 } else if (rAFhe) {
@@ -869,7 +869,7 @@ aeroclass.chair = function (obj) {
                     that.busy = false;
 
                     that.state = '';
-                    that.parent.removeClass('header');
+                    that.parent.removeClass('podgolovnik');
 
                     if ( $.isFunction(callback) ) {
                         callback.apply(this);
@@ -878,36 +878,36 @@ aeroclass.chair = function (obj) {
 
                 if ( Modernizr.canvas ) {
                     try {
-                        ctx.drawImage(that.images['header'][i], 0, 0);
+                        ctx.drawImage(that.images['podgolovnik'][i], 0, 0);
                     } catch(e) {
                         aeroclass.log(e);
                     }
                 } else {
                     try {
-                        el.attr('src', that.images['header'][i].src);
+                        el.attr('src', that.images['podgolovnik'][i].src);
                     } catch(e) {
                         aeroclass.log(e);
                     }
                 }
             }
 
-            function animateHeaderCollapse() {
-                rAFhe = requestAnimationFrame( animateHeaderCollapse );
-                _collapseHeaderStep();
+            function animatePodgolovnikCollapse() {
+                rAFhe = requestAnimationFrame( animatePodgolovnikCollapse );
+                _collapsePodgolovnikStep();
             }
 
-            rAFhe = requestAnimationFrame( animateHeaderCollapse );
+            rAFhe = requestAnimationFrame( animatePodgolovnikCollapse );
         } else {
-            // turn on header
+            // turn on podgolovnik
             that.busy = true;
 
             var i, len;
             var rAFhc;
 
             i = 0;
-            len = that.images['header'].length - 1;
+            len = that.images['podgolovnik'].length - 1;
 
-            function _expandHeaderStep() {
+            function _expandPodgolovnikStep() {
                 if ( i < len ) {
                     i++;
                 } else if (rAFhc) {
@@ -915,8 +915,8 @@ aeroclass.chair = function (obj) {
                     rAFhc = null;
                     that.busy = false;
 
-                    that.state = 'header';
-                    that.parent.addClass('header');
+                    that.state = 'podgolovnik';
+                    that.parent.addClass('podgolovnik');
 
                     if ( $.isFunction(callback) ) {
                         callback.apply(this);
@@ -925,25 +925,25 @@ aeroclass.chair = function (obj) {
 
                 if ( Modernizr.canvas ) {
                     try {
-                        ctx.drawImage(that.images['header'][i], 0, 0);
+                        ctx.drawImage(that.images['podgolovnik'][i], 0, 0);
                     } catch(e) {
                         aeroclass.log(e);
                     }
                 } else {
                     try {
-                        el.attr('src', that.images['header'][i].src);
+                        el.attr('src', that.images['podgolovnik'][i].src);
                     } catch(e) {
                         aeroclass.log(e);
                     }
                 }
             }
 
-            function animateHeaderExpand() {
-                rAFhc = requestAnimationFrame( animateHeaderExpand );
-                _expandHeaderStep();
+            function animatePodgolovnikExpand() {
+                rAFhc = requestAnimationFrame( animatePodgolovnikExpand );
+                _expandPodgolovnikStep();
             }
 
-            rAFhc = requestAnimationFrame( animateHeaderExpand );
+            rAFhc = requestAnimationFrame( animatePodgolovnikExpand );
         }
     }
 
@@ -969,8 +969,8 @@ aeroclass.chair = function (obj) {
             case 'footer':
                 _footerAnim(callback);
                 break;
-            case 'header':
-                _headerAnim(callback);
+            case 'podgolovnik':
+                _podgolovnikAnim(callback);
         }
     };
 
@@ -1050,7 +1050,7 @@ aeroclass.chair = function (obj) {
         });
 
         $('a.podgolovnik', obj).on('click', function() {
-            that.anim('header');
+            that.anim('podgolovnik');
             return false;
         });
 
