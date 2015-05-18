@@ -131,6 +131,12 @@
 									$('[data-rel="cc-fly-ent6"]').html(data.wifi[0]);
 									$('[data-rel="cc-fly-ent7"]').html(data.wifi[1]);
 									$('[data-rel="cc-fly-ent7"]').attr('href', data.wifi[2]);
+									
+									$('#ent-block').show();
+								
+								} else {
+									
+									$('#ent-block').hide();
 								}
 								
 							}
@@ -335,12 +341,12 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- interior BEGIN -->
                         <div class="cclHeader cclHeader-nobd" id="anchor2">
                             <i class="cclIco cclIco-4"></i>
                             Кресло
                         </div>
                         <div class="cclInterior cclInterior-econom">
-                            <!-- interior BEGIN -->
                             <div class="cclInterior_imgHolder">
                                 <img data-rel="cc-fly-chairimg" alt="" class="cclInterior_img" src="../images/econom/interior.jpg">
                             </div>
@@ -350,6 +356,8 @@
                             <div class="cclInterior_overlay"></div>
                         </div>
                         <!-- interior END -->
+                        
+                        <div id="ent-block">
                         <div class="cclHeader" data-rel="cc-fly-ent1" id="anchor3">
                             <i class="cclIco cclIco-5"></i>
                             Система развлечений
@@ -372,6 +380,9 @@
                             </div>
                         </div>
                         <img src="../images/econom/1.jpg" class="ccl_dv" alt="" id="cc-fly-ent-img">
+                        </div>
+                        
+                        
                         <div class="cclHeader" id="anchor4">
                             <i class="cclIco cclIco-6"></i>
                             Кухня
