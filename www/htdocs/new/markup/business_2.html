@@ -36,9 +36,112 @@
 <body class="yui-skin-sam page-type-content">
     <div class="main-body">
         
+        
+        
         <script>
             ;(function($) {
-                    $(function() {
+	            	$(function() {
+
+	                    ////////////////////////////////////////
+						//
+						////////////////////////////////////////					
+	                    var cclTabs = $('.cclTabs > .cclTabs_item-text');
+
+		                    cclTabs.click(function(){
+			                    
+			                    cclTabs.toggleClass('current');
+			                    
+			                    var rel 	= $(this).data('rel');
+			                    var form 	= $('.combobox-distance');
+			                   	var list 	= window._flyTabs[rel];
+			                   		
+			                   		//console.log(rel, list, form);
+			                   		
+			                   		form.html('');
+			                   		
+			                   		for(airplane in list){
+				                   		
+				                   		form.append('<option value="'+airplane+'">'+list[airplane]+'</option>');
+			                   		}
+	
+			                   		form.find('option:first').attr('selected','selected');
+			                   		form.click();
+		
+			                    return false;
+		                    });
+		                    
+							cclTabs.filter(':first').click();
+
+                    
+                    
+						////////////////////////////////////////
+						//
+						////////////////////////////////////////
+						
+						var chair3d = $('#chair-3d');
+						
+						$('.combobox-distance').on('change click',function(){
+							
+							var t = $(this);
+							var data = this.value;
+							
+							if(window._flyData[data] !== undefined){
+								
+								data = window._flyData[data];
+								
+								$('[data-rel="cc-fly-distance"]').html(data.info[0]);
+								$('[data-rel="cc-fly-peoples"]').html(data.info[1]);
+								
+								$('[data-rel="cc-fly-3d"]').attr('href',	 data.info[4]);
+								$('[data-rel="cc-fly-3d-cover"]').attr('src',data.info[3]);
+								
+								//.html
+								
+								if(data.ent !== undefined && data.wifi !== undefined){
+								
+									$('[data-rel="cc-fly-ent4"]').html(data.ent[0]);
+									$('[data-rel="cc-fly-ent5"]').html(data.ent[1]);
+									$('[data-rel="cc-fly-ent5"]').attr('href', data.ent[2]);
+								
+									$('[data-rel="cc-fly-ent6"]').html(data.wifi[0]);
+									$('[data-rel="cc-fly-ent7"]').html(data.wifi[1]);
+									$('[data-rel="cc-fly-ent7"]').attr('href', data.wifi[2]);
+									
+									$('#ent-block').show();
+								
+								} else {
+									
+									$('#ent-block').hide();
+								}
+								
+								$.get(data.chair3d+'?'+Math.random(), function(code){
+								
+									chair3d.html(code);	
+									
+									$('div.aerod3-js', chair3d).each(function() {
+								        var acl3d = new aeroclass.chair(this);
+								        if ( acl3d.is(':visible') ) {
+								            var acl3d_api = $(this).data('3d');
+								            acl3d_api.init();
+								        }
+								    });
+								});
+								
+								
+							}
+							
+						}).filter(':first').click();
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                         $('a.fancy-img').fancybox({
                             padding: 30
                         });
@@ -109,8 +212,8 @@
                     <!-- promo END -->
                     <!-- tabs BEGIN -->
                     <div class="cclTabs">
-                        <a href="#" class="cclTabs_item cclTabs_item-text current">Дальнемагистральные</a>
-                        <a href="#" class="cclTabs_item cclTabs_item-text">Средне- и ближне- магистральные</a>
+                        <a href="#longdistance"   class="cclTabs_item cclTabs_item-text" data-rel="ccl-longdistance">Дальнемагистральные</a>
+                        <a href="#middledistance" class="cclTabs_item cclTabs_item-text current" data-rel="ccl-middledistance">Средне- и ближне- магистральные</a>
                         <!-- TODO: сделать попап определения типа самолёта -->
                         <!-- <a href="#" class="cclTabs_item"><i class="cclFormIcon cclFormIcon_1"></i></a> -->
                     </div>
@@ -118,19 +221,15 @@
                         <div class="cclForm">
                             <div class="cclForm_label">Самолет</div>
                             <div class="cclForm_select">
-                                <select id="combobox">
-                                    <option value="">Выберите...</option>
-                                    <option value="boeing 777">Вoeing 777</option>
-                                    <option value="airbus_320">Airbus 320</option>
-                                </select>
+                                <select class="combobox-distance combobox-longdistance"></select>
                             </div>
                             <ul class="cclForm_list">
-                                <li>Дальности полёта — 21 501 км;</li>
+                                <li>Дальности полёта — <span data-rel="cc-fly-distance">%</span> км</li>
                                 <li>Самолёт с двумя турбинами</li>
                             </ul>
                             <ul class="cclForm_list">
-                                <li>Пассажиромест— 400</li>
-                                <li>Самолёт с двумя турбинами</li>
+                                <li>Пассажиромест — <span data-rel="cc-fly-peoples">%</span></li>
+                                <li><a style="color:#4a4a4a" href="http://www.aeroflot.com/cms/flight/plane_park">Схема посадочных мест</a></li>
                             </ul>
                         </div>
                         <div class="cclHeader" id="anchor1">
@@ -143,12 +242,12 @@
 									<div class="cclText_header">Факты о&nbsp;классе Бизнес</div>
 									<p>Пассажирам класса Бизнес Аэрофлота на&nbsp;борту Boeing 777&nbsp;предлагается:</p>
 									<ul>
-									<li>Индивидуальная стационарная система развлечений Thales с регулярно обновляющейся музыкальной и&nbsp;кинопрограммой;</li>
-									<li>Блюда сервируются в&nbsp;фарфоровой и&nbsp;стеклянной посуде.</li>
-									<li>Кресла класса Бизнес раскладываются в&nbsp;горизонтальную кровать;</li>
-									<li>В&nbsp;течение всего рейса пассажирам предлагаются прохладительные и&nbsp;алкогольные напитки.</li>
+										<li>Индивидуальная стационарная система развлечений Thales с&nbsp;регулярно обновляющейся музыкальной и&nbsp;кинопрограммой;</li>
+										<li>Блюда сервируются в&nbsp;фарфоровой и&nbsp;стеклянной посуде.</li>
+										<li>Кресла класса Бизнес раскладываются в&nbsp;горизонтальную кровать;</li>
+										<li>В&nbsp;течение всего рейса пассажирам предлагаются прохладительные и&nbsp;алкогольные напитки.</li>
 									</ul>
-									<p><a href="#">Подробнее</a></p>
+									<p><a href="http://www.aeroflot.ru/cms/flight/business_class/president">Подробнее</a></p>
 								</div>
 								<div class="cclText_column">
 									<div class="cclText_header">Описание пространства Бизнес класса</div>
@@ -159,15 +258,15 @@
                         </div>
                         <div class="ccl_clear cclText cclMedia_columns">
                             <div class="cclText_column side">
-                                <a class="cclMedia_item fancy-iframe" href="http://www.aeroflot.ru/cms/special_offers/class_comfort_promo/userfiles/3dtour/PEC_output/PEC_360.html">
+								<a class="cclMedia_item fancy-over" href="http://www.aeroflot-business.ru/?page=space" target="_blank">
                                     <img src="../images/business/3.jpg" width="360" height="209" alt="">
                                     <span class="cclMedia_title">Интерактивная <br> 3D сцена</span>
                                     <i class="ccl_3d"></i>
                                 </a>
                             </div>
                             <div class="cclText_column">
-                                <a class="cclMedia_item fancy-iframe" href="http://www.aeroflot.ru/cms/special_offers/class_comfort_promo/userfiles/3dtour/PEC_output/PEC_360.html">
-                                    <img src="../images/comfort/3.jpg" width="360" height="209" alt="">
+                                <a class="cclMedia_item fancy-iframe" href="%panorama_link%" data-rel="cc-fly-3d" >
+                                    <img data-rel="cc-fly-3d-cover" src="../images/comfort/3.jpg" width="360" height="209" alt="">
                                     <span class="cclMedia_title">3D панорама <br> салона</span>
                                     <i class="ccl_3d"></i>
                                 </a>
@@ -190,19 +289,19 @@
                                 </div>
                                 <div class="cclAccessories_item">
                                     <div class="cclAccessories_img"><div class="cclAccessories_tab"><div class="cclAccessories_cell">
-                                        <img src="../images/business/interior/2.jpg" alt="">
+                                        <img src="../images/business/interior/3.jpg" alt="">
                                     </div></div></div>
                                     <div class="cclAccessories_label">Маска для сна</div>
                                 </div>
                                 <div class="cclAccessories_item">
                                     <div class="cclAccessories_img"><div class="cclAccessories_tab"><div class="cclAccessories_cell">
-                                        <img src="../images/business/interior/3.jpg" alt="">
+                                        <img src="../images/business/interior/4.jpg" alt="">
                                     </div></div></div>
                                     <div class="cclAccessories_label">Плед</div>
                                 </div>
                                 <div class="cclAccessories_item">
                                     <div class="cclAccessories_img"><div class="cclAccessories_tab"><div class="cclAccessories_cell">
-                                        <img src="../images/business/interior/1.jpg" alt="">
+                                        <img src="../images/business/interior/5.jpg" alt="">
                                     </div></div></div>
                                     <div class="cclAccessories_label">Тапочки</div>
                                 </div>
@@ -213,190 +312,14 @@
                         <i class="cclIco cclIco-12"></i>
                         Кресло
                     </div>
-                    <!-- chair 320 BEGIN -->
-                    <div class="aerod3_wrapper">
-                        <div
-                                class="aerod3 aerod3-js"
-                                data-w="750"
-                                data-h="650"
-                                data-path="../images/business/320/"
-                                data-ext="jpg"
-                                data-expand="83"
-                                data-rotate="200"
-                                data-table="77">
-                            <div class="chair_loading"><i></i></div>
-                            <div class="chair-expander">
-                                <div class="slider"></div>
-                                <div class="chair-condition cond-1"><i></i>Положение сидя</div>
-                                <div class="chair-condition cond-2"><i></i>Сон</div>
-                            </div>
-                            <div class="chair-hint" style="left: 130px;top: 245px;">
-                                <div class="chair-hint-title">Откинуть столик</div>
-                                <a href="#" class="plus-circ table">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 190px;top: 175px;">
-                                <div class="chair-hint-title">Вращать</div>
-                                <a href="#" class="plus-circ rotate">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 185px;top: 335px;">
-                                <div class="chair-hint-title"><span class="e-e">Выдвинуть</span><span class="e-c">Задвинуть</span> спинку</div>
-                                <a href="#" class="plus-circ expand">+</a>
-                            </div>
-                        </div>
+                    <div id="chair-3d">
+	                    <!-- _320.html -->
+	                    <!-- _330.html -->
+	                    <!-- _737.html -->
+	                    <!-- _777.html -->
+	                    <!-- _SSJ.html -->
                     </div>
-                    <!-- chair 320 END -->
-                    <!-- chair 330 BEGIN -->
-                    <div class="aerod3_wrapper">
-                        <div
-                                class="aerod3 aerod3-js"
-                                data-id="330"
-                                data-w="750"
-                                data-h="650"
-                                data-path="../images/business/330/"
-                                data-ext="jpg"
-                                data-expand="42"
-                                data-light="26"
-                                data-rotate="201"
-                                data-table="66">
-                            <div class="chair_loading"><i></i></div>
-                            <div class="chair-expander">
-                                <div class="slider"></div>
-                                <div class="chair-condition cond-1"><i></i>Положение сидя</div>
-                                <div class="chair-condition cond-2"><i></i>Сон</div>
-                            </div>
-                            <div class="chair-hint" style="left: 130px;top: 245px;">
-                                <div class="chair-hint-title">Откинуть столик</div>
-                                <a href="#" class="plus-circ table">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 190px;top: 175px;">
-                                <div class="chair-hint-title">Вращать</div>
-                                <a href="#" class="plus-circ rotate">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 185px;top: 335px;">
-                                <div class="chair-hint-title"><span class="e-e">Выдвинуть</span><span class="e-c">Задвинуть</span> спинку</div>
-                                <a href="#" class="plus-circ expand">+</a>
-                            </div>
-                            <div class="chair-hint" style="left: 170px;top: 100px;">
-                            <div class="chair-hint-title"><span class="l-e">Включить</span><span class="l-c">Выключить</span> свет</div>
-                            <a href="#" class="plus-circ light">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- chair 330 END -->
-                    <!-- chair 737 BEGIN -->
-                    <div class="aerod3_wrapper">
-                        <div
-                                class="aerod3 aerod3-js"
-                                data-w="750"
-                                data-h="422"
-                                data-path="../images/business/737/"
-                                data-ext="jpg"
-                                data-expand="40"
-                                data-footer="92"
-                                data-rotate="154"
-                                data-table="133">
-                            <div class="chair_loading"><i></i></div>
-                            <div class="chair-expander">
-                                <div class="slider"></div>
-                                <div class="chair-condition cond-1"><i></i>Положение сидя</div>
-                                <div class="chair-condition cond-2"><i></i>Сон</div>
-                            </div>
-                            <div class="chair-hint" style="left: 130px;top: 245px;">
-                                <div class="chair-hint-title">Откинуть столик</div>
-                                <a href="#" class="plus-circ table">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 190px;top: 175px;">
-                                <div class="chair-hint-title">Вращать</div>
-                                <a href="#" class="plus-circ rotate">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 185px;top: 335px;">
-                                <div class="chair-hint-title"><span class="e-e">Выдвинуть</span><span class="e-c">Задвинуть</span> спинку</div>
-                                <a href="#" class="plus-circ expand">+</a>
-                            </div>
-                            <div class="chair-hint" style="left: 300px;top: 100px;">
-                                <div class="chair-hint-title"><span class="f-e">Выдвинуть</span><span class="f-c">Задвинуть</span> подставку</div>
-                                <a href="#" class="plus-circ footer">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- chair 737 END -->
-                    <!-- chair 777 BEGIN -->
-                    <div class="aerod3_wrapper">
-                        <div
-                            class="aerod3 aerod3-js"
-                            data-id="777"
-                            data-w="750"
-                            data-h="650"
-                            data-path="../images/business/777/"
-                            data-ext="jpg"
-                            data-expand="42"
-                            data-light="26"
-                            data-rotate="200"
-                            data-table="32">
-                            <div class="chair_loading"><i></i></div>
-                            <div class="chair-expander">
-                                <div class="slider"></div>
-                                <div class="chair-condition cond-1"><i></i>Положение сидя</div>
-                                <div class="chair-condition cond-2"><i></i>Сон</div>
-                            </div>
-                            <div class="chair-hint" style="left: 130px;top: 245px;">
-                                <div class="chair-hint-title">Откинуть столик</div>
-                                <a href="#" class="plus-circ table">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 190px;top: 175px;">
-                                <div class="chair-hint-title">Вращать</div>
-                                <a href="#" class="plus-circ rotate">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 185px;top: 335px;">
-                                <div class="chair-hint-title"><span class="e-e">Выдвинуть</span><span class="e-c">Задвинуть</span> спинку</div>
-                                <a href="#" class="plus-circ expand">+</a>
-                            </div>
-                            <div class="chair-hint" style="left: 170px;top: 100px;">
-                                <div class="chair-hint-title"><span class="l-e">Включить</span><span class="l-c">Выключить</span> свет</div>
-                                <a href="#" class="plus-circ light">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- chair 777 END -->
-                    <!-- chair SSJ BEGIN -->
-                    <div class="aerod3_wrapper">
-                        <div
-                                class="aerod3 aerod3-js"
-                                data-id="330"
-                                data-w="750"
-                                data-h="650"
-                                data-path="../images/business/SSJ/"
-                                data-ext="jpg"
-                                data-expand="41"
-                                data-podgolovnik="39"
-                                data-rotate="150"
-                                data-table="166">
-                            <div class="chair_loading"><i></i></div>
-                            <div class="chair-expander">
-                                <div class="slider"></div>
-                                <div class="chair-condition cond-1"><i></i>Положение сидя</div>
-                                <div class="chair-condition cond-2"><i></i>Сон</div>
-                            </div>
-                            <div class="chair-hint" style="left: 130px;top: 245px;">
-                                <div class="chair-hint-title">Откинуть столик</div>
-                                <a href="#" class="plus-circ table">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 190px;top: 175px;">
-                                <div class="chair-hint-title">Вращать</div>
-                                <a href="#" class="plus-circ rotate">+</a>
-                            </div>
-                            <div class="chair-hint" style="right: 185px;top: 335px;">
-                                <div class="chair-hint-title"><span class="e-e">Выдвинуть</span><span class="e-c">Задвинуть</span> спинку</div>
-                                <a href="#" class="plus-circ expand">+</a>
-                            </div>
-                            <div class="chair-hint" style="left: 370px;top: 60px;">
-                                <div class="chair-hint-title">Выдвинуть подголовник</div>
-                                <a href="#" class="plus-circ podgolovnik">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- chair SSJ END -->
-                    <div class="ccl_bg">
+                    <div class="ccl_bg" id="ent-block">
                         <div class="cclHeader" id="anchor3">
                             <i class="cclIco cclIco-5"></i>
                             Система развлечений
@@ -404,13 +327,19 @@
                         <div class="ccl_clear cclText">
                             <img src="../images/business/2.jpg" class="cclText-r" alt="">
                             <div class="ccl_zfix">
-							<div class="cclText_header">Описание мультимедийных возможностей</div>
-								<p>Длительный перелет не&nbsp;покажется скучным с&nbsp;развлекательной мультимедийной системой Thales. Классика и&nbsp;новинки кинематографа, аудиокниги и&nbsp;более 600 музыкальных альбомов, компьютерные игры и&nbsp;мультфильмы для детей&nbsp;&mdash; это далеко не&nbsp;вся программа, предлагаемая к&nbsp;услугам пассажиров на&nbsp;дальнемагистральных рейсах Аэрофлота. Вы&nbsp;также можете увидеть в&nbsp;режиме реального времени карту Вашего полета или картинку с&nbsp;внешней видео-камеры.</p>
-								<p><a href="#">Узнайте больше о&nbsp;мультимидийных возможностях</a></p>
-								<div class="cclText_header">Интернет на&nbsp;борту</div>
-								<p>На&nbsp;всех самолетах типа Boeing 777 парка Аэрофлота Вы&nbsp;сможете воспользоваться беспроводным доступом в&nbsp;интернет. Оплатить Wi-Fi на&nbsp;борту можно кредитной или дебетовой картой во&nbsp;время полета. К&nbsp;оплате принимаются карты VISA, MasterCard, American Express, JCB и&nbsp;Discover.</p>
-								<p><a href="#">Список самолетов с&nbsp;Wi-Fi на&nbsp;борту и&nbsp;инструкция подключения</a></p>
-							</div>
+                                
+                                <div class="cclText_header">Описание мультимедийных возможностей</div>
+                                <div data-rel="cc-fly-ent4">
+                                	%ent_text%
+                                </div>
+                                <p><a data-rel="cc-fly-ent5" href="%ent_link%">%ent_more_text%</a></p>
+                                
+                                <div class="cclText_header">Интернет на борту</div>
+                                <div data-rel="cc-fly-ent6">
+                                	%wifi_text%
+                                </div>
+                                <p><a data-rel="cc-fly-ent7" href="%wifi_link%">%wifi_more_text%</a></p>
+                            </div>
                         </div>
                         <img src="../images/business/5.jpg" class="ccl_dv" alt="">
                     </div>
@@ -428,7 +357,7 @@
                             </div>
                             <div class="cclCousine_main">
                                 <div class="cclCousine_quote">Я&nbsp;мог&nbsp;бы стать моряком, но&nbsp;в&nbsp;итоге поступил в&nbsp;кулинарное училище. Я&nbsp;с&nbsp;детства готовил сам&nbsp;&mdash; и&nbsp;для себя, и&nbsp;для своих младших сестер. И&nbsp;сейчас продолжаю. Правда, дома готовит жена, я&nbsp;не&nbsp;успеваю, у&nbsp;меня работа почти круглосуточная. А&nbsp;вот в&nbsp;выходные, в&nbsp;отпуске&nbsp;&mdash; люблю готовить для родных.</div>
-                                <a href="#" class="cclBtn">Посмотреть меню</a>
+                                <a href="https://www.aeroflot.ru/cms/flight/dining_onboard" class="cclBtn">Посмотреть меню</a>
                             </div>
                         </div>
                     </div>
