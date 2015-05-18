@@ -36,9 +36,56 @@
 <body class="yui-skin-sam page-type-content">
     <div class="main-body">
         
+        
+        
         <script>
             ;(function($) {
-                    $(function() {
+	            	$(function() {
+
+	                    ////////////////////////////////////////
+						//
+						////////////////////////////////////////					
+	                    var cclTabs = $('.cclTabs > .cclTabs_item-text');
+		
+		                    cclTabs.click(function(){
+			                    
+			                    cclTabs.toggleClass('current');
+			                    
+			                    var rel 	= $(this).data('rel');
+			                    var form 	= $('.combobox-distance');
+			                   	var list 	= window._flyTabs[rel];
+			                   		
+			                   		//console.log(rel, list, form);
+			                   		
+			                   		form.html('');
+			                   		
+			                   		for(airplane in list){
+				                   		
+				                   		form.append('<option value="'+airplane+'">'+list[airplane]+'</option>');
+			                   		}
+	
+			                   		form.find('option:first').attr('selected','selected');
+			                   		form.click();
+		
+			                    return false;
+		                    });
+		                    
+							cclTabs.filter(':first').click();
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                         $('a.fancy-img').fancybox({
                             padding: 30
                         });
@@ -109,8 +156,8 @@
                     <!-- promo END -->
                     <!-- tabs BEGIN -->
                     <div class="cclTabs">
-                        <a href="#" class="cclTabs_item cclTabs_item-text current">Дальнемагистральные</a>
-                        <a href="#" class="cclTabs_item cclTabs_item-text">Средне- и ближне- магистральные</a>
+                        <a href="#longdistance"   class="cclTabs_item cclTabs_item-text" data-rel="ccl-longdistance">Дальнемагистральные</a>
+                        <a href="#middledistance" class="cclTabs_item cclTabs_item-text current" data-rel="ccl-middledistance">Средне- и ближне- магистральные</a>
                         <!-- TODO: сделать попап определения типа самолёта -->
                         <!-- <a href="#" class="cclTabs_item"><i class="cclFormIcon cclFormIcon_1"></i></a> -->
                     </div>
@@ -118,19 +165,15 @@
                         <div class="cclForm">
                             <div class="cclForm_label">Самолет</div>
                             <div class="cclForm_select">
-                                <select id="combobox">
-                                    <option value="">Выберите...</option>
-                                    <option value="boeing 777">Вoeing 777</option>
-                                    <option value="airbus_320">Airbus 320</option>
-                                </select>
+                                <select class="combobox-distance combobox-longdistance"></select>
                             </div>
                             <ul class="cclForm_list">
-                                <li>Дальности полёта — 21 501 км;</li>
+                                <li>Дальности полёта — <span data-rel="cc-fly-distance">%</span> км</li>
                                 <li>Самолёт с двумя турбинами</li>
                             </ul>
                             <ul class="cclForm_list">
-                                <li>Пассажиромест— 400</li>
-                                <li>Самолёт с двумя турбинами</li>
+                                <li>Пассажиромест — <span data-rel="cc-fly-peoples">%</span></li>
+                                <li><a style="color:#4a4a4a" href="http://www.aeroflot.com/cms/flight/plane_park">Схема посадочных мест</a></li>
                             </ul>
                         </div>
                         <div class="cclHeader" id="anchor1">
@@ -143,10 +186,10 @@
 									<div class="cclText_header">Факты о&nbsp;классе Бизнес</div>
 									<p>Пассажирам класса Бизнес Аэрофлота на&nbsp;борту Boeing 777&nbsp;предлагается:</p>
 									<ul>
-									<li>Индивидуальная стационарная система развлечений Thales с регулярно обновляющейся музыкальной и&nbsp;кинопрограммой;</li>
-									<li>Блюда сервируются в&nbsp;фарфоровой и&nbsp;стеклянной посуде.</li>
-									<li>Кресла класса Бизнес раскладываются в&nbsp;горизонтальную кровать;</li>
-									<li>В&nbsp;течение всего рейса пассажирам предлагаются прохладительные и&nbsp;алкогольные напитки.</li>
+										<li>Индивидуальная стационарная система развлечений Thales с регулярно обновляющейся музыкальной и&nbsp;кинопрограммой;</li>
+										<li>Блюда сервируются в&nbsp;фарфоровой и&nbsp;стеклянной посуде.</li>
+										<li>Кресла класса Бизнес раскладываются в&nbsp;горизонтальную кровать;</li>
+										<li>В&nbsp;течение всего рейса пассажирам предлагаются прохладительные и&nbsp;алкогольные напитки.</li>
 									</ul>
 									<p><a href="#">Подробнее</a></p>
 								</div>
