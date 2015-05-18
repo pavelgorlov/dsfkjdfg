@@ -1,3 +1,128 @@
+////////////////////////////////////////
+window._flyTabs = {
+
+	'ccl-longdistance': {
+		airbus_330:	'Airbus 330',
+		boeing_777:	'Вoeing 777'
+	},
+	/**********/
+	'ccl-middledistance': {
+		ssj_100:	'Sukhoi Superjet 100',
+		airbus_320:	'Airbus 320/319/321',
+		boeing_737:	'Вoeing 737'
+	} 
+};
+
+////////////////////////////////////////
+window.chairItems = {
+    chair_benefit: 	['Преимущество кресел', 'Кресла устроены так, чтобы пассажиры чувствовали себя максимально удобно. Специальный механизм позволяет не&nbsp;откидывать для этого спинку кресла, а&nbsp;значит Ваш лиичный комфорт не&nbsp;будет нарушен.'],
+    table: 			['Раскладывающийся столик', 'Каждое кресло оборудовано удобным раскладывающимся столиком. Ваш перелет может быть не&nbsp;только комфортным, но&nbsp;и&nbsp;продуктивным.'],
+    road_complect: 	['Дорожный набор', 'Для удобства во&nbsp;время полёта Вам предоставят дорожный набор.'],
+    monitor: 		['Монитор']
+};
+
+/*
+window._flyData{}
+	key name - airplane id
+		info[]:
+			0 - distance
+			1 - peoples
+			2 - 3D-tour page link
+			3 - 3D-tour cover image
+		
+		ent[] + wifi[]:
+			0 - text
+			1 - link text
+			2 - link url
+		
+    	chairItems{}:
+			key name - plus-id form window.chairItems[]
+			0 - reverse 0 || 1
+			1 - left px str
+			2 - top px str 
+			3 - image src
+			4 - personal desc (optional)
+	*/
+
+window._flyData = {
+  	/*****************/
+  	ssj_100: {
+      	info: ['2 400', "87", 'http://lavdanskie.ru/aeroflotfeb2015/SSJ_1/','../images/econom/100-ec.png'],
+      	chair3d: '_SSJ.html',
+      	chairImage: '../images/econom/chair_100.jpg',
+      	chairItems: {
+          	chair_benefit:  [0,'240px','210px','SSJ-kreslo.jpg'], 
+          	table: 			[1,'730px','219px','SSJ-table.jpg']
+        }
+    },
+    /*****************/
+  	airbus_320: {
+      	info: ['4 000', "140/158/116/170/", 'http://lavdanskie.ru/aeroflotfeb2015/a320_2/','../images/econom/320-ec.png'],
+      	chair3d: '_320.html',
+      	chairImage: '../images/econom/chair_320.jpg',
+      	chairItems: {
+          	chair_benefit:  [0,'240px','210px','A320-kreslo.jpg'], 
+          	table: 			[1,'730px','219px','A320-table.jpg']
+        }
+    },
+    /*****************/
+  	airbus_330: {
+      	info: ['11 200', "241/302/296/301", 'http://lavdanskie.ru/aeroflotfeb2015/a330_1/','../images/econom/330-ec.png'],
+      	ent: ["<p>К&nbsp;услугам пассажиров на&nbsp;борту самолетов Airbus А330 мониторы мультимедийной развлекательной системы Panasonic. Ознакомьтесь с&nbsp;новинками кинематографа, прослушайте аудиокниги или музыкальные альбомы. Летите с&nbsp;детьми? Включите им&nbsp;мультфильмы или компьютерные игры, и&nbsp;перелет станет действительно увлекательным.</p>","Содержание развлекательной системы на&nbsp;борту Airbus А330","http://www.aeroflot.ru/cms/flight/entertainment_a330"],
+      	wifi: ["<p>С&nbsp;интернетом на&nbsp;борту&nbsp;Вы можете оставаться на&nbsp;связи с&nbsp;семьей, друзьями и&nbsp;коллегами даже в&nbsp;полете!</p> <p>В&nbsp;2012 году на&nbsp;ряде воздушных судов Аэрофлота запущена услуга &laquo;Интернет на&nbsp;борту&raquo;, позволяющая пассажирам пользоваться Wi-Fi доступом в&nbsp;Интернет во&nbsp;время полета.</p> <p>Оплатить Wi-Fi на&nbsp;борту можно кредитной или дебетовой картой во&nbsp;время полета. К&nbsp;оплате принимаются карты VISA, MasterCard, American Express, JCB и&nbsp;Discover.</p>","Самолеты с&nbsp;Wi-Fi на&nbsp;борту","http://www.aeroflot.ru/cms/flight/on_board/at_height"],					
+      	chair3d: '_330.html',
+      	chairImage: '../images/econom/chair_330.jpg',
+      	chairItems: {
+          	/*
+              chairItems:
+              	key name - plus id form window.chairItems[]
+              	1 - reverse true || false
+              	2 - left px str
+              	3 - top px str 
+              	4 - image src
+              	5 - personal desc (optional)
+          	*/
+          	chair_benefit:  [0,'180px','270px','A330-kreslo.jpg'], 
+          	table: 			[1,'730px','330px','A330-table.jpg'], 
+          	road_complect:  [0,'350px','340px','A330-nabor.jpg'], 
+          	monitor: 		[1,'670px','240px','A330-monitor.jpg','Спинки кресел на&nbsp;борту Boeing&nbsp;777 оснащены мониторами новой системы развлечения Thales в&nbsp;зависимости от&nbsp;класса обслуживания.']
+        }
+  	}, 
+  	/*****************/
+  	boeing_737: {
+      	info: ['4 500', "158", 'http://lavdanskie.ru/aeroflotfeb2015/737_1/','../images/econom/737-ec.png'],
+      	chair3d: '_737.html',
+      	chairImage: '../images/econom/chair_737.jpg',
+      	chairItems: {
+          	chair_benefit:  [0,'280px','170px','B737-kreslo.jpg'], 
+          	table: 			[1,'694px','288px','B737-table.jpg']
+        }
+    },
+	/*****************/
+  	boeing_777: {
+	  	info: ['11 200', "402", 'http://lavdanskie.ru/aeroflotfeb2015/777_1/','../images/econom/777-ec.png'],
+      	ent: ["<p>Перелет не&nbsp;покажется скучным с&nbsp;развлекательной мультимедийной системой Thales. Классика и&nbsp;новинки кинематографа, аудиокниги и&nbsp;более 600 музыкальных альбомов, компьютерные игры и&nbsp;мультфильмы для детей&nbsp;&mdash; это далеко не&nbsp;вся программа, предлагаемая к&nbsp;услугам пассажиров на&nbsp;дальнемагистральных рейсах Аэрофлота. Вы&nbsp;также можете увидеть в&nbsp;режиме реального времени карту Вашего полета или картинку с&nbsp;внешней видео-камеры.</p>","Узнайте больше о&nbsp;мультимедийных возможностях","http://www.aeroflot.ru/cms/flight/entertaiment_B777_ec"],
+      	wifi: ["<p>На&nbsp;всех самолетах типа Boeing&nbsp;777 парка Аэрофлота Вы&nbsp;сможете воспользоваться беспроводным доступом в&nbsp;Интернет.</p> <p>Оплатить Wi-Fi на&nbsp;борту можно кредитной или дебетовой картой во&nbsp;время полета. К&nbsp;оплате принимаются карты VISA, MasterCard, American Express, JCB и&nbsp;Discover.</p>","Самолеты с&nbsp;Wi-Fi на&nbsp;борту","http://www.aeroflot.ru/cms/flight/on_board/at_height"],
+      	chair3d: '_777.html',
+      	chairImage: '../images/econom/chair_777.jpg',
+      	chairItems: {
+          	chair_benefit:  [0,'180px','270px','B777-kreslo.jpg'], 
+          	table: 			[1,'730px','330px','B777-table.jpg'], 
+          	road_complect:  [0,'350px','340px','B777-nabor.jpg'], 
+          	monitor: 		[1,'724px','252px','B777-monitor.jpg','Спинки кресел на&nbsp;борту Boeing&nbsp;777 оснащены мониторами с&nbsp;диагональю от&nbsp;8,9 до&nbsp;15,4 дюймов новой системы развлечения Thales в&nbsp;зависимости от&nbsp;класса обслуживания.']
+        }
+  	} 
+};
+						
+function plusTemplate(title, desc, left, top, img, isReverse){
+	                        
+	var reverseClass = isReverse ? ' reverse' : '';
+	                        
+	return '<div class="cclInterior_plus'+reverseClass+'" style="top:'+top+'; left:'+left+';"><div class="cclInterior_icon"><img alt="" src="../images/plus/'+img+'"><div class="cclInterior_title">'+title+'</div></div><div class="cclInterior_text"><div class="cclInterior_textTitle">'+title+'</div><div class="cclInterior_desc">'+desc+'</div><span class="cclInterior_textBg"></span> <a class="cclInterior_close" href="#">x</a></div></div>';               
+
+}
+
+
 var aeroclass = window.aeroclass || {};
 
 aeroclass.plus = function() {
