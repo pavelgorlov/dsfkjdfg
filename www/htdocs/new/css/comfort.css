@@ -640,12 +640,16 @@ body {
   display: block;
   position: relative;
 }
+
+.cclMedia_item.fancy-over,
 .cclMedia_item.fancy-iframe {
   margin-top: 12px;
 }
+.cclMedia_item.fancy-over img,
 .cclMedia_item.fancy-iframe img {
   margin-top: 0;
 }
+.cclMedia_item.fancy-over:before,
 .cclMedia_item.fancy-iframe:before {
   content: "";
   position: absolute;

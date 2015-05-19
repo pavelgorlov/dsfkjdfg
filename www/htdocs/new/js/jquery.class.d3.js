@@ -6,7 +6,7 @@ aeroclass.log = aeroclass.log || function(msg) {
     }
 };
 
-aeroclass.tlenbow = [
+aeroclass.tlenbow = aeroclass.tlenbow330 = [
     "#ffffff",
     "#f5f5f5",
     "#ebebeb",
@@ -36,6 +36,7 @@ aeroclass.tlenbow = [
     "#000000"
 ];
 
+/*
 aeroclass.tlenbow330 = [
     "#ffffff",
     "#00ff00",
@@ -65,6 +66,7 @@ aeroclass.tlenbow330 = [
     "#000000",
     "#000000"
 ];
+*/
 
 aeroclass.chair = function (obj) {
     obj = $(obj);

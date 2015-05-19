@@ -49,7 +49,7 @@ window._flyData{}
 window._flyData = {
   	/*****************/
   	ssj_100: {
-      	info: ['2 400', "87", 'http://lavdanskie.ru/aeroflotfeb2015/SSJ_1/','../images/econom/100-ec.png','http://lavdanskie.ru/aeroflotfeb2015/SSJ_2/'],
+      	info: ['2 400', "87", 'http://lavdanskie.ru/aeroflotfeb2015/SSJ_1/','../images/econom/100-ec.png','http://lavdanskie.ru/aeroflotfeb2015/SSJ_2/','../images/business/100-bc.jpg'],
       	chair3d: '_SSJ.html',
       	chairImage: '../images/econom/chair_100.jpg',
       	chairItems: {
@@ -59,7 +59,7 @@ window._flyData = {
     },
     /*****************/
   	airbus_320: {
-      	info: ['4 000', "140/158/116/170/", 'http://lavdanskie.ru/aeroflotfeb2015/a320_2/','../images/econom/320-ec.png','http://lavdanskie.ru/aeroflotfeb2015/a320_3/'],
+      	info: ['4 000', "140/158/116/170/", 'http://lavdanskie.ru/aeroflotfeb2015/a320_2/','../images/econom/320-ec.png','http://lavdanskie.ru/aeroflotfeb2015/a320_3/','../images/business/320-bc.jpg'],
       	chair3d: '_320.html',
       	chairImage: '../images/econom/chair_320.jpg',
       	chairItems: {
@@ -69,7 +69,7 @@ window._flyData = {
     },
     /*****************/
   	airbus_330: {
-      	info: ['11 200', "241/302/296/301", 'http://lavdanskie.ru/aeroflotfeb2015/a330_1/','../images/econom/330-ec.png','http://lavdanskie.ru/aeroflotfeb2015/a330_4/'],
+      	info: ['11 200', "241/302/296/301", 'http://lavdanskie.ru/aeroflotfeb2015/a330_1/','../images/econom/330-ec.png','http://lavdanskie.ru/aeroflotfeb2015/a330_4/','../images/business/330-bc.jpg'],
       	ent: ["<p>К&nbsp;услугам пассажиров на&nbsp;борту самолетов Airbus А330 мониторы мультимедийной развлекательной системы Panasonic. Ознакомьтесь с&nbsp;новинками кинематографа, прослушайте аудиокниги или музыкальные альбомы. Летите с&nbsp;детьми? Включите им&nbsp;мультфильмы или компьютерные игры, и&nbsp;перелет станет действительно увлекательным.</p>","Содержание развлекательной системы на&nbsp;борту Airbus А330","http://www.aeroflot.ru/cms/flight/entertainment_a330"],
       	wifi: ["<p>С&nbsp;интернетом на&nbsp;борту&nbsp;Вы можете оставаться на&nbsp;связи с&nbsp;семьей, друзьями и&nbsp;коллегами даже в&nbsp;полете!</p> <p>В&nbsp;2012 году на&nbsp;ряде воздушных судов Аэрофлота запущена услуга &laquo;Интернет на&nbsp;борту&raquo;, позволяющая пассажирам пользоваться Wi-Fi доступом в&nbsp;Интернет во&nbsp;время полета.</p> <p>Оплатить Wi-Fi на&nbsp;борту можно кредитной или дебетовой картой во&nbsp;время полета. К&nbsp;оплате принимаются карты VISA, MasterCard, American Express, JCB и&nbsp;Discover.</p>","Самолеты с&nbsp;Wi-Fi на&nbsp;борту","http://www.aeroflot.ru/cms/flight/on_board/at_height"],					
       	chair3d: '_330.html',
@@ -92,7 +92,7 @@ window._flyData = {
   	}, 
   	/*****************/
   	boeing_737: {
-      	info: ['4 500', "158", 'http://lavdanskie.ru/aeroflotfeb2015/737_1/','../images/econom/737-ec.png','http://lavdanskie.ru/aeroflotfeb2015/737_2/'],
+      	info: ['4 500', "158", 'http://lavdanskie.ru/aeroflotfeb2015/737_1/','../images/econom/737-ec.png','http://lavdanskie.ru/aeroflotfeb2015/737_2/','../images/business/737-bc.jpg'],
       	chair3d: '_737.html',
       	chairImage: '../images/econom/chair_737.jpg',
       	chairItems: {
@@ -102,7 +102,7 @@ window._flyData = {
     },
 	/*****************/
   	boeing_777: {
-	  	info: ['11 200', "402", 'http://lavdanskie.ru/aeroflotfeb2015/777_1/','../images/econom/777-ec.png','http://lavdanskie.ru/aeroflotfeb2015/777_4/'],
+	  	info: ['11 200', "402", 'http://lavdanskie.ru/aeroflotfeb2015/777_1/','../images/econom/777-ec.png','http://lavdanskie.ru/aeroflotfeb2015/777_4/','../images/business/777-bc.jpg'],
       	ent: ["<p>Перелет не&nbsp;покажется скучным с&nbsp;развлекательной мультимедийной системой Thales. Классика и&nbsp;новинки кинематографа, аудиокниги и&nbsp;более 600 музыкальных альбомов, компьютерные игры и&nbsp;мультфильмы для детей&nbsp;&mdash; это далеко не&nbsp;вся программа, предлагаемая к&nbsp;услугам пассажиров на&nbsp;дальнемагистральных рейсах Аэрофлота. Вы&nbsp;также можете увидеть в&nbsp;режиме реального времени карту Вашего полета или картинку с&nbsp;внешней видео-камеры.</p>","Узнайте больше о&nbsp;мультимедийных возможностях","http://www.aeroflot.ru/cms/flight/entertaiment_B777_ec"],
       	wifi: ["<p>На&nbsp;всех самолетах типа Boeing&nbsp;777 парка Аэрофлота Вы&nbsp;сможете воспользоваться беспроводным доступом в&nbsp;Интернет.</p> <p>Оплатить Wi-Fi на&nbsp;борту можно кредитной или дебетовой картой во&nbsp;время полета. К&nbsp;оплате принимаются карты VISA, MasterCard, American Express, JCB и&nbsp;Discover.</p>","Самолеты с&nbsp;Wi-Fi на&nbsp;борту","http://www.aeroflot.ru/cms/flight/on_board/at_height"],
       	chair3d: '_777.html',
